@@ -1,0 +1,116 @@
+{
+  "budget": 16,
+  "distinct_count": 16,
+  "effective_count": 16,
+  "encoded_landmark_duplicates_removed": false,
+  "first_choice_and_ties": "first lexicographic distinct raw row",
+  "occurrence_counts": [
+    267,
+    252,
+    232,
+    254,
+    265,
+    257,
+    256,
+    263,
+    263,
+    263,
+    257,
+    248,
+    246,
+    265,
+    272,
+    236
+  ],
+  "raw_histories_hex": [
+    [
+      "0x0.0p+0",
+      "0x0.0p+0"
+    ],
+    [
+      "0x0.0p+0",
+      "0x1.0000000000000p-2"
+    ],
+    [
+      "0x0.0p+0",
+      "0x1.8000000000000p-1"
+    ],
+    [
+      "0x0.0p+0",
+      "0x1.0000000000000p+0"
+    ],
+    [
+      "0x1.0000000000000p-2",
+      "0x0.0p+0"
+    ],
+    [
+      "0x1.0000000000000p-2",
+      "0x1.0000000000000p-2"
+    ],
+    [
+      "0x1.0000000000000p-2",
+      "0x1.8000000000000p-1"
+    ],
+    [
+      "0x1.0000000000000p-2",
+      "0x1.0000000000000p+0"
+    ],
+    [
+      "0x1.8000000000000p-1",
+      "0x0.0p+0"
+    ],
+    [
+      "0x1.8000000000000p-1",
+      "0x1.0000000000000p-2"
+    ],
+    [
+      "0x1.8000000000000p-1",
+      "0x1.8000000000000p-1"
+    ],
+    [
+      "0x1.8000000000000p-1",
+      "0x1.0000000000000p+0"
+    ],
+    [
+      "0x1.0000000000000p+0",
+      "0x0.0p+0"
+    ],
+    [
+      "0x1.0000000000000p+0",
+      "0x1.0000000000000p-2"
+    ],
+    [
+      "0x1.0000000000000p+0",
+      "0x1.8000000000000p-1"
+    ],
+    [
+      "0x1.0000000000000p+0",
+      "0x1.0000000000000p+0"
+    ]
+  ],
+  "row_identity": "first zero-based occurrence in the training matrix",
+  "row_indices": [
+    1,
+    33,
+    63,
+    0,
+    2,
+    8,
+    24,
+    3,
+    41,
+    5,
+    6,
+    17,
+    23,
+    4,
+    7,
+    15
+  ],
+  "schema": "kahm.raw_landmark_plan.v1",
+  "selection": "all distinct raw rows in lexicographic order when within budget; otherwise farthest-first in training-standardized raw coordinates",
+  "shared_across_variants_and_caps": true,
+  "shortage_reduction": false,
+  "targets_used": false,
+  "training_count": 4096
+}

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kahm-demonstrator"
+version = "0.1.0"
+description = "Reproducible KAHM soft-state forecasting demonstration with verified fitted-risk bounds"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0,<3"]
+readme = "README.md"
+authors = [{name = "Mohit Kumar"}]
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+
+[project.urls]
+Repository = "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting"
+
+[project.optional-dependencies]
+tutorial = ["jupyterlab>=4,<5", "matplotlib>=3.8,<4"]
+dev = ["build>=1.2,<2", "PyYAML>=6,<7"]
+
+[project.scripts]
+kahm-demo = "kahm_demo.cli:main"
+
+[tool.setuptools]
+packages = ["kahm_demo"]
+
+[tool.setuptools.package-data]
+kahm_demo = ["specification.json", "readout_specification.json", "calibration_protocol.json"]
+

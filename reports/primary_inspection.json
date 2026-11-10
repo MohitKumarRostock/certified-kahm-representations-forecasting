@@ -1,0 +1,303 @@
+{
+  "anchors": {
+    "audit_sha256": "65e1bd54dcbc87994f197b15d6fd0f7e56a0f8eb2ef1cb4b699022d2e02c52eb",
+    "certificate_sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446",
+    "freeze_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5"
+  },
+  "archive_identity_checked": true,
+  "calibration_losses_recomputed": false,
+  "calibration_resampled": false,
+  "candidate_ids": [
+    "raw",
+    "kahm_mem",
+    "kahm_local"
+  ],
+  "certificate_reverified": false,
+  "history": {
+    "history_id": 6,
+    "observation_hex": [
+      "0x1.0000000000000p-2",
+      "0x1.8000000000000p-1"
+    ],
+    "observations": [
+      0.25,
+      0.75
+    ],
+    "recorded_encoder": {
+      "bank_id": "cap_2",
+      "enriched": [
+        0.9999903929519797,
+        9.607048020461591e-06,
+        1.3585427458503638e-05,
+        1.3581611148028954e-05,
+        0.9999728329613928,
+        7.319505877146013e-16,
+        0.6330816603100538,
+        0.31734358713417476,
+        6.0821043425407234e-06,
+        -1.5243821851046298e-05,
+        4.311289701199848e-06,
+        2.1501918998596545e-05,
+        -2.1550393039545804e-05,
+        -4.299175770027924e-06,
+        0.3173380145302355,
+        -0.31653527164762824,
+        -1.1614102832759571e-15,
+        1.1584723628378187e-15
+      ],
+      "enriched_hex": [
+        "0x1.fffebda415fc7p-1",
+        "0x1.425bea03a299ep-17",
+        "0x1.c7d9eeeaf9260p-17",
+        "0x1.c7b926c32b556p-17",
+        "0x1.fffc706cea518p-1",
+        "0x1.a5f0d7615cbddp-51",
+        "0x1.442347857547ap-1",
+        "0x1.44f5b7a158af8p-2",
+        "0x1.9829c1c8ac78ep-18",
+        "-0x1.ff7f6ec10260fp-17",
+        "0x1.215364a0f3d54p-18",
+        "0x1.68be09f55d47ap-16",
+        "-0x1.698e3bbae9612p-16",
+        "-0x1.208346fef9794p-18",
+        "0x1.44f441a8bd5f7p-2",
+        "-0x1.4421d27f07355p-2",
+        "-0x1.4ec0f3fa79154p-50",
+        "0x1.4de82c3afa7a0p-50"
+      ],
+      "enriched_order": "six memberships, then phi_j * P_j.T @ (z - mu_j) in partition/group order using each stored local basis",
+      "feature_widths": {
+        "kahm_local": 18,
+        "kahm_mem": 6,
+        "raw": 2
+      },
+      "membership_meaning": "each partition normalizes separately; the concatenated six values are not one probability distribution",
+      "memberships": [
+        0.9999903929519797,
+        9.607048020461591e-06,
+        1.3585427458503638e-05,
+        1.3581611148028954e-05,
+        0.9999728329613928,
+        7.319505877146013e-16
+      ],
+      "memberships_hex": [
+        "0x1.fffebda415fc7p-1",
+        "0x1.425bea03a299ep-17",
+        "0x1.c7d9eeeaf9260p-17",
+        "0x1.c7b926c32b556p-17",
+        "0x1.fffc706cea518p-1",
+        "0x1.a5f0d7615cbddp-51"
+      ],
+      "partition_groups": [
+        {
+          "group_count": 2,
+          "membership_start": 0,
+          "membership_stop": 2,
+          "memberships": [
+            0.9999903929519797,
+            9.607048020461591e-06
+          ],
+          "partition_id": 0,
+          "reference_counts": [
+            8,
+            8
+          ]
+        },
+        {
+          "group_count": 4,
+          "membership_start": 2,
+          "membership_stop": 6,
+          "memberships": [
+            1.3585427458503638e-05,
+            1.3581611148028954e-05,
+            0.9999728329613928,
+            7.319505877146013e-16
+          ],
+          "partition_id": 1,
+          "reference_counts": [
+            4,
+            4,
+            4,
+            4
+          ]
+        }
+      ],
+      "raw": [
+        -0.6374824512141666,
+        0.6485439861256852
+      ],
+      "raw_hex": [
+        "-0x1.4664198f7a3eep-1",
+        "0x1.4c0df514dac68p-1"
+      ],
+      "raw_meaning": "training-standardized two-observation history",
+      "recorded_values_only": true
+    },
+    "recorded_predictions": [
+      {
+        "candidate_id": "raw",
+        "prediction": 0.9189449012381653,
+        "prediction_hex": "0x1.d67ff23349a95p-1"
+      },
+      {
+        "candidate_id": "kahm_mem",
+        "prediction": 0.9189449875868347,
+        "prediction_hex": "0x1.d67ff5190464cp-1"
+      },
+      {
+        "candidate_id": "kahm_local",
+        "prediction": 0.9189450044744514,
+        "prediction_hex": "0x1.d67ff5aa14a7cp-1"
+      }
+    ],
+    "state_labels": [
+      1,
+      2
+    ]
+  },
+  "inventory": {
+    "audit": {
+      "payload_bytes": 266890,
+      "payload_count": 6
+    },
+    "certificate": {
+      "payload_bytes": 3391326,
+      "payload_count": 10
+    },
+    "external_dataset_file_count": 6,
+    "freeze": {
+      "payload_bytes": 36644586,
+      "payload_count": 286
+    }
+  },
+  "mode": "archive_identity_only",
+  "model_replayed": false,
+  "models_refitted": false,
+  "population_risk_recomputed": false,
+  "recorded_audit_summary": {
+    "all_available_endpoints_cover": true,
+    "all_three_covered": true,
+    "all_three_endpoints_available": true,
+    "all_three_population_requirements_met": true,
+    "available_endpoint_count": 3,
+    "candidate_count": 3,
+    "coverage_miss_count": 0,
+    "coverage_outcome": "all_three_covered",
+    "covered_endpoint_count": 3,
+    "population_requirement_met_count": 3,
+    "unavailable_endpoint_count": 0
+  },
+  "recorded_guarantee": {
+    "between_candidate_independence_required": false,
+    "class_optimality_or_representation_superiority_claimed": false,
+    "coverage_statement": "Conditional on development and under the stipulated premises, the probability that any reported valid upper endpoint fails to cover its fitted risk is at most 1/20. No additional conditioning on availability or acceptance is used.",
+    "evaluation_family": "the three selected predictors frozen before calibration",
+    "family_size": 3,
+    "per_candidate_failure_probability": {
+      "denominator": 60,
+      "numerator": 1
+    },
+    "per_prediction_interval_coverage_claimed": false,
+    "primary_mse_tolerance": {
+      "denominator": 10,
+      "numerator": 1
+    },
+    "risk": "population scalar MSE of the actual frozen predictor under the declared benchmark law",
+    "sampling_premise_status": "declared statistical model; not independently proved by deterministic PRNG metadata",
+    "simultaneous_confidence": {
+      "denominator": 20,
+      "numerator": 19
+    },
+    "statistical_premises": "iid calibration episodes from the stipulated law, independent of all development; bounded squared losses",
+    "total_failure_probability": {
+      "denominator": 20,
+      "numerator": 1
+    },
+    "type": "simultaneous_one_sided_fitted_mse_upper_bounds",
+    "unavailable_candidates": "retained without an endpoint; their probability allocation is not reassigned"
+  },
+  "root_search_repeated": false,
+  "schema": "kahm.primary_tutorial_inspection.v1",
+  "scope": "Recorded values match the released primary anchors and payload bytes. No model, loss, endpoint, or population-risk computation has been rerun. Runtime/source compatibility is a separate precheck; strict numerical verification is explicit.",
+  "status": "archive_identity_checked",
+  "table": [
+    {
+      "bank_id": null,
+      "candidate_id": "raw",
+      "certificate_status": "requirement_met",
+      "empirical_mse": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "685942479030621336985628067540446985"
+      },
+      "empirical_mse_decimal_18_approximate": "0.064505720727162463",
+      "exact_population_mse": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617660910893348877587862446939"
+      },
+      "fitted_excess_over_bayes": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "38949729207531184683971121701723"
+      },
+      "issued_upper_endpoint": {
+        "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+        "numerator": "488968561145369732839739125329222577906073475936575667012675"
+      },
+      "issued_upper_endpoint_decimal_18": "0.076071470660035393",
+      "population_mse_decimal_18_approximate": "0.056437536124516396",
+      "population_requirement_met": true,
+      "realized_coverage": "covered"
+    },
+    {
+      "bank_id": "cap_2",
+      "candidate_id": "kahm_mem",
+      "certificate_status": "requirement_met",
+      "empirical_mse": {
+        "denominator": "21267647932558653966460912964485513216",
+        "numerator": "1371884978136572561752631146330096251"
+      },
+      "empirical_mse_decimal_18_approximate": "0.064505721671099938",
+      "exact_population_mse": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617511918206923147658928940087"
+      },
+      "fitted_excess_over_bayes": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "38949580214844758954042188194871"
+      },
+      "issued_upper_endpoint": {
+        "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+        "numerator": "1955874270739427404227185048683186709999020649189588276396481"
+      },
+      "issued_upper_endpoint_decimal_18": "0.076071471677418599",
+      "population_mse_decimal_18_approximate": "0.056437535407142705",
+      "population_requirement_met": true,
+      "realized_coverage": "covered"
+    },
+    {
+      "bank_id": "cap_2",
+      "candidate_id": "kahm_local",
+      "certificate_status": "requirement_met",
+      "empirical_mse": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "685942519693215482778597544342018925"
+      },
+      "empirical_mse_decimal_18_approximate": "0.064505724551054440",
+      "exact_population_mse": {
+        "denominator": "83076749736557242056487941267521536",
+        "numerator": "4688647074824915106329509302933647"
+      },
+      "fitted_excess_over_bayes": {
+        "denominator": "415383748682786210282439706337607680",
+        "numerator": "77899510717851203260313033177803"
+      },
+      "issued_upper_endpoint": {
+        "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+        "numerator": "977937175273681580006270660570021941086620970155216373286307"
+      },
+      "issued_upper_endpoint_decimal_18": "0.076071474781456121",
+      "population_mse_decimal_18_approximate": "0.056437536250430780",
+      "population_requirement_met": true,
+      "realized_coverage": "covered"
+    }
+  ]
+}

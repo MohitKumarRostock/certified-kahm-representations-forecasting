@@ -1,0 +1,94 @@
+{
+  "plan_sha256": "9c19c91a1f2f78e31c2544d2e331c4337364c3bb9a92cee2f0942c4d985b18e4",
+  "record_sha256": "6f694c5b43232767bad301c008b2fa9685482d3da7984302c0f669aeb9959d59",
+  "result": {
+    "calibration_status": "reserved_not_accessed",
+    "freeze_status": "development_selected_not_frozen",
+    "output": "/workspace/scratch/f3abdf0f96c1/certified_kahm_public/models/primary",
+    "search_count": 225,
+    "selected_models": [
+      {
+        "bandwidth_multiplier": 0.25,
+        "bank_id": null,
+        "candidate_id": "raw",
+        "clipping": {
+          "support_history_ids": [],
+          "training_episodes": 0,
+          "validation_episodes": 0
+        },
+        "decoder_width": 18,
+        "landmark_count": 16,
+        "nystrom_rank": 16,
+        "representation_width": 2,
+        "ridge_alpha": 1e-06,
+        "selected_trial_id": "raw__b00_a00",
+        "training_mse": {
+          "decimal_approximation": 0.054294589481199855,
+          "denominator": "5316911983139663491615228241121378304",
+          "numerator": "288679553432240216105719678767074821"
+        },
+        "validation_mse": {
+          "decimal_approximation": 0.05515027673860771,
+          "denominator": "2658455991569831745807614120560689152",
+          "numerator": "146614583632485977330085979525033793"
+        }
+      },
+      {
+        "bandwidth_multiplier": 0.25,
+        "bank_id": "cap_2",
+        "candidate_id": "kahm_mem",
+        "clipping": {
+          "support_history_ids": [],
+          "training_episodes": 0,
+          "validation_episodes": 0
+        },
+        "decoder_width": 22,
+        "landmark_count": 16,
+        "nystrom_rank": 16,
+        "representation_width": 6,
+        "ridge_alpha": 1e-06,
+        "selected_trial_id": "kahm_mem__cap_2__b00_a00",
+        "training_mse": {
+          "decimal_approximation": 0.05429458948118374,
+          "denominator": "664613997892457936451903530140172288",
+          "numerator": "36084944179019322704258945268544987"
+        },
+        "validation_mse": {
+          "decimal_approximation": 0.05515027636161792,
+          "denominator": "5316911983139663491615228241121378304",
+          "numerator": "293229165260550432360783049796598531"
+        }
+      },
+      {
+        "bandwidth_multiplier": 4.0,
+        "bank_id": "cap_2",
+        "candidate_id": "kahm_local",
+        "clipping": {
+          "support_history_ids": [],
+          "training_episodes": 0,
+          "validation_episodes": 0
+        },
+        "decoder_width": 34,
+        "landmark_count": 16,
+        "nystrom_rank": 16,
+        "representation_width": 18,
+        "ridge_alpha": 1e-06,
+        "selected_trial_id": "kahm_local__cap_2__b04_a00",
+        "training_mse": {
+          "decimal_approximation": 0.05429458948114599,
+          "denominator": "21267647932558653966460912964485513216",
+          "numerator": "1154718213727815364222457226159326479"
+        },
+        "validation_mse": {
+          "decimal_approximation": 0.05515027629604989,
+          "denominator": "5316911983139663491615228241121378304",
+          "numerator": "293229164911931013740398438064103171"
+        }
+      }
+    ],
+    "selected_shared_bank": "cap_2",
+    "status": "completed"
+  },
+  "schema": "kahm.public_primary_stage_result.v1",
+  "stage": "fit_forecasters"
+}

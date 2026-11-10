@@ -1,0 +1,1181 @@
+{
+  "bank_id": "cap_1",
+  "canonical_method": "single_history_numpy_float64_v1",
+  "entries": [
+    {
+      "current_state": 0,
+      "history_id": 0,
+      "input_hex": [
+        "0x0.0p+0",
+        "0x0.0p+0"
+      ],
+      "kahm_local_hex": [
+        "0x1.fffffcf069cb1p-1",
+        "0x1.87cb1a78b7242p-24",
+        "0x1.ffffe42f98c0dp-1",
+        "0x1.ff4c5e8f620ecp-57",
+        "0x1.6c7a46da0002cp-24",
+        "0x1.8f772b172502ep-21",
+        "-0x1.442411aa41e7fp+0",
+        "-0x1.f0144410c7c9fp-24",
+        "-0x1.44f6729372894p-2",
+        "-0x1.1bf3f161ef0b3p-55",
+        "-0x1.cea9bb6ea3f7dp-26",
+        "-0x1.bbb10db58cfe6p-20"
+      ],
+      "kahm_mem_hex": [
+        "0x1.fffffcf069cb1p-1",
+        "0x1.87cb1a78b7242p-24",
+        "0x1.ffffe42f98c0dp-1",
+        "0x1.ff4c5e8f620ecp-57",
+        "0x1.6c7a46da0002cp-24",
+        "0x1.8f772b172502ep-21"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.0d6ee276b0b99p+2",
+        "-0x1.c2574a61c5476p+1"
+      ],
+      "previous_state": 0,
+      "raw_hex": [
+        "-0x1.45ad4ee519375p+0",
+        "-0x1.402f22dd13debp+0"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656cp-1",
+          "-0x1.0392f8a3f875cp+0"
+        ],
+        [
+          "0x1.e604310352385p-1",
+          "-0x1.03bc910da7521p+0"
+        ],
+        [
+          "-0x1.341d915cee592p+0",
+          "-0x1.de4c3becfca76p-1"
+        ],
+        [
+          "0x1.1e18dfdcebe12p-1",
+          "0x1.ee1ffee205dc7p-1"
+        ],
+        [
+          "-0x1.33e371af3a602p+0",
+          "0x1.ee1ffee205dc8p-1"
+        ],
+        [
+          "0x1.1d60c554af141p-1",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.d9ce0da5fc041p-3",
+        "0x1.711c01c413cb2p-1",
+        "0x1.944492442144ap-3",
+        "0x1.dbae901404838p-1",
+        "0x1.6b78495dde5b9p-1",
+        "0x1.55e23ade8318cp-1"
+      ]
+    },
+    {
+      "current_state": 1,
+      "history_id": 1,
+      "input_hex": [
+        "0x0.0p+0",
+        "0x1.0000000000000p-2"
+      ],
+      "kahm_local_hex": [
+        "0x1.fffffffca7058p-1",
+        "0x1.ac7d40d3ee4e9p-32",
+        "0x1.fffef3a421944p-1",
+        "0x1.4f78895e7e2d8p-41",
+        "0x1.08084540d1325p-17",
+        "0x1.14e5f6dc01d96p-23",
+        "-0x1.4424139837a11p-1",
+        "-0x1.0f45743c7b66ap-32",
+        "-0x1.44f5d9e75ffd4p-2",
+        "-0x1.749ca5d7dbbfep-40",
+        "-0x1.4f28b7f968990p-19",
+        "-0x1.338dfa61c8518p-22"
+      ],
+      "kahm_mem_hex": [
+        "0x1.fffffffca7058p-1",
+        "0x1.ac7d40d3ee4e9p-32",
+        "0x1.fffef3a421944p-1",
+        "0x1.4f78895e7e2d8p-41",
+        "0x1.08084540d1325p-17",
+        "0x1.14e5f6dc01d96p-23"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.ba10f43a36b22p+1",
+        "-0x1.cbf98b02b0ce6p+1"
+      ],
+      "previous_state": 0,
+      "raw_hex": [
+        "-0x1.45ad4ee519375p+0",
+        "-0x1.3c3a321fd1916p-1"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656bp-1",
+          "-0x1.308dc6e67a5eap-1"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "-0x1.30c4237c333d1p-1"
+        ],
+        [
+          "-0x1.341d915cee592p+0",
+          "-0x1.de4c3becfca76p-1"
+        ],
+        [
+          "0x1.1e18dfdcebe12p-1",
+          "0x1.ee1ffee205dc7p-1"
+        ],
+        [
+          "-0x1.33e371af3a602p+0",
+          "0x1.ee1ffee205dc8p-1"
+        ],
+        [
+          "0x1.1d60c554af141p-1",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.8d9cec6a6fe5dp-3",
+        "0x1.9579fa781f360p-1",
+        "0x1.9bfb89455da66p-3",
+        "0x1.b9955e7b2e596p-1",
+        "0x1.3bca2aee97f9fp-1",
+        "0x1.68402f50f2d63p-1"
+      ]
+    },
+    {
+      "current_state": 2,
+      "history_id": 2,
+      "input_hex": [
+        "0x0.0p+0",
+        "0x1.8000000000000p-1"
+      ],
+      "kahm_local_hex": [
+        "0x1.fffffffacf778p-1",
+        "0x1.4c2221fed372bp-31",
+        "0x1.0458a182caae8p-17",
+        "0x1.51bacf97046afp-23",
+        "0x1.fffef66072822p-1",
+        "0x1.7960d9683d480p-42",
+        "0x1.442413970d17fp-1",
+        "0x1.a48a0142104dcp-32",
+        "-0x1.4a7ae00e26dffp-19",
+        "-0x1.771ef1da5a2dcp-22",
+        "-0x1.44f5dba3dc638p-2",
+        "-0x1.a328ba00ac5fep-41"
+      ],
+      "kahm_mem_hex": [
+        "0x1.fffffffacf778p-1",
+        "0x1.4c2221fed372bp-31",
+        "0x1.0458a182caae8p-17",
+        "0x1.51bacf97046afp-23",
+        "0x1.fffef66072822p-1",
+        "0x1.7960d9683d480p-42"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.ba50a54d1bb3ep+1",
+        "-0x1.cbc7228e77a65p+1"
+      ],
+      "previous_state": 0,
+      "raw_hex": [
+        "-0x1.45ad4ee519375p+0",
+        "0x1.4c0df514dac68p-1"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656dp-1",
+          "0x1.406189db8393ap-1"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "0x1.4097e6713c722p-1"
+        ],
+        [
+          "-0x1.341d915cee592p+0",
+          "-0x1.de4c3becfca76p-1"
+        ],
+        [
+          "0x1.1e18dfdcebe12p-1",
+          "0x1.ee1ffee205dc7p-1"
+        ],
+        [
+          "-0x1.33e371af3a602p+0",
+          "0x1.ee1ffee205dc8p-1"
+        ],
+        [
+          "0x1.1d60c554af141p-1",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.8dd03f20f0eecp-3",
+        "0x1.9287d18ee57a3p-1",
+        "0x1.3bf175b45d277p-1",
+        "0x1.66573556cad74p-1",
+        "0x1.9bd343aa59f20p-3",
+        "0x1.bc1080c0607d9p-1"
+      ]
+    },
+    {
+      "current_state": 3,
+      "history_id": 3,
+      "input_hex": [
+        "0x0.0p+0",
+        "0x1.0000000000000p+0"
+      ],
+      "kahm_local_hex": [
+        "0x1.fffffc615f0c1p-1",
+        "0x1.cf507a006c3b0p-24",
+        "0x1.74bcd9192965cp-24",
+        "0x1.c016c17a30191p-21",
+        "0x1.ffffe1151a363p-1",
+        "0x1.989a96ae626a6p-58",
+        "0x1.4424114fb306dp+0",
+        "0x1.25519299fe3b0p-23",
+        "-0x1.d925f0c3557a0p-26",
+        "-0x1.f1b2c0e931259p-20",
+        "-0x1.44f6709b2fed8p-2",
+        "-0x1.c5d77a8510f9fp-57"
+      ],
+      "kahm_mem_hex": [
+        "0x1.fffffc615f0c1p-1",
+        "0x1.cf507a006c3b0p-24",
+        "0x1.74bcd9192965cp-24",
+        "0x1.c016c17a30191p-21",
+        "0x1.ffffe1151a363p-1",
+        "0x1.989a96ae626a6p-58"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.0d7720bd2f96ep+2",
+        "-0x1.c2493178e137fp+1"
+      ],
+      "previous_state": 0,
+      "raw_hex": [
+        "-0x1.45ad4ee519375p+0",
+        "0x1.4819045798794p+0"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656cp-1",
+          "0x1.0b7cda1e7d106p+0"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "0x1.0ba672882becap+0"
+        ],
+        [
+          "-0x1.341d915cee592p+0",
+          "-0x1.de4c3becfca76p-1"
+        ],
+        [
+          "0x1.1e18dfdcebe12p-1",
+          "0x1.ee1ffee205dc7p-1"
+        ],
+        [
+          "-0x1.33e371af3a602p+0",
+          "0x1.ee1ffee205dc8p-1"
+        ],
+        [
+          "0x1.1d60c554af141p-1",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.d9dab9d5c8baap-3",
+        "0x1.6f9bd066cb6d5p-1",
+        "0x1.6b41f80ec1444p-1",
+        "0x1.54a747bde2dfap-1",
+        "0x1.943942528abd0p-3",
+        "0x1.ddb467d74011bp-1"
+      ]
+    },
+    {
+      "current_state": 0,
+      "history_id": 4,
+      "input_hex": [
+        "0x1.0000000000000p-2",
+        "0x0.0p+0"
+      ],
+      "kahm_local_hex": [
+        "0x1.fffe9c5aac2e8p-1",
+        "0x1.63a553d174588p-17",
+        "0x1.fff350eb8e55ap-1",
+        "0x1.26d5f165bd346p-65",
+        "0x1.319dd09e331d6p-30",
+        "0x1.95e15c977c354p-14",
+        "-0x1.44233272a7e3bp+0",
+        "-0x1.c24f5c908f180p-17",
+        "0x1.44ee775462d7ap-2",
+        "-0x1.d3d35b3dd75eep-65",
+        "0x1.83f2078a29eb9p-32",
+        "-0x1.42030ade7fbeap-13"
+      ],
+      "kahm_mem_hex": [
+        "0x1.fffe9c5aac2e8p-1",
+        "0x1.63a553d174588p-17",
+        "0x1.fff350eb8e55ap-1",
+        "0x1.26d5f165bd346p-65",
+        "0x1.319dd09e331d6p-30",
+        "0x1.95e15c977c354p-14"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.18d5d3bc9fbc4p+2",
+        "-0x1.c7f5a9e994e5cp+1"
+      ],
+      "previous_state": 1,
+      "raw_hex": [
+        "-0x1.4664198f7a3eep-1",
+        "-0x1.402f22dd13debp+0"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656cp-1",
+          "-0x1.0392f8a3f875cp+0"
+        ],
+        [
+          "0x1.e604310352385p-1",
+          "-0x1.03bc910da7521p+0"
+        ],
+        [
+          "-0x1.6983949fcffb4p-1",
+          "-0x1.de4c3becfca75p-1"
+        ],
+        [
+          "0x1.1e4ea3fccc9a4p-1",
+          "0x1.ee1ffee205dc6p-1"
+        ],
+        [
+          "-0x1.69f7d3fb37ed4p-1",
+          "0x1.ee1ffee205dc8p-1"
+        ],
+        [
+          "0x1.1d96baf7cf2e8p-1",
+          "-0x1.de4c3becfca77p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.eb3cb878ac1b9p-3",
+        "0x1.41c956b114c8cp-1",
+        "0x1.98c7f356be55bp-3",
+        "0x1.e74186ca79930p-1",
+        "0x1.8f083074233dfp-1",
+        "0x1.1a056d4772ec7p-1"
+      ]
+    },
+    {
+      "current_state": 1,
+      "history_id": 5,
+      "input_hex": [
+        "0x1.0000000000000p-2",
+        "0x1.0000000000000p-2"
+      ],
+      "kahm_local_hex": [
+        "0x1.fffff96c2628cp-1",
+        "0x1.a4f675d36d665p-23",
+        "0x1.fffc7ca9f4ecbp-1",
+        "0x1.90e9a5ba27140p-46",
+        "0x1.ab7b843b4fca8p-22",
+        "0x1.bafd177278751p-16",
+        "-0x1.44240f704fabfp-1",
+        "-0x1.0a81a0021e72cp-23",
+        "0x1.44f4496d4292ep-2",
+        "-0x1.3e121b57cdbc2p-45",
+        "0x1.0f51fc6cefdb0p-23",
+        "-0x1.5f73cf8ef2e0ap-15"
+      ],
+      "kahm_mem_hex": [
+        "0x1.fffff96c2628cp-1",
+        "0x1.a4f675d36d665p-23",
+        "0x1.fffc7ca9f4ecbp-1",
+        "0x1.90e9a5ba27140p-46",
+        "0x1.ab7b843b4fca8p-22",
+        "0x1.bafd177278751p-16"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.c5449b2033509p+1",
+        "-0x1.c59f693034611p+1"
+      ],
+      "previous_state": 1,
+      "raw_hex": [
+        "-0x1.4664198f7a3eep-1",
+        "-0x1.3c3a321fd1916p-1"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656bp-1",
+          "-0x1.308dc6e67a5eap-1"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "-0x1.30c4237c333d1p-1"
+        ],
+        [
+          "-0x1.6983949fcffb4p-1",
+          "-0x1.de4c3becfca75p-1"
+        ],
+        [
+          "0x1.1e4ea3fccc9a4p-1",
+          "0x1.ee1ffee205dc6p-1"
+        ],
+        [
+          "-0x1.69f7d3fb37ed4p-1",
+          "0x1.ee1ffee205dc8p-1"
+        ],
+        [
+          "0x1.1d96baf7cf2e8p-1",
+          "-0x1.de4c3becfca77p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.969d87767233cp-3",
+        "0x1.63b6df6a7a520p-1",
+        "0x1.96e6ff72e2591p-3",
+        "0x1.c67bfcc2f90a5p-1",
+        "0x1.5caa9a1763f08p-1",
+        "0x1.2bb5cd4f578fcp-1"
+      ]
+    },
+    {
+      "current_state": 2,
+      "history_id": 6,
+      "input_hex": [
+        "0x1.0000000000000p-2",
+        "0x1.8000000000000p-1"
+      ],
+      "kahm_local_hex": [
+        "0x1.fffff6e7be864p-1",
+        "0x1.23082f3a8575ap-22",
+        "0x1.9071a072f683ep-22",
+        "0x1.01922e6c3cbeap-15",
+        "0x1.fffbed33b9465p-1",
+        "0x1.4654639331c88p-47",
+        "0x1.44240dd858af2p-1",
+        "0x1.707f5f35c5881p-23",
+        "0x1.fc516b181f0dcp-24",
+        "-0x1.98b24cd51093bp-15",
+        "0x1.44f3ee5f5df80p-2",
+        "-0x1.02e6274bb6d02p-46"
+      ],
+      "kahm_mem_hex": [
+        "0x1.fffff6e7be864p-1",
+        "0x1.23082f3a8575ap-22",
+        "0x1.9071a072f683ep-22",
+        "0x1.01922e6c3cbeap-15",
+        "0x1.fffbed33b9465p-1",
+        "0x1.4654639331c88p-47"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.c5777fd0046bfp+1",
+        "-0x1.c4f2ba56809d3p+1"
+      ],
+      "previous_state": 1,
+      "raw_hex": [
+        "-0x1.4664198f7a3eep-1",
+        "0x1.4c0df514dac68p-1"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656dp-1",
+          "0x1.406189db8393ap-1"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "0x1.4097e6713c722p-1"
+        ],
+        [
+          "-0x1.6983949fcffb4p-1",
+          "-0x1.de4c3becfca75p-1"
+        ],
+        [
+          "0x1.1e4ea3fccc9a4p-1",
+          "0x1.ee1ffee205dc6p-1"
+        ],
+        [
+          "-0x1.69f7d3fb37ed4p-1",
+          "0x1.ee1ffee205dc8p-1"
+        ],
+        [
+          "0x1.1d96baf7cf2e8p-1",
+          "-0x1.de4c3becfca77p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.96c65168f62aep-3",
+        "0x1.60884c30298fep-1",
+        "0x1.5d474a7ce966bp-1",
+        "0x1.29a0c18d80c25p-1",
+        "0x1.965cb69c1788bp-3",
+        "0x1.c99be30016f62p-1"
+      ]
+    },
+    {
+      "current_state": 3,
+      "history_id": 7,
+      "input_hex": [
+        "0x1.0000000000000p-2",
+        "0x1.0000000000000p+0"
+      ],
+      "kahm_local_hex": [
+        "0x1.fffe77ed8c1ebp-1",
+        "0x1.881273e16456cp-17",
+        "0x1.405d1056aaf62p-30",
+        "0x1.b06469d39c1f1p-14",
+        "0x1.fff27cd2ae7a9p-1",
+        "0x1.ebf692ac812e5p-64",
+        "0x1.44231b6308886p+0",
+        "0x1.f06e9b474c5cfp-17",
+        "0x1.96aa4794dba8dp-32",
+        "-0x1.570ba99aca97bp-13",
+        "0x1.44edf0b68674cp-2",
+        "-0x1.864ea12d88719p-63"
+      ],
+      "kahm_mem_hex": [
+        "0x1.fffe77ed8c1ebp-1",
+        "0x1.881273e16456cp-17",
+        "0x1.405d1056aaf62p-30",
+        "0x1.b06469d39c1f1p-14",
+        "0x1.fff27cd2ae7a9p-1",
+        "0x1.ebf692ac812e5p-64"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.186bdf63b4841p+2",
+        "-0x1.c79e376967872p+1"
+      ],
+      "previous_state": 1,
+      "raw_hex": [
+        "-0x1.4664198f7a3eep-1",
+        "0x1.4819045798794p+0"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656cp-1",
+          "0x1.0b7cda1e7d106p+0"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "0x1.0ba672882becap+0"
+        ],
+        [
+          "-0x1.6983949fcffb4p-1",
+          "-0x1.de4c3becfca75p-1"
+        ],
+        [
+          "0x1.1e4ea3fccc9a4p-1",
+          "0x1.ee1ffee205dc6p-1"
+        ],
+        [
+          "-0x1.69f7d3fb37ed4p-1",
+          "0x1.ee1ffee205dc8p-1"
+        ],
+        [
+          "0x1.1d96baf7cf2e8p-1",
+          "-0x1.de4c3becfca77p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.ea9ba282230f6p-3",
+        "0x1.408bdc6bfdfb5p-1",
+        "0x1.8eae0bdea289ap-1",
+        "0x1.191246a53ed21p-1",
+        "0x1.98821e1f29074p-3",
+        "0x1.e550d4c7ee795p-1"
+      ]
+    },
+    {
+      "current_state": 0,
+      "history_id": 8,
+      "input_hex": [
+        "0x1.8000000000000p-1",
+        "0x0.0p+0"
+      ],
+      "kahm_local_hex": [
+        "0x1.62c540da40144p-17",
+        "0x1.fffe9d3abf25cp-1",
+        "0x1.93888131e79ffp-14",
+        "0x1.1c510139b1608p-30",
+        "0x1.c54107a4ac24dp-65",
+        "0x1.fff363b313e8cp-1",
+        "-0x1.c133a4fbddaf1p-17",
+        "-0x1.4423330083ae1p+0",
+        "0x1.402657b2e89d1p-13",
+        "-0x1.68e84e3f2d799p-32",
+        "0x1.6798baac888e6p-64",
+        "-0x1.44ee833fb0154p-2"
+      ],
+      "kahm_mem_hex": [
+        "0x1.62c540da40144p-17",
+        "0x1.fffe9d3abf25cp-1",
+        "0x1.93888131e79ffp-14",
+        "0x1.1c510139b1608p-30",
+        "0x1.c54107a4ac24dp-65",
+        "0x1.fff363b313e8cp-1"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.18a0456b67655p+2",
+        "-0x1.c7df514b683fap+1"
+      ],
+      "previous_state": 2,
+      "raw_hex": [
+        "0x1.4388eee5f6208p-1",
+        "-0x1.402f22dd13debp+0"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656cp-1",
+          "-0x1.0392f8a3f875cp+0"
+        ],
+        [
+          "0x1.e604310352385p-1",
+          "-0x1.03bc910da7521p+0"
+        ],
+        [
+          "-0x1.20939e5fc66fcp-1",
+          "-0x1.de4c3becfca75p-1"
+        ],
+        [
+          "0x1.6707e95f3e26bp-1",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "-0x1.214a70b67a18cp-1",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "0x1.6692f8d0b4a47p-1",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.41c6e3c5a7a20p-1",
+        "0x1.eaeb4aadf3661p-3",
+        "0x1.1a18413b89ffbp-1",
+        "0x1.8f893f3deec05p-1",
+        "0x1.e694af3588822p-1",
+        "0x1.98b60cb2080b8p-3"
+      ]
+    },
+    {
+      "current_state": 1,
+      "history_id": 9,
+      "input_hex": [
+        "0x1.8000000000000p-1",
+        "0x1.0000000000000p-2"
+      ],
+      "kahm_local_hex": [
+        "0x1.a9b9b246f5a8fp-23",
+        "0x1.fffff9591936ep-1",
+        "0x1.b987ce519fdb6p-16",
+        "0x1.952f539c3b07dp-22",
+        "0x1.44a4ed2a26ec0p-46",
+        "0x1.fffc8046e8b5bp-1",
+        "-0x1.0d85822c29113p-23",
+        "-0x1.44240f6440234p-1",
+        "0x1.5e4ba88d4a7c8p-15",
+        "-0x1.012b094ab518ap-23",
+        "0x1.018fd874f89f2p-45",
+        "-0x1.44f44bb8522fdp-2"
+      ],
+      "kahm_mem_hex": [
+        "0x1.a9b9b246f5a8fp-23",
+        "0x1.fffff9591936ep-1",
+        "0x1.b987ce519fdb6p-16",
+        "0x1.952f539c3b07dp-22",
+        "0x1.44a4ed2a26ec0p-46",
+        "0x1.fffc8046e8b5bp-1"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.c56e7084eb04fp+1",
+        "-0x1.c587f70c30d3cp+1"
+      ],
+      "previous_state": 2,
+      "raw_hex": [
+        "0x1.4388eee5f6208p-1",
+        "-0x1.3c3a321fd1916p-1"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656bp-1",
+          "-0x1.308dc6e67a5eap-1"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "-0x1.30c4237c333d1p-1"
+        ],
+        [
+          "-0x1.20939e5fc66fcp-1",
+          "-0x1.de4c3becfca75p-1"
+        ],
+        [
+          "0x1.6707e95f3e26bp-1",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "-0x1.214a70b67a18cp-1",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "0x1.6692f8d0b4a47p-1",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.639dece732d4ap-1",
+        "0x1.96bf0e449860ap-3",
+        "0x1.2bbe91e073534p-1",
+        "0x1.5d3480333f456p-1",
+        "0x1.c73c3ff7e6047p-1",
+        "0x1.96d434fe2063ep-3"
+      ]
+    },
+    {
+      "current_state": 2,
+      "history_id": 10,
+      "input_hex": [
+        "0x1.8000000000000p-1",
+        "0x1.8000000000000p-1"
+      ],
+      "kahm_local_hex": [
+        "0x1.261ccc21203fep-22",
+        "0x1.fffff6cf199f0p-1",
+        "0x1.0421dbc23a3bep-47",
+        "0x1.fffbf0cae50a6p-1",
+        "0x1.00d6afcbf21bfp-15",
+        "0x1.7b4b7838405c7p-22",
+        "0x1.7465e4ec14f2dp-23",
+        "0x1.44240dc8be984p-1",
+        "0x1.9cc2af4a261bap-47",
+        "-0x1.44f3f0a6c2394p-2",
+        "0x1.9788cbd1d2977p-15",
+        "-0x1.e178c296a17dbp-24"
+      ],
+      "kahm_mem_hex": [
+        "0x1.261ccc21203fep-22",
+        "0x1.fffff6cf199f0p-1",
+        "0x1.0421dbc23a3bep-47",
+        "0x1.fffbf0cae50a6p-1",
+        "0x1.00d6afcbf21bfp-15",
+        "0x1.7b4b7838405c7p-22"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.c59ffe5c799c5p+1",
+        "-0x1.c4db26d3eb235p+1"
+      ],
+      "previous_state": 2,
+      "raw_hex": [
+        "0x1.4388eee5f6208p-1",
+        "0x1.4c0df514dac68p-1"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656dp-1",
+          "0x1.406189db8393ap-1"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "0x1.4097e6713c722p-1"
+        ],
+        [
+          "-0x1.20939e5fc66fcp-1",
+          "-0x1.de4c3becfca75p-1"
+        ],
+        [
+          "0x1.6707e95f3e26bp-1",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "-0x1.214a70b67a18cp-1",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "0x1.6692f8d0b4a47p-1",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.60709426a934fp-1",
+        "0x1.96e6c4a8b134dp-3",
+        "0x1.ca5f2ec7d5989p-1",
+        "0x1.9649cfd34511ep-3",
+        "0x1.29a80e01f777dp-1",
+        "0x1.5dd273fc2fe80p-1"
+      ]
+    },
+    {
+      "current_state": 3,
+      "history_id": 11,
+      "input_hex": [
+        "0x1.8000000000000p-1",
+        "0x1.0000000000000p+0"
+      ],
+      "kahm_local_hex": [
+        "0x1.8704d9eaa3fbcp-17",
+        "0x1.fffe78fb26155p-1",
+        "0x1.6eb1cc74d2ee2p-63",
+        "0x1.fff28ff6b4d5bp-1",
+        "0x1.adffff3bdd553p-14",
+        "0x1.2a296d009e9a0p-30",
+        "0x1.ef193e6cb5400p-17",
+        "0x1.44231c0db6f5ap+0",
+        "0x1.22ec55e3d1f87p-62",
+        "-0x1.44edfcdc89babp-2",
+        "0x1.5525cab50964dp-13",
+        "-0x1.7a7b8bc5476f7p-32"
+      ],
+      "kahm_mem_hex": [
+        "0x1.8704d9eaa3fbcp-17",
+        "0x1.fffe78fb26155p-1",
+        "0x1.6eb1cc74d2ee2p-63",
+        "0x1.fff28ff6b4d5bp-1",
+        "0x1.adffff3bdd553p-14",
+        "0x1.2a296d009e9a0p-30"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.183572935e0c5p+2",
+        "-0x1.c78833bb4faa5p+1"
+      ],
+      "previous_state": 2,
+      "raw_hex": [
+        "0x1.4388eee5f6208p-1",
+        "0x1.4819045798794p+0"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656cp-1",
+          "0x1.0b7cda1e7d106p+0"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "0x1.0ba672882becap+0"
+        ],
+        [
+          "-0x1.20939e5fc66fcp-1",
+          "-0x1.de4c3becfca75p-1"
+        ],
+        [
+          "0x1.6707e95f3e26bp-1",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "-0x1.214a70b67a18cp-1",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "0x1.6692f8d0b4a47p-1",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.4089ecabd8fdbp-1",
+        "0x1.ea48d9cb327f2p-3",
+        "0x1.e4a3eb9e5bb0fp-1",
+        "0x1.98707aa450a09p-3",
+        "0x1.19244a34bf671p-1",
+        "0x1.8f2ec2cc5d55fp-1"
+      ]
+    },
+    {
+      "current_state": 0,
+      "history_id": 12,
+      "input_hex": [
+        "0x1.0000000000000p+0",
+        "0x0.0p+0"
+      ],
+      "kahm_local_hex": [
+        "0x1.83c75f7de9dbcp-24",
+        "0x1.fffffcf87140fp-1",
+        "0x1.8a377432ec489p-21",
+        "0x1.6347fece958b9p-24",
+        "0x1.9216c8a170e29p-57",
+        "0x1.ffffe495f8bf2p-1",
+        "-0x1.eafefa965e3c7p-24",
+        "-0x1.442411af57316p+0",
+        "0x1.b5dc9279fc13fp-20",
+        "0x1.c2fd3d2eed18ap-26",
+        "0x1.be9b0690f4ec1p-56",
+        "0x1.44f672d46c92cp-2"
+      ],
+      "kahm_mem_hex": [
+        "0x1.83c75f7de9dbcp-24",
+        "0x1.fffffcf87140fp-1",
+        "0x1.8a377432ec489p-21",
+        "0x1.6347fece958b9p-24",
+        "0x1.9216c8a170e29p-57",
+        "0x1.ffffe495f8bf2p-1"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.0d34682690c91p+2",
+        "-0x1.c24c0fcc02604p+1"
+      ],
+      "previous_state": 3,
+      "raw_hex": [
+        "0x1.443fb99057281p+0",
+        "-0x1.402f22dd13debp+0"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656cp-1",
+          "-0x1.0392f8a3f875cp+0"
+        ],
+        [
+          "0x1.e604310352385p-1",
+          "-0x1.03bc910da7521p+0"
+        ],
+        [
+          "-0x1.205db1d0c64acp-1",
+          "-0x1.de4c3becfca76p-1"
+        ],
+        [
+          "0x1.32803c53b3250p+0",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "-0x1.2114b55fb26a8p-1",
+          "0x1.ee1ffee205dc6p-1"
+        ],
+        [
+          "0x1.32bab49af7e62p+0",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.712b64119a7bep-1",
+        "0x1.d974252f3e9a2p-3",
+        "0x1.560548eef0fedp-1",
+        "0x1.6bb428533cb26p-1",
+        "0x1.dc38f31565f12p-1",
+        "0x1.943b8f018e3c5p-3"
+      ]
+    },
+    {
+      "current_state": 1,
+      "history_id": 13,
+      "input_hex": [
+        "0x1.0000000000000p+0",
+        "0x1.0000000000000p-2"
+      ],
+      "kahm_local_hex": [
+        "0x1.a733aae90a0efp-32",
+        "0x1.fffffffcb198ap-1",
+        "0x1.0f847afba2327p-23",
+        "0x1.0414a5400b1f1p-17",
+        "0x1.2c893940f2e5bp-41",
+        "0x1.fffef7ad47a78p-1",
+        "-0x1.0bec83fd795c3p-32",
+        "-0x1.442413983e52ep-1",
+        "0x1.2d93fd0cd6218p-22",
+        "0x1.4a249352269fdp-19",
+        "0x1.4dcf311d0b95dp-40",
+        "0x1.44f5dc771b859p-2"
+      ],
+      "kahm_mem_hex": [
+        "0x1.a733aae90a0efp-32",
+        "0x1.fffffffcb198ap-1",
+        "0x1.0f847afba2327p-23",
+        "0x1.0414a5400b1f1p-17",
+        "0x1.2c893940f2e5bp-41",
+        "0x1.fffef7ad47a78p-1"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.ba1d09fb4b17bp+1",
+        "-0x1.cbfdf5b3a324ep+1"
+      ],
+      "previous_state": 3,
+      "raw_hex": [
+        "0x1.443fb99057281p+0",
+        "-0x1.3c3a321fd1916p-1"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656bp-1",
+          "-0x1.308dc6e67a5eap-1"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "-0x1.30c4237c333d1p-1"
+        ],
+        [
+          "-0x1.205db1d0c64acp-1",
+          "-0x1.de4c3becfca76p-1"
+        ],
+        [
+          "0x1.32803c53b3250p+0",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "-0x1.2114b55fb26a8p-1",
+          "0x1.ee1ffee205dc6p-1"
+        ],
+        [
+          "0x1.32bab49af7e62p+0",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.958fc2c1b4075p-1",
+        "0x1.8da6a98056eecp-3",
+        "0x1.687020f4217b7p-1",
+        "0x1.3bf9e8b2ae03fp-1",
+        "0x1.ba10fe0b6eb32p-1",
+        "0x1.9bff0fb32a90ap-3"
+      ]
+    },
+    {
+      "current_state": 2,
+      "history_id": 14,
+      "input_hex": [
+        "0x1.0000000000000p+0",
+        "0x1.8000000000000p-1"
+      ],
+      "kahm_local_hex": [
+        "0x1.48388a7b488f8p-31",
+        "0x1.fffffffadf1dep-1",
+        "0x1.4f97311d31b7ap-42",
+        "0x1.fffefa6b9e3c7p-1",
+        "0x1.4b9e5ac948262p-23",
+        "0x1.0065e7b09ed90p-17",
+        "0x1.9f95d05993f1ap-32",
+        "0x1.4424139717005p-1",
+        "0x1.74beb26ff1816p-41",
+        "0x1.44f5de34e078cp-2",
+        "0x1.705548503d832p-22",
+        "0x1.4577df9787c9fp-19"
+      ],
+      "kahm_mem_hex": [
+        "0x1.48388a7b488f8p-31",
+        "0x1.fffffffadf1dep-1",
+        "0x1.4f97311d31b7ap-42",
+        "0x1.fffefa6b9e3c7p-1",
+        "0x1.4b9e5ac948262p-23",
+        "0x1.0065e7b09ed90p-17"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.ba5d5e83a9ce6p+1",
+        "-0x1.cbca7b04343a4p+1"
+      ],
+      "previous_state": 3,
+      "raw_hex": [
+        "0x1.443fb99057281p+0",
+        "0x1.4c0df514dac68p-1"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656dp-1",
+          "0x1.406189db8393ap-1"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "0x1.4097e6713c722p-1"
+        ],
+        [
+          "-0x1.205db1d0c64acp-1",
+          "-0x1.de4c3becfca76p-1"
+        ],
+        [
+          "0x1.32803c53b3250p+0",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "-0x1.2114b55fb26a8p-1",
+          "0x1.ee1ffee205dc6p-1"
+        ],
+        [
+          "0x1.32bab49af7e62p+0",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.929d3edc1c7d0p-1",
+        "0x1.8dda7f9dc30f9p-3",
+        "0x1.bc8fb5bd3f835p-1",
+        "0x1.9bd5ef1804874p-3",
+        "0x1.668453fa3fd1dp-1",
+        "0x1.3c21b14cecd1ep-1"
+      ]
+    },
+    {
+      "current_state": 3,
+      "history_id": 15,
+      "input_hex": [
+        "0x1.0000000000000p+0",
+        "0x1.0000000000000p+0"
+      ],
+      "kahm_local_hex": [
+        "0x1.cab0b76c2312cp-24",
+        "0x1.fffffc6a9e913p-1",
+        "0x1.3b6293bfefa78p-58",
+        "0x1.ffffe180fe822p-1",
+        "0x1.ba8315d7c6643p-21",
+        "0x1.6b68102f0edbdp-24",
+        "0x1.2264260f26f52p-23",
+        "0x1.442411558ddfep+0",
+        "0x1.5e4d67cc0f089p-57",
+        "0x1.44f670dfaa582p-2",
+        "0x1.eb810567864d9p-20",
+        "0x1.cd4da6301f690p-26"
+      ],
+      "kahm_mem_hex": [
+        "0x1.cab0b76c2312cp-24",
+        "0x1.fffffc6a9e913p-1",
+        "0x1.3b6293bfefa78p-58",
+        "0x1.ffffe180fe822p-1",
+        "0x1.ba8315d7c6643p-21",
+        "0x1.6b68102f0edbdp-24"
+      ],
+      "log_normalizer_hex": [
+        "-0x1.0d3cd0c59a3bap+2",
+        "-0x1.c23dcc2b86f71p+1"
+      ],
+      "previous_state": 3,
+      "raw_hex": [
+        "0x1.443fb99057281p+0",
+        "0x1.4819045798794p+0"
+      ],
+      "reconstruction_hex": [
+        [
+          "-0x1.e8df5bacd656cp-1",
+          "0x1.0b7cda1e7d106p+0"
+        ],
+        [
+          "0x1.e604310352384p-1",
+          "0x1.0ba672882becap+0"
+        ],
+        [
+          "-0x1.205db1d0c64acp-1",
+          "-0x1.de4c3becfca76p-1"
+        ],
+        [
+          "0x1.32803c53b3250p+0",
+          "0x1.ee1ffee205dc9p-1"
+        ],
+        [
+          "-0x1.2114b55fb26a8p-1",
+          "0x1.ee1ffee205dc6p-1"
+        ],
+        [
+          "0x1.32bab49af7e62p+0",
+          "-0x1.de4c3becfca76p-1"
+        ]
+      ],
+      "score_hex": [
+        "0x1.6faac305897d7p-1",
+        "0x1.d981133478744p-3",
+        "0x1.de412b6605216p-1",
+        "0x1.94301cb599d3fp-3",
+        "0x1.54c8a62d19f1bp-1",
+        "0x1.6b7d6e8af4d8bp-1"
+      ]
+    }
+  ],
+  "feature_widths": {
+    "kahm_local": 12,
+    "kahm_mem": 6,
+    "raw": 2
+  },
+  "schema": "kahm.encoder_support_features.v1",
+  "state_sha256": "2ccbf1a8e7bf5e643c1f73236f68845ac90239c0b8f1e331dc79906ec4d18300"
+}

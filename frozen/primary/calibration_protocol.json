@@ -1,0 +1,206 @@
+{
+  "schema": "kahm.calibration_protocol.v1",
+  "protocol_id": "iid_three_forecaster_exact_mse_upper_v1",
+  "protocol_version": "1.0.0",
+  "status": "fixed_before_primary_calibration",
+  "contract_sha256": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+  "scope": {
+    "certified_object": "actual frozen deterministic computational predictor",
+    "target": "population scalar mean squared error under the declared benchmark law, conditional on all development",
+    "candidate_ids": [
+      "raw",
+      "kahm_mem",
+      "kahm_local"
+    ],
+    "family_size": 3,
+    "fitted_risk_upper_bounds_only": true,
+    "class_risk_lower_bound_claimed": false,
+    "ideal_real_arithmetic_KAHM_equivalence_claimed": false,
+    "oracle_risk_used_for_endpoint_or_selection": false
+  },
+  "sampling": {
+    "benchmark_id": "four_state_order2_modular_v1",
+    "episode_count": 4096,
+    "observations_per_episode": 1,
+    "independent_unit": "one independently sampled episode",
+    "sampling_law": "independent episodes with replacement, independent of development",
+    "shared_calibration_across_candidates": true,
+    "retain_all_occurrences": true,
+    "single_dependent_trajectory": false,
+    "calibration_randomness_selected_before_outcomes": true,
+    "iid_premise": "The statistical guarantee assumes genuine iid draws from the stipulated episode law. A deterministic pseudorandom implementation and distinct stream names do not themselves prove this premise.",
+    "external_freeze_bindings": [
+      "the three complete selected predictor artifacts and canonical predictions on all 16 supported histories",
+      "the unchanged calibration reservation, stream identity, implementation, and prescribed count",
+      "development data identities and all selection decisions",
+      "this protocol's exact resource SHA-256"
+    ]
+  },
+  "confidence": {
+    "total_failure_probability": {
+      "numerator": 1,
+      "denominator": 20
+    },
+    "per_candidate_failure_probability": {
+      "numerator": 1,
+      "denominator": 60
+    },
+    "simultaneous_coverage": {
+      "numerator": 19,
+      "denominator": 20
+    },
+    "upper_statements": 3,
+    "statistical_independent_count": 4096,
+    "between_candidate_independence_required": false,
+    "numerical_failure_probability": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "allocation_reassigned_after_outcomes": false,
+    "conditional_statement": "Under the stated premises, P_Cal[every reported valid endpoint U_m covers R_m(D), simultaneously over the fixed family | D] >= 19/20. If all three endpoints are available, the reported simultaneous statement covers all three risks.",
+    "availability_interpretation": "The probability is conditional on development only, not additionally conditional on numerical availability, requirement acceptance, or a favorable result. Numerical failure yields an unavailable report, not a selected retry.",
+    "partially_available_statement": "If only some numerical endpoints are established, the same fixed allocation gives simultaneous coverage of those reported endpoints; retain every unavailable candidate in the report and do not redistribute its allocation."
+  },
+  "loss": {
+    "name": "ordinary_scalar_squared_error",
+    "target_range": [
+      0,
+      1
+    ],
+    "prediction_range": [
+      0,
+      1
+    ],
+    "loss_range": [
+      0,
+      1
+    ],
+    "variance_normalization": false,
+    "prediction_interpretation": "Each finite canonical binary64 prediction is its exact represented rational value, recovered without decimal approximation from its canonical hexadecimal value or exact integer ratio.",
+    "target_interpretation": "Use the benchmark's exact rational observation values 0, 1/4, 3/4, and 1.",
+    "loss_formula": "ell_i = (y_i - f(x_i))^2, with subtraction and squaring performed in exact rational arithmetic",
+    "empirical_mean_formula": "q = (sum of all 4096 exact ell_i) / 4096",
+    "empirical_mean_rounding": "none",
+    "empirical_mean_is_exact": true,
+    "further_clipping_during_evaluation": false,
+    "invalid_input_action": "certificate_unavailable for any nonfinite or out-of-range prediction, unsupported target, wrong count, missing record, or unverified frozen-prediction identity",
+    "duplicate_handling": "Prediction computation may be cached by a verified supported history, but all 4096 episode occurrences contribute separately to the exact loss mean."
+  },
+  "endpoint": {
+    "definition": "k_plus(q,c) = sup {p in [q,1] : kl(q||p) <= c}",
+    "confidence_log_argument": 60,
+    "confidence_divisor": 4096,
+    "confidence_parameter": "c = log(60)/4096",
+    "kl_formula": "q*log(q/p) + (1-q)*log((1-q)/(1-p))",
+    "continuous_conventions": "A zero-weight term is zero without evaluating its logarithm; a positive numerator over a zero denominator has infinite divergence.",
+    "root_equation": "F(p) = 4096*kl(q||p) - log(60) = 0",
+    "q_equals_one": "Return the exact endpoint U=1 and the exact bracket [1,1] without evaluating a logarithm.",
+    "q_equals_zero": "For p<1, evaluate kl(0||p) = log(1/(1-p)), equivalently -log(1-p); if negating a logarithm interval, reverse its endpoints. Do not evaluate log(0).",
+    "monotonicity": "For q<1, kl(q||p) is continuous and strictly increasing for p in (q,1), equals zero at p=q, and tends to infinity as p tends to 1. Its upper root is unique."
+  },
+  "verified_logarithm": {
+    "algorithm_id": "range_reduced_atanh_exact_directed_dyadic_v1",
+    "arithmetic": "arbitrary-precision integers and exact rational arithmetic only; every floor and ceiling is exact integer division",
+    "input_domain": "positive rational x",
+    "range_reduction": "Find the integer a and rational u with x=2^a*u and 1<=u<2 using integer bit lengths and exact comparisons, never a floating logarithm.",
+    "series_variable": "z=(u-1)/(u+1), so 0<=z<1/3; use z=1/3 separately for log(2)",
+    "series": "S_M(z)=2*sum_{j=0}^{M-1} z^(2*j+1)/(2*j+1)",
+    "rigorous_tail": "0 <= log((1+z)/(1-z))-S_M(z) <= 2*z^(2*M+1)/((2*M+1)*(1-z^2)) <= 3/(4*(2*M+1)*9^M) for 0<=z<=1/3",
+    "precision_bits_schedule": [
+      128,
+      256,
+      512
+    ],
+    "series_term_count": "M=b at working precision b bits",
+    "fixed_grid": "D=2^b; every interval endpoint in the series calculation is an integer divided by D",
+    "zero_argument_in_series": "If z=0, return the exact series logarithm interval [0,0].",
+    "power_initialization": "L_0=floor(D*z), H_0=ceil(D*z), so L_0/D <= z <= H_0/D",
+    "term_accumulation": "For j=0,...,M-1, add floor(2*L_j/(2*j+1)) to A and ceil(2*H_j/(2*j+1)) to B, starting from A=B=0.",
+    "power_recurrence": "For each required next term, set L_(j+1)=floor(L_j*z^2) and H_(j+1)=ceil(H_j*z^2), with the products and divisions evaluated exactly.",
+    "series_interval": "Return [A/D, (B+ceil(D*3/(4*(2*M+1)*9^M)))/D]. Directed rounding encloses every partial-sum term; the added nonnegative tail encloses all omitted terms.",
+    "range_recombination": "Add the interval for log(u) to a times the interval for log(2); if a<0, reverse the endpoints of the multiplied log(2) interval.",
+    "cache_policy": "Cache exact log(2) and log(60) intervals separately at each declared precision. Caching must not change any rational endpoint.",
+    "unverified_logarithm_use": "prohibited in endpoint construction or verification"
+  },
+  "upper_root_algorithm": {
+    "algorithm_id": "exact_mean_verified_interval_bisection_v1",
+    "initial_bracket": "For q<1, set L=q and H=1. The lower-side proof is kl(q||q)=0<log(60)/4096; H=1 is an analytic upper boundary.",
+    "bracket_invariant": "L <= k_plus(q,log(60)/4096) <= H",
+    "trial": "If H-L is greater than 2^-80, set p=(L+H)/2 exactly and evaluate F(p) using interval logarithms, first at 128 bits, then 256 and 512 only if necessary.",
+    "interval_formula": "If KL is enclosed by [K_low,K_high] and log(60) by [C_low,C_high], enclose F(p) by [4096*K_low-C_high,4096*K_high-C_low]. Nonnegative q and 1-q multiply their logarithm intervals without reversing endpoints.",
+    "upper_move": "If the lower endpoint of the F interval is >=0, replace H by p and save the precision and inequality witness. This proves 4096*kl(q||H) >= log(60).",
+    "lower_move": "Otherwise, if the upper endpoint of the F interval is <=0, replace L by p and save the precision and inequality witness. This proves 4096*kl(q||L) <= log(60).",
+    "ambiguous_comparison": "If neither comparison is proved, keep both bracket endpoints unchanged and try the next precision at the same p. At 512 bits, an unresolved comparison returns certificate_unavailable; it never guesses a sign or repeatedly retries without a bound.",
+    "near_root_policy": "Even a trial exactly at the real root, or arbitrarily close to it, need not admit a finite strict interval sign decision. Successful narrowing is not assumed. A valid bracket is retained diagnostically, but no endpoint is reported under this protocol unless the target width and independent checks are established.",
+    "target_bracket_width": {
+      "numerator": 1,
+      "denominator": 1208925819614629174706176
+    },
+    "target_bracket_width_power_of_two": -80,
+    "maximum_successful_bisections": 80,
+    "stopping_rule": "Return U=H as an exact rational only when 0<=q<=L<=H<=1, H-L<=2^-80, and the independent endpoint check succeeds. Since the initial width is at most one, 80 successful halvings suffice.",
+    "returned_endpoint_rounding": "H is already an outward upper endpoint. Preserve it exactly; do not convert it to a binary floating root.",
+    "trivial_upper_boundary": "H=1 is verified analytically. It is an allowed reported endpoint only when the same target-width rule holds, including q=1.",
+    "maximum_precision_does_not_imply_success": true
+  },
+  "independent_numerical_check": {
+    "scope": "Recompute the exact empirical mean and directly check the saved bracket endpoints and their inequality witnesses; do not call the root-search routine.",
+    "lower_endpoint": "Accept L=q analytically; otherwise require q<L<1 and a fresh exact interval evaluation at the recorded precision proving 4096*kl(q||L) <= log(60).",
+    "upper_endpoint": "Accept H=1 analytically; otherwise require q<H<1 and a fresh exact interval evaluation at the recorded precision proving 4096*kl(q||H) >= log(60).",
+    "width_check": "Compare H-L with the exact rational 2^-80.",
+    "failed_check_action": "certificate_unavailable",
+    "numerical_scope": "These checks certify logarithm enclosures and endpoint direction for the actual stored prediction values. They do not certify an ideal real-arithmetic Gaussian KAHM map or establish the iid sampling premise."
+  },
+  "work_limits": {
+    "maximum_precision_bits": 512,
+    "maximum_series_terms_per_logarithm": 512,
+    "maximum_root_trials_per_candidate": 80,
+    "maximum_precision_attempts_per_trial": 3,
+    "maximum_root_interval_evaluations_per_candidate": 240,
+    "maximum_integer_bit_length": 32768,
+    "maximum_series_term_iterations_for_family_and_checker": 1000000,
+    "exact_empirical_risk_denominator_exponent_bound": 2160,
+    "exact_empirical_risk_bound_reason": "A binary64 value in [0,1] has dyadic denominator at most 2^1074; an exact squared loss has denominator at most 2^2148; division by 4096=2^12 gives at most 2^2160.",
+    "budget_enforcement": "Check integer bit lengths and the cumulative series-term counter. If a declared bound, arithmetic check, or required invariant is violated, stop that numerical certificate with certificate_unavailable and preserve the failure record.",
+    "fallback": "certificate_unavailable",
+    "automatic_looser_endpoint_or_replacement_sample": false
+  },
+  "reporting": {
+    "primary_tolerance": {
+      "numerator": 1,
+      "denominator": 10
+    },
+    "exact_rational_record": "Store exact q, bracket endpoints, logarithm witnesses, and U using base-10 integer strings for numerator and positive denominator; never round through JSON floating-point numbers.",
+    "prediction_record": "Retain canonical hexadecimal binary64 predictions and all calibration episode identities and outcomes.",
+    "decimal_places": 18,
+    "outward_decimal_rule": "For U=A/B, calculate J=ceil(10^18*A/B) by integer division and format J/10^18 as a decimal string with exactly 18 fractional digits. This display is an upper bound on U.",
+    "decision_rule": "Compare exact U=A/B with 1/10 by testing 10*A<=B; the displayed decimal is not used for the decision.",
+    "statuses": {
+      "requirement_met": "all premises and checks established and exact U<=1/10",
+      "unresolved": "all premises and checks established and exact U>1/10; this does not establish that the risk exceeds the tolerance",
+      "certificate_unavailable": "a required premise, identity, input, work-limit, numerical enclosure, root-width, or independent check is not established"
+    },
+    "unavailable_candidate_visibility": "Report every frozen candidate, including every failure; leave its endpoint null and retain a reason code and available diagnostics.",
+    "claim_after_selection": "Any candidate meeting the requirement may be chosen within this fixed three-member family without an extra allocation; no additional searched or revised predictor is covered by that statement."
+  },
+  "change_control": {
+    "scope": "one predeclared primary calibration of one frozen three-member family",
+    "after_calibration_prediction_change": "Requires a new freeze and untouched calibration, with repeated-attempt selection accounted for.",
+    "numerical_recalculation": "Archived calibration may be reused only after endpoint equivalence or conservativeness is established; retain the original results and audit trail.",
+    "sampling_or_budget_retry": "Do not replace the prescribed calibration data or silently alter this fixed protocol in response to outcomes or numerical failure."
+  },
+  "source_basis": [
+    {
+      "id": "bounded_iid_fitted_risk_v1",
+      "basis": "Based on our research",
+      "location": "docs/FITTED_RISK_GUARANTEE.md",
+      "use": "bounded iid fitted-loss upper endpoint, conditional union bound, shared calibration across candidates, and conservative numerical enclosures"
+    },
+    {
+      "id": "verified_kl_endpoint_v1",
+      "basis": "Based on our research",
+      "location": "docs/CERTIFICATION_DESIGN.md",
+      "use": "range-reduced atanh logarithm tail bound, exact dyadic interval recurrences, verified root brackets, direct outer-endpoint checking, and bounded work"
+    }
+  ]
+}

@@ -1,0 +1,4649 @@
+{
+  "contract_sha256": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+  "package_version": "0.1.0",
+  "provenance": {
+    "artifact_role": "development_search_candidate",
+    "calibration_used": false,
+    "data_identity": {
+      "dataset_manifest_sha256": "67a389a7ab59552b065c97bc215c693c637a261100cd0849eee8b8dbb433dd3f",
+      "run_id": "public-v0.1.0",
+      "training_data_sha256": "3dd4c6c8cf94161130111f5d54b0d16afca524b3fa4ac5df4a33ad1c31eb1d1e",
+      "training_episodes": 4096,
+      "validation_data_sha256": "bc2df457d11b5a7a940263322c6f82f9b63fe272a266604233a43b3cdc252809",
+      "validation_episodes": 1024
+    },
+    "encoder_bundle_manifest_sha256": "2316a3ba98b35d5c295f3d8ae190170ff767b083cdef23186a3a482d4af3026c",
+    "fitting_role": "training",
+    "oracle_population_risk_used": false,
+    "readout_specification_sha256": "1fc29f4dec462e65efc7312c20b33c89b4ec1b9ea003ce508a459711c69a71f9",
+    "refit_on_training_plus_validation": false,
+    "selection_role": "validation",
+    "trial_id": "kahm_local__cap_2__b00_a00"
+  },
+  "record_sha256": "2e47852a2993a1bef8954cf61992ae3566bed356e288c9a64fa081a8df86d817",
+  "runtime": {
+    "arithmetic": "float64; canonical one-history inference",
+    "canonical_method": "single_history_numpy_float64_v1",
+    "forecast_canonical_method": "single_history_numpy_float64_forecast_v1",
+    "machine": "x86_64",
+    "numpy_build_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-aw1mwcap/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n  - AVX512_SPR\n\n",
+    "numpy_version": "2.3.5",
+    "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "python_implementation": "CPython",
+    "python_version": "3.12.14"
+  },
+  "schema": "kahm.forecast_model.v1",
+  "state": {
+    "_type": "ForecastModel",
+    "fields": {
+      "bank_id": "cap_2",
+      "candidate_id": "kahm_local",
+      "encoder": {
+        "_type": "KAHMEncoder",
+        "fields": {
+          "config": {
+            "_type": "EncoderConfig",
+            "fields": {
+              "cap": 2,
+              "contrast": {
+                "_type": "float",
+                "hex": "0x1.0000000000000p+4"
+              },
+              "kmeans_max_iterations": 150,
+              "offset": {
+                "_type": "float",
+                "hex": "0x1.0c6f7a0b5ed8dp-20"
+              },
+              "reference_budget": 24,
+              "requested_groups": {
+                "_type": "tuple",
+                "items": [
+                  2,
+                  4
+                ]
+              }
+            }
+          },
+          "models": {
+            "_type": "tuple",
+            "items": [
+              {
+                "_type": "LocalKAHM",
+                "fields": {
+                  "C": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      8,
+                      8
+                    ],
+                    "values": [
+                      "0x1.59583934f7db8p-2",
+                      "-0x1.52f48359f29dap-4",
+                      "-0x1.9043d12d4aceep-6",
+                      "-0x1.5c2e98e7c89cep-8",
+                      "-0x1.afc1756d1431dp-6",
+                      "-0x1.36d5430864b34p-6",
+                      "-0x1.6eec9fc9e53b4p-10",
+                      "0x1.66f5f5ebb52e2p-9",
+                      "-0x1.52f48359f29dbp-4",
+                      "0x1.64ab1ed3b21dap-2",
+                      "-0x1.ab73443d38ec3p-5",
+                      "-0x1.9043d12d4acefp-6",
+                      "-0x1.36d5430864b33p-6",
+                      "-0x1.588a3f246e42dp-6",
+                      "-0x1.33b3526eb456fp-7",
+                      "-0x1.6eec9fc9e53b7p-10",
+                      "-0x1.9043d12d4aceep-6",
+                      "-0x1.ab73443d38ec5p-5",
+                      "0x1.64ab1ed3b21d8p-2",
+                      "-0x1.52f48359f29d9p-4",
+                      "-0x1.6eec9fc9e53abp-10",
+                      "-0x1.33b3526eb456ep-7",
+                      "-0x1.588a3f246e42dp-6",
+                      "-0x1.36d5430864b31p-6",
+                      "-0x1.5c2e98e7c89cap-8",
+                      "-0x1.9043d12d4acefp-6",
+                      "-0x1.52f48359f29dbp-4",
+                      "0x1.59583934f7db9p-2",
+                      "0x1.66f5f5ebb52e3p-9",
+                      "-0x1.6eec9fc9e53b9p-10",
+                      "-0x1.36d5430864b34p-6",
+                      "-0x1.afc1756d1431ep-6",
+                      "-0x1.afc1756d1431dp-6",
+                      "-0x1.36d5430864b34p-6",
+                      "-0x1.6eec9fc9e53b4p-10",
+                      "0x1.66f5f5ebb52e3p-9",
+                      "0x1.59583934f7db9p-2",
+                      "-0x1.52f48359f29dap-4",
+                      "-0x1.9043d12d4acf1p-6",
+                      "-0x1.5c2e98e7c89cep-8",
+                      "-0x1.36d5430864b32p-6",
+                      "-0x1.588a3f246e42dp-6",
+                      "-0x1.33b3526eb456dp-7",
+                      "-0x1.6eec9fc9e53acp-10",
+                      "-0x1.52f48359f29dap-4",
+                      "0x1.64ab1ed3b21d9p-2",
+                      "-0x1.ab73443d38ec3p-5",
+                      "-0x1.9043d12d4acf0p-6",
+                      "-0x1.6eec9fc9e53b4p-10",
+                      "-0x1.33b3526eb456dp-7",
+                      "-0x1.588a3f246e42dp-6",
+                      "-0x1.36d5430864b34p-6",
+                      "-0x1.9043d12d4acefp-6",
+                      "-0x1.ab73443d38ec3p-5",
+                      "0x1.64ab1ed3b21d9p-2",
+                      "-0x1.52f48359f29d9p-4",
+                      "0x1.66f5f5ebb52e6p-9",
+                      "-0x1.6eec9fc9e53bbp-10",
+                      "-0x1.36d5430864b31p-6",
+                      "-0x1.afc1756d1431fp-6",
+                      "-0x1.5c2e98e7c89d1p-8",
+                      "-0x1.9043d12d4aceep-6",
+                      "-0x1.52f48359f29d9p-4",
+                      "0x1.59583934f7db9p-2"
+                    ]
+                  },
+                  "Q": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      8,
+                      2
+                    ],
+                    "values": [
+                      "-0x1.45ad4ee519375p+0",
+                      "-0x1.402f22dd13debp+0",
+                      "-0x1.45ad4ee519375p+0",
+                      "-0x1.3c3a321fd1916p-1",
+                      "-0x1.45ad4ee519375p+0",
+                      "0x1.4c0df514dac68p-1",
+                      "-0x1.45ad4ee519375p+0",
+                      "0x1.4819045798794p+0",
+                      "-0x1.4664198f7a3eep-1",
+                      "-0x1.402f22dd13debp+0",
+                      "-0x1.4664198f7a3eep-1",
+                      "-0x1.3c3a321fd1916p-1",
+                      "-0x1.4664198f7a3eep-1",
+                      "0x1.4c0df514dac68p-1",
+                      "-0x1.4664198f7a3eep-1",
+                      "0x1.4819045798794p+0"
+                    ]
+                  },
+                  "converged": true,
+                  "diagnostics": {
+                    "converged": true,
+                    "covariance_cholesky_relative_residual": {
+                      "_type": "float",
+                      "hex": "0x1.bf1b0e6666663p-53"
+                    },
+                    "covariance_cholesky_residual_inf": {
+                      "_type": "float",
+                      "hex": "0x1.0000000000000p-52"
+                    },
+                    "dtype": "float64",
+                    "fit_uses_future_targets": false,
+                    "fitted_lambda": {
+                      "_type": "float",
+                      "hex": "0x1.23f21319b97b2p+1"
+                    },
+                    "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+                    "gram_rescaling": "none",
+                    "input_dimension": 2,
+                    "iteration_records": [
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.b6846b3c30430p-3"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.4714fd401ba25p-51"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.4257eca704c7fp+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.26efa5f341c3cp+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.24d38dcc8df7fp-53"
+                        },
+                        "solve_index": 1
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.5b5abf4a01100p-6"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.4dcef44f2312ep-51"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.26efa5f341c3cp+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2438f074adc1ap+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.1d302fb1fac75p-53"
+                        },
+                        "solve_index": 2
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.1b756bd11a000p-9"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.4116289c41d8dp-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2438f074adc1ap+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.23f21319b97b2p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.10f6a4238ee92p-54"
+                        },
+                        "solve_index": 3
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.d0022fee48000p-13"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.fd6be5719dcd9p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.23f21319b97b2p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.23ead310f9c20p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.b0d9e485afe6bp-54"
+                        },
+                        "solve_index": 4
+                      }
+                    ],
+                    "iterations": 4,
+                    "maximum_inverse_solves": 100,
+                    "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+                    "minimum_projected_separation": {
+                      "_type": "float",
+                      "hex": "0x1.4424139a562c1p-1"
+                    },
+                    "numerical_enclosure_claimed": false,
+                    "projected_collision_count": 0,
+                    "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+                    "projected_reference_distinctness_claimed": false,
+                    "projected_unique_count": 8,
+                    "rank": 2,
+                    "raw_distinct_count": 8,
+                    "reference_count": 8,
+                    "reference_energy": {
+                      "_type": "float",
+                      "hex": "0x1.01dff0859d6ccp+0"
+                    },
+                    "regularization_status": "converged",
+                    "regularization_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.0624dd2f1a9fcp-10"
+                    },
+                    "signed_ratio_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "solve_residual_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "unused_next_lambda_proposal": {
+                      "_type": "float",
+                      "hex": "0x1.23ead310f9c20p+1"
+                    },
+                    "version": "gaussian-signed-regularized-float64-v1"
+                  },
+                  "fitted_lambda": {
+                    "_type": "float",
+                    "hex": "0x1.23f21319b97b2p+1"
+                  },
+                  "gram": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      8,
+                      8
+                    ],
+                    "values": [
+                      "0x1.0000000000000p+0",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.f907d43b60711p-3",
+                      "0x1.aadde095dad4fp-2",
+                      "0x1.871a74139749ap-2",
+                      "0x1.846ead8ad638ap-3",
+                      "0x1.a50e5efdc05adp-4",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.68cce09671f71p-1",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.871a74139749ap-2",
+                      "0x1.aadde095dad4fp-2",
+                      "0x1.2cced18f59d94p-2",
+                      "0x1.846ead8ad638ap-3",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.68cce09671f71p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.846ead8ad638ap-3",
+                      "0x1.2cced18f59d94p-2",
+                      "0x1.aadde095dad4fp-2",
+                      "0x1.871a74139749ap-2",
+                      "0x1.f907d43b60711p-3",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.a50e5efdc05adp-4",
+                      "0x1.846ead8ad638ap-3",
+                      "0x1.871a74139749ap-2",
+                      "0x1.aadde095dad4fp-2",
+                      "0x1.aadde095dad4fp-2",
+                      "0x1.871a74139749ap-2",
+                      "0x1.846ead8ad638ap-3",
+                      "0x1.a50e5efdc05adp-4",
+                      "0x1.0000000000000p+0",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.f907d43b60711p-3",
+                      "0x1.871a74139749ap-2",
+                      "0x1.aadde095dad4fp-2",
+                      "0x1.2cced18f59d94p-2",
+                      "0x1.846ead8ad638ap-3",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.68cce09671f71p-1",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.846ead8ad638ap-3",
+                      "0x1.2cced18f59d94p-2",
+                      "0x1.aadde095dad4fp-2",
+                      "0x1.871a74139749ap-2",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.68cce09671f71p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.a50e5efdc05adp-4",
+                      "0x1.846ead8ad638ap-3",
+                      "0x1.871a74139749ap-2",
+                      "0x1.aadde095dad4fp-2",
+                      "0x1.f907d43b60711p-3",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.0000000000000p+0"
+                    ]
+                  },
+                  "iterations": 4,
+                  "metric_transform": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      2,
+                      2
+                    ],
+                    "values": [
+                      "0x0.0p+0",
+                      "0x1.0ac98a62d69bfp+1",
+                      "0x1.525167337a065p-1",
+                      "-0x1.0a88dcc430ef3p-56"
+                    ]
+                  },
+                  "pca": {
+                    "_type": "LocalPCA",
+                    "fields": {
+                      "P": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x0.0p+0",
+                          "0x1.0000000000000p+0",
+                          "0x1.0000000000000p+0",
+                          "0x0.0p+0"
+                        ]
+                      },
+                      "S": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.2528195c2197fp+0",
+                          "0x1.24e1072d88c00p-57",
+                          "0x1.24e1072d88c00p-57",
+                          "0x1.d76ec4ac9ab66p-4"
+                        ]
+                      },
+                      "attempts": {
+                        "_type": "tuple",
+                        "items": [
+                          {
+                            "_type": "_PCAAttempt",
+                            "fields": {
+                              "minimum_projected_range": {
+                                "_type": "float",
+                                "hex": "0x1.44f6843ab82fcp-1"
+                              },
+                              "positive_rank": 2,
+                              "range_violation": false,
+                              "requested_rank": 2
+                            }
+                          }
+                        ]
+                      },
+                      "cap": 2,
+                      "eigenvalue_threshold": {
+                        "_type": "float",
+                        "hex": "0x1.2528195c2197fp-52"
+                      },
+                      "eigenvalues": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.2528195c2197fp+0",
+                          "0x1.d76ec4ac9ab66p-4"
+                        ]
+                      },
+                      "final_rank_request": 2,
+                      "initial_rank_request": 2,
+                      "minimum_projected_separation": {
+                        "_type": "float",
+                        "hex": "0x1.4424139a562c1p-1"
+                      },
+                      "mu": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "-0x1.e8df5bacd656dp-1",
+                          "0x1.fa785ea126a40p-7"
+                        ]
+                      },
+                      "projected_ranges": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.4424139a562c0p+1",
+                          "0x1.44f6843ab82fcp-1"
+                        ]
+                      },
+                      "projected_unique_count": 8,
+                      "rank": 2,
+                      "reason": "positive_rank",
+                      "reference_count": 8,
+                      "repeated_eigenvalue_blocks": {
+                        "_type": "tuple",
+                        "items": []
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "_type": "LocalKAHM",
+                "fields": {
+                  "C": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      8,
+                      8
+                    ],
+                    "values": [
+                      "0x1.5aeeece09c1d6p-2",
+                      "-0x1.55c9c374e8ea0p-4",
+                      "-0x1.92b78db1c7e2fp-6",
+                      "-0x1.5bdc1afb43f7bp-8",
+                      "-0x1.b2cac7dac998dp-6",
+                      "-0x1.38aba91e742f5p-6",
+                      "-0x1.68c31e6abc793p-10",
+                      "0x1.6c70403fb4089p-9",
+                      "-0x1.55c9c374e8e9fp-4",
+                      "0x1.6663897a6ffc9p-2",
+                      "-0x1.aec41d544950ep-5",
+                      "-0x1.92b78db1c7e2bp-6",
+                      "-0x1.38aba91e742f5p-6",
+                      "-0x1.5ab71e9efd732p-6",
+                      "-0x1.350612a827840p-7",
+                      "-0x1.68c31e6abc799p-10",
+                      "-0x1.92b78db1c7e2ep-6",
+                      "-0x1.aec41d544950dp-5",
+                      "0x1.6663897a6ffccp-2",
+                      "-0x1.55c9c374e8ea2p-4",
+                      "-0x1.68c31e6abc7a6p-10",
+                      "-0x1.350612a827841p-7",
+                      "-0x1.5ab71e9efd734p-6",
+                      "-0x1.38aba91e742f4p-6",
+                      "-0x1.5bdc1afb43f7dp-8",
+                      "-0x1.92b78db1c7e2ap-6",
+                      "-0x1.55c9c374e8ea1p-4",
+                      "0x1.5aeeece09c1d8p-2",
+                      "0x1.6c70403fb408ap-9",
+                      "-0x1.68c31e6abc7a7p-10",
+                      "-0x1.38aba91e742f4p-6",
+                      "-0x1.b2cac7dac998ep-6",
+                      "-0x1.b2cac7dac998dp-6",
+                      "-0x1.38aba91e742f5p-6",
+                      "-0x1.68c31e6abc79dp-10",
+                      "0x1.6c70403fb4089p-9",
+                      "0x1.5aeeece09c1d8p-2",
+                      "-0x1.55c9c374e8ea1p-4",
+                      "-0x1.92b78db1c7e2cp-6",
+                      "-0x1.5bdc1afb43f7ap-8",
+                      "-0x1.38aba91e742f4p-6",
+                      "-0x1.5ab71e9efd732p-6",
+                      "-0x1.350612a827841p-7",
+                      "-0x1.68c31e6abc79bp-10",
+                      "-0x1.55c9c374e8ea2p-4",
+                      "0x1.6663897a6ffcap-2",
+                      "-0x1.aec41d544950ep-5",
+                      "-0x1.92b78db1c7e2ap-6",
+                      "-0x1.68c31e6abc79bp-10",
+                      "-0x1.350612a82783fp-7",
+                      "-0x1.5ab71e9efd735p-6",
+                      "-0x1.38aba91e742f6p-6",
+                      "-0x1.92b78db1c7e2ap-6",
+                      "-0x1.aec41d544950dp-5",
+                      "0x1.6663897a6ffcap-2",
+                      "-0x1.55c9c374e8ea1p-4",
+                      "0x1.6c70403fb4087p-9",
+                      "-0x1.68c31e6abc79dp-10",
+                      "-0x1.38aba91e742f5p-6",
+                      "-0x1.b2cac7dac998ep-6",
+                      "-0x1.5bdc1afb43f75p-8",
+                      "-0x1.92b78db1c7e2cp-6",
+                      "-0x1.55c9c374e8ea1p-4",
+                      "0x1.5aeeece09c1d7p-2"
+                    ]
+                  },
+                  "Q": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      8,
+                      2
+                    ],
+                    "values": [
+                      "0x1.4388eee5f6208p-1",
+                      "-0x1.402f22dd13debp+0",
+                      "0x1.4388eee5f6208p-1",
+                      "-0x1.3c3a321fd1916p-1",
+                      "0x1.4388eee5f6208p-1",
+                      "0x1.4c0df514dac68p-1",
+                      "0x1.4388eee5f6208p-1",
+                      "0x1.4819045798794p+0",
+                      "0x1.443fb99057281p+0",
+                      "-0x1.402f22dd13debp+0",
+                      "0x1.443fb99057281p+0",
+                      "-0x1.3c3a321fd1916p-1",
+                      "0x1.443fb99057281p+0",
+                      "0x1.4c0df514dac68p-1",
+                      "0x1.443fb99057281p+0",
+                      "0x1.4819045798794p+0"
+                    ]
+                  },
+                  "converged": true,
+                  "diagnostics": {
+                    "converged": true,
+                    "covariance_cholesky_relative_residual": {
+                      "_type": "float",
+                      "hex": "0x1.bf1b0e6666663p-53"
+                    },
+                    "covariance_cholesky_residual_inf": {
+                      "_type": "float",
+                      "hex": "0x1.0000000000000p-52"
+                    },
+                    "dtype": "float64",
+                    "fit_uses_future_targets": false,
+                    "fitted_lambda": {
+                      "_type": "float",
+                      "hex": "0x1.22544f25f672ap+1"
+                    },
+                    "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+                    "gram_rescaling": "none",
+                    "input_dimension": 2,
+                    "iteration_records": [
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.b557e9b6ff340p-3"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.e075546a7af3ep-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.40a4dcae047e2p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.254f5e12948aep+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.acf663a85af64p-54"
+                        },
+                        "solve_index": 1
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.5a3b0c180df80p-6"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.95f1924e365e5p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.254f5e12948aep+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.229ae7fa646efp+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.59ca85e813b26p-54"
+                        },
+                        "solve_index": 2
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.1a6351b7f1400p-9"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.70889295d6000p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.229ae7fa646efp+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.22544f25f672ap+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.385db656da565p-54"
+                        },
+                        "solve_index": 3
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.ce011c4788000p-13"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.5d9b8376387f8p-51"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.22544f25f672ap+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.224d172185548p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.282c5592f4e96p-53"
+                        },
+                        "solve_index": 4
+                      }
+                    ],
+                    "iterations": 4,
+                    "maximum_inverse_solves": 100,
+                    "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+                    "minimum_projected_separation": {
+                      "_type": "float",
+                      "hex": "0x1.4424139a562c1p-1"
+                    },
+                    "numerical_enclosure_claimed": false,
+                    "projected_collision_count": 0,
+                    "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+                    "projected_reference_distinctness_claimed": false,
+                    "projected_unique_count": 8,
+                    "rank": 2,
+                    "raw_distinct_count": 8,
+                    "reference_count": 8,
+                    "reference_energy": {
+                      "_type": "float",
+                      "hex": "0x1.0083e3be69fe8p+0"
+                    },
+                    "regularization_status": "converged",
+                    "regularization_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.0624dd2f1a9fcp-10"
+                    },
+                    "signed_ratio_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "solve_residual_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "unused_next_lambda_proposal": {
+                      "_type": "float",
+                      "hex": "0x1.224d172185548p+1"
+                    },
+                    "version": "gaussian-signed-regularized-float64-v1"
+                  },
+                  "fitted_lambda": {
+                    "_type": "float",
+                    "hex": "0x1.22544f25f672ap+1"
+                  },
+                  "gram": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      8,
+                      8
+                    ],
+                    "values": [
+                      "0x1.0000000000000p+0",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.f907d43b60711p-3",
+                      "0x1.aadde095dad4ap-2",
+                      "0x1.871a741397495p-2",
+                      "0x1.846ead8ad6385p-3",
+                      "0x1.a50e5efdc05aap-4",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.68cce09671f71p-1",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.871a741397495p-2",
+                      "0x1.aadde095dad4ap-2",
+                      "0x1.2cced18f59d90p-2",
+                      "0x1.846ead8ad6385p-3",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.68cce09671f71p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.846ead8ad6385p-3",
+                      "0x1.2cced18f59d90p-2",
+                      "0x1.aadde095dad4ap-2",
+                      "0x1.871a741397495p-2",
+                      "0x1.f907d43b60711p-3",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.a50e5efdc05aap-4",
+                      "0x1.846ead8ad6385p-3",
+                      "0x1.871a741397495p-2",
+                      "0x1.aadde095dad4ap-2",
+                      "0x1.aadde095dad4ap-2",
+                      "0x1.871a741397495p-2",
+                      "0x1.846ead8ad6385p-3",
+                      "0x1.a50e5efdc05aap-4",
+                      "0x1.0000000000000p+0",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.f907d43b60711p-3",
+                      "0x1.871a741397495p-2",
+                      "0x1.aadde095dad4ap-2",
+                      "0x1.2cced18f59d90p-2",
+                      "0x1.846ead8ad6385p-3",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.68cce09671f71p-1",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.846ead8ad6385p-3",
+                      "0x1.2cced18f59d90p-2",
+                      "0x1.aadde095dad4ap-2",
+                      "0x1.871a741397495p-2",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.68cce09671f71p-1",
+                      "0x1.0000000000000p+0",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.a50e5efdc05aap-4",
+                      "0x1.846ead8ad6385p-3",
+                      "0x1.871a741397495p-2",
+                      "0x1.aadde095dad4ap-2",
+                      "0x1.f907d43b60711p-3",
+                      "0x1.d1e67e6c3f13ap-2",
+                      "0x1.d51aa3d36fe49p-1",
+                      "0x1.0000000000000p+0"
+                    ]
+                  },
+                  "iterations": 4,
+                  "metric_transform": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      2,
+                      2
+                    ],
+                    "values": [
+                      "0x0.0p+0",
+                      "0x1.0ac98a62d69c2p+1",
+                      "0x1.525167337a065p-1",
+                      "-0x1.870c61ffe0e71p-56"
+                    ]
+                  },
+                  "pca": {
+                    "_type": "LocalPCA",
+                    "fields": {
+                      "P": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x0.0p+0",
+                          "0x1.0000000000000p+0",
+                          "0x1.0000000000000p+0",
+                          "0x0.0p+0"
+                        ]
+                      },
+                      "S": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.2528195c2197fp+0",
+                          "0x1.adb323839f36ep-57",
+                          "0x1.adb323839f36ep-57",
+                          "0x1.d76ec4ac9ab5ep-4"
+                        ]
+                      },
+                      "attempts": {
+                        "_type": "tuple",
+                        "items": [
+                          {
+                            "_type": "_PCAAttempt",
+                            "fields": {
+                              "minimum_projected_range": {
+                                "_type": "float",
+                                "hex": "0x1.44f6843ab82fap-1"
+                              },
+                              "positive_rank": 2,
+                              "range_violation": false,
+                              "requested_rank": 2
+                            }
+                          }
+                        ]
+                      },
+                      "cap": 2,
+                      "eigenvalue_threshold": {
+                        "_type": "float",
+                        "hex": "0x1.2528195c2197fp-52"
+                      },
+                      "eigenvalues": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.2528195c2197fp+0",
+                          "0x1.d76ec4ac9ab5ep-4"
+                        ]
+                      },
+                      "final_rank_request": 2,
+                      "initial_rank_request": 2,
+                      "minimum_projected_separation": {
+                        "_type": "float",
+                        "hex": "0x1.4424139a562c1p-1"
+                      },
+                      "mu": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.e604310352384p-1",
+                          "0x1.fa785ea126a40p-7"
+                        ]
+                      },
+                      "projected_ranges": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.4424139a562c0p+1",
+                          "0x1.44f6843ab82fap-1"
+                        ]
+                      },
+                      "projected_unique_count": 8,
+                      "rank": 2,
+                      "reason": "positive_rank",
+                      "reference_count": 8,
+                      "repeated_eigenvalue_blocks": {
+                        "_type": "tuple",
+                        "items": []
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "_type": "LocalKAHM",
+                "fields": {
+                  "C": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      4
+                    ],
+                    "values": [
+                      "0x1.459bca6364f6dp-2",
+                      "-0x1.55087714577d1p-5",
+                      "-0x1.55087714577d1p-5",
+                      "-0x1.3c59e6f4e48d8p-7",
+                      "-0x1.55087714577d1p-5",
+                      "0x1.459bca6364f6cp-2",
+                      "-0x1.3c59e6f4e48d5p-7",
+                      "-0x1.55087714577d1p-5",
+                      "-0x1.55087714577d2p-5",
+                      "-0x1.3c59e6f4e48d7p-7",
+                      "0x1.459bca6364f6bp-2",
+                      "-0x1.55087714577d1p-5",
+                      "-0x1.3c59e6f4e48d6p-7",
+                      "-0x1.55087714577d1p-5",
+                      "-0x1.55087714577d2p-5",
+                      "0x1.459bca6364f6cp-2"
+                    ]
+                  },
+                  "Q": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      2
+                    ],
+                    "values": [
+                      "-0x1.45ad4ee519375p+0",
+                      "-0x1.402f22dd13debp+0",
+                      "-0x1.45ad4ee519375p+0",
+                      "-0x1.3c3a321fd1916p-1",
+                      "-0x1.4664198f7a3eep-1",
+                      "-0x1.402f22dd13debp+0",
+                      "-0x1.4664198f7a3eep-1",
+                      "-0x1.3c3a321fd1916p-1"
+                    ]
+                  },
+                  "converged": true,
+                  "diagnostics": {
+                    "converged": true,
+                    "covariance_cholesky_relative_residual": {
+                      "_type": "float",
+                      "hex": "0x0.0p+0"
+                    },
+                    "covariance_cholesky_residual_inf": {
+                      "_type": "float",
+                      "hex": "0x0.0p+0"
+                    },
+                    "dtype": "float64",
+                    "fit_uses_future_targets": false,
+                    "fitted_lambda": {
+                      "_type": "float",
+                      "hex": "0x1.233e5e95722b3p+1"
+                    },
+                    "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+                    "gram_rescaling": "none",
+                    "input_dimension": 2,
+                    "iteration_records": [
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.789c2653f93d0p-3"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.3c21a4125d273p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.3da5862f00e63p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.261bc3c9c1526p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.c8a4a4fe0e824p-54"
+                        },
+                        "solve_index": 1
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.49a1004bea500p-6"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.12d5651b0f269p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.261bc3c9c1526p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.238881c9297dcp+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.85f411547aea3p-54"
+                        },
+                        "solve_index": 2
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.288ccedd4a400p-9"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.5d173e67d291fp-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.238881c9297dcp+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.233e5e95722b3p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.ee49457143b30p-54"
+                        },
+                        "solve_index": 3
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.0b98e5f92a000p-12"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.15f0f3205e4cep-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.233e5e95722b3p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.233601ce4261ep+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.89737ea1fd91dp-54"
+                        },
+                        "solve_index": 4
+                      }
+                    ],
+                    "iterations": 4,
+                    "maximum_inverse_solves": 100,
+                    "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+                    "minimum_projected_separation": {
+                      "_type": "float",
+                      "hex": "0x1.4424139a562c0p-1"
+                    },
+                    "numerical_enclosure_claimed": false,
+                    "projected_collision_count": 0,
+                    "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+                    "projected_reference_distinctness_claimed": false,
+                    "projected_unique_count": 4,
+                    "rank": 2,
+                    "raw_distinct_count": 4,
+                    "reference_count": 4,
+                    "reference_energy": {
+                      "_type": "float",
+                      "hex": "0x1.fc3c09e4ce3d2p-1"
+                    },
+                    "regularization_status": "converged",
+                    "regularization_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.0624dd2f1a9fcp-10"
+                    },
+                    "signed_ratio_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "solve_residual_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "unused_next_lambda_proposal": {
+                      "_type": "float",
+                      "hex": "0x1.233601ce4261ep+1"
+                    },
+                    "version": "gaussian-signed-regularized-float64-v1"
+                  },
+                  "fitted_lambda": {
+                    "_type": "float",
+                    "hex": "0x1.233e5e95722b3p+1"
+                  },
+                  "gram": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      4
+                    ],
+                    "values": [
+                      "0x1.0000000000000p+0",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.0000000000000p+0",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.0000000000000p+0",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.0000000000000p+0"
+                    ]
+                  },
+                  "iterations": 4,
+                  "metric_transform": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      2,
+                      2
+                    ],
+                    "values": [
+                      "0x1.edfe78be1965ep+0",
+                      "0x1.4697254dca7b6p-55",
+                      "0x0.0p+0",
+                      "0x1.ef3f2f2adc5ebp+0"
+                    ]
+                  },
+                  "pca": {
+                    "_type": "LocalPCA",
+                    "fields": {
+                      "P": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.0000000000000p+0",
+                          "0x0.0p+0",
+                          "0x0.0p+0",
+                          "0x1.0000000000000p+0"
+                        ]
+                      },
+                      "S": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.13009d64af94fp-3",
+                          "-0x1.6ab357cce1d55p-59",
+                          "-0x1.6ab357cce1d55p-59",
+                          "0x1.119ce4781f5aap-3"
+                        ]
+                      },
+                      "attempts": {
+                        "_type": "tuple",
+                        "items": [
+                          {
+                            "_type": "_PCAAttempt",
+                            "fields": {
+                              "minimum_projected_range": {
+                                "_type": "float",
+                                "hex": "0x1.4424139a562c0p-1"
+                              },
+                              "positive_rank": 2,
+                              "range_violation": false,
+                              "requested_rank": 2
+                            }
+                          }
+                        ]
+                      },
+                      "cap": 2,
+                      "eigenvalue_threshold": {
+                        "_type": "float",
+                        "hex": "0x1.0000000000000p-52"
+                      },
+                      "eigenvalues": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.13009d64af94fp-3",
+                          "0x1.119ce4781f5aap-3"
+                        ]
+                      },
+                      "final_rank_request": 2,
+                      "initial_rank_request": 2,
+                      "minimum_projected_separation": {
+                        "_type": "float",
+                        "hex": "0x1.4424139a562c0p-1"
+                      },
+                      "mu": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "-0x1.e8df5bacd656cp-1",
+                          "-0x1.de4c3becfca76p-1"
+                        ]
+                      },
+                      "projected_ranges": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.44f6843ab82fcp-1",
+                          "0x1.4424139a562c0p-1"
+                        ]
+                      },
+                      "projected_unique_count": 4,
+                      "rank": 2,
+                      "reason": "positive_rank",
+                      "reference_count": 4,
+                      "repeated_eigenvalue_blocks": {
+                        "_type": "tuple",
+                        "items": []
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "_type": "LocalKAHM",
+                "fields": {
+                  "C": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      4
+                    ],
+                    "values": [
+                      "0x1.3f285ecb00bf3p-2",
+                      "-0x1.487aa890967bcp-5",
+                      "-0x1.487aa890967bdp-5",
+                      "-0x1.36f0a546cce24p-7",
+                      "-0x1.487aa890967bep-5",
+                      "0x1.3f285ecb00bf0p-2",
+                      "-0x1.36f0a546cce23p-7",
+                      "-0x1.487aa890967bep-5",
+                      "-0x1.487aa890967bep-5",
+                      "-0x1.36f0a546cce23p-7",
+                      "0x1.3f285ecb00bf1p-2",
+                      "-0x1.487aa890967bdp-5",
+                      "-0x1.36f0a546cce25p-7",
+                      "-0x1.487aa890967bep-5",
+                      "-0x1.487aa890967bep-5",
+                      "0x1.3f285ecb00bf2p-2"
+                    ]
+                  },
+                  "Q": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      2
+                    ],
+                    "values": [
+                      "0x1.4388eee5f6208p-1",
+                      "0x1.4c0df514dac68p-1",
+                      "0x1.4388eee5f6208p-1",
+                      "0x1.4819045798794p+0",
+                      "0x1.443fb99057281p+0",
+                      "0x1.4c0df514dac68p-1",
+                      "0x1.443fb99057281p+0",
+                      "0x1.4819045798794p+0"
+                    ]
+                  },
+                  "converged": true,
+                  "diagnostics": {
+                    "converged": true,
+                    "covariance_cholesky_relative_residual": {
+                      "_type": "float",
+                      "hex": "0x0.0p+0"
+                    },
+                    "covariance_cholesky_residual_inf": {
+                      "_type": "float",
+                      "hex": "0x0.0p+0"
+                    },
+                    "dtype": "float64",
+                    "fit_uses_future_targets": false,
+                    "fitted_lambda": {
+                      "_type": "float",
+                      "hex": "0x1.2b1b94cd291b5p+1"
+                    },
+                    "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+                    "gram_rescaling": "none",
+                    "input_dimension": 2,
+                    "iteration_records": [
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.75dbe9b6892f0p-3"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.c95aeaa2ac85ap-55"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.45574326085ffp+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2df9848a9fcd0p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.4c1ef3fba13a8p-56"
+                        },
+                        "solve_index": 1
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.49a2327babc80p-6"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.7ef5f214994bbp-53"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2df9848a9fcd0p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2b664025a8757p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.115fcd3dafc21p-54"
+                        },
+                        "solve_index": 2
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.2aad61fd68800p-9"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.320c0ffe1fb2fp-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2b664025a8757p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2b1b94cd291b5p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.b410c81b15441p-54"
+                        },
+                        "solve_index": 3
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.0f72528dc4000p-12"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.a448f08f63e39p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2b1b94cd291b5p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2b13193a94ad3p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.2b5965c650802p-53"
+                        },
+                        "solve_index": 4
+                      }
+                    ],
+                    "iterations": 4,
+                    "maximum_inverse_solves": 100,
+                    "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+                    "minimum_projected_separation": {
+                      "_type": "float",
+                      "hex": "0x1.4424139a562c0p-1"
+                    },
+                    "numerical_enclosure_claimed": false,
+                    "projected_collision_count": 0,
+                    "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+                    "projected_reference_distinctness_claimed": false,
+                    "projected_unique_count": 4,
+                    "rank": 2,
+                    "raw_distinct_count": 4,
+                    "reference_count": 4,
+                    "reference_energy": {
+                      "_type": "float",
+                      "hex": "0x1.0445cf51a04ccp+0"
+                    },
+                    "regularization_status": "converged",
+                    "regularization_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.0624dd2f1a9fcp-10"
+                    },
+                    "signed_ratio_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "solve_residual_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "unused_next_lambda_proposal": {
+                      "_type": "float",
+                      "hex": "0x1.2b13193a94ad3p+1"
+                    },
+                    "version": "gaussian-signed-regularized-float64-v1"
+                  },
+                  "fitted_lambda": {
+                    "_type": "float",
+                    "hex": "0x1.2b1b94cd291b5p+1"
+                  },
+                  "gram": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      4
+                    ],
+                    "values": [
+                      "0x1.0000000000000p+0",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.0000000000000p+0",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.0000000000000p+0",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.0000000000000p+0"
+                    ]
+                  },
+                  "iterations": 4,
+                  "metric_transform": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      2,
+                      2
+                    ],
+                    "values": [
+                      "0x1.edfe78be19661p+0",
+                      "0x1.4697254dca7bap-55",
+                      "0x0.0p+0",
+                      "0x1.ef3f2f2adc5ebp+0"
+                    ]
+                  },
+                  "pca": {
+                    "_type": "LocalPCA",
+                    "fields": {
+                      "P": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.0000000000000p+0",
+                          "0x0.0p+0",
+                          "0x0.0p+0",
+                          "0x1.0000000000000p+0"
+                        ]
+                      },
+                      "S": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.13009d64af94cp-3",
+                          "-0x1.6ab357cce1d55p-59",
+                          "-0x1.6ab357cce1d55p-59",
+                          "0x1.119ce4781f5aap-3"
+                        ]
+                      },
+                      "attempts": {
+                        "_type": "tuple",
+                        "items": [
+                          {
+                            "_type": "_PCAAttempt",
+                            "fields": {
+                              "minimum_projected_range": {
+                                "_type": "float",
+                                "hex": "0x1.4424139a562c0p-1"
+                              },
+                              "positive_rank": 2,
+                              "range_violation": false,
+                              "requested_rank": 2
+                            }
+                          }
+                        ]
+                      },
+                      "cap": 2,
+                      "eigenvalue_threshold": {
+                        "_type": "float",
+                        "hex": "0x1.0000000000000p-52"
+                      },
+                      "eigenvalues": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.13009d64af94cp-3",
+                          "0x1.119ce4781f5aap-3"
+                        ]
+                      },
+                      "final_rank_request": 2,
+                      "initial_rank_request": 2,
+                      "minimum_projected_separation": {
+                        "_type": "float",
+                        "hex": "0x1.4424139a562c0p-1"
+                      },
+                      "mu": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.e604310352384p-1",
+                          "0x1.ee1ffee205dc8p-1"
+                        ]
+                      },
+                      "projected_ranges": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.44f6843ab82fap-1",
+                          "0x1.4424139a562c0p-1"
+                        ]
+                      },
+                      "projected_unique_count": 4,
+                      "rank": 2,
+                      "reason": "positive_rank",
+                      "reference_count": 4,
+                      "repeated_eigenvalue_blocks": {
+                        "_type": "tuple",
+                        "items": []
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "_type": "LocalKAHM",
+                "fields": {
+                  "C": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      4
+                    ],
+                    "values": [
+                      "0x1.3dc3cc56a95bcp-2",
+                      "-0x1.45cbb00e2a873p-5",
+                      "-0x1.45cbb00e2a873p-5",
+                      "-0x1.35bc673ace1f3p-7",
+                      "-0x1.45cbb00e2a874p-5",
+                      "0x1.3dc3cc56a95bcp-2",
+                      "-0x1.35bc673ace1f4p-7",
+                      "-0x1.45cbb00e2a874p-5",
+                      "-0x1.45cbb00e2a873p-5",
+                      "-0x1.35bc673ace1f4p-7",
+                      "0x1.3dc3cc56a95bdp-2",
+                      "-0x1.45cbb00e2a874p-5",
+                      "-0x1.35bc673ace1f2p-7",
+                      "-0x1.45cbb00e2a874p-5",
+                      "-0x1.45cbb00e2a874p-5",
+                      "0x1.3dc3cc56a95bdp-2"
+                    ]
+                  },
+                  "Q": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      2
+                    ],
+                    "values": [
+                      "-0x1.45ad4ee519375p+0",
+                      "0x1.4c0df514dac68p-1",
+                      "-0x1.45ad4ee519375p+0",
+                      "0x1.4819045798794p+0",
+                      "-0x1.4664198f7a3eep-1",
+                      "0x1.4c0df514dac68p-1",
+                      "-0x1.4664198f7a3eep-1",
+                      "0x1.4819045798794p+0"
+                    ]
+                  },
+                  "converged": true,
+                  "diagnostics": {
+                    "converged": true,
+                    "covariance_cholesky_relative_residual": {
+                      "_type": "float",
+                      "hex": "0x0.0p+0"
+                    },
+                    "covariance_cholesky_residual_inf": {
+                      "_type": "float",
+                      "hex": "0x0.0p+0"
+                    },
+                    "dtype": "float64",
+                    "fit_uses_future_targets": false,
+                    "fitted_lambda": {
+                      "_type": "float",
+                      "hex": "0x1.2cd94e3b65fccp+1"
+                    },
+                    "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+                    "gram_rescaling": "none",
+                    "input_dimension": 2,
+                    "iteration_records": [
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.7532254358320p-3"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.345c8d046b513p-53"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.470a531f08a9cp+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2fb730cad326ap+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.c060b3d86c61ep-55"
+                        },
+                        "solve_index": 1
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.498f6457f4f00p-6"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.3684de9bfbb1dp-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2fb730cad326ap+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2d241202233ccp+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.bbeb3e29623e1p-54"
+                        },
+                        "solve_index": 2
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.2b0f1af500000p-9"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.afd373c5381b8p-53"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2d241202233ccp+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2cd94e3b65fccp+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.340eb0db8763ap-54"
+                        },
+                        "solve_index": 3
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.10338b6112000p-12"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.21cb097ce5169p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2cd94e3b65fccp+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2cd0cc9f0af43p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.9d5f8fbe2f597p-54"
+                        },
+                        "solve_index": 4
+                      }
+                    ],
+                    "iterations": 4,
+                    "maximum_inverse_solves": 100,
+                    "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+                    "minimum_projected_separation": {
+                      "_type": "float",
+                      "hex": "0x1.4424139a562c0p-1"
+                    },
+                    "numerical_enclosure_claimed": false,
+                    "projected_collision_count": 0,
+                    "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+                    "projected_reference_distinctness_claimed": false,
+                    "projected_unique_count": 4,
+                    "rank": 2,
+                    "raw_distinct_count": 4,
+                    "reference_count": 4,
+                    "reference_energy": {
+                      "_type": "float",
+                      "hex": "0x1.05a1dc18d3bb0p+0"
+                    },
+                    "regularization_status": "converged",
+                    "regularization_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.0624dd2f1a9fcp-10"
+                    },
+                    "signed_ratio_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "solve_residual_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "unused_next_lambda_proposal": {
+                      "_type": "float",
+                      "hex": "0x1.2cd0cc9f0af43p+1"
+                    },
+                    "version": "gaussian-signed-regularized-float64-v1"
+                  },
+                  "fitted_lambda": {
+                    "_type": "float",
+                    "hex": "0x1.2cd94e3b65fccp+1"
+                  },
+                  "gram": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      4
+                    ],
+                    "values": [
+                      "0x1.0000000000000p+0",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.0000000000000p+0",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.0000000000000p+0",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.0000000000000p+0"
+                    ]
+                  },
+                  "iterations": 4,
+                  "metric_transform": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      2,
+                      2
+                    ],
+                    "values": [
+                      "0x1.edfe78be1965ep+0",
+                      "0x1.4697254dca7b6p-55",
+                      "0x0.0p+0",
+                      "0x1.ef3f2f2adc5ebp+0"
+                    ]
+                  },
+                  "pca": {
+                    "_type": "LocalPCA",
+                    "fields": {
+                      "P": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.0000000000000p+0",
+                          "0x0.0p+0",
+                          "0x0.0p+0",
+                          "0x1.0000000000000p+0"
+                        ]
+                      },
+                      "S": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.13009d64af94fp-3",
+                          "-0x1.6ab357cce1d55p-59",
+                          "-0x1.6ab357cce1d55p-59",
+                          "0x1.119ce4781f5aap-3"
+                        ]
+                      },
+                      "attempts": {
+                        "_type": "tuple",
+                        "items": [
+                          {
+                            "_type": "_PCAAttempt",
+                            "fields": {
+                              "minimum_projected_range": {
+                                "_type": "float",
+                                "hex": "0x1.4424139a562c0p-1"
+                              },
+                              "positive_rank": 2,
+                              "range_violation": false,
+                              "requested_rank": 2
+                            }
+                          }
+                        ]
+                      },
+                      "cap": 2,
+                      "eigenvalue_threshold": {
+                        "_type": "float",
+                        "hex": "0x1.0000000000000p-52"
+                      },
+                      "eigenvalues": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.13009d64af94fp-3",
+                          "0x1.119ce4781f5aap-3"
+                        ]
+                      },
+                      "final_rank_request": 2,
+                      "initial_rank_request": 2,
+                      "minimum_projected_separation": {
+                        "_type": "float",
+                        "hex": "0x1.4424139a562c0p-1"
+                      },
+                      "mu": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "-0x1.e8df5bacd656cp-1",
+                          "0x1.ee1ffee205dc8p-1"
+                        ]
+                      },
+                      "projected_ranges": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.44f6843ab82fcp-1",
+                          "0x1.4424139a562c0p-1"
+                        ]
+                      },
+                      "projected_unique_count": 4,
+                      "rank": 2,
+                      "reason": "positive_rank",
+                      "reference_count": 4,
+                      "repeated_eigenvalue_blocks": {
+                        "_type": "tuple",
+                        "items": []
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "_type": "LocalKAHM",
+                "fields": {
+                  "C": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      4
+                    ],
+                    "values": [
+                      "0x1.4710f1a1dc3bbp-2",
+                      "-0x1.57e5f6a76ac23p-5",
+                      "-0x1.57e5f6a76ac25p-5",
+                      "-0x1.3d8911ca174b3p-7",
+                      "-0x1.57e5f6a76ac23p-5",
+                      "0x1.4710f1a1dc3bap-2",
+                      "-0x1.3d8911ca174b5p-7",
+                      "-0x1.57e5f6a76ac25p-5",
+                      "-0x1.57e5f6a76ac25p-5",
+                      "-0x1.3d8911ca174b3p-7",
+                      "0x1.4710f1a1dc3bdp-2",
+                      "-0x1.57e5f6a76ac26p-5",
+                      "-0x1.3d8911ca174b3p-7",
+                      "-0x1.57e5f6a76ac25p-5",
+                      "-0x1.57e5f6a76ac26p-5",
+                      "0x1.4710f1a1dc3bcp-2"
+                    ]
+                  },
+                  "Q": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      2
+                    ],
+                    "values": [
+                      "0x1.4388eee5f6208p-1",
+                      "-0x1.402f22dd13debp+0",
+                      "0x1.4388eee5f6208p-1",
+                      "-0x1.3c3a321fd1916p-1",
+                      "0x1.443fb99057281p+0",
+                      "-0x1.402f22dd13debp+0",
+                      "0x1.443fb99057281p+0",
+                      "-0x1.3c3a321fd1916p-1"
+                    ]
+                  },
+                  "converged": true,
+                  "diagnostics": {
+                    "converged": true,
+                    "covariance_cholesky_relative_residual": {
+                      "_type": "float",
+                      "hex": "0x0.0p+0"
+                    },
+                    "covariance_cholesky_residual_inf": {
+                      "_type": "float",
+                      "hex": "0x0.0p+0"
+                    },
+                    "dtype": "float64",
+                    "fit_uses_future_targets": false,
+                    "fitted_lambda": {
+                      "_type": "float",
+                      "hex": "0x1.2182c6d5614c6p+1"
+                    },
+                    "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+                    "gram_rescaling": "none",
+                    "input_dimension": 2,
+                    "iteration_records": [
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.79294e3970210p-3"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.47b07293ef150p-53"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.3bf27636009c6p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.245fe152699a5p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.d8c1eacc5a4bep-55"
+                        },
+                        "solve_index": 1
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.498d8157de200p-6"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.21e54294bea74p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.245fe152699a5p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.21ccc64fb9de1p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.9ac00eb22ab80p-54"
+                        },
+                        "solve_index": 2
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.27fde96246c00p-9"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.229a42ac65b70p-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.21ccc64fb9de1p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2182c6d5614c6p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.9ae3d8cc8df64p-54"
+                        },
+                        "solve_index": 3
+                      },
+                      {
+                        "absolute_change": {
+                          "_type": "float",
+                          "hex": "0x1.0aa6f1e8bc000p-12"
+                        },
+                        "inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.49268dd6a9e1cp-52"
+                        },
+                        "lambda": {
+                          "_type": "float",
+                          "hex": "0x1.2182c6d5614c6p+1"
+                        },
+                        "proposed_lambda": {
+                          "_type": "float",
+                          "hex": "0x1.217a719dd2068p+1"
+                        },
+                        "scaled_inverse_residual_inf": {
+                          "_type": "float",
+                          "hex": "0x1.d148a511ec8f7p-54"
+                        },
+                        "solve_index": 4
+                      }
+                    ],
+                    "iterations": 4,
+                    "maximum_inverse_solves": 100,
+                    "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+                    "minimum_projected_separation": {
+                      "_type": "float",
+                      "hex": "0x1.4424139a562c0p-1"
+                    },
+                    "numerical_enclosure_claimed": false,
+                    "projected_collision_count": 0,
+                    "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+                    "projected_reference_distinctness_claimed": false,
+                    "projected_unique_count": 4,
+                    "rank": 2,
+                    "raw_distinct_count": 4,
+                    "reference_count": 4,
+                    "reference_energy": {
+                      "_type": "float",
+                      "hex": "0x1.f983f0566760ap-1"
+                    },
+                    "regularization_status": "converged",
+                    "regularization_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.0624dd2f1a9fcp-10"
+                    },
+                    "signed_ratio_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "solve_residual_tolerance": {
+                      "_type": "float",
+                      "hex": "0x1.b7cdfd9d7bdbbp-34"
+                    },
+                    "unused_next_lambda_proposal": {
+                      "_type": "float",
+                      "hex": "0x1.217a719dd2068p+1"
+                    },
+                    "version": "gaussian-signed-regularized-float64-v1"
+                  },
+                  "fitted_lambda": {
+                    "_type": "float",
+                    "hex": "0x1.2182c6d5614c6p+1"
+                  },
+                  "gram": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      4,
+                      4
+                    ],
+                    "values": [
+                      "0x1.0000000000000p+0",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.0000000000000p+0",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.0000000000000p+0",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.c8f87724b5c1fp-3",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.e3b40ebefcd7fp-2",
+                      "0x1.0000000000000p+0"
+                    ]
+                  },
+                  "iterations": 4,
+                  "metric_transform": {
+                    "_type": "array",
+                    "dtype": "float64",
+                    "shape": [
+                      2,
+                      2
+                    ],
+                    "values": [
+                      "0x1.edfe78be19661p+0",
+                      "0x1.4697254dca7bap-55",
+                      "0x0.0p+0",
+                      "0x1.ef3f2f2adc5ebp+0"
+                    ]
+                  },
+                  "pca": {
+                    "_type": "LocalPCA",
+                    "fields": {
+                      "P": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.0000000000000p+0",
+                          "0x0.0p+0",
+                          "0x0.0p+0",
+                          "0x1.0000000000000p+0"
+                        ]
+                      },
+                      "S": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2,
+                          2
+                        ],
+                        "values": [
+                          "0x1.13009d64af94cp-3",
+                          "-0x1.6ab357cce1d55p-59",
+                          "-0x1.6ab357cce1d55p-59",
+                          "0x1.119ce4781f5aap-3"
+                        ]
+                      },
+                      "attempts": {
+                        "_type": "tuple",
+                        "items": [
+                          {
+                            "_type": "_PCAAttempt",
+                            "fields": {
+                              "minimum_projected_range": {
+                                "_type": "float",
+                                "hex": "0x1.4424139a562c0p-1"
+                              },
+                              "positive_rank": 2,
+                              "range_violation": false,
+                              "requested_rank": 2
+                            }
+                          }
+                        ]
+                      },
+                      "cap": 2,
+                      "eigenvalue_threshold": {
+                        "_type": "float",
+                        "hex": "0x1.0000000000000p-52"
+                      },
+                      "eigenvalues": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.13009d64af94cp-3",
+                          "0x1.119ce4781f5aap-3"
+                        ]
+                      },
+                      "final_rank_request": 2,
+                      "initial_rank_request": 2,
+                      "minimum_projected_separation": {
+                        "_type": "float",
+                        "hex": "0x1.4424139a562c0p-1"
+                      },
+                      "mu": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.e604310352384p-1",
+                          "-0x1.de4c3becfca76p-1"
+                        ]
+                      },
+                      "projected_ranges": {
+                        "_type": "array",
+                        "dtype": "float64",
+                        "shape": [
+                          2
+                        ],
+                        "values": [
+                          "0x1.44f6843ab82fap-1",
+                          "0x1.4424139a562c0p-1"
+                        ]
+                      },
+                      "projected_unique_count": 4,
+                      "rank": 2,
+                      "reason": "positive_rank",
+                      "reference_count": 4,
+                      "repeated_eigenvalue_blocks": {
+                        "_type": "tuple",
+                        "items": []
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "partitions": {
+            "_type": "tuple",
+            "items": [
+              {
+                "_type": "ReferencePartition",
+                "fields": {
+                  "attempts": {
+                    "_type": "tuple",
+                    "items": [
+                      {
+                        "_type": "_PartitionAttempt",
+                        "fields": {
+                          "empty_groups": {
+                            "_type": "tuple",
+                            "items": []
+                          },
+                          "group_count": 2,
+                          "initial_reference_indices": {
+                            "_type": "tuple",
+                            "items": [
+                              1,
+                              15
+                            ]
+                          },
+                          "iterations": 3,
+                          "status": "converged"
+                        }
+                      }
+                    ]
+                  },
+                  "distinct_count": 16,
+                  "groups": {
+                    "_type": "tuple",
+                    "items": [
+                      {
+                        "_type": "ReferenceGroup",
+                        "fields": {
+                          "Q": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              8,
+                              2
+                            ],
+                            "values": [
+                              "-0x1.45ad4ee519375p+0",
+                              "-0x1.402f22dd13debp+0",
+                              "-0x1.45ad4ee519375p+0",
+                              "-0x1.3c3a321fd1916p-1",
+                              "-0x1.45ad4ee519375p+0",
+                              "0x1.4c0df514dac68p-1",
+                              "-0x1.45ad4ee519375p+0",
+                              "0x1.4819045798794p+0",
+                              "-0x1.4664198f7a3eep-1",
+                              "-0x1.402f22dd13debp+0",
+                              "-0x1.4664198f7a3eep-1",
+                              "-0x1.3c3a321fd1916p-1",
+                              "-0x1.4664198f7a3eep-1",
+                              "0x1.4c0df514dac68p-1",
+                              "-0x1.4664198f7a3eep-1",
+                              "0x1.4819045798794p+0"
+                            ]
+                          },
+                          "centroid": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              2
+                            ],
+                            "values": [
+                              "-0x1.e6037a0ae9bd2p-1",
+                              "-0x1.544ce9c9d1d47p-12"
+                            ]
+                          },
+                          "group_id": 0,
+                          "member_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              8
+                            ],
+                            "values": [
+                              1,
+                              33,
+                              63,
+                              0,
+                              2,
+                              8,
+                              24,
+                              3
+                            ]
+                          },
+                          "member_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              8
+                            ],
+                            "values": [
+                              267,
+                              252,
+                              232,
+                              254,
+                              265,
+                              257,
+                              256,
+                              263
+                            ]
+                          },
+                          "partition_id": 0,
+                          "reference_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              8
+                            ],
+                            "values": [
+                              1,
+                              33,
+                              63,
+                              0,
+                              2,
+                              8,
+                              24,
+                              3
+                            ]
+                          },
+                          "reference_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              8
+                            ],
+                            "values": [
+                              267,
+                              252,
+                              232,
+                              254,
+                              265,
+                              257,
+                              256,
+                              263
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "_type": "ReferenceGroup",
+                        "fields": {
+                          "Q": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              8,
+                              2
+                            ],
+                            "values": [
+                              "0x1.4388eee5f6208p-1",
+                              "-0x1.402f22dd13debp+0",
+                              "0x1.4388eee5f6208p-1",
+                              "-0x1.3c3a321fd1916p-1",
+                              "0x1.4388eee5f6208p-1",
+                              "0x1.4c0df514dac68p-1",
+                              "0x1.4388eee5f6208p-1",
+                              "0x1.4819045798794p+0",
+                              "0x1.443fb99057281p+0",
+                              "-0x1.402f22dd13debp+0",
+                              "0x1.443fb99057281p+0",
+                              "-0x1.3c3a321fd1916p-1",
+                              "0x1.443fb99057281p+0",
+                              "0x1.4c0df514dac68p-1",
+                              "0x1.443fb99057281p+0",
+                              "0x1.4819045798794p+0"
+                            ]
+                          },
+                          "centroid": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              2
+                            ],
+                            "values": [
+                              "0x1.e510b4ff2738fp-1",
+                              "0x1.53a2edd3ea257p-12"
+                            ]
+                          },
+                          "group_id": 1,
+                          "member_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              8
+                            ],
+                            "values": [
+                              41,
+                              5,
+                              6,
+                              17,
+                              23,
+                              4,
+                              7,
+                              15
+                            ]
+                          },
+                          "member_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              8
+                            ],
+                            "values": [
+                              263,
+                              263,
+                              257,
+                              248,
+                              246,
+                              265,
+                              272,
+                              236
+                            ]
+                          },
+                          "partition_id": 0,
+                          "reference_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              8
+                            ],
+                            "values": [
+                              41,
+                              5,
+                              6,
+                              17,
+                              23,
+                              4,
+                              7,
+                              15
+                            ]
+                          },
+                          "reference_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              8
+                            ],
+                            "values": [
+                              263,
+                              263,
+                              257,
+                              248,
+                              246,
+                              265,
+                              272,
+                              236
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "inertia": {
+                    "_type": "float",
+                    "hex": "0x1.19c6eab93bc1ep+12"
+                  },
+                  "max_iter": 150,
+                  "partition_id": 0,
+                  "reference_budget": 24,
+                  "requested_groups": 2,
+                  "training_count": 4096
+                }
+              },
+              {
+                "_type": "ReferencePartition",
+                "fields": {
+                  "attempts": {
+                    "_type": "tuple",
+                    "items": [
+                      {
+                        "_type": "_PartitionAttempt",
+                        "fields": {
+                          "empty_groups": {
+                            "_type": "tuple",
+                            "items": []
+                          },
+                          "group_count": 4,
+                          "initial_reference_indices": {
+                            "_type": "tuple",
+                            "items": [
+                              1,
+                              15,
+                              0,
+                              23
+                            ]
+                          },
+                          "iterations": 2,
+                          "status": "converged"
+                        }
+                      }
+                    ]
+                  },
+                  "distinct_count": 16,
+                  "groups": {
+                    "_type": "tuple",
+                    "items": [
+                      {
+                        "_type": "ReferenceGroup",
+                        "fields": {
+                          "Q": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              4,
+                              2
+                            ],
+                            "values": [
+                              "-0x1.45ad4ee519375p+0",
+                              "-0x1.402f22dd13debp+0",
+                              "-0x1.45ad4ee519375p+0",
+                              "-0x1.3c3a321fd1916p-1",
+                              "-0x1.4664198f7a3eep-1",
+                              "-0x1.402f22dd13debp+0",
+                              "-0x1.4664198f7a3eep-1",
+                              "-0x1.3c3a321fd1916p-1"
+                            ]
+                          },
+                          "centroid": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              2
+                            ],
+                            "values": [
+                              "-0x1.e8677caef745bp-1",
+                              "-0x1.e1e0ebba3043cp-1"
+                            ]
+                          },
+                          "group_id": 0,
+                          "member_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              1,
+                              33,
+                              2,
+                              8
+                            ]
+                          },
+                          "member_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              267,
+                              252,
+                              265,
+                              257
+                            ]
+                          },
+                          "partition_id": 1,
+                          "reference_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              1,
+                              33,
+                              2,
+                              8
+                            ]
+                          },
+                          "reference_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              267,
+                              252,
+                              265,
+                              257
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "_type": "ReferenceGroup",
+                        "fields": {
+                          "Q": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              4,
+                              2
+                            ],
+                            "values": [
+                              "0x1.4388eee5f6208p-1",
+                              "0x1.4c0df514dac68p-1",
+                              "0x1.4388eee5f6208p-1",
+                              "0x1.4819045798794p+0",
+                              "0x1.443fb99057281p+0",
+                              "0x1.4c0df514dac68p-1",
+                              "0x1.443fb99057281p+0",
+                              "0x1.4819045798794p+0"
+                            ]
+                          },
+                          "centroid": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              2
+                            ],
+                            "values": [
+                              "0x1.e67f6036b58e8p-1",
+                              "0x1.e6ece77351472p-1"
+                            ]
+                          },
+                          "group_id": 1,
+                          "member_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              6,
+                              17,
+                              7,
+                              15
+                            ]
+                          },
+                          "member_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              257,
+                              248,
+                              272,
+                              236
+                            ]
+                          },
+                          "partition_id": 1,
+                          "reference_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              6,
+                              17,
+                              7,
+                              15
+                            ]
+                          },
+                          "reference_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              257,
+                              248,
+                              272,
+                              236
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "_type": "ReferenceGroup",
+                        "fields": {
+                          "Q": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              4,
+                              2
+                            ],
+                            "values": [
+                              "-0x1.45ad4ee519375p+0",
+                              "0x1.4c0df514dac68p-1",
+                              "-0x1.45ad4ee519375p+0",
+                              "0x1.4819045798794p+0",
+                              "-0x1.4664198f7a3eep-1",
+                              "0x1.4c0df514dac68p-1",
+                              "-0x1.4664198f7a3eep-1",
+                              "0x1.4819045798794p+0"
+                            ]
+                          },
+                          "centroid": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              2
+                            ],
+                            "values": [
+                              "-0x1.e3898b2d04fc9p-1",
+                              "0x1.f2cd387aaa625p-1"
+                            ]
+                          },
+                          "group_id": 2,
+                          "member_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              63,
+                              0,
+                              24,
+                              3
+                            ]
+                          },
+                          "member_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              232,
+                              254,
+                              256,
+                              263
+                            ]
+                          },
+                          "partition_id": 1,
+                          "reference_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              63,
+                              0,
+                              24,
+                              3
+                            ]
+                          },
+                          "reference_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              232,
+                              254,
+                              256,
+                              263
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "_type": "ReferenceGroup",
+                        "fields": {
+                          "Q": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              4,
+                              2
+                            ],
+                            "values": [
+                              "0x1.4388eee5f6208p-1",
+                              "-0x1.402f22dd13debp+0",
+                              "0x1.4388eee5f6208p-1",
+                              "-0x1.3c3a321fd1916p-1",
+                              "0x1.443fb99057281p+0",
+                              "-0x1.402f22dd13debp+0",
+                              "0x1.443fb99057281p+0",
+                              "-0x1.3c3a321fd1916p-1"
+                            ]
+                          },
+                          "centroid": {
+                            "_type": "array",
+                            "dtype": "float64",
+                            "shape": [
+                              2
+                            ],
+                            "values": [
+                              "0x1.e3aa86367dd14p-1",
+                              "-0x1.db540cd774169p-1"
+                            ]
+                          },
+                          "group_id": 3,
+                          "member_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              41,
+                              5,
+                              23,
+                              4
+                            ]
+                          },
+                          "member_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              263,
+                              263,
+                              246,
+                              265
+                            ]
+                          },
+                          "partition_id": 1,
+                          "reference_indices": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              41,
+                              5,
+                              23,
+                              4
+                            ]
+                          },
+                          "reference_multiplicities": {
+                            "_type": "array",
+                            "dtype": "int64",
+                            "shape": [
+                              4
+                            ],
+                            "values": [
+                              263,
+                              263,
+                              246,
+                              265
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "inertia": {
+                    "_type": "float",
+                    "hex": "0x1.9b35c92a057b4p+9"
+                  },
+                  "max_iter": 150,
+                  "partition_id": 1,
+                  "reference_budget": 24,
+                  "requested_groups": 4,
+                  "training_count": 4096
+                }
+              }
+            ]
+          },
+          "standardizer": {
+            "_type": "Standardizer",
+            "fields": {
+              "mean": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  2
+                ],
+                "values": [
+                  "0x1.0090000000000p-1",
+                  "0x1.f9c0000000000p-2"
+                ]
+              },
+              "raw_std": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  2
+                ],
+                "values": [
+                  "0x1.93582cfbe2701p-2",
+                  "0x1.945e095546081p-2"
+                ]
+              },
+              "replaced_columns": {
+                "_type": "tuple",
+                "items": []
+              },
+              "sample_count": 4096,
+              "scale": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  2
+                ],
+                "values": [
+                  "0x1.93582cfbe2701p-2",
+                  "0x1.945e095546081p-2"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "raw_standardizer": null,
+      "readout": {
+        "_type": "ReadoutFeatures",
+        "fields": {
+          "bandwidth_multiplier": {
+            "_type": "float",
+            "hex": "0x1.0000000000000p-2"
+          },
+          "diagnostics": {
+            "bandwidth_multiplier": {
+              "_type": "float",
+              "hex": "0x1.0000000000000p-2"
+            },
+            "canonical_inference": "single-row transform; batches memoize identical rows without dropping observations",
+            "distance_rule": "median over i<j squared distances strictly greater than 1e-14",
+            "dtype": "float64",
+            "eigenpair_residual_inf": {
+              "_type": "float",
+              "hex": "0x1.25c8c00000000p-49"
+            },
+            "eigenvalue_cutoff": {
+              "_type": "float",
+              "hex": "0x1.d0c621b6817bep-34"
+            },
+            "eigenvalue_rule": "lambda > max(1e-12, 1e-10 * largest eigenvalue)",
+            "eigenvector_convention": "canonical exact-equality eigenspaces and largest-absolute component positive",
+            "encoded_landmark_distinct_count": 16,
+            "encoded_landmark_duplicates_retained": true,
+            "fit_uses_future_targets": false,
+            "full_gram_eigenvalues": [
+              {
+                "_type": "float",
+                "hex": "0x1.0e88b73c3394ap+0"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.0d66a0a9c2ba2p+0"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.0ba80ff1fb045p+0"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.0b7aa7304ded6p+0"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.08494496610e3p+0"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.0831374b91a64p+0"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.06c363a241ef2p+0"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.06b5c035f3c43p+0"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.f178ec961aeacp-1"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.f13f0b770bf36p-1"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.f002d3627c282p-1"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.efb76dd0cd259p-1"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.e8438adc3c450p-1"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.e7c5c64b3677bp-1"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.e5edc189ef8eap-1"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.e58b56895e37dp-1"
+              }
+            ],
+            "input_width": 18,
+            "landmark_count": 16,
+            "landmark_identity_source": "caller-supplied common RAW-history training row indices",
+            "landmark_indices": [
+              1,
+              33,
+              63,
+              0,
+              2,
+              8,
+              24,
+              3,
+              41,
+              5,
+              6,
+              17,
+              23,
+              4,
+              7,
+              15
+            ],
+            "linear_scaler": {
+              "feature_width": 18,
+              "moment_algorithm": "one contiguous column at a time, including all occurrences",
+              "replaced_columns": [],
+              "replacement_rule": "std < 1e-8 becomes 1; all columns retained",
+              "sample_count": 4096,
+              "standard_deviation_floor": {
+                "_type": "float",
+                "hex": "0x1.5798ee2308c3ap-27"
+              },
+              "variance_divisor": 4096
+            },
+            "median_distance_fallback_used": false,
+            "median_squared_distance": {
+              "_type": "float",
+              "hex": "0x1.4ce0fc8098dc2p+5"
+            },
+            "minimum_sigma_squared": {
+              "_type": "float",
+              "hex": "0x1.19799812dea11p-40"
+            },
+            "numerical_enclosure_claimed": false,
+            "nystrom_rank": 16,
+            "nystrom_scaler": {
+              "feature_width": 16,
+              "moment_algorithm": "one contiguous column at a time, including all occurrences",
+              "replaced_columns": [],
+              "replacement_rule": "std < 1e-8 becomes 1; all columns retained",
+              "sample_count": 4096,
+              "standard_deviation_floor": {
+                "_type": "float",
+                "hex": "0x1.5798ee2308c3ap-27"
+              },
+              "variance_divisor": 4096
+            },
+            "orthogonality_residual_inf": {
+              "_type": "float",
+              "hex": "0x1.52e0b5ddca952p-48"
+            },
+            "output_order": "unchanged standardized linear block, then standardized Nystrom block",
+            "output_width": 34,
+            "positive_distance_pair_count": 120,
+            "positive_distance_threshold": {
+              "_type": "float",
+              "hex": "0x1.6849b86a12b9bp-47"
+            },
+            "repeated_eigenvalue_blocks": [],
+            "sigma_squared": {
+              "_type": "float",
+              "hex": "0x1.4ce0fc8098dc2p+1"
+            },
+            "training_count": 4096,
+            "training_multiplicity": "all supplied rows contribute to both moment calculations",
+            "version": "matched-nystrom-linear-float64-v1"
+          },
+          "eigenvalues": {
+            "_type": "array",
+            "dtype": "float64",
+            "shape": [
+              16
+            ],
+            "values": [
+              "0x1.0e88b73c3394ap+0",
+              "0x1.0d66a0a9c2ba2p+0",
+              "0x1.0ba80ff1fb045p+0",
+              "0x1.0b7aa7304ded6p+0",
+              "0x1.08494496610e3p+0",
+              "0x1.0831374b91a64p+0",
+              "0x1.06c363a241ef2p+0",
+              "0x1.06b5c035f3c43p+0",
+              "0x1.f178ec961aeacp-1",
+              "0x1.f13f0b770bf36p-1",
+              "0x1.f002d3627c282p-1",
+              "0x1.efb76dd0cd259p-1",
+              "0x1.e8438adc3c450p-1",
+              "0x1.e7c5c64b3677bp-1",
+              "0x1.e5edc189ef8eap-1",
+              "0x1.e58b56895e37dp-1"
+            ]
+          },
+          "eigenvectors": {
+            "_type": "array",
+            "dtype": "float64",
+            "shape": [
+              16,
+              16
+            ],
+            "values": [
+              "0x1.3fab76c253988p-2",
+              "-0x1.3c31ecc0b07e2p-2",
+              "-0x1.fe300f069cc14p-5",
+              "-0x1.da3424f4598f7p-3",
+              "0x1.b986d227d0afap-2",
+              "-0x1.a366a53015b94p-9",
+              "-0x1.2c190b8287a52p-11",
+              "-0x1.03ff01a59f0d8p-2",
+              "0x1.36cf0576d3ffdp-4",
+              "-0x1.da5fda2c14e04p-12",
+              "-0x1.053537c942c35p-5",
+              "-0x1.f8ba541928db8p-2",
+              "-0x1.146eda3ac8051p-5",
+              "0x1.06eb23f8a93dap-15",
+              "-0x1.92771f94d98c1p-13",
+              "0x1.fe698599bdcafp-2",
+              "0x1.49cdf722fe1a1p-2",
+              "-0x1.3e422be17d95dp-2",
+              "-0x1.e02b6aaa0b962p-5",
+              "-0x1.b4cf1b838421ap-3",
+              "0x1.c00a72ccf6d59p-2",
+              "-0x1.a87afd727341bp-9",
+              "-0x1.1ee895efbe4fap-11",
+              "-0x1.efd2fc8e6f772p-3",
+              "-0x1.c7e23ab51d3b5p-5",
+              "0x1.fb5f8f4d73b72p-11",
+              "0x1.ec9c8fe43d438p-6",
+              "0x1.fcaedc11e7273p-2",
+              "0x1.4833d9739c310p-6",
+              "-0x1.250c84ab61986p-15",
+              "0x1.96b2f7c49f2c0p-13",
+              "-0x1.ff7e591bca0a4p-2",
+              "0x1.918e80473d217p-3",
+              "-0x1.1c75ee3057a21p-3",
+              "0x1.06070eb4cc886p-4",
+              "0x1.bb3c93d712b35p-2",
+              "0x1.03f7e299ba4d8p-2",
+              "-0x1.d711cdff591e8p-10",
+              "0x1.dcb652280ef24p-11",
+              "0x1.b928dd5d1f644p-2",
+              "-0x1.f56f6ad605119p-2",
+              "0x1.29c095879eb1dp-4",
+              "-0x1.bf4564f8375dap-7",
+              "-0x1.31eefa543fcaep-4",
+              "0x1.febee4f0655afp-2",
+              "0x1.5ce069a2d5327p-13",
+              "-0x1.1f534b2eaa586p-15",
+              "0x1.1409f504de572p-5",
+              "0x1.72d96a3aff991p-3",
+              "-0x1.091455f663a7ap-3",
+              "0x1.0d59c4e3ed0eep-4",
+              "0x1.c5d84e9c0d07bp-2",
+              "0x1.efd248a655ecbp-3",
+              "-0x1.c1a8da8bc38a2p-10",
+              "0x1.e40b1fc1aca09p-11",
+              "0x1.c07e0838c0b19p-2",
+              "0x1.f79f85e6ec6cfp-2",
+              "-0x1.1b8b36e025275p-4",
+              "0x1.47e49d0297466p-7",
+              "0x1.bbf706d3f4b88p-5",
+              "-0x1.ff1b275914839p-2",
+              "-0x1.5c78c7a377d00p-13",
+              "0x1.da13935ba3931p-16",
+              "-0x1.4cef32a085187p-6",
+              "0x1.40076af8f2cccp-2",
+              "-0x1.3c6d641d483fdp-2",
+              "-0x1.fe9e14043b154p-5",
+              "-0x1.daa6e596ec8ebp-3",
+              "-0x1.b925068db76b1p-2",
+              "0x1.a89eeb3858d78p-9",
+              "0x1.26cf9b1679f11p-11",
+              "0x1.03b141566b473p-2",
+              "0x1.35f42f52824a7p-4",
+              "-0x1.e02ddd543a862p-12",
+              "-0x1.04d1ecdadfd69p-5",
+              "-0x1.f83dd70a128c8p-2",
+              "0x1.15c41b409653fp-5",
+              "-0x1.fe191a0b633d0p-17",
+              "0x1.843019433e653p-13",
+              "-0x1.feebeedf3523ap-2",
+              "0x1.4a200da5cc8b0p-2",
+              "-0x1.3e7d71383c1dap-2",
+              "-0x1.e0a35e82144aap-5",
+              "-0x1.b553922e6c702p-3",
+              "-0x1.bfa0eb5e49886p-2",
+              "0x1.b1f0d670c25e9p-9",
+              "0x1.1b751f7cb4194p-11",
+              "0x1.ef66248a747d4p-3",
+              "-0x1.c6e4e33cdb5bdp-5",
+              "0x1.fa2bff4089a73p-11",
+              "0x1.ec0fa2d74085cp-6",
+              "0x1.fc2b93a57d3cbp-2",
+              "-0x1.4b80f36534037p-6",
+              "0x1.f1b88f1f05c69p-18",
+              "-0x1.6b67fbe27da68p-13",
+              "0x1.0000b86d654f6p-1",
+              "0x1.91f0a81a9d5f7p-3",
+              "-0x1.1c9a84d502412p-3",
+              "0x1.0673027d0d754p-4",
+              "0x1.bbb29df3c8a3cp-2",
+              "-0x1.03b3a18dc4c9cp-2",
+              "0x1.edf7980010844p-10",
+              "-0x1.ca4641bcc36f4p-11",
+              "-0x1.b8bb8803746aap-2",
+              "-0x1.f4de10ce7baa5p-2",
+              "0x1.2976579efe362p-4",
+              "-0x1.bf74171f5d855p-7",
+              "-0x1.32191b7d7fc5bp-4",
+              "-0x1.ff4ebea8ec3d9p-2",
+              "-0x1.8d83e8311ed29p-13",
+              "0x1.aa17809069014p-15",
+              "-0x1.13547f1e9bd1ap-5",
+              "0x1.7354c8e19a122p-3",
+              "-0x1.094170d1c649ep-3",
+              "0x1.0dc9d46f7f4efp-4",
+              "0x1.c649ec786c1b0p-2",
+              "-0x1.ef6f317703479p-3",
+              "0x1.d051ad2cbf23bp-10",
+              "-0x1.d5f2d5a94d564p-11",
+              "-0x1.c00064c51ddabp-2",
+              "0x1.f70e3360e0cc1p-2",
+              "-0x1.1b5adc84c584bp-4",
+              "0x1.4898eea13b069p-7",
+              "0x1.bcfb1c87d896ap-5",
+              "0x1.ffaa0af893933p-2",
+              "0x1.6d1f3d1c23906p-13",
+              "-0x1.362531f3c0efbp-15",
+              "0x1.4c1f12d74e337p-6",
+              "0x1.15428278188e0p-2",
+              "0x1.46811992efc33p-2",
+              "-0x1.191fb7a0cfcdap-2",
+              "0x1.480d2c8423cb9p-6",
+              "-0x1.8ade148119684p-9",
+              "-0x1.a56fc3577422bp-2",
+              "0x1.2296d8498e54ep-2",
+              "-0x1.25feb163491eap-11",
+              "0x1.8990aecd46f2ap-6",
+              "0x1.ad990635969c3p-4",
+              "-0x1.f21e2437f56a7p-2",
+              "0x1.06e70ae0cea21p-5",
+              "-0x1.4de8ea9f4dd0dp-15",
+              "0x1.8e8b88578a8aep-5",
+              "-0x1.fdab7b4da514cp-2",
+              "-0x1.8dfb4672dd8afp-13",
+              "0x1.1fee7f9a84501p-2",
+              "0x1.4acdf5d79364dp-2",
+              "-0x1.0709cd872aa0ep-2",
+              "0x1.1fa19cf7a7b92p-6",
+              "-0x1.8ed8aceb98457p-9",
+              "-0x1.accbca887c699p-2",
+              "0x1.170bd62014a7cp-2",
+              "-0x1.16f94023e5b2fp-11",
+              "-0x1.2b19935962c25p-6",
+              "-0x1.5f751e8a996d3p-4",
+              "0x1.f714077778d8bp-2",
+              "-0x1.1b3cacf57ac81p-5",
+              "0x1.78b6e5153fb0bp-16",
+              "-0x1.1f6a880e8b798p-5",
+              "0x1.ff288f901eaebp-2",
+              "0x1.ab210a2866d89p-13",
+              "0x1.9ac27c9633621p-3",
+              "0x1.7e4301fdff099p-3",
+              "0x1.a24e975c39c77p-2",
+              "-0x1.68eb2f09242d5p-4",
+              "-0x1.11becc4c2b69dp-9",
+              "-0x1.2285d9b902d87p-2",
+              "-0x1.a5120a0097a46p-2",
+              "0x1.e28c16df5419bp-11",
+              "-0x1.0c9d31a10b7f1p-4",
+              "-0x1.efa4fe2f83e1fp-2",
+              "-0x1.baa4930ec6be7p-4",
+              "-0x1.6a5fc62ab4d0dp-9",
+              "0x1.41b4e0362c687p-13",
+              "-0x1.fe0b8e015698ep-2",
+              "-0x1.8cc33963726dap-5",
+              "0x1.a390533f49d60p-16",
+              "0x1.7ec69cec0746cp-3",
+              "0x1.69a4e4df8865cp-3",
+              "0x1.ae3a2232d6ebep-2",
+              "-0x1.71c2ccc3b184ap-4",
+              "-0x1.0a253cf4b546cp-9",
+              "-0x1.17228ae69126bp-2",
+              "-0x1.ad1dbc0af21ccp-2",
+              "0x1.e69affec747e3p-11",
+              "0x1.1c11f310e7f03p-4",
+              "0x1.f2369d6595288p-2",
+              "0x1.66b61e12956dcp-4",
+              "0x1.b002c41127321p-10",
+              "-0x1.642d393c7c593p-13",
+              "0x1.fed60a272b0f8p-2",
+              "0x1.1f32170b468c3p-5",
+              "-0x1.50deecef0c035p-16",
+              "0x1.14f0a66eae9dep-2",
+              "0x1.46416a422dfd5p-2",
+              "-0x1.18dd8b8e57bc4p-2",
+              "0x1.477bac9dd850ep-6",
+              "0x1.9185729d6ba17p-9",
+              "0x1.a5ca7ed57e349p-2",
+              "-0x1.22eb4f702244bp-2",
+              "0x1.2249dd5d0fb5fp-11",
+              "0x1.8aa555573c65bp-6",
+              "0x1.ae8c2d98eeca6p-4",
+              "-0x1.f29621efc006dp-2",
+              "0x1.06fd71944adcap-5",
+              "0x1.d015cf02dbabep-15",
+              "-0x1.8d3a2ce67b9d7p-5",
+              "0x1.fd2b2ea9389cep-2",
+              "0x1.810b5727be937p-13",
+              "0x1.1fa66eac3e345p-2",
+              "0x1.4a90137a493b1p-2",
+              "-0x1.06bfaae8c34abp-2",
+              "0x1.1ef9a019ff09bp-6",
+              "0x1.998d966ed6de1p-9",
+              "0x1.ad2faf09138bcp-2",
+              "-0x1.1749ebcdf9cd9p-2",
+              "0x1.15d610901ee99p-11",
+              "-0x1.2baa812708ac8p-6",
+              "-0x1.6015936b614b5p-4",
+              "0x1.f793a363296a9p-2",
+              "-0x1.1b7bfa9c25326p-5",
+              "-0x1.9d7d891ae4ffbp-15",
+              "0x1.1dcb5a7155ca4p-5",
+              "-0x1.fea7eef487013p-2",
+              "-0x1.7e79221d6ddd8p-13",
+              "0x1.9a5bbae444908p-3",
+              "0x1.7e05994e5c651p-3",
+              "0x1.a1db09aeee623p-2",
+              "-0x1.68b8180635fcap-4",
+              "0x1.1cd675513fb8fp-9",
+              "0x1.22d082e450c78p-2",
+              "0x1.a5794153cc7d9p-2",
+              "-0x1.cf7ddb6657b0dp-11",
+              "-0x1.0cf37969abeeep-4",
+              "-0x1.f0343ac293295p-2",
+              "-0x1.bab07df60e5d2p-4",
+              "-0x1.69ff21eacba9cp-9",
+              "-0x1.73f53858ac33ap-13",
+              "0x1.fd7c1e6037dfap-2",
+              "0x1.8d5ddf32d5a95p-5",
+              "-0x1.dfde0e754845bp-18",
+              "0x1.7e48db584a6d9p-3",
+              "0x1.695d36f5c7a6ap-3",
+              "0x1.adcaf59df0849p-2",
+              "-0x1.719a6687c792cp-4",
+              "0x1.113524cf90679p-9",
+              "0x1.175c2b910ed61p-2",
+              "0x1.ad965320fd85bp-2",
+              "-0x1.d8ed5475bb895p-11",
+              "0x1.1c824f53b2d01p-4",
+              "0x1.f2c570f5682e2p-2",
+              "0x1.666994ddfa398p-4",
+              "0x1.ad4a921900015p-10",
+              "0x1.74f7c5acdfb1ap-13",
+              "-0x1.fe4811e90e9adp-2",
+              "-0x1.1f829fe882011p-5",
+              "0x1.7749b1e5f7139p-17"
+            ]
+          },
+          "landmark_gram": {
+            "_type": "array",
+            "dtype": "float64",
+            "shape": [
+              16,
+              16
+            ],
+            "values": [
+              "0x1.0000000000000p+0",
+              "0x1.554fd02f5d586p-5",
+              "0x1.8a52a2ed26f9bp-10",
+              "0x1.109335ab4d0d7p-11",
+              "0x1.54fdfa3ff24ccp-7",
+              "0x1.c5fd2d5b9971dp-12",
+              "0x1.51fabf1395868p-12",
+              "0x1.d4e28224a7055p-14",
+              "0x1.807355d121665p-13",
+              "0x1.330e1911be7f4p-12",
+              "0x1.23707d4677fc6p-12",
+              "0x1.6c5c9a80e6311p-13",
+              "0x1.7fbc0d12e6b12p-13",
+              "0x1.3322b2d29c0b6p-12",
+              "0x1.2380dcd6a5369p-12",
+              "0x1.6c2f4a3f2ac48p-13",
+              "0x1.554fd02f5d586p-5",
+              "0x1.0000000000000p+0",
+              "0x1.a61e5b0fd482bp-9",
+              "0x1.8a4fd45e94d8ep-10",
+              "0x1.c7067ce01fe5ep-12",
+              "0x1.54a476a5d79f6p-7",
+              "0x1.6957e76988655p-11",
+              "0x1.52e7030f1957fp-12",
+              "0x1.2ef5c4fc19101p-12",
+              "0x1.e4459965168ecp-12",
+              "0x1.cba2e916948aap-12",
+              "0x1.1f7421b88bab9p-12",
+              "0x1.2e9cf44a0472fp-12",
+              "0x1.e46b6762ecdbbp-12",
+              "0x1.cbc3cfe997110p-12",
+              "0x1.1f33ad0eb8505p-12",
+              "0x1.8a52a2ed26f9bp-10",
+              "0x1.a61e5b0fd482bp-9",
+              "0x1.0000000000000p+0",
+              "0x1.322b54c52f294p-5",
+              "0x1.52d6c223dcadcp-12",
+              "0x1.695a499e13920p-11",
+              "0x1.3166c486b749fp-7",
+              "0x1.6dff336ff3fc2p-12",
+              "0x1.17fb4256433fcp-12",
+              "0x1.bfb4d41dfc122p-12",
+              "0x1.a8e4898b119b6p-12",
+              "0x1.09d4c36be221bp-12",
+              "0x1.17c0a4d9d942ep-12",
+              "0x1.bfd3387b20b42p-12",
+              "0x1.a908402faf503p-12",
+              "0x1.09817710acce6p-12",
+              "0x1.109335ab4d0d7p-11",
+              "0x1.8a4fd45e94d8ep-10",
+              "0x1.322b54c52f294p-5",
+              "0x1.0000000000000p+0",
+              "0x1.d4c586db47120p-14",
+              "0x1.51f90de270e37p-12",
+              "0x1.6d19f4903348bp-12",
+              "0x1.31bc075c9294fp-7",
+              "0x1.62e44bc6b0f51p-13",
+              "0x1.1bde02289f9d7p-12",
+              "0x1.0d65724014c1bp-12",
+              "0x1.5157d2698a667p-13",
+              "0x1.62b9bf5f61b41p-13",
+              "0x1.1bec3a95eb847p-12",
+              "0x1.0d78f670ed474p-12",
+              "0x1.50ab06a277e8fp-13",
+              "0x1.54fdfa3ff24ccp-7",
+              "0x1.c7067ce01fe5ep-12",
+              "0x1.52d6c223dcadcp-12",
+              "0x1.d4c586db47120p-14",
+              "0x1.0000000000000p+0",
+              "0x1.557a8d89ecb47p-5",
+              "0x1.8af9f60e39b5ep-10",
+              "0x1.11c528a968bcdp-11",
+              "0x1.863c3e5525565p-13",
+              "0x1.3584080e8998dp-12",
+              "0x1.254ab9534c70dp-12",
+              "0x1.709e588f90336p-13",
+              "0x1.8078592f66c0fp-13",
+              "0x1.337eb95ba6785p-12",
+              "0x1.23bc7349c6541p-12",
+              "0x1.6c567a54f81edp-13",
+              "0x1.c5fd2d5b9971dp-12",
+              "0x1.54a476a5d79f6p-7",
+              "0x1.695a499e13920p-11",
+              "0x1.51f90de270e37p-12",
+              "0x1.557a8d89ecb47p-5",
+              "0x1.0000000000000p+0",
+              "0x1.a5445127355bep-9",
+              "0x1.8b04c46714d4ap-10",
+              "0x1.30e77412f8d56p-12",
+              "0x1.e457371fc6180p-12",
+              "0x1.cb928908a5c10p-12",
+              "0x1.211097ed3560ap-12",
+              "0x1.2e8870352428ap-12",
+              "0x1.e44597605dfc2p-12",
+              "0x1.cba4ab3039893p-12",
+              "0x1.1f2526b5d2c81p-12",
+              "0x1.51fabf1395868p-12",
+              "0x1.6957e76988655p-11",
+              "0x1.3166c486b749fp-7",
+              "0x1.6d19f4903348bp-12",
+              "0x1.8af9f60e39b5ep-10",
+              "0x1.a5445127355bep-9",
+              "0x1.0000000000000p+0",
+              "0x1.3254a4da2049cp-5",
+              "0x1.196f57a3f8f83p-12",
+              "0x1.bfa2f8a28384ep-12",
+              "0x1.a8fdff7e936e5p-12",
+              "0x1.0badd0d9b8cb7p-12",
+              "0x1.17b09d4bd8ea6p-12",
+              "0x1.bfb2ed0406d54p-12",
+              "0x1.a8e453572acd6p-12",
+              "0x1.096df15ae8f3fp-12",
+              "0x1.d4e28224a7055p-14",
+              "0x1.52e7030f1957fp-12",
+              "0x1.6dff336ff3fc2p-12",
+              "0x1.31bc075c9294fp-7",
+              "0x1.11c528a968bcdp-11",
+              "0x1.8b04c46714d4ap-10",
+              "0x1.3254a4da2049cp-5",
+              "0x1.0000000000000p+0",
+              "0x1.670c053fbd81fp-13",
+              "0x1.1dcd0e8a07329p-12",
+              "0x1.0fba964e6f787p-12",
+              "0x1.56ceabac17c67p-13",
+              "0x1.62e18d41417bfp-13",
+              "0x1.1c2aa4ec0aceap-12",
+              "0x1.0dd0054e7c9f0p-12",
+              "0x1.515d36b7131d1p-13",
+              "0x1.807355d121665p-13",
+              "0x1.2ef5c4fc19101p-12",
+              "0x1.17fb4256433fcp-12",
+              "0x1.62e44bc6b0f51p-13",
+              "0x1.863c3e5525565p-13",
+              "0x1.30e77412f8d56p-12",
+              "0x1.196f57a3f8f83p-12",
+              "0x1.670c053fbd81fp-13",
+              "0x1.0000000000000p+0",
+              "0x1.4fe3045acc50ap-5",
+              "0x1.7d5e7c5b26938p-10",
+              "0x1.feb12ed3894bcp-12",
+              "0x1.521278eeafce7p-7",
+              "0x1.bbbdbeb991695p-12",
+              "0x1.483993ef9c8cap-12",
+              "0x1.b6a3ca55c45c0p-14",
+              "0x1.330e1911be7f4p-12",
+              "0x1.e4459965168ecp-12",
+              "0x1.bfb4d41dfc122p-12",
+              "0x1.1bde02289f9d7p-12",
+              "0x1.3584080e8998dp-12",
+              "0x1.e457371fc6180p-12",
+              "0x1.bfa2f8a28384ep-12",
+              "0x1.1dcd0e8a07329p-12",
+              "0x1.4fe3045acc50ap-5",
+              "0x1.0000000000000p+0",
+              "0x1.a0ee0ea18a1c8p-9",
+              "0x1.7d68dda096869p-10",
+              "0x1.babea9f86e94cp-12",
+              "0x1.51bc78b205f20p-7",
+              "0x1.66cd9ac38cf4cp-11",
+              "0x1.4765b343d71c2p-12",
+              "0x1.23707d4677fc6p-12",
+              "0x1.cba2e916948aap-12",
+              "0x1.a8e4898b119b6p-12",
+              "0x1.0d65724014c1bp-12",
+              "0x1.254ab9534c70dp-12",
+              "0x1.cb928908a5c10p-12",
+              "0x1.a8fdff7e936e5p-12",
+              "0x1.0fba964e6f787p-12",
+              "0x1.7d5e7c5b26938p-10",
+              "0x1.a0ee0ea18a1c8p-9",
+              "0x1.0000000000000p+0",
+              "0x1.382db40dede6ep-5",
+              "0x1.47671a9d14802p-12",
+              "0x1.66caefb4d792ep-11",
+              "0x1.3a5612d69b0d1p-7",
+              "0x1.7ef55dc65e3fap-12",
+              "0x1.6c5c9a80e6311p-13",
+              "0x1.1f7421b88bab9p-12",
+              "0x1.09d4c36be221bp-12",
+              "0x1.5157d2698a667p-13",
+              "0x1.709e588f90336p-13",
+              "0x1.211097ed3560ap-12",
+              "0x1.0badd0d9b8cb7p-12",
+              "0x1.56ceabac17c67p-13",
+              "0x1.feb12ed3894bcp-12",
+              "0x1.7d68dda096869p-10",
+              "0x1.382db40dede6ep-5",
+              "0x1.0000000000000p+0",
+              "0x1.b6be74dd23cf1p-14",
+              "0x1.4849e6a511366p-12",
+              "0x1.7fe1a13f13dfdp-12",
+              "0x1.3aab3980a0e45p-7",
+              "0x1.7fbc0d12e6b12p-13",
+              "0x1.2e9cf44a0472fp-12",
+              "0x1.17c0a4d9d942ep-12",
+              "0x1.62b9bf5f61b41p-13",
+              "0x1.8078592f66c0fp-13",
+              "0x1.2e8870352428ap-12",
+              "0x1.17b09d4bd8ea6p-12",
+              "0x1.62e18d41417bfp-13",
+              "0x1.521278eeafce7p-7",
+              "0x1.babea9f86e94cp-12",
+              "0x1.47671a9d14802p-12",
+              "0x1.b6be74dd23cf1p-14",
+              "0x1.0000000000000p+0",
+              "0x1.4fb8f70d05401p-5",
+              "0x1.7cbc5c9472b71p-10",
+              "0x1.fc759428f0cabp-12",
+              "0x1.3322b2d29c0b6p-12",
+              "0x1.e46b6762ecdbbp-12",
+              "0x1.bfd3387b20b42p-12",
+              "0x1.1bec3a95eb847p-12",
+              "0x1.337eb95ba6785p-12",
+              "0x1.e44597605dfc2p-12",
+              "0x1.bfb2ed0406d54p-12",
+              "0x1.1c2aa4ec0aceap-12",
+              "0x1.bbbdbeb991695p-12",
+              "0x1.51bc78b205f20p-7",
+              "0x1.66caefb4d792ep-11",
+              "0x1.4849e6a511366p-12",
+              "0x1.4fb8f70d05401p-5",
+              "0x1.0000000000000p+0",
+              "0x1.a1c4f160dd27dp-9",
+              "0x1.7cba7c00e5cd3p-10",
+              "0x1.2380dcd6a5369p-12",
+              "0x1.cbc3cfe997110p-12",
+              "0x1.a908402faf503p-12",
+              "0x1.0d78f670ed474p-12",
+              "0x1.23bc7349c6541p-12",
+              "0x1.cba4ab3039893p-12",
+              "0x1.a8e453572acd6p-12",
+              "0x1.0dd0054e7c9f0p-12",
+              "0x1.483993ef9c8cap-12",
+              "0x1.66cd9ac38cf4cp-11",
+              "0x1.3a5612d69b0d1p-7",
+              "0x1.7fe1a13f13dfdp-12",
+              "0x1.7cbc5c9472b71p-10",
+              "0x1.a1c4f160dd27dp-9",
+              "0x1.0000000000000p+0",
+              "0x1.3803a0e7f5cc0p-5",
+              "0x1.6c2f4a3f2ac48p-13",
+              "0x1.1f33ad0eb8505p-12",
+              "0x1.09817710acce6p-12",
+              "0x1.50ab06a277e8fp-13",
+              "0x1.6c567a54f81edp-13",
+              "0x1.1f2526b5d2c81p-12",
+              "0x1.096df15ae8f3fp-12",
+              "0x1.515d36b7131d1p-13",
+              "0x1.b6a3ca55c45c0p-14",
+              "0x1.4765b343d71c2p-12",
+              "0x1.7ef55dc65e3fap-12",
+              "0x1.3aab3980a0e45p-7",
+              "0x1.fc759428f0cabp-12",
+              "0x1.7cba7c00e5cd3p-10",
+              "0x1.3803a0e7f5cc0p-5",
+              "0x1.0000000000000p+0"
+            ]
+          },
+          "landmark_indices": {
+            "_type": "tuple",
+            "items": [
+              1,
+              33,
+              63,
+              0,
+              2,
+              8,
+              24,
+              3,
+              41,
+              5,
+              6,
+              17,
+              23,
+              4,
+              7,
+              15
+            ]
+          },
+          "landmarks": {
+            "_type": "array",
+            "dtype": "float64",
+            "shape": [
+              16,
+              18
+            ],
+            "values": [
+              "0x1.0058ff5322a33p+0",
+              "-0x1.0058ff5322a32p+0",
+              "0x1.b6938011c640bp+0",
+              "-0x1.258135b4f6eebp-1",
+              "-0x1.23f6a2cea1d49p-1",
+              "-0x1.2a1f87e137cfbp-1",
+              "-0x1.c40c5b34013acp+0",
+              "-0x1.6da1ac49e0722p+0",
+              "0x1.6167d698dcf3ap-7",
+              "0x1.30d12d86a45eap-8",
+              "-0x1.fc3529c834b3ep+0",
+              "-0x1.f903bffe8640cp+0",
+              "-0x1.75253e65c3c9dp-10",
+              "0x1.6aca4a96a0387p-6",
+              "-0x1.0b471aa821e84p-6",
+              "-0x1.d337f3ce1038ap-7",
+              "0x1.df5d49f3054e8p-8",
+              "-0x1.2fcf94ffd9d10p-7",
+              "0x1.0059c3ca34697p+0",
+              "-0x1.0059c3ca34698p+0",
+              "0x1.b6882ac36354ep+0",
+              "-0x1.258135b4f6d69p-1",
+              "-0x1.23df88b744de7p-1",
+              "-0x1.2a1fb25fde6e9p-1",
+              "-0x1.c137c70aae6b2p-1",
+              "-0x1.6da2374398107p+0",
+              "0x1.61c09621d6287p-7",
+              "0x1.349cf94f7b1bcp-8",
+              "-0x1.fc2b602c59f0fp+0",
+              "0x1.fea84546ee0c8p+0",
+              "-0x1.75253e66e887cp-10",
+              "0x1.6aca4a9693260p-6",
+              "-0x1.0dc960447aba9p-6",
+              "-0x1.ec39581456a57p-7",
+              "0x1.dfddd29fde1a5p-8",
+              "-0x1.2fc4af2adf2cep-7",
+              "0x1.0059c38f0fddap+0",
+              "-0x1.0059c38f0fddbp+0",
+              "-0x1.2acc04c309f6fp-1",
+              "-0x1.258130b4c7214p-1",
+              "0x1.c0f0241b5e692p+0",
+              "-0x1.2a1fb658e2888p-1",
+              "0x1.cc8cd1690429ap-1",
+              "-0x1.6da23719c1f28p+0",
+              "0x1.61c0d536f50fep-7",
+              "0x1.349bd4c434f13p-8",
+              "-0x1.b2b03ccc2c45cp-10",
+              "0x1.85f8a8b60089ap-7",
+              "-0x1.7561fb602e51ep-10",
+              "0x1.6ac9bfb96daadp-6",
+              "-0x1.04859b1d463a8p+1",
+              "-0x1.043fefd388ea0p+1",
+              "0x1.dfe9d6cb719c5p-8",
+              "-0x1.2fc58ae5b8bfbp-7",
+              "0x1.0058e4682b616p+0",
+              "-0x1.0058e4682b616p+0",
+              "-0x1.2ae442b8b37dap-1",
+              "-0x1.258102c3b3e24p-1",
+              "0x1.c0fc50b47c47bp+0",
+              "-0x1.2a1fb658e290ep-1",
+              "0x1.c9b6c895857b1p+0",
+              "-0x1.6da1993f58b75p+0",
+              "0x1.6225acd1d5fb7p-7",
+              "0x1.304c08048e934p-8",
+              "-0x1.88d1212d7d41dp-10",
+              "0x1.6be3a1d35729cp-7",
+              "-0x1.778ffbd5b7301p-10",
+              "0x1.6acfd1324ae3dp-6",
+              "-0x1.048ae4f7cc131p+1",
+              "0x1.009f5d9bb47b2p+1",
+              "0x1.dfe9d6cb8b18ep-8",
+              "-0x1.2fc58ae5c1d9ep-7",
+              "0x1.fff6dfa7f4db2p-1",
+              "-0x1.fff6dfa7f4db1p-1",
+              "0x1.b688678d9185ep+0",
+              "-0x1.258135b4f6e71p-1",
+              "-0x1.23f6cf0f54db5p-1",
+              "-0x1.2a0923d27bd73p-1",
+              "-0x1.c3b943b78220fp+0",
+              "0x1.66bd1ce58effbp+0",
+              "0x1.373031b930ceap-7",
+              "-0x1.8a8b4068817f8p-12",
+              "0x1.fb6759bed0698p+0",
+              "-0x1.f8fa2abc6fe3ep+0",
+              "-0x1.75253e6605bfdp-10",
+              "0x1.6aca4a969a729p-6",
+              "-0x1.0b4158dbd30bcp-6",
+              "-0x1.d2f4ac266f5ecp-7",
+              "0x1.af255405b4586p-8",
+              "-0x1.34a6038990ba0p-7",
+              "0x1.0058d94b5f433p+0",
+              "-0x1.0058d94b5f431p+0",
+              "0x1.b6900e9e81927p+0",
+              "-0x1.258135b4f6ed8p-1",
+              "-0x1.23f2f49f49327p-1",
+              "-0x1.2a1c471b4e5b1p-1",
+              "-0x1.c136f6c8e4832p-1",
+              "0x1.66ff30cce0c87p+0",
+              "0x1.618bae435ba5cp-7",
+              "0x1.3161135ecc8f3p-8",
+              "0x1.fb6df59f58246p+0",
+              "0x1.feaf15c229fa5p+0",
+              "-0x1.75253e65cdc6cp-10",
+              "0x1.6aca4a969f989p-6",
+              "-0x1.0ad6383e8f552p-6",
+              "-0x1.d72202abc1e9cp-7",
+              "0x1.d87e3d1b7cf60p-8",
+              "-0x1.2f079457db9f7p-7",
+              "0x1.005881bd10bdfp+0",
+              "-0x1.005881bd10bdep+0",
+              "-0x1.2ae0607e04726p-1",
+              "-0x1.257d1562122ffp-1",
+              "0x1.c0f861af91643p+0",
+              "-0x1.2a1fb658e2900p-1",
+              "0x1.cc8bb3997485ap-1",
+              "0x1.66fef2dd73239p+0",
+              "0x1.620970bfb16b2p-7",
+              "0x1.302bba57914f3p-8",
+              "-0x1.8165511bcc889p-10",
+              "0x1.6ffe2a1e44913p-7",
+              "-0x1.98f181d59e548p-10",
+              "0x1.6a57b5c962038p-6",
+              "0x1.005c283a1adc6p+1",
+              "-0x1.04438433679c3p+1",
+              "0x1.dfe9d6cb890ccp-8",
+              "-0x1.2fc58ae5c0d3cp-7",
+              "0x1.ffe882d967eddp-1",
+              "-0x1.ffe882d967edbp-1",
+              "-0x1.2ae472740c7d6p-1",
+              "-0x1.256977d84304dp-1",
+              "0x1.c0f09b58acbbcp+0",
+              "-0x1.2a1fb658e27cbp-1",
+              "0x1.c95d684e1e2aep+0",
+              "0x1.66b808727dabcp+0",
+              "0x1.8f8eb76e26d1ep-7",
+              "-0x1.904069f6f5a7bp-11",
+              "-0x1.886d057160043p-10",
+              "0x1.6b9b7d4f1461dp-7",
+              "-0x1.218f3b4766647p-9",
+              "0x1.6d5d9147c9642p-6",
+              "0x1.0058c79f11b1dp+1",
+              "0x1.009a4797e934cp+1",
+              "0x1.dfe9d6cb5f7cbp-8",
+              "-0x1.2fc58ae5a352dp-7",
+              "-0x1.fef8e71ed8235p-1",
+              "0x1.fef8e71ed8238p-1",
+              "-0x1.2ace2d083f71ap-1",
+              "-0x1.25813183eabeep-1",
+              "-0x1.23f6d3706834bp-1",
+              "0x1.b7aa8c5186f0cp+0",
+              "0x1.41e457514eb84p-7",
+              "-0x1.065a9163f98f3p-7",
+              "-0x1.cb2622ef90631p+0",
+              "-0x1.68792b1abda9dp+0",
+              "-0x1.8fe6d61f90261p-11",
+              "0x1.66c3a01be8993p-7",
+              "-0x1.752c8444a0506p-10",
+              "0x1.6ac71bd2381ffp-6",
+              "-0x1.0b41d29b94dc5p-6",
+              "-0x1.d2ee03b75d439p-7",
+              "-0x1.fae78db7ad167p+0",
+              "-0x1.ff291d3daf6cep+0",
+              "-0x1.ffae99f15bd9ep-1",
+              "0x1.ffae99f15bda1p-1",
+              "-0x1.2ae114a5337f9p-1",
+              "-0x1.257d78b434502p-1",
+              "-0x1.23f6d370683d1p-1",
+              "0x1.b7b22a80cd6f3p+0",
+              "0x1.6a6e98f2fbbadp-7",
+              "-0x1.a70420584703cp-7",
+              "-0x1.c8b49e78bd6c5p-1",
+              "-0x1.68b95d78ef26ep+0",
+              "-0x1.6b36ff4192b42p-10",
+              "0x1.6c4ef1885af4cp-7",
+              "-0x1.7ba1c33170193p-10",
+              "0x1.68c340a953711p-6",
+              "-0x1.0b41d29b996e5p-6",
+              "-0x1.d2ee03b750183p-7",
+              "-0x1.faee23116ec4fp+0",
+              "0x1.fa709c72d235ap+0",
+              "-0x1.ffadef3d3d651p-1",
+              "0x1.ffadef3d3d654p-1",
+              "-0x1.2ae477911f144p-1",
+              "0x1.be9daa33eaf07p+0",
+              "-0x1.23f2bca958f74p-1",
+              "-0x1.2a1bbde9c2b3cp-1",
+              "0x1.6ae6ff0ff1501p-7",
+              "-0x1.a66d2f9deacbbp-7",
+              "0x1.d3c256e9ee186p-1",
+              "-0x1.68b921290acb1p+0",
+              "-0x1.8875da827f570p-10",
+              "0x1.6b93c2c175919p-7",
+              "-0x1.0192f54abe355p+1",
+              "-0x1.fd3da3b67bf1cp+0",
+              "-0x1.09096bc95ec54p-6",
+              "-0x1.d3d15e35e8e25p-7",
+              "0x1.de32a33a81a35p-8",
+              "-0x1.2b7b8570ce589p-7",
+              "-0x1.feead19ef4274p-1",
+              "0x1.feead19ef4276p-1",
+              "-0x1.2ae477911efd4p-1",
+              "0x1.be95f33fb7527p+0",
+              "-0x1.23df460d13c32p-1",
+              "-0x1.2a1fb16c338b2p-1",
+              "0x1.967ed1c92fc02p-7",
+              "-0x1.f3ccfde349dc4p-8",
+              "0x1.d0a6cac253f6ep+0",
+              "-0x1.6874313a891a2p+0",
+              "-0x1.8875da81b93f7p-10",
+              "0x1.6b93c2c198c4dp-7",
+              "-0x1.018f9c9832ec8p+1",
+              "0x1.0446a21d83963p+1",
+              "-0x1.fcefb6b02bc99p-7",
+              "-0x1.cdd0782c8db67p-7",
+              "0x1.dfe7b60da7ddcp-8",
+              "-0x1.2fbe18454432cp-7",
+              "-0x1.ffaee6ed5c30cp-1",
+              "0x1.ffaee6ed5c30ep-1",
+              "-0x1.2ae449fab016fp-1",
+              "-0x1.258105f4f20afp-1",
+              "-0x1.23f6d370683dfp-1",
+              "0x1.b7b588c921d9bp+0",
+              "0x1.6a4cf73e3e85dp-7",
+              "-0x1.a6c1d17ed6864p-7",
+              "-0x1.cb78429397d4fp+0",
+              "0x1.6b22b6e12983cp+0",
+              "-0x1.864eac00eea40p-10",
+              "0x1.6b89eaea71e04p-7",
+              "-0x1.74d26435b08c9p-10",
+              "0x1.6aa608ddb1539p-6",
+              "-0x1.0b41d29b99e5bp-6",
+              "-0x1.d2ee03b74f298p-7",
+              "0x1.feb0dfee635d3p+0",
+              "-0x1.ff329bd0db9b2p+0",
+              "-0x1.ffb0620cf0e5fp-1",
+              "0x1.ffb0620cf0e63p-1",
+              "-0x1.2ae473b8ff00ep-1",
+              "-0x1.256a29efa3ebfp-1",
+              "-0x1.23f6d37068298p-1",
+              "0x1.b7aa466ab83b9p+0",
+              "0x1.6aa13b43dd65ap-7",
+              "-0x1.a89724064e858p-7",
+              "-0x1.c8b56c4805508p-1",
+              "0x1.6b233cd451fe7p+0",
+              "-0x1.88475fd8fb1d2p-10",
+              "0x1.6b94973ea048bp-7",
+              "-0x1.4d28690e6cc34p-10",
+              "0x1.5e4a8000f854ap-6",
+              "-0x1.0b41d29b8a61ap-6",
+              "-0x1.d2ee03b76553bp-7",
+              "0x1.fea724fc90792p+0",
+              "0x1.fa69caa924beap+0",
+              "-0x1.ffb0619c73011p-1",
+              "0x1.ffb0619c73014p-1",
+              "-0x1.2ae477911f0e7p-1",
+              "0x1.be957330e8320p+0",
+              "-0x1.23f6ce9201012p-1",
+              "-0x1.2a0769866aea6p-1",
+              "0x1.6aa175f0208cap-7",
+              "-0x1.a89698c4f8834p-7",
+              "0x1.d3c3718d4640dp-1",
+              "0x1.6b233cac9346bp+0",
+              "-0x1.8875da82354ddp-10",
+              "0x1.6b93c2c17bccap-7",
+              "0x1.01321bbc0a63fp+1",
+              "-0x1.fd3682c6429ccp+0",
+              "-0x1.0b3e1f16f5579p-6",
+              "-0x1.d2ef126d4f26cp-7",
+              "0x1.ea69dba06b7f4p-8",
+              "-0x1.15856307a627ap-7",
+              "-0x1.ffaeb2724c862p-1",
+              "0x1.ffaeb2724c864p-1",
+              "-0x1.2ae477911f157p-1",
+              "0x1.bea18112c4cbdp+0",
+              "-0x1.23f6a136831c7p-1",
+              "-0x1.2a1f8233e4551p-1",
+              "0x1.6b015469ff9a3p-7",
+              "-0x1.a680da092e6b0p-7",
+              "0x1.d0ff2da14a99dp+0",
+              "0x1.6b22a4565bb8cp+0",
+              "-0x1.8875da8289fafp-10",
+              "0x1.6b93c2c1743d1p-7",
+              "0x1.01375654e128cp+1",
+              "0x1.044ba579f9b3bp+1",
+              "-0x1.0b1ba402f60e1p-6",
+              "-0x1.d2e31b0ff0687p-7",
+              "0x1.e0005ee6043bap-8",
+              "-0x1.2f76ae359e407p-7"
+            ]
+          },
+          "linear_scaler": {
+            "_type": "ColumnScaler",
+            "fields": {
+              "mean": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  18
+                ],
+                "values": [
+                  "0x1.ff7e79d986b62p-2",
+                  "0x1.0040c3133ca4ep-1",
+                  "0x1.043ff6cf749b4p-2",
+                  "0x1.fa7fed7657a78p-3",
+                  "0x1.f67fd84b02bc8p-3",
+                  "0x1.0340264fde32cp-2",
+                  "-0x1.02671b329053dp-7",
+                  "0x1.7cd1f483c3fedp-9",
+                  "-0x1.f02286dd2ca1dp-8",
+                  "-0x1.1519034572930p-10",
+                  "0x1.f64794dd9aa73p-13",
+                  "-0x1.d01bf23b8bbcfp-10",
+                  "0x1.d7178ad524560p-13",
+                  "-0x1.c8bf98d86231fp-9",
+                  "0x1.5007b95805f5cp-9",
+                  "0x1.24cf12249c035p-9",
+                  "-0x1.3280dd36c1b2dp-10",
+                  "0x1.830736c153362p-10"
+                ]
+              },
+              "raw_std": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  18
+                ],
+                "values": [
+                  "0x1.ffce0f3897894p-2",
+                  "0x1.ffce0f3897893p-2",
+                  "0x1.bdce3be6359a3p-2",
+                  "0x1.b9c72a4e32f53p-2",
+                  "0x1.b899fb172e634p-2",
+                  "0x1.bd3d1e2342b39p-2",
+                  "0x1.6cd732b16bc01p-1",
+                  "0x1.cb36efc0c663cp-3",
+                  "0x1.6709a350dc31fp-1",
+                  "0x1.cbb3cca0871a9p-3",
+                  "0x1.47a272eae4cddp-3",
+                  "0x1.46c9392e09170p-3",
+                  "0x1.433275e2c43c6p-3",
+                  "0x1.424d05c5f5baep-3",
+                  "0x1.41e053041c480p-3",
+                  "0x1.4112791b3272ep-3",
+                  "0x1.46fef3b79fa33p-3",
+                  "0x1.4629d8c943a38p-3"
+                ]
+              },
+              "replaced_columns": {
+                "_type": "tuple",
+                "items": []
+              },
+              "sample_count": 4096,
+              "scale": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  18
+                ],
+                "values": [
+                  "0x1.ffce0f3897894p-2",
+                  "0x1.ffce0f3897893p-2",
+                  "0x1.bdce3be6359a3p-2",
+                  "0x1.b9c72a4e32f53p-2",
+                  "0x1.b899fb172e634p-2",
+                  "0x1.bd3d1e2342b39p-2",
+                  "0x1.6cd732b16bc01p-1",
+                  "0x1.cb36efc0c663cp-3",
+                  "0x1.6709a350dc31fp-1",
+                  "0x1.cbb3cca0871a9p-3",
+                  "0x1.47a272eae4cddp-3",
+                  "0x1.46c9392e09170p-3",
+                  "0x1.433275e2c43c6p-3",
+                  "0x1.424d05c5f5baep-3",
+                  "0x1.41e053041c480p-3",
+                  "0x1.4112791b3272ep-3",
+                  "0x1.46fef3b79fa33p-3",
+                  "0x1.4629d8c943a38p-3"
+                ]
+              }
+            }
+          },
+          "median_squared_distance": {
+            "_type": "float",
+            "hex": "0x1.4ce0fc8098dc2p+5"
+          },
+          "nystrom_scaler": {
+            "_type": "ColumnScaler",
+            "fields": {
+              "mean": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  16
+                ],
+                "values": [
+                  "0x1.018f3a4abeb1ap-2",
+                  "0x1.e8c6957fccc5ep-7",
+                  "0x1.2b21277e541a8p-5",
+                  "0x1.19e4e37a69226p-5",
+                  "-0x1.2ca6891a93eb9p-9",
+                  "-0x1.33299a00b6de4p-10",
+                  "0x1.63055e16553e0p-10",
+                  "-0x1.b4d35afb63db6p-9",
+                  "0x1.c61c796ce8906p-8",
+                  "-0x1.8c2223ca80462p-9",
+                  "-0x1.81b89a506669bp-10",
+                  "-0x1.40c1696756492p-8",
+                  "-0x1.df0bcca4a4cbfp-10",
+                  "0x1.bf0579b53a0e9p-9",
+                  "-0x1.0259adb420bc0p-9",
+                  "0x1.669e7c88f24d4p-11"
+                ]
+              },
+              "raw_std": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  16
+                ],
+                "values": [
+                  "0x1.cfd8c60ce8fa4p-5",
+                  "0x1.075c9791cf6bap-2",
+                  "0x1.026a4184dcce6p-2",
+                  "0x1.01e9f25d16481p-2",
+                  "0x1.050e5d1bfcd13p-2",
+                  "0x1.04dd7fb59cccfp-2",
+                  "0x1.02cc65223cf1ep-2",
+                  "0x1.0219650ca896ep-2",
+                  "0x1.f4067de13835bp-3",
+                  "0x1.f5e5a6bb7ac11p-3",
+                  "0x1.fb060ad642286p-3",
+                  "0x1.fb9ff4f01a18bp-3",
+                  "0x1.ef5dccb71415ep-3",
+                  "0x1.f1034a62230abp-3",
+                  "0x1.f5ef05f12f12dp-3",
+                  "0x1.f6ab1f09ae816p-3"
+                ]
+              },
+              "replaced_columns": {
+                "_type": "tuple",
+                "items": []
+              },
+              "sample_count": 4096,
+              "scale": {
+                "_type": "array",
+                "dtype": "float64",
+                "shape": [
+                  16
+                ],
+                "values": [
+                  "0x1.cfd8c60ce8fa4p-5",
+                  "0x1.075c9791cf6bap-2",
+                  "0x1.026a4184dcce6p-2",
+                  "0x1.01e9f25d16481p-2",
+                  "0x1.050e5d1bfcd13p-2",
+                  "0x1.04dd7fb59cccfp-2",
+                  "0x1.02cc65223cf1ep-2",
+                  "0x1.0219650ca896ep-2",
+                  "0x1.f4067de13835bp-3",
+                  "0x1.f5e5a6bb7ac11p-3",
+                  "0x1.fb060ad642286p-3",
+                  "0x1.fb9ff4f01a18bp-3",
+                  "0x1.ef5dccb71415ep-3",
+                  "0x1.f1034a62230abp-3",
+                  "0x1.f5ef05f12f12dp-3",
+                  "0x1.f6ab1f09ae816p-3"
+                ]
+              }
+            }
+          },
+          "sigma_squared": {
+            "_type": "float",
+            "hex": "0x1.4ce0fc8098dc2p+1"
+          },
+          "training_count": 4096
+        }
+      },
+      "ridge": {
+        "_type": "RidgeModel",
+        "fields": {
+          "alpha": {
+            "_type": "float",
+            "hex": "0x1.0c6f7a0b5ed8dp-20"
+          },
+          "coefficients": {
+            "_type": "array",
+            "dtype": "float64",
+            "shape": [
+              34
+            ],
+            "values": [
+              "0x1.0faa117902ed6p-9",
+              "-0x1.0faa117fa9daap-9",
+              "-0x1.8989d8eb5659dp-6",
+              "-0x1.c08d8a082d172p-6",
+              "0x1.b521518176f74p-6",
+              "0x1.96874dc077509p-6",
+              "0x1.cb2d758aa1c0dp-6",
+              "0x1.2a37cad11fc97p-10",
+              "-0x1.e741b31ce39abp-6",
+              "-0x1.8ce0f6e261cf8p-10",
+              "0x1.36c2d70f3a805p-5",
+              "0x1.22b7296282016p-5",
+              "0x1.2c60f6f830b43p-5",
+              "0x1.50546da945380p-5",
+              "-0x1.2ed878f8a9528p-5",
+              "-0x1.55917007163c2p-5",
+              "-0x1.3bca56b739f3dp-5",
+              "-0x1.2c7b06ef239a7p-5",
+              "-0x1.0f2871ca98937p-7",
+              "0x1.68b9fcaed59e5p-7",
+              "-0x1.a9f1d4fca10c4p-6",
+              "0x1.2015c593e572dp-5",
+              "-0x1.11f2930d13bf9p-6",
+              "-0x1.a94738331ba0fp-7",
+              "0x1.a0a4d3cf8c146p-5",
+              "0x1.a5a0f5c45d046p-5",
+              "-0x1.3d8bb842416b0p-5",
+              "0x1.b4d4600053e4ep-5",
+              "-0x1.adee388b46690p-6",
+              "0x1.04fedc4a6a7d5p-5",
+              "-0x1.016d3ce21cc0fp-3",
+              "-0x1.30e9324c3eeb4p-5",
+              "0x1.fb694aac2f094p-4",
+              "0x1.5bf523d536de2p-6"
+            ]
+          },
+          "diagnostics": {
+            "all_feature_columns_retained": true,
+            "alpha": {
+              "_type": "float",
+              "hex": "0x1.0c6f7a0b5ed8dp-20"
+            },
+            "coefficient_penalty_diagnostic": {
+              "_type": "float",
+              "hex": "0x1.0dce2d329e8e3p-24"
+            },
+            "diagnostic_numerical_rank": 15,
+            "diagnostic_rank_threshold": {
+              "_type": "float",
+              "hex": "0x1.0ea946a04f791p-33"
+            },
+            "dtype": "float64",
+            "feature_count": 34,
+            "inference": "one-row math.fsum of intercept and coefficient-feature products",
+            "intercept_check_tolerance": {
+              "_type": "float",
+              "hex": "0x1.b7cdfd9d7bdbbp-34"
+            },
+            "intercept_mean_residual_abs": {
+              "_type": "float",
+              "hex": "0x1.4800000000000p-56"
+            },
+            "intercept_penalized": false,
+            "normal_equation_relative_residual": {
+              "_type": "float",
+              "hex": "0x1.ff0be2cd7d90fp-50"
+            },
+            "normal_equation_residual_inf": {
+              "_type": "float",
+              "hex": "0x1.0000000000000p-37"
+            },
+            "normal_equation_residual_scale": {
+              "_type": "float",
+              "hex": "0x1.007a48e6f87b5p+12"
+            },
+            "normal_equation_tolerance": {
+              "_type": "float",
+              "hex": "0x1.b7cdfd9d7bdbbp-34"
+            },
+            "normal_matrix_penalty": {
+              "_type": "float",
+              "hex": "0x1.0c6f7a0b5ed8dp-8"
+            },
+            "numerical_enclosure_claimed": false,
+            "objective": "mean((y-b-Xw)^2) + alpha*sum(w^2)",
+            "output_clipping": "[0,1], after finite affine readout",
+            "rank_threshold_used_to_drop_columns": false,
+            "singular_values": [
+              {
+                "_type": "float",
+                "hex": "0x1.0ea946a04f791p+7"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.040efdb237498p+7"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.d2c74fc95d1c1p+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.bb4e3e622701bp+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.babaf57b20bf1p+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.713901bc7c4bap+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.6e15de2832401p+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.6ba915cafcc22p+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.6a2e12ec84a26p+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.67fe5761223e4p+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.67cb6bffc5bfbp+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.000941cbb7a94p+6"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.fff90c4356c4bp+5"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.fea17b59977d5p+5"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.fe9734cc3c1d1p+5"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.4186fc2a3d006p-42"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.c02eb69f0e7ecp-43"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.8ced08dd06f1fp-43"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.3c1e5aac0e6adp-43"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.e39009e9ce706p-44"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.b8519e4796976p-44"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.a23c67fe736d2p-44"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.63fa78e8e944cp-44"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.e5b45becd2ec5p-45"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.e4e85861bf41fp-45"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.7100469a7db69p-45"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.3a89a21ea3aa7p-45"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.2af3d9155c376p-46"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.c1ea144d2d5a9p-47"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.c1ea144d2d5a9p-47"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.c1ea144d2d5a9p-47"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.c1ea144d2d5a9p-47"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.9b7e87b40eb77p-47"
+              },
+              {
+                "_type": "float",
+                "hex": "0x1.7ec6bd13171a2p-49"
+              }
+            ],
+            "solver": "numpy.linalg.svd(full_matrices=False)",
+            "solver_recovery_used": false,
+            "svd_check_tolerance": {
+              "_type": "float",
+              "hex": "0x1.b7cdfd9d7bdbbp-34"
+            },
+            "svd_reconstruction_fro": {
+              "_type": "float",
+              "hex": "0x1.1fe961f0e91d8p-40"
+            },
+            "svd_reconstruction_relative_fro": {
+              "_type": "float",
+              "hex": "0x1.8b02f35d455a8p-49"
+            },
+            "svd_u_orthogonality_inf": {
+              "_type": "float",
+              "hex": "0x1.ca706ee000000p-46"
+            },
+            "svd_v_orthogonality_inf": {
+              "_type": "float",
+              "hex": "0x1.9be92796a0387p-48"
+            },
+            "training_count": 4096,
+            "training_objective_diagnostic": {
+              "_type": "float",
+              "hex": "0x1.bcc8237f40a96p-5"
+            },
+            "training_rows": "all supplied occurrences, including duplicates",
+            "training_unclipped_mse_diagnostic": {
+              "_type": "float",
+              "hex": "0x1.bcc801c57b031p-5"
+            },
+            "version": "centered-svd-scalar-float64-v1"
+          },
+          "feature_mean": {
+            "_type": "array",
+            "dtype": "float64",
+            "shape": [
+              34
+            ],
+            "values": [
+              "0x1.d2f0000000000p-53",
+              "0x1.df80000000000p-55",
+              "0x1.f1c0000000000p-55",
+              "0x1.6c00000000000p-56",
+              "0x1.a940000000000p-55",
+              "-0x1.4520000000000p-53",
+              "-0x1.73fc000000000p-55",
+              "-0x1.40bcc00000000p-53",
+              "0x1.0340000000000p-54",
+              "-0x1.5000000000000p-60",
+              "-0x1.5ebe200000000p-56",
+              "0x1.c347c00000000p-53",
+              "0x1.c1ec800000000p-56",
+              "0x1.1c00000000000p-55",
+              "-0x1.26c5000000000p-54",
+              "0x1.e571c00000000p-53",
+              "-0x1.3640000000000p-53",
+              "0x1.bf00000000000p-54",
+              "-0x1.f3d0000000000p-54",
+              "0x1.4800000000000p-57",
+              "-0x1.0800000000000p-57",
+              "0x1.73a0000000000p-56",
+              "-0x1.68b4200000000p-54",
+              "0x1.bd40000000000p-54",
+              "-0x1.7500000000000p-56",
+              "-0x1.da98000000000p-58",
+              "0x1.1088000000000p-52",
+              "-0x1.a980000000000p-55",
+              "0x1.c700000000000p-56",
+              "0x1.1c78000000000p-54",
+              "-0x1.947a000000000p-55",
+              "0x1.1540000000000p-55",
+              "-0x1.5e40000000000p-54",
+              "0x1.f0fa600000000p-52"
+            ]
+          },
+          "intercept": {
+            "_type": "float",
+            "hex": "0x1.fa50000000000p-2"
+          },
+          "target_mean": {
+            "_type": "float",
+            "hex": "0x1.fa50000000000p-2"
+          },
+          "training_count": 4096
+        }
+      }
+    }
+  },
+  "state_sha256": "634713f9e83000765282d0d8eb585a3d52a3ce2ffdeb97465a634e4230179a90",
+  "status": "development_candidate"
+}

@@ -1,0 +1,15 @@
+{
+  "browser_rendering_performed": false,
+  "code_cells": 7,
+  "embedded_png_count": 1,
+  "external_scripts": [],
+  "html_bytes": 119462,
+  "html_sha256": "e9df74daaca917848297baf323cab9b541853374647051da4d027c9992af8bae",
+  "html_structure_and_result_content_checked": true,
+  "jupyter_server_or_browser_kernel_execution_claimed": false,
+  "notebook_cells": 16,
+  "pandoc_conversion_passed": true,
+  "saved_outputs": "executed archive inspection",
+  "schema": "kahm.public_notebook_html_validation.v1",
+  "status": "passed"
+}

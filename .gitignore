@@ -1,0 +1,27 @@
+# Local Python environments and generated build output.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Fresh user experiments and CI working directories.
+runs/
+ci-artifacts/
+
+# Editor and operating-system files.
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local environment configuration; no credentials belong in this repository.
+.env
+.env.*
+
+# Retain the one validated release wheel so the manifest also holds in a checkout.
+dist/*
+!dist/kahm_demonstrator-0.1.0-py3-none-any.whl

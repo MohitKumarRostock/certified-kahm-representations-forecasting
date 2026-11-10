@@ -1,0 +1,102 @@
+{
+  "candidate_id": "kahm_mem",
+  "predictions": [
+    {
+      "current_state": 0,
+      "history_id": 0,
+      "prediction_hex": "0x1.b536f97f7c3fbp-4",
+      "previous_state": 0
+    },
+    {
+      "current_state": 1,
+      "history_id": 1,
+      "prediction_hex": "0x1.36db75a606b36p-2",
+      "previous_state": 0
+    },
+    {
+      "current_state": 2,
+      "history_id": 2,
+      "prediction_hex": "0x1.6b08cf40024c3p-1",
+      "previous_state": 0
+    },
+    {
+      "current_state": 3,
+      "history_id": 3,
+      "prediction_hex": "0x1.ce9d30099177dp-1",
+      "previous_state": 0
+    },
+    {
+      "current_state": 0,
+      "history_id": 4,
+      "prediction_hex": "0x1.3807c2138375cp-2",
+      "previous_state": 1
+    },
+    {
+      "current_state": 1,
+      "history_id": 5,
+      "prediction_hex": "0x1.708f6668e0022p-1",
+      "previous_state": 1
+    },
+    {
+      "current_state": 2,
+      "history_id": 6,
+      "prediction_hex": "0x1.d67ff5190464cp-1",
+      "previous_state": 1
+    },
+    {
+      "current_state": 3,
+      "history_id": 7,
+      "prediction_hex": "0x1.ac4a7b875d0b6p-4",
+      "previous_state": 1
+    },
+    {
+      "current_state": 0,
+      "history_id": 8,
+      "prediction_hex": "0x1.65b7f411ac165p-1",
+      "previous_state": 2
+    },
+    {
+      "current_state": 1,
+      "history_id": 9,
+      "prediction_hex": "0x1.c230a14165253p-1",
+      "previous_state": 2
+    },
+    {
+      "current_state": 2,
+      "history_id": 10,
+      "prediction_hex": "0x1.ba4609a60b21cp-4",
+      "previous_state": 2
+    },
+    {
+      "current_state": 3,
+      "history_id": 11,
+      "prediction_hex": "0x1.36b5b4f98faf1p-2",
+      "previous_state": 2
+    },
+    {
+      "current_state": 0,
+      "history_id": 12,
+      "prediction_hex": "0x1.c63e65510fbcap-1",
+      "previous_state": 3
+    },
+    {
+      "current_state": 1,
+      "history_id": 13,
+      "prediction_hex": "0x1.0aa0e271670abp-4",
+      "previous_state": 3
+    },
+    {
+      "current_state": 2,
+      "history_id": 14,
+      "prediction_hex": "0x1.26969eab1bcc0p-2",
+      "previous_state": 3
+    },
+    {
+      "current_state": 3,
+      "history_id": 15,
+      "prediction_hex": "0x1.6822abce9e21ep-1",
+      "previous_state": 3
+    }
+  ],
+  "schema": "kahm.prediction_table.v1"
+}

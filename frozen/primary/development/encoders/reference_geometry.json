@@ -1,0 +1,344 @@
+{
+  "partitions": [
+    {
+      "attempts": [
+        {
+          "empty_groups": [],
+          "group_count": 2,
+          "initial_reference_indices": [
+            1,
+            15
+          ],
+          "iterations": 3,
+          "status": "converged"
+        }
+      ],
+      "cluster_weighting": "all training occurrence counts",
+      "distance_ties": "first lexicographic distinct row; assignment ties use first center",
+      "distinct_count": 16,
+      "dtype": "float64",
+      "effective_groups": 2,
+      "groups": [
+        {
+          "centroid": [
+            -0.9492452753373704,
+            -0.0003245357917091751
+          ],
+          "distinct_member_count": 8,
+          "group_id": 0,
+          "member_indices": [
+            1,
+            33,
+            63,
+            0,
+            2,
+            8,
+            24,
+            3
+          ],
+          "member_multiplicities": [
+            267,
+            252,
+            232,
+            254,
+            265,
+            257,
+            256,
+            263
+          ],
+          "partition_id": 0,
+          "reference_count": 8,
+          "reference_indices": [
+            1,
+            33,
+            63,
+            0,
+            2,
+            8,
+            24,
+            3
+          ],
+          "reference_multiplicities": [
+            267,
+            252,
+            232,
+            254,
+            265,
+            257,
+            256,
+            263
+          ],
+          "reference_weighting_for_pca": "one equal weight per selected distinct reference",
+          "row_identity": "first zero-based row index in the supplied training matrix",
+          "training_occurrence_count": 2046
+        },
+        {
+          "centroid": [
+            0.9473930894342731,
+            0.000323902551139931
+          ],
+          "distinct_member_count": 8,
+          "group_id": 1,
+          "member_indices": [
+            41,
+            5,
+            6,
+            17,
+            23,
+            4,
+            7,
+            15
+          ],
+          "member_multiplicities": [
+            263,
+            263,
+            257,
+            248,
+            246,
+            265,
+            272,
+            236
+          ],
+          "partition_id": 0,
+          "reference_count": 8,
+          "reference_indices": [
+            41,
+            5,
+            6,
+            17,
+            23,
+            4,
+            7,
+            15
+          ],
+          "reference_multiplicities": [
+            263,
+            263,
+            257,
+            248,
+            246,
+            265,
+            272,
+            236
+          ],
+          "reference_weighting_for_pca": "one equal weight per selected distinct reference",
+          "row_identity": "first zero-based row index in the supplied training matrix",
+          "training_occurrence_count": 2050
+        }
+      ],
+      "initial_groups": 2,
+      "initialization": "first lexicographic row, then farthest from selected centers",
+      "max_iteration_behavior": "retain last assignments and their weighted means; mark nonconvergence",
+      "max_lloyd_iterations": 150,
+      "partition_id": 0,
+      "reference_budget_per_group": 24,
+      "reference_order": "lexicographic when all fit; farthest-first when budget binds",
+      "requested_groups": 2,
+      "training_count": 4096,
+      "unique_shortage_reduction": false,
+      "version": "weighted-distinct-farthest-first-float64-v1",
+      "weighted_inertia": 4508.432305558612
+    },
+    {
+      "attempts": [
+        {
+          "empty_groups": [],
+          "group_count": 4,
+          "initial_reference_indices": [
+            1,
+            15,
+            0,
+            23
+          ],
+          "iterations": 2,
+          "status": "converged"
+        }
+      ],
+      "cluster_weighting": "all training occurrence counts",
+      "distance_ties": "first lexicographic distinct row; assignment ties use first center",
+      "distinct_count": 16,
+      "dtype": "float64",
+      "effective_groups": 4,
+      "groups": [
+        {
+          "centroid": [
+            -0.9539145434934072,
+            -0.9411691345959592
+          ],
+          "distinct_member_count": 4,
+          "group_id": 0,
+          "member_indices": [
+            1,
+            33,
+            2,
+            8
+          ],
+          "member_multiplicities": [
+            267,
+            252,
+            265,
+            257
+          ],
+          "partition_id": 1,
+          "reference_count": 4,
+          "reference_indices": [
+            1,
+            33,
+            2,
+            8
+          ],
+          "reference_multiplicities": [
+            267,
+            252,
+            265,
+            257
+          ],
+          "reference_weighting_for_pca": "one equal weight per selected distinct reference",
+          "row_identity": "first zero-based row index in the supplied training matrix",
+          "training_occurrence_count": 1041
+        },
+        {
+          "centroid": [
+            0.9501905504974077,
+            0.9510261848705694
+          ],
+          "distinct_member_count": 4,
+          "group_id": 1,
+          "member_indices": [
+            6,
+            17,
+            7,
+            15
+          ],
+          "member_multiplicities": [
+            257,
+            248,
+            272,
+            236
+          ],
+          "partition_id": 1,
+          "reference_count": 4,
+          "reference_indices": [
+            6,
+            17,
+            7,
+            15
+          ],
+          "reference_multiplicities": [
+            257,
+            248,
+            272,
+            236
+          ],
+          "reference_weighting_for_pca": "one equal weight per selected distinct reference",
+          "row_identity": "first zero-based row index in the supplied training matrix",
+          "training_occurrence_count": 1013
+        },
+        {
+          "centroid": [
+            -0.9444087498145503,
+            0.9742219590891109
+          ],
+          "distinct_member_count": 4,
+          "group_id": 2,
+          "member_indices": [
+            63,
+            0,
+            24,
+            3
+          ],
+          "member_multiplicities": [
+            232,
+            254,
+            256,
+            263
+          ],
+          "partition_id": 1,
+          "reference_count": 4,
+          "reference_indices": [
+            63,
+            0,
+            24,
+            3
+          ],
+          "reference_multiplicities": [
+            232,
+            254,
+            256,
+            263
+          ],
+          "reference_weighting_for_pca": "one equal weight per selected distinct reference",
+          "row_identity": "first zero-based row index in the supplied training matrix",
+          "training_occurrence_count": 1005
+        },
+        {
+          "centroid": [
+            0.944660371925155,
+            -0.9283756268505786
+          ],
+          "distinct_member_count": 4,
+          "group_id": 3,
+          "member_indices": [
+            41,
+            5,
+            23,
+            4
+          ],
+          "member_multiplicities": [
+            263,
+            263,
+            246,
+            265
+          ],
+          "partition_id": 1,
+          "reference_count": 4,
+          "reference_indices": [
+            41,
+            5,
+            23,
+            4
+          ],
+          "reference_multiplicities": [
+            263,
+            263,
+            246,
+            265
+          ],
+          "reference_weighting_for_pca": "one equal weight per selected distinct reference",
+          "row_identity": "first zero-based row index in the supplied training matrix",
+          "training_occurrence_count": 1037
+        }
+      ],
+      "initial_groups": 4,
+      "initialization": "first lexicographic row, then farthest from selected centers",
+      "max_iteration_behavior": "retain last assignments and their weighted means; mark nonconvergence",
+      "max_lloyd_iterations": 150,
+      "partition_id": 1,
+      "reference_budget_per_group": 24,
+      "reference_order": "lexicographic when all fit; farthest-first when budget binds",
+      "requested_groups": 4,
+      "training_count": 4096,
+      "unique_shortage_reduction": false,
+      "version": "weighted-distinct-farthest-first-float64-v1",
+      "weighted_inertia": 822.4202015425458
+    }
+  ],
+  "shared_across_caps": true,
+  "shared_between_mem_and_local": true,
+  "standardizer": {
+    "dtype": "float64",
+    "fitting_rows": "all training occurrences, including duplicates",
+    "input_dimension": 2,
+    "raw_std": [
+      0.3938910511720764,
+      0.394889970616994
+    ],
+    "replaced_columns": [],
+    "replacement_count": 0,
+    "replacement_rule": "std <= floor becomes 1",
+    "sample_count": 4096,
+    "standard_deviation_floor": 1e-12,
+    "variance_divisor": 4096,
+    "version": "weighted-distinct-farthest-first-float64-v1"
+  }
+}

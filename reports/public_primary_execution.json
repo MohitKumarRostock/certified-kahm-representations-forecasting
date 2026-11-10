@@ -1,0 +1,203 @@
+{
+  "artifacts": {
+    "audit": {
+      "path": "audits/primary/audit.json",
+      "sha256": "65e1bd54dcbc87994f197b15d6fd0f7e56a0f8eb2ef1cb4b699022d2e02c52eb"
+    },
+    "certificate": {
+      "path": "certificates/primary/certificate.json",
+      "sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446"
+    },
+    "freeze": {
+      "path": "frozen/primary/freeze.json",
+      "sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5"
+    }
+  },
+  "audit_summary": {
+    "all_available_endpoints_cover": true,
+    "all_three_covered": true,
+    "all_three_endpoints_available": true,
+    "all_three_population_requirements_met": true,
+    "available_endpoint_count": 3,
+    "candidate_count": 3,
+    "coverage_miss_count": 0,
+    "coverage_outcome": "all_three_covered",
+    "covered_endpoint_count": 3,
+    "population_requirement_met_count": 3,
+    "unavailable_endpoint_count": 0
+  },
+  "automatic_retries_performed": false,
+  "candidates": [
+    {
+      "bank_id": null,
+      "bayes_reference_mse": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "calibration_empirical_mse": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "685942479030621336985628067540446985"
+      },
+      "candidate_id": "raw",
+      "certificate_status": "requirement_met",
+      "empirical_minus_population_risk": {
+        "denominator": "53169119831396634916152282411213783040",
+        "numerator": "428978273959917987615477844915818541"
+      },
+      "exact_population_mse": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617660910893348877587862446939"
+      },
+      "excess_over_bayes_decimal_18_approximate": "0.000187536124516396",
+      "fitted_excess_over_bayes": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "38949729207531184683971121701723"
+      },
+      "frozen_state_sha256": "8348ae41df4888258e760020d55c1af9305bf096d0fb94c0802b80bb632e04bc",
+      "independent_exact_decomposition_checked": true,
+      "issued_upper_endpoint": {
+        "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+        "numerator": "488968561145369732839739125329222577906073475936575667012675"
+      },
+      "issued_upper_endpoint_decimal_18": "0.076071470660035393",
+      "population_audit_path": "population/raw.json",
+      "population_audit_sha256": "a892bc66bca5aaec1fe669aaa289bc19fba9f294c7ec427ec142a1c5ee3feb29",
+      "population_mse_decimal_18_approximate": "0.056437536124516396",
+      "population_requirement_met": true,
+      "prediction_table_sha256": "f75eafd61a4b248d764abdc527b8fc96e3aa8b953c962cf5f7e5159aa73a733e",
+      "primary_mse_tolerance": {
+        "denominator": "10",
+        "numerator": "1"
+      },
+      "realized_coverage": "covered",
+      "upper_minus_empirical_risk": {
+        "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+        "numerator": "74341774310077490001376809373771343277088604334184126972995"
+      },
+      "upper_minus_population_risk": {
+        "denominator": "32138760885179805510839241846823252050444059875655856706027520",
+        "numerator": "631010327272318844427752883953343385381476727170914738869583"
+      }
+    },
+    {
+      "bank_id": "cap_2",
+      "bayes_reference_mse": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "calibration_empirical_mse": {
+        "denominator": "21267647932558653966460912964485513216",
+        "numerator": "1371884978136572561752631146330096251"
+      },
+      "candidate_id": "kahm_mem",
+      "certificate_status": "requirement_met",
+      "empirical_minus_population_risk": {
+        "denominator": "106338239662793269832304564822427566080",
+        "numerator": "857956724580740864111554360033156711"
+      },
+      "exact_population_mse": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617511918206923147658928940087"
+      },
+      "excess_over_bayes_decimal_18_approximate": "0.000187535407142705",
+      "fitted_excess_over_bayes": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "38949580214844758954042188194871"
+      },
+      "frozen_state_sha256": "f1dbda4d5f178bcb930c30565e3ca7b417e50ababf75cb29e4c0f86e2e0bd2c3",
+      "independent_exact_decomposition_checked": true,
+      "issued_upper_endpoint": {
+        "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+        "numerator": "1955874270739427404227185048683186709999020649189588276396481"
+      },
+      "issued_upper_endpoint_decimal_18": "0.076071471677418599",
+      "population_audit_path": "population/kahm_mem.json",
+      "population_audit_sha256": "ddcdf899cb7216f47b29d301a18047f63f5b8e734a6009e88aae20083cd15b43",
+      "population_mse_decimal_18_approximate": "0.056437535407142705",
+      "population_requirement_met": true,
+      "prediction_table_sha256": "d1e1b28ed544842e7b10a135ab56fe9b0f341a57ec2ef92d188113d72974f159",
+      "primary_mse_tolerance": {
+        "denominator": "10",
+        "numerator": "1"
+      },
+      "realized_coverage": "covered",
+      "upper_minus_empirical_risk": {
+        "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+        "numerator": "297367099128673794253575465559510316246249837706159552250305"
+      },
+      "upper_minus_population_risk": {
+        "denominator": "128555043540719222043356967387293008201776239502623426824110080",
+        "numerator": "2524041532101023785603380591418116585850389231176058948798661"
+      }
+    },
+    {
+      "bank_id": "cap_2",
+      "bayes_reference_mse": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "calibration_empirical_mse": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "685942519693215482778597544342018925"
+      },
+      "candidate_id": "kahm_local",
+      "certificate_status": "requirement_met",
+      "empirical_minus_population_risk": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "85795694115626349168420353566512109"
+      },
+      "exact_population_mse": {
+        "denominator": "83076749736557242056487941267521536",
+        "numerator": "4688647074824915106329509302933647"
+      },
+      "excess_over_bayes_decimal_18_approximate": "0.000187536250430780",
+      "fitted_excess_over_bayes": {
+        "denominator": "415383748682786210282439706337607680",
+        "numerator": "77899510717851203260313033177803"
+      },
+      "frozen_state_sha256": "896f3a81086a42fc78b9fb46d299b0df378639afb5fa7c7ffde211a1f84844d1",
+      "independent_exact_decomposition_checked": true,
+      "issued_upper_endpoint": {
+        "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+        "numerator": "977937175273681580006270660570021941086620970155216373286307"
+      },
+      "issued_upper_endpoint_decimal_18": "0.076071474781456121",
+      "population_audit_path": "population/kahm_local.json",
+      "population_audit_sha256": "aa548447257890211a389951101dcadd099120633ab6957ccd9b38791c911738",
+      "population_mse_decimal_18_approximate": "0.056437536250430780",
+      "population_requirement_met": true,
+      "prediction_table_sha256": "52df243696d80ea7c183744090fd93e3c592af142ff6c682c0a50add8311cdb0",
+      "primary_mse_tolerance": {
+        "denominator": "10",
+        "numerator": "1"
+      },
+      "realized_coverage": "covered",
+      "upper_minus_empirical_risk": {
+        "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+        "numerator": "148683552445037138969758318233861125743474030316828866905507"
+      },
+      "upper_minus_population_risk": {
+        "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+        "numerator": "252404182273176740503801806675344689637448004532682087990691"
+      }
+    }
+  ],
+  "completed_stages": [
+    "generate_data",
+    "fit_encoders",
+    "fit_forecasters",
+    "freeze_models",
+    "certify",
+    "audit"
+  ],
+  "elapsed_seconds": 103.32203079999817,
+  "interpretation": "One locally planned execution. Every candidate outcome is retained. Statistical claims retain the conditional iid premise.",
+  "master_seed_integer": "20261110",
+  "pipeline_complete": true,
+  "plan_sha256": "9c19c91a1f2f78e31c2544d2e331c4337364c3bb9a92cee2f0942c4d985b18e4",
+  "record_sha256": "7a171c629f4289ddcd60807ad34b9700e90bfb0bcc16993aa7ddd5151a9d1351",
+  "run_id": "public-v0.1.0",
+  "schema": "kahm.public_primary_execution.v1",
+  "status": "pipeline_complete",
+  "unfavorable_outcomes_filtered": false
+}

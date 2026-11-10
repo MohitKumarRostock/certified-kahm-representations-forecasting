@@ -1,0 +1,102 @@
+{
+  "candidate_id": "raw",
+  "predictions": [
+    {
+      "current_state": 0,
+      "history_id": 0,
+      "prediction_hex": "0x1.b5370c048a506p-4",
+      "previous_state": 0
+    },
+    {
+      "current_state": 1,
+      "history_id": 1,
+      "prediction_hex": "0x1.36db7b67df571p-2",
+      "previous_state": 0
+    },
+    {
+      "current_state": 2,
+      "history_id": 2,
+      "prediction_hex": "0x1.6b08cc637af75p-1",
+      "previous_state": 0
+    },
+    {
+      "current_state": 3,
+      "history_id": 3,
+      "prediction_hex": "0x1.ce9d2cf84e05ep-1",
+      "previous_state": 0
+    },
+    {
+      "current_state": 0,
+      "history_id": 4,
+      "prediction_hex": "0x1.3807c71ee6bb8p-2",
+      "previous_state": 1
+    },
+    {
+      "current_state": 1,
+      "history_id": 5,
+      "prediction_hex": "0x1.708f6965d1ac8p-1",
+      "previous_state": 1
+    },
+    {
+      "current_state": 2,
+      "history_id": 6,
+      "prediction_hex": "0x1.d67ff23349a95p-1",
+      "previous_state": 1
+    },
+    {
+      "current_state": 3,
+      "history_id": 7,
+      "prediction_hex": "0x1.ac4a62c47cf0dp-4",
+      "previous_state": 1
+    },
+    {
+      "current_state": 0,
+      "history_id": 8,
+      "prediction_hex": "0x1.65b7f1942565cp-1",
+      "previous_state": 2
+    },
+    {
+      "current_state": 1,
+      "history_id": 9,
+      "prediction_hex": "0x1.c2309eeafcf79p-1",
+      "previous_state": 2
+    },
+    {
+      "current_state": 2,
+      "history_id": 10,
+      "prediction_hex": "0x1.ba46238dbafd0p-4",
+      "previous_state": 2
+    },
+    {
+      "current_state": 3,
+      "history_id": 11,
+      "prediction_hex": "0x1.36b5bb01f6a2cp-2",
+      "previous_state": 2
+    },
+    {
+      "current_state": 0,
+      "history_id": 12,
+      "prediction_hex": "0x1.c63e628112239p-1",
+      "previous_state": 3
+    },
+    {
+      "current_state": 1,
+      "history_id": 13,
+      "prediction_hex": "0x1.0aa0cbc98d8f1p-4",
+      "previous_state": 3
+    },
+    {
+      "current_state": 2,
+      "history_id": 14,
+      "prediction_hex": "0x1.2696a3b687730p-2",
+      "previous_state": 3
+    },
+    {
+      "current_state": 3,
+      "history_id": 15,
+      "prediction_hex": "0x1.6822ae9f9365cp-1",
+      "previous_state": 3
+    }
+  ],
+  "schema": "kahm.prediction_table.v1"
+}

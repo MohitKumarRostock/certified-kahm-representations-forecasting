@@ -1,0 +1,15 @@
+{
+  "calibration_plan_sha256": "2d0722e21855c984819480ac3cf28cc47ffb6bbc7fed8a1944b546012ac5ada7",
+  "candidate_ids": [
+    "kahm_local",
+    "kahm_mem",
+    "raw"
+  ],
+  "data_path": "episodes.jsonl",
+  "data_sha256": "989274ebc09c533c5fd0b34a26bd028546f82cacc0010f7587c496a9a92d6e85",
+  "dataset_manifest_sha256": "67a389a7ab59552b065c97bc215c693c637a261100cd0849eee8b8dbb433dd3f",
+  "episode_count": 4096,
+  "freeze_record_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5",
+  "schema": "kahm.calibration_receipt.v1",
+  "status": "materialized_after_recorded_freeze"
+}

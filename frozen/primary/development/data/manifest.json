@@ -1,0 +1,98 @@
+{
+  "benchmark_id": "four_state_order2_modular_v1",
+  "calibration_plan": {
+    "path": "calibration_plan.json",
+    "sha256": "2d0722e21855c984819480ac3cf28cc47ffb6bbc7fed8a1944b546012ac5ada7"
+  },
+  "contract_sha256": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+  "development": {
+    "training": {
+      "episode_count": 4096,
+      "path": "development/training.jsonl",
+      "role": "training",
+      "sha256": "3dd4c6c8cf94161130111f5d54b0d16afca524b3fa4ac5df4a33ad1c31eb1d1e",
+      "stream": {
+        "benchmark_id": "four_state_order2_modular_v1",
+        "derivation": {
+          "algorithm": "SHA-256",
+          "canonical_json": "{\"benchmark_id\":\"four_state_order2_modular_v1\",\"master_seed\":\"20261110\",\"namespace\":\"kahm-demonstrator-episode-stream-v1\",\"role\":\"training\",\"run_id\":\"public-v0.1.0\"}",
+          "digest_hex": "a09531481cf8fc03bbbf5854580e5fe1061e726e1fa11ca9dbf38cd98f973b4b",
+          "encoding": "UTF-8; ASCII JSON escapes; sorted keys; compact separators",
+          "integer_interpretation": "unsigned big-endian 256-bit integer",
+          "namespace": "kahm-demonstrator-episode-stream-v1"
+        },
+        "integer_metadata_encoding": "base-10 strings unless marked hexadecimal",
+        "master_seed_integer": "20261110",
+        "rng": {
+          "algorithm": "Mersenne Twister (MT19937)",
+          "implementation": "random.Random",
+          "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+          "python_implementation": "CPython",
+          "python_version": "3.12.14",
+          "state_format_version": 3
+        },
+        "role": "training",
+        "run_id": "public-v0.1.0",
+        "sampler_version": "fresh-pair-ticket-v1",
+        "sampling_rule": {
+          "duplicate_policy": "retain every sampled episode",
+          "episode_dependence": "fresh pair and ticket for every episode",
+          "pair_draw": "pair_id = rng.randrange(16); a, b = divmod(pair_id, 4)",
+          "successor": "(a+b)%4 for tickets 0..15; ticket-16 for tickets 16..19",
+          "ticket_draw": "ticket = rng.randrange(20)"
+        },
+        "seed_hex": "0xa09531481cf8fc03bbbf5854580e5fe1061e726e1fa11ca9dbf38cd98f973b4b",
+        "seed_integer": "72633656115712924598406954822735327926564300535393581843966637295672065735499"
+      }
+    },
+    "validation": {
+      "episode_count": 1024,
+      "path": "development/validation.jsonl",
+      "role": "validation",
+      "sha256": "bc2df457d11b5a7a940263322c6f82f9b63fe272a266604233a43b3cdc252809",
+      "stream": {
+        "benchmark_id": "four_state_order2_modular_v1",
+        "derivation": {
+          "algorithm": "SHA-256",
+          "canonical_json": "{\"benchmark_id\":\"four_state_order2_modular_v1\",\"master_seed\":\"20261110\",\"namespace\":\"kahm-demonstrator-episode-stream-v1\",\"role\":\"validation\",\"run_id\":\"public-v0.1.0\"}",
+          "digest_hex": "ece9e85812e333f81576967f715ef78db811c49837f67baac092c829a8cb0a25",
+          "encoding": "UTF-8; ASCII JSON escapes; sorted keys; compact separators",
+          "integer_interpretation": "unsigned big-endian 256-bit integer",
+          "namespace": "kahm-demonstrator-episode-stream-v1"
+        },
+        "integer_metadata_encoding": "base-10 strings unless marked hexadecimal",
+        "master_seed_integer": "20261110",
+        "rng": {
+          "algorithm": "Mersenne Twister (MT19937)",
+          "implementation": "random.Random",
+          "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+          "python_implementation": "CPython",
+          "python_version": "3.12.14",
+          "state_format_version": 3
+        },
+        "role": "validation",
+        "run_id": "public-v0.1.0",
+        "sampler_version": "fresh-pair-ticket-v1",
+        "sampling_rule": {
+          "duplicate_policy": "retain every sampled episode",
+          "episode_dependence": "fresh pair and ticket for every episode",
+          "pair_draw": "pair_id = rng.randrange(16); a, b = divmod(pair_id, 4)",
+          "successor": "(a+b)%4 for tickets 0..15; ticket-16 for tickets 16..19",
+          "ticket_draw": "ticket = rng.randrange(20)"
+        },
+        "seed_hex": "0xece9e85812e333f81576967f715ef78db811c49837f67baac092c829a8cb0a25",
+        "seed_integer": "107159111211361080469702169268735981891358614453595033149870941067483888159269"
+      }
+    }
+  },
+  "environment": {
+    "python_implementation": "CPython",
+    "python_version": "3.12.14"
+  },
+  "master_seed_integer": "20261110",
+  "package_version": "0.1.0",
+  "run_id": "public-v0.1.0",
+  "sampler_version": "fresh-pair-ticket-v1",
+  "sampling_assumption": "iid episodes from the declared law; PRNG stream metadata provides reproducibility, not a proof of independence",
+  "schema": "kahm.dataset_bundle.v1"
+}

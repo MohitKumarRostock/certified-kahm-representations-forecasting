@@ -1,0 +1,922 @@
+{
+  "bank_order": [
+    "cap_1",
+    "cap_2"
+  ],
+  "banks": [
+    {
+      "bank_id": "cap_1",
+      "cap": 1,
+      "effective_ranks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "feature_table_path": "cap_1_features.json",
+      "feature_table_sha256": "ce28a72218fdbfba888a78c5db8ad1632bd62748067d5979445cead895a26dc4",
+      "feature_widths": {
+        "kahm_local": 12,
+        "kahm_mem": 6,
+        "raw": 2
+      },
+      "model_diagnostics": [
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 1.939011835107664e-16,
+          "covariance_cholesky_residual_inf": 2.220446049250313e-16,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.222589301666854,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.2732373587668766,
+              "inverse_residual_inf": 4.069042533345592e-16,
+              "lambda": 2.5183082404633406,
+              "proposed_lambda": 2.245070881696464,
+              "scaled_inverse_residual_inf": 7.914973328518505e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.02086382291401412,
+              "inverse_residual_inf": 5.801779088239749e-16,
+              "lambda": 2.245070881696464,
+              "proposed_lambda": 2.22420705878245,
+              "scaled_inverse_residual_inf": 1.053041570000992e-16,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.0016177571155959747,
+              "inverse_residual_inf": 6.080528917534789e-16,
+              "lambda": 2.22420705878245,
+              "proposed_lambda": 2.222589301666854,
+              "scaled_inverse_residual_inf": 1.0973125693810652e-16,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.0001255757221616527,
+              "inverse_residual_inf": 4.2990816039662857e-16,
+              "lambda": 2.222589301666854,
+              "proposed_lambda": 2.222463725944692,
+              "scaled_inverse_residual_inf": 7.754787621224814e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.0,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 4,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 4,
+          "rank": 1,
+          "raw_distinct_count": 8,
+          "reference_count": 8,
+          "reference_energy": 1.0073232961853362,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.222463725944692,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 1.939011835107664e-16,
+          "covariance_cholesky_residual_inf": 2.220446049250313e-16,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.2104449220019617,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.2722581420846182,
+              "inverse_residual_inf": 5.868119929050101e-16,
+              "lambda": 2.5050311898894373,
+              "proposed_lambda": 2.232773047804819,
+              "scaled_inverse_residual_inf": 1.1378832709643358e-16,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.02072612704257004,
+              "inverse_residual_inf": 6.028164079019405e-16,
+              "lambda": 2.232773047804819,
+              "proposed_lambda": 2.212046920762249,
+              "scaled_inverse_residual_inf": 1.090441289121668e-16,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.0016019987602873265,
+              "inverse_residual_inf": 5.278678195716904e-16,
+              "lambda": 2.212046920762249,
+              "proposed_lambda": 2.2104449220019617,
+              "scaled_inverse_residual_inf": 9.493918872152284e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.00012395752070126775,
+              "inverse_residual_inf": 3.891229364567189e-16,
+              "lambda": 2.2104449220019617,
+              "proposed_lambda": 2.2103209644812605,
+              "scaled_inverse_residual_inf": 6.995405290790754e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.0,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 4,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 4,
+          "rank": 1,
+          "raw_distinct_count": 8,
+          "reference_count": 8,
+          "reference_energy": 1.002012475955775,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.2103209644812605,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 0.0,
+          "covariance_cholesky_residual_inf": 0.0,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.258907052684437,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.20091979503247837,
+              "inverse_residual_inf": 2.638031657755267e-16,
+              "lambda": 2.481613896323141,
+              "proposed_lambda": 2.2806941012906625,
+              "scaled_inverse_residual_inf": 8.51983443135943e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.019792166370804942,
+              "inverse_residual_inf": 2.321098082475412e-16,
+              "lambda": 2.2806941012906625,
+              "proposed_lambda": 2.2609019349198576,
+              "scaled_inverse_residual_inf": 7.278503705372444e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.0019948822354205475,
+              "inverse_residual_inf": 5.6049652478398195e-16,
+              "lambda": 2.2609019349198576,
+              "proposed_lambda": 2.258907052684437,
+              "scaled_inverse_residual_inf": 1.752115362287322e-16,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.00020151602780105193,
+              "inverse_residual_inf": 2.3245294578089215e-16,
+              "lambda": 2.258907052684437,
+              "proposed_lambda": 2.258705536656636,
+              "scaled_inverse_residual_inf": 7.264183683900388e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.0,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 2,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 2,
+          "rank": 1,
+          "raw_distinct_count": 4,
+          "reference_count": 4,
+          "reference_energy": 0.9926455585292564,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.258705536656636,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 0.0,
+          "covariance_cholesky_residual_inf": 0.0,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.3187023041767927,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.20093937081538593,
+              "inverse_residual_inf": 3.158689538069522e-16,
+              "lambda": 2.5417255340296374,
+              "proposed_lambda": 2.3407861632142515,
+              "scaled_inverse_residual_inf": 1.0284183440078756e-16,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.02003859489017179,
+              "inverse_residual_inf": 1.4051260155412137e-16,
+              "lambda": 2.3407861632142515,
+              "proposed_lambda": 2.3207475683240797,
+              "scaled_inverse_residual_inf": 4.447099716737416e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.002045264147287007,
+              "inverse_residual_inf": 2.883290079932875e-16,
+              "lambda": 2.3207475683240797,
+              "proposed_lambda": 2.3187023041767927,
+              "scaled_inverse_residual_inf": 9.097670046180798e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.000209231278421651,
+              "inverse_residual_inf": 2.42861286636753e-16,
+              "lambda": 2.3187023041767927,
+              "proposed_lambda": 2.318493072898371,
+              "scaled_inverse_residual_inf": 7.660628645118098e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.0,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 2,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 2,
+          "rank": 1,
+          "raw_distinct_count": 4,
+          "reference_count": 4,
+          "reference_energy": 1.016690213611855,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.318493072898371,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 0.0,
+          "covariance_cholesky_residual_inf": 0.0,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.3319435365892645,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.20091472142195776,
+              "inverse_residual_inf": 2.914335439641036e-16,
+              "lambda": 2.5550025846035407,
+              "proposed_lambda": 2.354087863181583,
+              "scaled_inverse_residual_inf": 9.505173337109914e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.020088494969923598,
+              "inverse_residual_inf": 1.7959285047306776e-16,
+              "lambda": 2.354087863181583,
+              "proposed_lambda": 2.3339993682116593,
+              "scaled_inverse_residual_inf": 5.69530209245862e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.002055831622394866,
+              "inverse_residual_inf": 1.2626237948315196e-16,
+              "lambda": 2.3339993682116593,
+              "proposed_lambda": 2.3319435365892645,
+              "scaled_inverse_residual_inf": 3.9920007031968636e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.00021087652829798742,
+              "inverse_residual_inf": 2.4964527934351995e-16,
+              "lambda": 2.3319435365892645,
+              "proposed_lambda": 2.3317326600609665,
+              "scaled_inverse_residual_inf": 7.890505118202749e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.0,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 2,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 2,
+          "rank": 1,
+          "raw_distinct_count": 4,
+          "reference_count": 4,
+          "reference_energy": 1.0220010338414163,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.3317326600609665,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 0.0,
+          "covariance_cholesky_residual_inf": 0.0,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.245734278631575,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.20088616523771075,
+              "inverse_residual_inf": 2.459564796629196e-16,
+              "lambda": 2.4683368457492376,
+              "proposed_lambda": 2.267450680511527,
+              "scaled_inverse_residual_inf": 7.92894195646464e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.01973319999338452,
+              "inverse_residual_inf": 3.0184188481996443e-16,
+              "lambda": 2.267450680511527,
+              "proposed_lambda": 2.2477174805181424,
+              "scaled_inverse_residual_inf": 9.445413486341112e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.0019832018865675316,
+              "inverse_residual_inf": 2.8796409701215e-16,
+              "lambda": 2.2477174805181424,
+              "proposed_lambda": 2.245734278631575,
+              "scaled_inverse_residual_inf": 8.982813447193545e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.00019975536640881586,
+              "inverse_residual_inf": 7.371612739826123e-17,
+              "lambda": 2.245734278631575,
+              "proposed_lambda": 2.245534523265166,
+              "scaled_inverse_residual_inf": 2.2987834636187295e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.0,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 2,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 2,
+          "rank": 1,
+          "raw_distinct_count": 4,
+          "reference_count": 4,
+          "reference_energy": 0.9873347382996951,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.245534523265166,
+          "version": "gaussian-signed-regularized-float64-v1"
+        }
+      ],
+      "regularization_converged": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "regularizers": [
+        2.222589301666854,
+        2.2104449220019617,
+        2.258907052684437,
+        2.3187023041767927,
+        2.3319435365892645,
+        2.245734278631575
+      ],
+      "save_reload_exact_support_match": true,
+      "state_file_sha256": "71ce5d25edc2f2a50814d446a9e291744f9a27e9913d1b6c48732cfa67d7f510",
+      "state_path": "cap_1.json",
+      "support_diagnostics": {
+        "all_features_finite": true,
+        "fallback_count": 0,
+        "fallback_events": [],
+        "local_model_evaluations": 96,
+        "maximum_membership": 0.9999999996151001,
+        "maximum_partition_sum_error": 2.220446049250313e-16,
+        "mem_is_exact_local_prefix": true,
+        "minimum_cancellation_ratio": 0.8098225886724205,
+        "minimum_membership": 3.121694554539557e-20,
+        "rank_zero_evaluations": 0,
+        "support_histories": 16
+      }
+    },
+    {
+      "bank_id": "cap_2",
+      "cap": 2,
+      "effective_ranks": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "feature_table_path": "cap_2_features.json",
+      "feature_table_sha256": "e04c0b4a2bd74fc16b5b72cb9c0b8a9d13ef9ee186500b7ed7ba13090b456797",
+      "feature_widths": {
+        "kahm_local": 18,
+        "kahm_mem": 6,
+        "raw": 2
+      },
+      "model_diagnostics": [
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 1.939011835107664e-16,
+          "covariance_cholesky_residual_inf": 2.220446049250313e-16,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.2808250308616715,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.21411975648337167,
+              "inverse_residual_inf": 5.67396805398822e-16,
+              "lambda": 2.5183082404633406,
+              "proposed_lambda": 2.304188483979969,
+              "scaled_inverse_residual_inf": 1.2699319999739075e-16,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.021200835042706423,
+              "inverse_residual_inf": 5.790652946061494e-16,
+              "lambda": 2.304188483979969,
+              "proposed_lambda": 2.2829876489372625,
+              "scaled_inverse_residual_inf": 1.2368067844685917e-16,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.0021626180755909274,
+              "inverse_residual_inf": 2.784981942675366e-16,
+              "lambda": 2.2829876489372625,
+              "proposed_lambda": 2.2808250308616715,
+              "scaled_inverse_residual_inf": 5.918951137829738e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.00022125651543891678,
+              "inverse_residual_inf": 4.4185269140111777e-16,
+              "lambda": 2.2808250308616715,
+              "proposed_lambda": 2.2806037743462326,
+              "scaled_inverse_residual_inf": 9.385962996888586e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.6330877424143965,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 0,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 8,
+          "rank": 2,
+          "raw_distinct_count": 8,
+          "reference_count": 8,
+          "reference_energy": 1.0073232961853362,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.2806037743462326,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 1.939011835107664e-16,
+          "covariance_cholesky_residual_inf": 2.220446049250313e-16,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.268197911774128,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.21354658689224415,
+              "inverse_residual_inf": 4.1673116288939363e-16,
+              "lambda": 2.5050311898894373,
+              "proposed_lambda": 2.291484602997193,
+              "scaled_inverse_residual_inf": 9.301640580924782e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.021132242022047887,
+              "inverse_residual_inf": 3.520999799838526e-16,
+              "lambda": 2.291484602997193,
+              "proposed_lambda": 2.2703523609751453,
+              "scaled_inverse_residual_inf": 7.498149361645521e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.002154449201017261,
+              "inverse_residual_inf": 3.196518455432862e-16,
+              "lambda": 2.2703523609751453,
+              "proposed_lambda": 2.268197911774128,
+              "scaled_inverse_residual_inf": 6.773359293722322e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.00022030083549484658,
+              "inverse_residual_inf": 6.064722937353622e-16,
+              "lambda": 2.268197911774128,
+              "proposed_lambda": 2.267977610938633,
+              "scaled_inverse_residual_inf": 1.2844464240319994e-16,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.6330877424143965,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 0,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 8,
+          "rank": 2,
+          "raw_distinct_count": 8,
+          "reference_count": 8,
+          "reference_energy": 1.002012475955775,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.267977610938633,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 0.0,
+          "covariance_cholesky_residual_inf": 0.0,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.2753408651081712,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.18389158195273447,
+              "inverse_residual_inf": 2.7420028902469073e-16,
+              "lambda": 2.481613896323141,
+              "proposed_lambda": 2.2977223143704064,
+              "scaled_inverse_residual_inf": 9.901869744811511e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.020118952073663543,
+              "inverse_residual_inf": 2.3838012640268005e-16,
+              "lambda": 2.2977223143704064,
+              "proposed_lambda": 2.277603362296743,
+              "scaled_inverse_residual_inf": 8.455766239866411e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.0022624971885716327,
+              "inverse_residual_inf": 3.0278799951976737e-16,
+              "lambda": 2.277603362296743,
+              "proposed_lambda": 2.2753408651081712,
+              "scaled_inverse_residual_inf": 1.0718123781247517e-16,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.0002552006331577594,
+              "inverse_residual_inf": 2.4107557080377853e-16,
+              "lambda": 2.2753408651081712,
+              "proposed_lambda": 2.2750856644750135,
+              "scaled_inverse_residual_inf": 8.531611853900184e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.6330877424143964,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 0,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 4,
+          "rank": 2,
+          "raw_distinct_count": 4,
+          "reference_count": 4,
+          "reference_energy": 0.9926455585292564,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.2750856644750135,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 0.0,
+          "covariance_cholesky_residual_inf": 0.0,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.336779213119565,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.18254835689835813,
+              "inverse_residual_inf": 4.95865439369962e-17,
+              "lambda": 2.5417255340296374,
+              "proposed_lambda": 2.3591771771312793,
+              "scaled_inverse_residual_inf": 1.8004310628312362e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.020119237232105736,
+              "inverse_residual_inf": 1.6608274005407238e-16,
+              "lambda": 2.3591771771312793,
+              "proposed_lambda": 2.3390579398991735,
+              "scaled_inverse_residual_inf": 5.927858583308003e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.0022787267796084976,
+              "inverse_residual_inf": 2.654535610671605e-16,
+              "lambda": 2.3390579398991735,
+              "proposed_lambda": 2.336779213119565,
+              "scaled_inverse_residual_inf": 9.455664406242257e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.00025887162415560994,
+              "inverse_residual_inf": 3.6453905923059006e-16,
+              "lambda": 2.336779213119565,
+              "proposed_lambda": 2.3365203414954094,
+              "scaled_inverse_residual_inf": 1.2982202518212105e-16,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.6330877424143964,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 0,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 4,
+          "rank": 2,
+          "raw_distinct_count": 4,
+          "reference_count": 4,
+          "reference_energy": 1.016690213611855,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.3365203414954094,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 0.0,
+          "covariance_cholesky_residual_inf": 0.0,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.3503816404372397,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.182224551313106,
+              "inverse_residual_inf": 1.3373049488647374e-16,
+              "lambda": 2.5550025846035407,
+              "proposed_lambda": 2.3727780332904347,
+              "scaled_inverse_residual_inf": 4.861321243808134e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.020114753715303912,
+              "inverse_residual_inf": 2.6933231838223266e-16,
+              "lambda": 2.3727780332904347,
+              "proposed_lambda": 2.3526632795751308,
+              "scaled_inverse_residual_inf": 9.625957090048492e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.002281639137891034,
+              "inverse_residual_inf": 1.8727466854440188e-16,
+              "lambda": 2.3526632795751308,
+              "proposed_lambda": 2.3503816404372397,
+              "scaled_inverse_residual_inf": 6.679929745886394e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.00025959143210174673,
+              "inverse_residual_inf": 2.5135545860274105e-16,
+              "lambda": 2.3503816404372397,
+              "proposed_lambda": 2.350122049005138,
+              "scaled_inverse_residual_inf": 8.963604318268518e-17,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.6330877424143964,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 0,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 4,
+          "rank": 2,
+          "raw_distinct_count": 4,
+          "reference_count": 4,
+          "reference_energy": 1.0220010338414163,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.350122049005138,
+          "version": "gaussian-signed-regularized-float64-v1"
+        },
+        {
+          "converged": true,
+          "covariance_cholesky_relative_residual": 0.0,
+          "covariance_cholesky_residual_inf": 0.0,
+          "dtype": "float64",
+          "fit_uses_future_targets": false,
+          "fitted_lambda": 2.26180348795842,
+          "fixedpoint_reference_energy": "sum(Q**2)/(reference_count*input_dimension), before local centering",
+          "gram_rescaling": "none",
+          "input_dimension": 2,
+          "iteration_records": [
+            {
+              "absolute_change": 0.1841608153608978,
+              "inverse_residual_inf": 1.421125579712582e-16,
+              "lambda": 2.4683368457492376,
+              "proposed_lambda": 2.28417603038834,
+              "scaled_inverse_residual_inf": 5.1256469661851027e-17,
+              "solve_index": 1
+            },
+            {
+              "absolute_change": 0.020114303886176188,
+              "inverse_residual_inf": 2.514443056509832e-16,
+              "lambda": 2.28417603038834,
+              "proposed_lambda": 2.2640617265021636,
+              "scaled_inverse_residual_inf": 8.906725709455132e-17,
+              "solve_index": 2
+            },
+            {
+              "absolute_change": 0.0022582385437437402,
+              "inverse_residual_inf": 2.5205755872760527e-16,
+              "lambda": 2.2640617265021636,
+              "proposed_lambda": 2.26180348795842,
+              "scaled_inverse_residual_inf": 8.909757195069278e-17,
+              "solve_index": 3
+            },
+            {
+              "absolute_change": 0.0002542992865945948,
+              "inverse_residual_inf": 2.854926380234774e-16,
+              "lambda": 2.26180348795842,
+              "proposed_lambda": 2.2615491886718253,
+              "scaled_inverse_residual_inf": 1.008923345842216e-16,
+              "solve_index": 4
+            }
+          ],
+          "iterations": 4,
+          "maximum_inverse_solves": 100,
+          "metric_transform_convention": "log kernel = -0.5*norm((z-q)@metric_transform)**2; includes 1/sqrt(rank)",
+          "minimum_projected_separation": 0.6330877424143964,
+          "numerical_enclosure_claimed": false,
+          "projected_collision_count": 0,
+          "projected_collision_policy": "retain references in the regularized Gaussian computational map",
+          "projected_reference_distinctness_claimed": false,
+          "projected_unique_count": 4,
+          "rank": 2,
+          "raw_distinct_count": 4,
+          "reference_count": 4,
+          "reference_energy": 0.9873347382996951,
+          "regularization_status": "converged",
+          "regularization_tolerance": 0.001,
+          "signed_ratio_tolerance": 1e-10,
+          "solve_residual_tolerance": 1e-10,
+          "unused_next_lambda_proposal": 2.2615491886718253,
+          "version": "gaussian-signed-regularized-float64-v1"
+        }
+      ],
+      "regularization_converged": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "regularizers": [
+        2.2808250308616715,
+        2.268197911774128,
+        2.2753408651081712,
+        2.336779213119565,
+        2.3503816404372397,
+        2.26180348795842
+      ],
+      "save_reload_exact_support_match": true,
+      "state_file_sha256": "a757dd06553e74344cc6208551351eec2c4031b6874c26bd78196b0c4e9a9cbf",
+      "state_path": "cap_2.json",
+      "support_diagnostics": {
+        "all_features_finite": true,
+        "fallback_count": 0,
+        "fallback_events": [],
+        "local_model_evaluations": 96,
+        "maximum_membership": 0.9999999878965654,
+        "maximum_partition_sum_error": 2.220446049250313e-16,
+        "mem_is_exact_local_prefix": true,
+        "minimum_cancellation_ratio": 0.5566856756241537,
+        "minimum_membership": 1.5341499999615403e-21,
+        "rank_zero_evaluations": 0,
+        "support_histories": 16
+      }
+    }
+  ],
+  "calibration_status": "reserved_not_accessed",
+  "contract_sha256": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+  "forecast_models_fitted": false,
+  "geometry_path": "reference_geometry.json",
+  "geometry_sha256": "8a4c3c927ff482d9ea621cfe3e52d3d056993338f782c6fd10819f304b9e5976",
+  "package_version": "0.1.0",
+  "runtime": {
+    "arithmetic": "float64; canonical one-history inference",
+    "canonical_method": "single_history_numpy_float64_v1",
+    "machine": "x86_64",
+    "numpy_build_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-aw1mwcap/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n  - AVX512_SPR\n\n",
+    "numpy_version": "2.3.5",
+    "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "python_implementation": "CPython",
+    "python_version": "3.12.14"
+  },
+  "schema": "kahm.encoder_development_bundle.v1",
+  "scope": "Gaussian KAHM computational encoders; numerical diagnostics are not verified real-arithmetic bounds",
+  "selected_bank_id": null,
+  "selection_rule": "readout development: mean of MEM and LOCAL best validation MSEs; ties follow bank_order",
+  "source_sha256": {
+    "encoder.py": "24f394ba634ea91ead5941153c121d4c469e1251c601306fe65f028bb3c707bd",
+    "encoder_state.py": "62ca70887a22ab5385b396c455f63cba2f83939ccd617e75870a3580e195f927",
+    "encoder_workflow.py": "6988ecde0c400c190c41e42ecbbb23017a7ea0f2ec8477f9e6abd614b0e80f1a",
+    "geometry.py": "17eb6a36ba18e4004a84265963053aefaa2d9fd9456ef4599650ad76a9b77486",
+    "kahm.py": "3c69d3067cf7b606328d3740e4e19021b46c203777199072b3eeaf591a61c20a",
+    "soft_state.py": "ab4023a1bcfdabc5ce67115e11d3b7eb98eea7cc168e46b21503369241e73ea3"
+  },
+  "statistical_certificate_issued": false,
+  "status": "development_banks_unselected",
+  "training_provenance": {
+    "calibration_used": false,
+    "dataset_manifest_sha256": "67a389a7ab59552b065c97bc215c693c637a261100cd0849eee8b8dbb433dd3f",
+    "role": "training",
+    "run_id": "public-v0.1.0",
+    "targets_used": false,
+    "training_data_sha256": "3dd4c6c8cf94161130111f5d54b0d16afca524b3fa4ac5df4a33ad1c31eb1d1e",
+    "training_episode_count": 4096,
+    "validation_used": false
+  }
+}

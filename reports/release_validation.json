@@ -1,0 +1,106 @@
+{
+  "citation_schema": "CFF 1.2.0",
+  "citation_schema_validation": "passed",
+  "copyright": "Copyright 2026 Mohit Kumar",
+  "date": "2026-11-10",
+  "html": {
+    "browser_rendering_claimed": false,
+    "jupyter_browser_kernel_claimed": false,
+    "plot_visually_inspected": true,
+    "report": "reports/notebook_html_validation.json",
+    "status": "passed"
+  },
+  "installed_wheel_validation": "reports/installed_wheel_validation.json",
+  "interpretation": "Validation applies to this public source and evidence edition. Statistical claims retain their conditional iid sampling premises; one realized finite-law audit is not an estimate of long-run coverage.",
+  "license": "Apache-2.0",
+  "license_text_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "notebooks": {
+    "inspect": {
+      "code_cells_executed": 7,
+      "elapsed_seconds": 0.509,
+      "report": "reports/notebook_inspect.json",
+      "status": "passed"
+    },
+    "verify": {
+      "code_cells_executed": 7,
+      "elapsed_seconds": 26.923,
+      "report": "reports/notebook_verify.json",
+      "status": "passed"
+    }
+  },
+  "package_version": "0.1.0",
+  "presentation_source_update_after_issuance": [
+    "kahm_demo/tutorial.py"
+  ],
+  "primary_execution": {
+    "artifacts": {
+      "audit": {
+        "path": "audits/primary/audit.json",
+        "sha256": "65e1bd54dcbc87994f197b15d6fd0f7e56a0f8eb2ef1cb4b699022d2e02c52eb"
+      },
+      "certificate": {
+        "path": "certificates/primary/certificate.json",
+        "sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446"
+      },
+      "freeze": {
+        "path": "frozen/primary/freeze.json",
+        "sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5"
+      }
+    },
+    "automatic_retries_performed": false,
+    "completed_stages": [
+      "generate_data",
+      "fit_encoders",
+      "fit_forecasters",
+      "freeze_models",
+      "certify",
+      "audit"
+    ],
+    "elapsed_seconds": 103.32203079999817,
+    "master_seed_integer": "20261110",
+    "plan_sha256": "9c19c91a1f2f78e31c2544d2e331c4337364c3bb9a92cee2f0942c4d985b18e4",
+    "run_id": "public-v0.1.0",
+    "unfavorable_outcomes_filtered": false
+  },
+  "remote_ci_result_claimed": false,
+  "runtime": {
+    "machine": "x86_64",
+    "numpy_version": "2.3.5",
+    "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "python_implementation": "CPython",
+    "python_version": "3.12.14"
+  },
+  "schema": "kahm.public_release_validation.v1",
+  "scientific_artifacts_unchanged_after_issuance": true,
+  "scientific_inventory_count": 552,
+  "software_author": "Mohit Kumar",
+  "standalone_content_check": {
+    "external_document_reference_matches": 0,
+    "status": "passed",
+    "text_files_scanned": 668,
+    "wheel_members_scanned": 41
+  },
+  "status": "passed",
+  "tests": {
+    "initial_portable_failure": "One presentation test expected 278 frozen payloads from an earlier snapshot. The public freeze includes 286 payloads, including all 34 current package files. Its assertion was corrected; the complete portable gate then passed. No scientific artifact was changed or primary experiment repeated.",
+    "initial_portable_report": "reports/portable_tests.json",
+    "portable": {
+      "elapsed_seconds": 385.108,
+      "path": "reports/portable_tests_final.json",
+      "status": "passed",
+      "tests_run": 412
+    },
+    "strict_primary": {
+      "elapsed_seconds": 26.166,
+      "path": "reports/strict_primary_tests.json",
+      "status": "passed",
+      "tests_run": 3
+    },
+    "total_passed": 415
+  },
+  "wheel": {
+    "bytes": 157058,
+    "path": "dist/kahm_demonstrator-0.1.0-py3-none-any.whl",
+    "sha256": "d34201a61cbbd5de90ae9980c2af85a18ae4a954f1525e83e9ab928787955fc0"
+  }
+}

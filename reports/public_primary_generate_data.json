@@ -1,0 +1,20 @@
+{
+  "plan_sha256": "9c19c91a1f2f78e31c2544d2e331c4337364c3bb9a92cee2f0942c4d985b18e4",
+  "record_sha256": "1a42d2380cf30c04d9ea6e3863e13922ece58bcdb82ec729dacd15279ec04c4e",
+  "result": {
+    "calibration_count_reserved": 4096,
+    "calibration_state": "reserved_not_materialized",
+    "contract_sha256": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+    "development_counts": {
+      "training": 4096,
+      "validation": 1024
+    },
+    "freeze_artifacts_rechecked": false,
+    "note": "Integrity checks establish file consistency, not execution chronology or a risk certificate.",
+    "run_id": "public-v0.1.0",
+    "schema": "kahm.bundle_verification.v1",
+    "status": "passed"
+  },
+  "schema": "kahm.public_primary_stage_result.v1",
+  "stage": "generate_data"
+}

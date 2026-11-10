@@ -1,0 +1,144 @@
+{
+  "plan_sha256": "9c19c91a1f2f78e31c2544d2e331c4337364c3bb9a92cee2f0942c4d985b18e4",
+  "record_sha256": "971272fada609464c40ec6c283860f6c372dd216db66bbd63e575a77a5e7aff2",
+  "result": {
+    "all_three_requirements_met": true,
+    "any_kahm_requirement_met": true,
+    "calibration_action": "materialize_reserved_stream",
+    "calibration_count": 4096,
+    "candidates": [
+      {
+        "bank_id": null,
+        "bound_path": "bounds/raw.json",
+        "bound_sha256": "d15f5b7b80365400e89cb0bb081b15e25e7927c604018a1ab531dbf4f0ca7fbb",
+        "candidate_id": "raw",
+        "empirical_mse": {
+          "denominator": "10633823966279326983230456482242756608",
+          "numerator": "685942479030621336985628067540446985"
+        },
+        "failure": null,
+        "frozen_state_sha256": "8348ae41df4888258e760020d55c1af9305bf096d0fb94c0802b80bb632e04bc",
+        "status": "requirement_met",
+        "upper_endpoint": {
+          "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+          "numerator": "488968561145369732839739125329222577906073475936575667012675"
+        },
+        "upper_endpoint_decimal_18": "0.076071470660035393"
+      },
+      {
+        "bank_id": "cap_2",
+        "bound_path": "bounds/kahm_mem.json",
+        "bound_sha256": "f8616669d1a3a8a15bd93d62353d3853eefcb7816a2b4116c04ec855d0d0db8b",
+        "candidate_id": "kahm_mem",
+        "empirical_mse": {
+          "denominator": "21267647932558653966460912964485513216",
+          "numerator": "1371884978136572561752631146330096251"
+        },
+        "failure": null,
+        "frozen_state_sha256": "f1dbda4d5f178bcb930c30565e3ca7b417e50ababf75cb29e4c0f86e2e0bd2c3",
+        "status": "requirement_met",
+        "upper_endpoint": {
+          "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+          "numerator": "1955874270739427404227185048683186709999020649189588276396481"
+        },
+        "upper_endpoint_decimal_18": "0.076071471677418599"
+      },
+      {
+        "bank_id": "cap_2",
+        "bound_path": "bounds/kahm_local.json",
+        "bound_sha256": "abe9301dcaacd310be96fc4865dae97b6be8fc2cab0d32e21d89774638646268",
+        "candidate_id": "kahm_local",
+        "empirical_mse": {
+          "denominator": "10633823966279326983230456482242756608",
+          "numerator": "685942519693215482778597544342018925"
+        },
+        "failure": null,
+        "frozen_state_sha256": "896f3a81086a42fc78b9fb46d299b0df378639afb5fa7c7ffde211a1f84844d1",
+        "status": "requirement_met",
+        "upper_endpoint": {
+          "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+          "numerator": "977937175273681580006270660570021941086620970155216373286307"
+        },
+        "upper_endpoint_decimal_18": "0.076071474781456121"
+      }
+    ],
+    "certificate_path": "/workspace/scratch/f3abdf0f96c1/certified_kahm_public/certificates/primary/certificate.json",
+    "certificate_sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446",
+    "freeze_record_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5",
+    "status": "assessment_complete",
+    "verification": {
+      "all_episode_losses_recomputed_exactly": true,
+      "calibration_count": 4096,
+      "calibration_protocol_sha256": "26d62b5c737e67f4cdb08250f10eddc8bf1c06c996b034c6bc6e1356f4e19c04",
+      "calibration_resampled": false,
+      "candidate_ids": [
+        "raw",
+        "kahm_mem",
+        "kahm_local"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "raw",
+          "empirical_mse": {
+            "denominator": "10633823966279326983230456482242756608",
+            "numerator": "685942479030621336985628067540446985"
+          },
+          "endpoint_verified": true,
+          "status": "requirement_met",
+          "upper_endpoint": {
+            "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+            "numerator": "488968561145369732839739125329222577906073475936575667012675"
+          },
+          "upper_endpoint_decimal_18": "0.076071470660035393"
+        },
+        {
+          "candidate_id": "kahm_mem",
+          "empirical_mse": {
+            "denominator": "21267647932558653966460912964485513216",
+            "numerator": "1371884978136572561752631146330096251"
+          },
+          "endpoint_verified": true,
+          "status": "requirement_met",
+          "upper_endpoint": {
+            "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+            "numerator": "1955874270739427404227185048683186709999020649189588276396481"
+          },
+          "upper_endpoint_decimal_18": "0.076071471677418599"
+        },
+        {
+          "candidate_id": "kahm_local",
+          "empirical_mse": {
+            "denominator": "10633823966279326983230456482242756608",
+            "numerator": "685942519693215482778597544342018925"
+          },
+          "endpoint_verified": true,
+          "status": "requirement_met",
+          "upper_endpoint": {
+            "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+            "numerator": "977937175273681580006270660570021941086620970155216373286307"
+          },
+          "upper_endpoint_decimal_18": "0.076071474781456121"
+        }
+      ],
+      "certificate_sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446",
+      "certifier_runtime_matches": true,
+      "certifier_source_identity_matches": true,
+      "direct_verification_work": {
+        "maximum_integer_bits": 32768,
+        "maximum_integer_bits_seen": 524,
+        "maximum_series_terms": 1000000,
+        "series_terms": 2304
+      },
+      "freeze_record_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5",
+      "interpretation": "Exact observed losses and direct numerical endpoint checks pass. Statistical coverage is conditional on the declared iid evaluation premises.",
+      "model_population_risk_evaluated": false,
+      "models_refitted": false,
+      "root_search_repeated": false,
+      "sampling_premise_status": "declared statistical model; not independently proved by deterministic PRNG metadata",
+      "schema": "kahm.certificate_verification.v1",
+      "status": "passed"
+    }
+  },
+  "schema": "kahm.public_primary_stage_result.v1",
+  "stage": "certify"
+}

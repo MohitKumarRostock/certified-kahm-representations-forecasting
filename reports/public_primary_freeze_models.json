@@ -1,0 +1,76 @@
+{
+  "plan_sha256": "9c19c91a1f2f78e31c2544d2e331c4337364c3bb9a92cee2f0942c4d985b18e4",
+  "record_sha256": "d368b429a2aa18b8aa6ce369f1afbe662b064802c347edca9caf8adc0d004b91",
+  "result": {
+    "calibration_status": "reserved_not_materialized",
+    "candidate_ids": [
+      "raw",
+      "kahm_mem",
+      "kahm_local"
+    ],
+    "freeze_path": "/workspace/scratch/f3abdf0f96c1/certified_kahm_public/frozen/primary/freeze.json",
+    "freeze_record_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5",
+    "record_payload_sha256": "d942a1dde147f88a9828693106f9de2446f73628d70a4b2ae88d2e791d41d8f0",
+    "selected_shared_bank": "cap_2",
+    "statistical_certificate_issued": false,
+    "status": "frozen",
+    "verification": {
+      "all_225_development_candidate_states_replayed": true,
+      "calibration_count_reserved": 4096,
+      "calibration_outcomes_accessed": false,
+      "calibration_protocol_sha256": "26d62b5c737e67f4cdb08250f10eddc8bf1c06c996b034c6bc6e1356f4e19c04",
+      "candidate_ids": [
+        "raw",
+        "kahm_mem",
+        "kahm_local"
+      ],
+      "exact_development_losses_and_selection_checked": true,
+      "external_dataset_identity_checked": true,
+      "freeze_record_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5",
+      "freeze_status": "frozen",
+      "interpretation": "The selected computational family and calibration protocol are frozen and checked; no statistical risk certificate has been issued.",
+      "model_artifacts_byte_identical_to_selected_development": true,
+      "model_population_risk_evaluated": false,
+      "models_refitted": false,
+      "record_payload_sha256": "d942a1dde147f88a9828693106f9de2446f73628d70a4b2ae88d2e791d41d8f0",
+      "runtime_metadata_matches": true,
+      "schema": "kahm.freeze_verification.v1",
+      "selected_models": [
+        {
+          "all_16_predictions_match_exactly": true,
+          "bank_id": null,
+          "candidate_id": "raw",
+          "clipping_count_on_support": 0,
+          "encoder_fallback_events": [],
+          "scalar_batch_exact_match": true,
+          "state_sha256": "8348ae41df4888258e760020d55c1af9305bf096d0fb94c0802b80bb632e04bc"
+        },
+        {
+          "all_16_predictions_match_exactly": true,
+          "bank_id": "cap_2",
+          "candidate_id": "kahm_mem",
+          "clipping_count_on_support": 0,
+          "encoder_fallback_events": [],
+          "scalar_batch_exact_match": true,
+          "state_sha256": "f1dbda4d5f178bcb930c30565e3ca7b417e50ababf75cb29e4c0f86e2e0bd2c3"
+        },
+        {
+          "all_16_predictions_match_exactly": true,
+          "bank_id": "cap_2",
+          "candidate_id": "kahm_local",
+          "clipping_count_on_support": 0,
+          "encoder_fallback_events": [],
+          "scalar_batch_exact_match": true,
+          "state_sha256": "896f3a81086a42fc78b9fb46d299b0df378639afb5fa7c7ffde211a1f84844d1"
+        }
+      ],
+      "selected_shared_bank": "cap_2",
+      "self_contained_development_snapshot_checked": true,
+      "source_identity_matches": true,
+      "statistical_certificate_issued": false,
+      "status": "passed"
+    }
+  },
+  "schema": "kahm.public_primary_stage_result.v1",
+  "stage": "freeze_models"
+}

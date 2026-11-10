@@ -1,0 +1,13 @@
+{
+  "content_status": "self_contained_public_edition",
+  "copyright_holder": "Mohit Kumar",
+  "copyright_year": 2026,
+  "license": "Apache-2.0",
+  "local_validation_status": "passed",
+  "package_version": "0.1.0",
+  "primary_run": "public-v0.1.0",
+  "repository_destination": "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting",
+  "schema": "kahm.release_preparation_snapshot.v1",
+  "scope": "This file records release preparation. GitHub commit, tag, release, and workflow records establish actual remote publication state; this preparation record does not assert a remote CI outcome.",
+  "software_author": "Mohit Kumar"
+}

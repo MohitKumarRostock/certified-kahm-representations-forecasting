@@ -1,0 +1,5 @@
+# Version pins for the supplied public primary experiment.
+# Python: CPython 3.12.14. Strict verification also requires the full recorded
+# interpreter build, machine, NumPy/BLAS configuration, and execution sources.
+# Matching version numbers alone does not establish this runtime identity.
+numpy==2.3.5

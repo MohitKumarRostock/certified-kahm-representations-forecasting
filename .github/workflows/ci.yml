@@ -1,0 +1,53 @@
+name: Portable checks and fresh installed-wheel demonstration
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portable-and-fresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - name: Check out source and retained evidence
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up the initially supported CI Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Inspect the archived example with the standard library only
+        run: python scripts/ci_checks.py archive-inspect --project . --report "${RUNNER_TEMP}/kahm-ci/archive-inspection.json"
+      - name: Install the CI numerical and wheel-build dependencies
+        run: python -m pip install 'numpy==2.3.5' 'setuptools>=77.0.3' wheel
+      - name: Run the explicitly selected portable suite
+        run: python scripts/ci_checks.py portable --project . --report "${RUNNER_TEMP}/kahm-ci/portable-tests.json"
+      - name: Check the installed wheel and run one complete fresh demonstration
+        env:
+          KAHM_CI_RUN_ID: ci-${{ github.run_id }}
+        run: python scripts/ci_checks.py fresh-wheel --project . --output "${RUNNER_TEMP}/kahm-ci/fresh-wheel" --run-id "${KAHM_CI_RUN_ID}"
+      - name: Retain reports, logs, and all fresh outcomes even on failure
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: kahm-ci-${{ github.run_id }}-${{ github.run_attempt }}
+          if-no-files-found: warn
+          retention-days: 14
+          include-hidden-files: true
+          path: |
+            ${{ runner.temp }}/kahm-ci/*.json
+            ${{ runner.temp }}/kahm-ci/*.log
+            ${{ runner.temp }}/kahm-ci/fresh-wheel/ci_plan.json
+            ${{ runner.temp }}/kahm-ci/fresh-wheel/ci_report.json
+            ${{ runner.temp }}/kahm-ci/fresh-wheel/logs/
+            ${{ runner.temp }}/kahm-ci/fresh-wheel/wheelhouse/
+            ${{ runner.temp }}/kahm-ci/fresh-wheel/run/

@@ -1,0 +1,315 @@
+{
+  "schema_version": "1.0",
+  "specification_id": "public_kahm_forecasting_v1",
+  "specification_version": "0.1.0",
+  "date": "2026-11-10",
+  "status": "public_specification_fixed_before_primary_run",
+  "purpose": "Build a reproducible Gaussian KAHM forecasting demonstrator with simultaneous fitted-risk upper certificates.",
+  "claim_scope": {
+    "certified_object": "actual frozen deterministic computational predictor",
+    "task": "one-step scalar forecasting from a two-observation history",
+    "risk": "population mean squared error under the specified history-successor law, conditional on development",
+    "loss": "squared_error",
+    "target_range": [
+      0,
+      1
+    ],
+    "prediction_range": [
+      0,
+      1
+    ],
+    "loss_range": [
+      0,
+      1
+    ],
+    "loss_units": "squared units of the declared observation values",
+    "empirical_variance_normalization": false,
+    "primary_mse_tolerance": {
+      "numerator": 1,
+      "denominator": 10
+    },
+    "simultaneous_confidence": {
+      "numerator": 19,
+      "denominator": 20
+    },
+    "unclaimed_properties": [
+      "pointwise error or per-forecast interval coverage",
+      "performance under a changed evaluation law",
+      "optimal risk over a decoder class",
+      "global Lipschitz admissibility of the rounded decoder",
+      "exact input recovery or predictive sufficiency of the soft state",
+      "exact Koopman closure or recursive rollout accuracy",
+      "numerical equivalence to an ideal real-arithmetic Gaussian KAHM map",
+      "general superiority of KAHM or enrichment over the controls"
+    ]
+  },
+  "benchmark": {
+    "id": "four_state_order2_modular_v1",
+    "provenance": "Based on our research; controlled finite benchmark defined in docs/BENCHMARK.md (finite_benchmark_v1).",
+    "state_labels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "observation_values": [
+      {
+        "numerator": 0,
+        "denominator": 1
+      },
+      {
+        "numerator": 1,
+        "denominator": 4
+      },
+      {
+        "numerator": 3,
+        "denominator": 4
+      },
+      {
+        "numerator": 1,
+        "denominator": 1
+      }
+    ],
+    "history_order": 2,
+    "horizon": 1,
+    "input_order": [
+      "previous_observation",
+      "current_observation"
+    ],
+    "initial_state_pair_distribution": "uniform over all 16 ordered pairs",
+    "initial_state_pair_probability": {
+      "numerator": 1,
+      "denominator": 16
+    },
+    "nominal_successor": "(previous_state + current_state) mod 4",
+    "transition_formula": "P(c|a,b) = (4/5) * indicator[c == (a+b) mod 4] + 1/20",
+    "nominal_successor_probability": {
+      "numerator": 17,
+      "denominator": 20
+    },
+    "each_other_successor_probability": {
+      "numerator": 1,
+      "denominator": 20
+    },
+    "joint_probability_formula": "p(a,b,c) = P(c|a,b)/16",
+    "sampling": "independent episodes sampled with replacement; exactly one (history,target) pair per episode",
+    "support_histories": 16,
+    "support_history_target_triples": 64,
+    "initial_pair_is_stationary": true,
+    "burn_in_required": false,
+    "reference_conditional_mean": "1/10 + (4/5) * z[(a+b) mod 4]",
+    "bayes_mse": {
+      "numerator": 9,
+      "denominator": 160
+    },
+    "best_constant_prediction": {
+      "numerator": 1,
+      "denominator": 2
+    },
+    "best_constant_mse": {
+      "numerator": 5,
+      "denominator": 32
+    },
+    "reference_risks_are_analytic_not_fitted_model_results": true
+  },
+  "data_protocol": {
+    "development_defaults": {
+      "training_episodes": 4096,
+      "validation_episodes": 1024
+    },
+    "development_default_counts_may_be_revised_before_final_freeze": true,
+    "primary_calibration_episodes": 4096,
+    "calibration_pairs_per_episode": 1,
+    "calibration_independent_unit": "one independently sampled episode",
+    "split_roles": [
+      "training",
+      "validation",
+      "calibration"
+    ],
+    "training_role": "fit all preprocessing, reference geometry, decoder parameters and candidate models",
+    "validation_role": "select among development candidates using validation MSE",
+    "calibration_role": "evaluate the three already frozen fitted predictors and their risk upper endpoints",
+    "calibration_is_shared_across_candidates": true,
+    "retain_repeated_histories_and_triples": true,
+    "calibration_stream_selected_before_outcomes": true,
+    "rng_requirements": [
+      "record generator, implementation version, seed/stream scheme and role of every stream",
+      "use separate development and calibration streams",
+      "do not select or replace calibration randomness after inspecting outcomes",
+      "iid sampling is a statistical premise; different seed labels alone are not its proof"
+    ],
+    "single_dependent_trajectory_used_for_primary_certificate": false,
+    "dependence_failure_allowance": {
+      "numerator": 0,
+      "denominator": 1
+    }
+  },
+  "candidates": [
+    {
+      "id": "raw",
+      "label": "Raw histories",
+      "features": "training-standardized two-observation history"
+    },
+    {
+      "id": "kahm_mem",
+      "label": "KAHM memberships",
+      "features": "Gaussian KAHM reconstruction-score normalized memberships"
+    },
+    {
+      "id": "kahm_local",
+      "label": "KAHM memberships plus local coordinates",
+      "features": "same membership vector plus membership-weighted local PCA coordinates"
+    }
+  ],
+  "representation_contract": {
+    "gaussian_kahm_reconstruction": "A_j(z) = Q_j^T C_j k_j(z) / (1^T C_j k_j(z)); C_j=(G_j+lambda_j I)^(-1)",
+    "score_family": "radial/angular reconstruction score defined in docs/ENCODER_DESIGN.md (gaussian_kahm_encoder_v1)",
+    "membership_formula": "phi_j(z)=(1-T_j(z)+eta)^omega / sum_{i in same partition}(1-T_i(z)+eta)^omega",
+    "mem_and_local_share_one_fitted_kahm_bank": true,
+    "shared_bank_components": [
+      "input preprocessing",
+      "reference partitions and histories",
+      "local means and PCA bases/ranks",
+      "kernel metrics",
+      "reconstruction regularizers",
+      "score and affinity settings",
+      "numerical safeguards and fallback rules"
+    ],
+    "bank_selection_rule": "For each development bank, choose each KAHM variant's decoder by validation MSE; choose the shared bank minimizing the mean of those two best validation MSEs.",
+    "tie_rule": "deterministic configuration ordering recorded before final selection",
+    "reference_selection_requirement": "handle repeated input histories and respect distinctness/rank conditions; never discard calibration duplicates",
+    "soft_state_interpretation": "the membership block is simplex-valued in the mathematical construction; the enriched vector also contains local coordinates",
+    "local_coordinate_formula": "concatenate phi_j(z) P_j^T (z-mu_j) for all local models j"
+  },
+  "readout_contract": {
+    "family": "Gaussian Nystrom feature block appended to linear feature coordinates, ridge regression with intercept, and final clipping to [0,1]",
+    "reason": "the controlled process has a nonlinear conditional mean; the same compact readout family is used for all candidates",
+    "decoder_scaling": "fit feature transformations on training data and freeze them",
+    "hyperparameter_selection": "validation MSE, with matched family, nominal budget and grid across candidates",
+    "landmark_identity_rule": "use the same distinct raw-history landmark identities across candidates; encoded values and retained ranks may differ",
+    "fit_selection_policy": "retain the training-fitted model chosen by validation",
+    "equal_effective_capacity_claimed": false,
+    "hard_lipschitz_budget_required_for_primary_upper_certificate": false
+  },
+  "freeze_requirements": [
+    "all three complete deterministic predictors, preprocessing, clipping and fallbacks",
+    "canonical inference behavior and runtime details",
+    "complete candidate/search configurations and development selection record",
+    "calibration episode count, RNG/stream choice, confidence allocation and tolerance",
+    "all 16 supported histories produce finite predictions in [0,1]",
+    "save/reload preserves the canonical predictions on the full input support",
+    "model-specific oracle risks are not used for final fitting or selection"
+  ],
+  "certificate": {
+    "type": "simultaneous_one_sided_fitted_mse_upper_bounds",
+    "family_size": 3,
+    "total_failure_probability": {
+      "numerator": 1,
+      "denominator": 20
+    },
+    "per_candidate_failure_probability": {
+      "numerator": 1,
+      "denominator": 60
+    },
+    "independent_unit_count": 4096,
+    "empirical_risk": "mean of all 4096 squared losses for the frozen candidate",
+    "endpoint": "sup {p in [q,1] : kl(q||p) <= log(60)/4096}, where q is the exact empirical risk",
+    "kl": "q*log(q/p)+(1-q)*log((1-q)/(1-p)), with continuous boundary conventions",
+    "conditional_guarantee": "P_Cal[for every m, R_m(D) <= U_m | D] >= 19/20, under the declared premises",
+    "risk_definition": "R_m(D)=E_P[(Y-f_m,D(X))^2], with a fresh draw independent of development D",
+    "between_candidate_endpoint_independence_required": false,
+    "numerical_requirements": [
+      "interpret canonical finite floating-point predictions as their exact represented numbers",
+      "compute exact or verified upper empirical loss means",
+      "use a verified upper value of log(60)/4096",
+      "round the upper root and reported endpoint outward",
+      "compare against the exact rational tolerance 1/10",
+      "retain every calibration episode and predeclared fallback event"
+    ],
+    "statuses": {
+      "requirement_met": "valid U_m <= 1/10",
+      "unresolved": "valid U_m > 1/10",
+      "certificate_unavailable": "a required premise or numerical check is not established"
+    },
+    "class_exclusion_status_supported": false,
+    "accepted_candidate_selection": "any accepted candidate in the frozen three-member family may be selected while preserving this simultaneous guarantee",
+    "guarantee_scope": "one final calibrated family; additional attempts require a suitable allocation or a separately reserved final evaluation"
+  },
+  "reference_audit": {
+    "formula": "R(f)=sum_{a,b,c} p(a,b,c) * (z_c-f(z_a,z_b))^2",
+    "implementation": "enumerate the 16 canonical predictions and use the 64 rational population weights",
+    "numerical_basis": "dyadic targets and finite binary predictions permit exact rational risk calculation",
+    "use": "independent audit after predictors have been selected and frozen",
+    "excluded_uses": [
+      "fitted-model selection",
+      "confidence endpoint construction",
+      "seed selection",
+      "run filtering"
+    ],
+    "coverage_miss_rule": "retain and investigate any realized R_m > U_m; a 95% theorem does not promise coverage on every run"
+  },
+  "change_control": {
+    "prediction_rule_change_after_calibration": "new model freeze and untouched calibration data; account for repeated-attempt selection",
+    "equivalent_code_or_conservative_recalculation": "archived calibration may be reused after prediction/endpoint equivalence or conservativeness is established",
+    "primary_tolerance": "keep 1/10 for the declared primary result; changes are labeled as new requirements",
+    "development_changes": "record revisions; finish development before final calibration"
+  },
+  "required_first_demo_outputs": [
+    "complete source and executable regeneration command",
+    "saved frozen model states",
+    "data/seed/configuration and environment records",
+    "calibration inputs, targets, predictions and loss arithmetic",
+    "machine-readable certificate and readable comparison report",
+    "reference-risk audit with all outcomes retained",
+    "tutorial and reproduction instructions"
+  ],
+  "completion_definition": {
+    "acceptance_or_kahm_superiority_is_not_presupposed": true,
+    "scientific_contract": "scientific contract and implementation requirements documented; empirical performance claims require a completed calibration assessment",
+    "engineering_success": "complete reproducible valid assessment of all three candidates",
+    "acceptance_success": "at least one KAHM candidate may be reported as meeting the requirement only when its valid U is <=1/10",
+    "execution_order": "generate development data, fit encoders and readouts, freeze the model family and protocol, assess calibration losses, then audit population risks"
+  },
+  "sources": [
+    {
+      "id": "finite_benchmark_v1",
+      "basis": "Based on our research",
+      "location": "docs/BENCHMARK.md",
+      "role": "exact history-successor law and analytical reference risks"
+    },
+    {
+      "id": "gaussian_kahm_encoder_v1",
+      "basis": "Based on our research",
+      "location": "docs/ENCODER_DESIGN.md",
+      "role": "training-only geometry, Gaussian KAHM reconstruction, partition memberships, and local coordinates"
+    },
+    {
+      "id": "matched_forecasting_readout_v1",
+      "basis": "Based on our research",
+      "location": "docs/READOUT_DESIGN.md",
+      "role": "matched Gaussian Nystrom and linear features, ridge objective, and fixed validation selection"
+    },
+    {
+      "id": "bounded_iid_fitted_risk_v1",
+      "basis": "Based on our research",
+      "location": "docs/FITTED_RISK_GUARANTEE.md",
+      "role": "bounded iid fitted-risk upper bounds and simultaneous confidence allocation"
+    },
+    {
+      "id": "verified_kl_endpoint_v1",
+      "basis": "Based on our research",
+      "location": "docs/CERTIFICATION_DESIGN.md",
+      "role": "exact loss arithmetic, verified logarithms, outer root endpoints, and direct endpoint checks"
+    }
+  ],
+  "development_configuration_requirements": [
+    "reference partitions, numbers of local models and reference budget",
+    "PCA caps, effective-rank handling and reconstruction regularization",
+    "score offset and contrast parameters",
+    "deterministic numerical thresholds and exceptional-input behavior",
+    "decoder standardization, landmark budget and selection details",
+    "Gaussian bandwidth grid and ridge penalty grid",
+    "RNG implementation, concrete seeds, runtime and canonical inference convention",
+    "verified logarithm/root arithmetic and implementation tolerance"
+  ]
+}

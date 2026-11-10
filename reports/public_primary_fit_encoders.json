@@ -1,0 +1,78 @@
+{
+  "plan_sha256": "9c19c91a1f2f78e31c2544d2e331c4337364c3bb9a92cee2f0942c4d985b18e4",
+  "record_sha256": "bd15f801634f332d7e82734c43e5633700da94bf514272a6f7fd4264ce8597f3",
+  "result": {
+    "bank_order": [
+      "cap_1",
+      "cap_2"
+    ],
+    "banks": [
+      {
+        "bank_id": "cap_1",
+        "effective_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "feature_widths": {
+          "kahm_local": 12,
+          "kahm_mem": 6,
+          "raw": 2
+        },
+        "save_reload_exact_support_match": true,
+        "support_diagnostics": {
+          "all_features_finite": true,
+          "fallback_count": 0,
+          "fallback_events": [],
+          "local_model_evaluations": 96,
+          "maximum_membership": 0.9999999996151001,
+          "maximum_partition_sum_error": 2.220446049250313e-16,
+          "mem_is_exact_local_prefix": true,
+          "minimum_cancellation_ratio": 0.8098225886724205,
+          "minimum_membership": 3.121694554539557e-20,
+          "rank_zero_evaluations": 0,
+          "support_histories": 16
+        }
+      },
+      {
+        "bank_id": "cap_2",
+        "effective_ranks": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "feature_widths": {
+          "kahm_local": 18,
+          "kahm_mem": 6,
+          "raw": 2
+        },
+        "save_reload_exact_support_match": true,
+        "support_diagnostics": {
+          "all_features_finite": true,
+          "fallback_count": 0,
+          "fallback_events": [],
+          "local_model_evaluations": 96,
+          "maximum_membership": 0.9999999878965654,
+          "maximum_partition_sum_error": 2.220446049250313e-16,
+          "mem_is_exact_local_prefix": true,
+          "minimum_cancellation_ratio": 0.5566856756241537,
+          "minimum_membership": 1.5341499999615403e-21,
+          "rank_zero_evaluations": 0,
+          "support_histories": 16
+        }
+      }
+    ],
+    "calibration_status": "reserved_not_accessed",
+    "output": "/workspace/scratch/f3abdf0f96c1/certified_kahm_public/encoders/primary",
+    "selection_status": "unselected; awaiting fitted readouts and validation",
+    "status": "completed"
+  },
+  "schema": "kahm.public_primary_stage_result.v1",
+  "stage": "fit_encoders"
+}

@@ -1,0 +1,12 @@
+# Frozen evidence and source hashes depend on exact file bytes. Do not apply
+# automatic checkout line-ending transformations to this repository.
+* -text
+
+# Keep notebook and JSON changes readable in Git's text diff.
+*.py diff
+*.md diff
+*.json diff
+*.jsonl diff
+*.ipynb diff
+*.yml diff
+*.toml diff

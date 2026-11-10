@@ -1,0 +1,200 @@
+{
+  "calibration_count": 4096,
+  "calibration_protocol_sha256": "26d62b5c737e67f4cdb08250f10eddc8bf1c06c996b034c6bc6e1356f4e19c04",
+  "candidate_ids": [
+    "raw",
+    "kahm_mem",
+    "kahm_local"
+  ],
+  "contract_sha256": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+  "driver_sha256": "923e2bd5c84776242388687b416944239f367144adf0d7f37ab333c0289a385a",
+  "encoder_caps": [
+    1,
+    2
+  ],
+  "forecast_search_count": 225,
+  "local_recorded_at_utc": "2026-11-10T16:05:21.137519+00:00",
+  "master_seed_integer": "20261110",
+  "package_version": "0.1.0",
+  "paths": {
+    "audits": "audits/primary",
+    "certificates": "certificates/primary",
+    "data": "data/primary",
+    "encoders": "encoders/primary",
+    "frozen": "frozen/primary",
+    "models": "models/primary"
+  },
+  "policy": {
+    "automatic_retries": false,
+    "calibration_after_freeze_only": true,
+    "filter_unfavorable_outcomes": false,
+    "overwrite": false,
+    "population_audit_after_verified_certificate_only": true,
+    "prng_proves_iid_premise": false,
+    "public_preregistration_claimed": false,
+    "resume": false,
+    "tutorial_anchors_assigned_after_evidence_issuance": true
+  },
+  "record_sha256": "aa94a0699967be16ab78abd99fe25ae13a022241ed2984c42845302dbf758bea",
+  "run_id": "public-v0.1.0",
+  "runtime": {
+    "arithmetic": "float64; canonical one-history inference",
+    "canonical_method": "single_history_numpy_float64_v1",
+    "forecast_canonical_method": "single_history_numpy_float64_forecast_v1",
+    "machine": "x86_64",
+    "numpy_build_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-aw1mwcap/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n  - AVX512_SPR\n\n",
+    "numpy_version": "2.3.5",
+    "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "python_implementation": "CPython",
+    "python_version": "3.12.14"
+  },
+  "schema": "kahm.public_primary_plan.v1",
+  "source_sha256": {
+    "kahm_demo/__init__.py": "97400117504cc209ade85eb0a81f49fa56c80e09262a2d2e17e2817b1f260b98",
+    "kahm_demo/__main__.py": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7",
+    "kahm_demo/_util.py": "60ecb707fa4317325747adcadb4c56c14b4b77a98bc44665457eb53724420810",
+    "kahm_demo/audit_workflow.py": "0d373ce23208f811c4a92be8b49850f3ea68309c1716f7174411f7bd6ce4ace9",
+    "kahm_demo/calibration_ledger.py": "56d8d0719b8d9aec5d5c96a7294fa0ec52260d0495f39495d46a6e7817cbc2f7",
+    "kahm_demo/calibration_protocol.json": "26d62b5c737e67f4cdb08250f10eddc8bf1c06c996b034c6bc6e1356f4e19c04",
+    "kahm_demo/calibration_protocol.py": "94a21c17ad0b66149b4c83fbc0344008b5481af8daaf73b597f310a368737455",
+    "kahm_demo/certificate_workflow.py": "a182eba110c6496569f9e16c6720f034ae3ce23cccdb674bc8420a9b160855a3",
+    "kahm_demo/cli.py": "8f4ed9e569ec46a8fc7b8cf8587ad397d6a1a27a970ff4cf7f8ca45fe1944d60",
+    "kahm_demo/contract.py": "98fdaafd00059a3dcf0544ba6aec42a383464370c6cdcd07e66c31c2bb68522a",
+    "kahm_demo/datasets.py": "d4284857f857cab44c0cf5c95c8dc83ae30071842ee59d422ee68cf0c256eac5",
+    "kahm_demo/encoder.py": "24f394ba634ea91ead5941153c121d4c469e1251c601306fe65f028bb3c707bd",
+    "kahm_demo/encoder_state.py": "62ca70887a22ab5385b396c455f63cba2f83939ccd617e75870a3580e195f927",
+    "kahm_demo/encoder_workflow.py": "6988ecde0c400c190c41e42ecbbb23017a7ea0f2ec8477f9e6abd614b0e80f1a",
+    "kahm_demo/forecast.py": "2f935a3c014e5043675ad7ed131c3a52b8f8f8eadb4a7cc9959db9c1d99c8bc1",
+    "kahm_demo/forecast_state.py": "47a6645b0671d4d4919d26c7fae1f4efc13211a0a2b065e4ee09af14a3567399",
+    "kahm_demo/forecast_workflow.py": "1acc3f00f314b9c6b87aa705fdd88c67f48199f30f3f7b8ccea73511171e0803",
+    "kahm_demo/freeze.py": "154cccb823a49a5d791ed2e4b73d0c6cf1c09ddccee71c496f77b8bf0d8aef67",
+    "kahm_demo/geometry.py": "17eb6a36ba18e4004a84265963053aefaa2d9fd9456ef4599650ad76a9b77486",
+    "kahm_demo/kahm.py": "3c69d3067cf7b606328d3740e4e19021b46c203777199072b3eeaf591a61c20a",
+    "kahm_demo/law.py": "fbe59e8ac9d7efdbb6dee630ea285230f08cd1f0298c25d807759fd6d3e6a8dd",
+    "kahm_demo/oracle.py": "ac582478713162db6bc5c1ee785121f4840a5328a1521086ea98bc71fd9523c5",
+    "kahm_demo/population_audit.py": "7cc2f61c355fe63713f85b995dcb40438228c02fc23293a06288c796fa63a962",
+    "kahm_demo/readout_features.py": "2ce519e9e031740776cb84b0f34766dc017120e1be4560622ae76a21260dae25",
+    "kahm_demo/readout_specification.json": "1fc29f4dec462e65efc7312c20b33c89b4ec1b9ea003ce508a459711c69a71f9",
+    "kahm_demo/reproduce.py": "cb39ce5220193da1b5dfdd657c35acd1fd87f1268125903775e3f64a3421e089",
+    "kahm_demo/ridge.py": "e12b925886ed5d0f0a0de4c2ee2803fd4dec3bebbb0747da728fc752332c54fa",
+    "kahm_demo/risk_bounds.py": "ca2ffa62e9de5f13eefffa26b057bd07a8110218abbf240025df327b47bbd551",
+    "kahm_demo/sampling.py": "d5764a642de70cf1c8e77dd4d60d9dd9144976c40ff937113b15fa9ec2953e00",
+    "kahm_demo/selection.py": "840fe17ab2c75d3e92e1dd2e70fb15598a77a4675d0bb3c908ad3fd32e5e613d",
+    "kahm_demo/soft_state.py": "ab4023a1bcfdabc5ce67115e11d3b7eb98eea7cc168e46b21503369241e73ea3",
+    "kahm_demo/specification.json": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+    "kahm_demo/tutorial.py": "8b09e15fd33df8fe3d7135390c2afe3e96b904e5e4fd065515b211f5f1649953",
+    "kahm_demo/verified_arithmetic.py": "2b0dbd5f84ace66425b4a7c7288f34d255aaf76607a486250c3c750a7c756b62"
+  },
+  "stage_order": [
+    "generate_data",
+    "fit_encoders",
+    "fit_forecasters",
+    "freeze_models",
+    "certify",
+    "audit"
+  ],
+  "status": "planned",
+  "streams": {
+    "calibration": {
+      "benchmark_id": "four_state_order2_modular_v1",
+      "derivation": {
+        "algorithm": "SHA-256",
+        "canonical_json": "{\"benchmark_id\":\"four_state_order2_modular_v1\",\"master_seed\":\"20261110\",\"namespace\":\"kahm-demonstrator-episode-stream-v1\",\"role\":\"calibration\",\"run_id\":\"public-v0.1.0\"}",
+        "digest_hex": "2966928694d29cd5acc39420ab9a4f368474cdd4458d8b3553601d4c7efc1834",
+        "encoding": "UTF-8; ASCII JSON escapes; sorted keys; compact separators",
+        "integer_interpretation": "unsigned big-endian 256-bit integer",
+        "namespace": "kahm-demonstrator-episode-stream-v1"
+      },
+      "integer_metadata_encoding": "base-10 strings unless marked hexadecimal",
+      "master_seed_integer": "20261110",
+      "rng": {
+        "algorithm": "Mersenne Twister (MT19937)",
+        "implementation": "random.Random",
+        "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "state_format_version": 3
+      },
+      "role": "calibration",
+      "run_id": "public-v0.1.0",
+      "sampler_version": "fresh-pair-ticket-v1",
+      "sampling_rule": {
+        "duplicate_policy": "retain every sampled episode",
+        "episode_dependence": "fresh pair and ticket for every episode",
+        "pair_draw": "pair_id = rng.randrange(16); a, b = divmod(pair_id, 4)",
+        "successor": "(a+b)%4 for tickets 0..15; ticket-16 for tickets 16..19",
+        "ticket_draw": "ticket = rng.randrange(20)"
+      },
+      "seed_hex": "0x2966928694d29cd5acc39420ab9a4f368474cdd4458d8b3553601d4c7efc1834",
+      "seed_integer": "18726056475793662125222046299949351142958702648510898861171834145230802393140"
+    },
+    "training": {
+      "benchmark_id": "four_state_order2_modular_v1",
+      "derivation": {
+        "algorithm": "SHA-256",
+        "canonical_json": "{\"benchmark_id\":\"four_state_order2_modular_v1\",\"master_seed\":\"20261110\",\"namespace\":\"kahm-demonstrator-episode-stream-v1\",\"role\":\"training\",\"run_id\":\"public-v0.1.0\"}",
+        "digest_hex": "a09531481cf8fc03bbbf5854580e5fe1061e726e1fa11ca9dbf38cd98f973b4b",
+        "encoding": "UTF-8; ASCII JSON escapes; sorted keys; compact separators",
+        "integer_interpretation": "unsigned big-endian 256-bit integer",
+        "namespace": "kahm-demonstrator-episode-stream-v1"
+      },
+      "integer_metadata_encoding": "base-10 strings unless marked hexadecimal",
+      "master_seed_integer": "20261110",
+      "rng": {
+        "algorithm": "Mersenne Twister (MT19937)",
+        "implementation": "random.Random",
+        "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "state_format_version": 3
+      },
+      "role": "training",
+      "run_id": "public-v0.1.0",
+      "sampler_version": "fresh-pair-ticket-v1",
+      "sampling_rule": {
+        "duplicate_policy": "retain every sampled episode",
+        "episode_dependence": "fresh pair and ticket for every episode",
+        "pair_draw": "pair_id = rng.randrange(16); a, b = divmod(pair_id, 4)",
+        "successor": "(a+b)%4 for tickets 0..15; ticket-16 for tickets 16..19",
+        "ticket_draw": "ticket = rng.randrange(20)"
+      },
+      "seed_hex": "0xa09531481cf8fc03bbbf5854580e5fe1061e726e1fa11ca9dbf38cd98f973b4b",
+      "seed_integer": "72633656115712924598406954822735327926564300535393581843966637295672065735499"
+    },
+    "validation": {
+      "benchmark_id": "four_state_order2_modular_v1",
+      "derivation": {
+        "algorithm": "SHA-256",
+        "canonical_json": "{\"benchmark_id\":\"four_state_order2_modular_v1\",\"master_seed\":\"20261110\",\"namespace\":\"kahm-demonstrator-episode-stream-v1\",\"role\":\"validation\",\"run_id\":\"public-v0.1.0\"}",
+        "digest_hex": "ece9e85812e333f81576967f715ef78db811c49837f67baac092c829a8cb0a25",
+        "encoding": "UTF-8; ASCII JSON escapes; sorted keys; compact separators",
+        "integer_interpretation": "unsigned big-endian 256-bit integer",
+        "namespace": "kahm-demonstrator-episode-stream-v1"
+      },
+      "integer_metadata_encoding": "base-10 strings unless marked hexadecimal",
+      "master_seed_integer": "20261110",
+      "rng": {
+        "algorithm": "Mersenne Twister (MT19937)",
+        "implementation": "random.Random",
+        "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "state_format_version": 3
+      },
+      "role": "validation",
+      "run_id": "public-v0.1.0",
+      "sampler_version": "fresh-pair-ticket-v1",
+      "sampling_rule": {
+        "duplicate_policy": "retain every sampled episode",
+        "episode_dependence": "fresh pair and ticket for every episode",
+        "pair_draw": "pair_id = rng.randrange(16); a, b = divmod(pair_id, 4)",
+        "successor": "(a+b)%4 for tickets 0..15; ticket-16 for tickets 16..19",
+        "ticket_draw": "ticket = rng.randrange(20)"
+      },
+      "seed_hex": "0xece9e85812e333f81576967f715ef78db811c49837f67baac092c829a8cb0a25",
+      "seed_integer": "107159111211361080469702169268735981891358614453595033149870941067483888159269"
+    }
+  },
+  "training_count": 4096,
+  "validation_count": 1024
+}

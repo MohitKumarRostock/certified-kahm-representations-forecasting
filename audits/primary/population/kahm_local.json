@@ -1,0 +1,2776 @@
+{
+  "arithmetic": "exact Fraction arithmetic on the exact represented binary64 prediction values",
+  "bayes_mse": {
+    "denominator": "160",
+    "numerator": "9"
+  },
+  "benchmark_id": "four_state_order2_modular_v1",
+  "checks": {
+    "all_conditional_masses_are_one": true,
+    "all_history_masses_are_one_sixteenth": true,
+    "bayes_reference_matches": true,
+    "best_constant_reference_matches": true,
+    "conditional_means_match_transition_enumeration": true,
+    "contract_facts_match": true,
+    "full_history_and_triple_support": true,
+    "joint_mass_is_one": true,
+    "nominal_successor_reference_matches": true,
+    "oracle_exact_equality": true,
+    "oracle_exact_population_mse": {
+      "denominator": "83076749736557242056487941267521536",
+      "numerator": "4688647074824915106329509302933647"
+    },
+    "per_history_bias_variance_identities": true,
+    "population_minus_bayes_minus_excess": {
+      "denominator": "1",
+      "numerator": "0"
+    },
+    "population_minus_oracle": {
+      "denominator": "1",
+      "numerator": "0"
+    },
+    "triple_and_history_risk_sums_agree": true
+  },
+  "contract_sha256": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+  "exact_population_mse": {
+    "denominator": "83076749736557242056487941267521536",
+    "numerator": "4688647074824915106329509302933647"
+  },
+  "excess_over_bayes": {
+    "denominator": "415383748682786210282439706337607680",
+    "numerator": "77899510717851203260313033177803"
+  },
+  "histories": [
+    {
+      "conditional_excess_mse": {
+        "denominator": "129807421463370690713262408230502400",
+        "numerator": "5899822502757838175251799269569"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "1"
+      },
+      "conditional_mse": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "1850935720353583910299039677138573"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "13"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "57"
+      },
+      "current_state": 0,
+      "history_id": 0,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        {
+          "denominator": "1",
+          "numerator": "0"
+        }
+      ],
+      "nominal_successor": 0,
+      "prediction_exact": {
+        "denominator": "72057594037927936",
+        "numerator": "7691550408351661"
+      },
+      "prediction_hex": "0x1.b536ca1dc9fadp-4",
+      "previous_state": 0,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "57"
+      },
+      "weighted_excess_mse": {
+        "denominator": "2076918743413931051412198531688038400",
+        "numerator": "5899822502757838175251799269569"
+      },
+      "weighted_mse": {
+        "denominator": "415383748682786210282439706337607680",
+        "numerator": "1850935720353583910299039677138573"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "507060240091291760598681282150400",
+        "numerator": "6467997159798698782760856561"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "3"
+      },
+      "conditional_mse": {
+        "denominator": "101412048018258352119736256430080",
+        "numerator": "4184540580185116764695672749053"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "21"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "33"
+      },
+      "current_state": 1,
+      "history_id": 1,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        {
+          "denominator": "4",
+          "numerator": "1"
+        }
+      ],
+      "nominal_successor": 1,
+      "prediction_exact": {
+        "denominator": "4503599627370496",
+        "numerator": "1367164660089915"
+      },
+      "prediction_hex": "0x1.36db74fa810ecp-2",
+      "previous_state": 0,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "33"
+      },
+      "weighted_excess_mse": {
+        "denominator": "8112963841460668169578900514406400",
+        "numerator": "6467997159798698782760856561"
+      },
+      "weighted_mse": {
+        "denominator": "1622592768292133633915780102881280",
+        "numerator": "4184540580185116764695672749053"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "2028240960365167042394725128601600",
+        "numerator": "166183027455714485287129979449"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "7"
+      },
+      "conditional_mse": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "16766224528503770996813908306853"
+      },
+      "conditional_second_moment": {
+        "denominator": "32",
+        "numerator": "17"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "33"
+      },
+      "current_state": 2,
+      "history_id": 2,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        {
+          "denominator": "4",
+          "numerator": "3"
+        }
+      ],
+      "nominal_successor": 2,
+      "prediction_exact": {
+        "denominator": "9007199254740992",
+        "numerator": "6386570583415023"
+      },
+      "prediction_hex": "0x1.6b08d56f518efp-1",
+      "previous_state": 0,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "33"
+      },
+      "weighted_excess_mse": {
+        "denominator": "32451855365842672678315602057625600",
+        "numerator": "166183027455714485287129979449"
+      },
+      "weighted_mse": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "16766224528503770996813908306853"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "507060240091291760598681282150400",
+        "numerator": "6365112849736676353026068409"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "9"
+      },
+      "conditional_mse": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "1445376288774170984760362696865"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "141"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "57"
+      },
+      "current_state": 3,
+      "history_id": 3,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        {
+          "denominator": "1",
+          "numerator": "1"
+        }
+      ],
+      "nominal_successor": 3,
+      "prediction_exact": {
+        "denominator": "4503599627370496",
+        "numerator": "4069195996103727"
+      },
+      "prediction_hex": "0x1.ce9d30bbd085ep-1",
+      "previous_state": 0,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "57"
+      },
+      "weighted_excess_mse": {
+        "denominator": "8112963841460668169578900514406400",
+        "numerator": "6365112849736676353026068409"
+      },
+      "weighted_mse": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "1445376288774170984760362696865"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "2028240960365167042394725128601600",
+        "numerator": "45129995123843884709135110329"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "3"
+      },
+      "conditional_mse": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "16742013922037396876698309333029"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "21"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "33"
+      },
+      "current_state": 0,
+      "history_id": 4,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "4",
+          "numerator": "1"
+        },
+        {
+          "denominator": "1",
+          "numerator": "0"
+        }
+      ],
+      "nominal_successor": 1,
+      "prediction_exact": {
+        "denominator": "9007199254740992",
+        "numerator": "2744647419390033"
+      },
+      "prediction_hex": "0x1.3807c0ceed0a2p-2",
+      "previous_state": 1,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "33"
+      },
+      "weighted_excess_mse": {
+        "denominator": "32451855365842672678315602057625600",
+        "numerator": "45129995123843884709135110329"
+      },
+      "weighted_mse": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "16742013922037396876698309333029"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "31691265005705735037417580134400",
+        "numerator": "12479772247293438799171481641"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "7"
+      },
+      "conditional_mse": {
+        "denominator": "6338253001141147007483516026880",
+        "numerator": "263948890746531001818529332437"
+      },
+      "conditional_second_moment": {
+        "denominator": "32",
+        "numerator": "17"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "33"
+      },
+      "current_state": 1,
+      "history_id": 5,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "4",
+          "numerator": "1"
+        },
+        {
+          "denominator": "4",
+          "numerator": "1"
+        }
+      ],
+      "nominal_successor": 2,
+      "prediction_exact": {
+        "denominator": "1125899906842624",
+        "numerator": "810472514987561"
+      },
+      "prediction_hex": "0x1.708f6b2d93148p-1",
+      "previous_state": 1,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "33"
+      },
+      "weighted_excess_mse": {
+        "denominator": "507060240091291760598681282150400",
+        "numerator": "12479772247293438799171481641"
+      },
+      "weighted_mse": {
+        "denominator": "101412048018258352119736256430080",
+        "numerator": "263948890746531001818529332437"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "126765060022822940149670320537600",
+        "numerator": "45497652648463737017448014041"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "9"
+      },
+      "conditional_mse": {
+        "denominator": "25353012004564588029934064107520",
+        "numerator": "1815501635854919644536291670469"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "141"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "57"
+      },
+      "current_state": 2,
+      "history_id": 6,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "4",
+          "numerator": "1"
+        },
+        {
+          "denominator": "4",
+          "numerator": "3"
+        }
+      ],
+      "nominal_successor": 3,
+      "prediction_exact": {
+        "denominator": "2251799813685248",
+        "numerator": "2069280189862559"
+      },
+      "prediction_hex": "0x1.d67ff5aa14a7cp-1",
+      "previous_state": 1,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "57"
+      },
+      "weighted_excess_mse": {
+        "denominator": "2028240960365167042394725128601600",
+        "numerator": "45497652648463737017448014041"
+      },
+      "weighted_mse": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "1815501635854919644536291670469"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "129807421463370690713262408230502400",
+        "numerator": "2702817723174603072647339619529"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "1"
+      },
+      "conditional_mse": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "370059263879533452655703757041713"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "13"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "57"
+      },
+      "current_state": 3,
+      "history_id": 7,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "4",
+          "numerator": "1"
+        },
+        {
+          "denominator": "1",
+          "numerator": "1"
+        }
+      ],
+      "nominal_successor": 0,
+      "prediction_exact": {
+        "denominator": "72057594037927936",
+        "numerator": "7534564374751239"
+      },
+      "prediction_hex": "0x1.ac4a579182807p-4",
+      "previous_state": 1,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "57"
+      },
+      "weighted_excess_mse": {
+        "denominator": "2076918743413931051412198531688038400",
+        "numerator": "2702817723174603072647339619529"
+      },
+      "weighted_mse": {
+        "denominator": "83076749736557242056487941267521536",
+        "numerator": "370059263879533452655703757041713"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "2028240960365167042394725128601600",
+        "numerator": "3591747706317233011697287489"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "7"
+      },
+      "conditional_mse": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "16733706272553891546358821768461"
+      },
+      "conditional_second_moment": {
+        "denominator": "32",
+        "numerator": "17"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "33"
+      },
+      "current_state": 0,
+      "history_id": 8,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "4",
+          "numerator": "3"
+        },
+        {
+          "denominator": "1",
+          "numerator": "0"
+        }
+      ],
+      "nominal_successor": 2,
+      "prediction_exact": {
+        "denominator": "9007199254740992",
+        "numerator": "6293053240032531"
+      },
+      "prediction_hex": "0x1.65b7fa2ecbd13p-1",
+      "previous_state": 2,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "33"
+      },
+      "weighted_excess_mse": {
+        "denominator": "32451855365842672678315602057625600",
+        "numerator": "3591747706317233011697287489"
+      },
+      "weighted_mse": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "16733706272553891546358821768461"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "2028240960365167042394725128601600",
+        "numerator": "870990207169841666659902983121"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "9"
+      },
+      "conditional_mse": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "29076631726637598687456813679197"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "141"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "57"
+      },
+      "current_state": 1,
+      "history_id": 9,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "4",
+          "numerator": "3"
+        },
+        {
+          "denominator": "4",
+          "numerator": "1"
+        }
+      ],
+      "nominal_successor": 3,
+      "prediction_exact": {
+        "denominator": "9007199254740992",
+        "numerator": "7919825617043445"
+      },
+      "prediction_hex": "0x1.c230a18963ff5p-1",
+      "previous_state": 2,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "57"
+      },
+      "weighted_excess_mse": {
+        "denominator": "32451855365842672678315602057625600",
+        "numerator": "870990207169841666659902983121"
+      },
+      "weighted_mse": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "29076631726637598687456813679197"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "129807421463370690713262408230502400",
+        "numerator": "8259554388235617473344684963369"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "1"
+      },
+      "conditional_mse": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "1851407666730679466158658254277333"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "13"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "57"
+      },
+      "current_state": 2,
+      "history_id": 10,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "4",
+          "numerator": "3"
+        },
+        {
+          "denominator": "4",
+          "numerator": "3"
+        }
+      ],
+      "nominal_successor": 0,
+      "prediction_exact": {
+        "denominator": "72057594037927936",
+        "numerator": "7780548213295401"
+      },
+      "prediction_hex": "0x1.ba45e0c694929p-4",
+      "previous_state": 2,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "57"
+      },
+      "weighted_excess_mse": {
+        "denominator": "2076918743413931051412198531688038400",
+        "numerator": "8259554388235617473344684963369"
+      },
+      "weighted_mse": {
+        "denominator": "415383748682786210282439706337607680",
+        "numerator": "1851407666730679466158658254277333"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "8112963841460668169578900514406400",
+        "numerator": "95309995975378852875683926921"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "3"
+      },
+      "conditional_mse": {
+        "denominator": "1622592768292133633915780102881280",
+        "numerator": "66951013691245588169601066029237"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "21"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "33"
+      },
+      "current_state": 3,
+      "history_id": 11,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "4",
+          "numerator": "3"
+        },
+        {
+          "denominator": "1",
+          "numerator": "1"
+        }
+      ],
+      "nominal_successor": 1,
+      "prediction_exact": {
+        "denominator": "18014398509481984",
+        "numerator": "5466064186935463"
+      },
+      "prediction_hex": "0x1.36b5b3e2e88a7p-2",
+      "previous_state": 2,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "33"
+      },
+      "weighted_excess_mse": {
+        "denominator": "129807421463370690713262408230502400",
+        "numerator": "95309995975378852875683926921"
+      },
+      "weighted_mse": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "66951013691245588169601066029237"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "2028240960365167042394725128601600",
+        "numerator": "332576012496128985092389719601"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "9"
+      },
+      "conditional_mse": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "28968948887702856151143311026493"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "141"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "57"
+      },
+      "current_state": 0,
+      "history_id": 12,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "1",
+          "numerator": "1"
+        },
+        {
+          "denominator": "1",
+          "numerator": "0"
+        }
+      ],
+      "nominal_successor": 3,
+      "prediction_exact": {
+        "denominator": "9007199254740992",
+        "numerator": "7991140521834853"
+      },
+      "prediction_hex": "0x1.c63e664277965p-1",
+      "previous_state": 3,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "57"
+      },
+      "weighted_excess_mse": {
+        "denominator": "32451855365842672678315602057625600",
+        "numerator": "332576012496128985092389719601"
+      },
+      "weighted_mse": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "28968948887702856151143311026493"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "32451855365842672678315602057625600",
+        "numerator": "39538714975290706895925496247401"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "1"
+      },
+      "conditional_mse": {
+        "denominator": "1298074214633706907132624082305024",
+        "numerator": "94069336391663245409036485714129"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "13"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "57"
+      },
+      "current_state": 1,
+      "history_id": 13,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "1",
+          "numerator": "1"
+        },
+        {
+          "denominator": "4",
+          "numerator": "1"
+        }
+      ],
+      "nominal_successor": 0,
+      "prediction_exact": {
+        "denominator": "36028797018963968",
+        "numerator": "2345283344152137"
+      },
+      "prediction_hex": "0x1.0aa0ba9406c92p-4",
+      "previous_state": 3,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "57"
+      },
+      "weighted_excess_mse": {
+        "denominator": "519229685853482762853049632922009600",
+        "numerator": "39538714975290706895925496247401"
+      },
+      "weighted_mse": {
+        "denominator": "20769187434139310514121985316880384",
+        "numerator": "94069336391663245409036485714129"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "8112963841460668169578900514406400",
+        "numerator": "1230620203113688005762153323401"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "3"
+      },
+      "conditional_mse": {
+        "denominator": "1622592768292133633915780102881280",
+        "numerator": "67178075732673250000178359908533"
+      },
+      "conditional_second_moment": {
+        "denominator": "160",
+        "numerator": "21"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "33"
+      },
+      "current_state": 2,
+      "history_id": 14,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "1",
+          "numerator": "1"
+        },
+        {
+          "denominator": "4",
+          "numerator": "3"
+        }
+      ],
+      "nominal_successor": 1,
+      "prediction_exact": {
+        "denominator": "18014398509481984",
+        "numerator": "5182452907932505"
+      },
+      "prediction_hex": "0x1.26969d8a47b59p-2",
+      "previous_state": 3,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "33"
+      },
+      "weighted_excess_mse": {
+        "denominator": "129807421463370690713262408230502400",
+        "numerator": "1230620203113688005762153323401"
+      },
+      "weighted_mse": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "67178075732673250000178359908533"
+      }
+    },
+    {
+      "conditional_excess_mse": {
+        "denominator": "2028240960365167042394725128601600",
+        "numerator": "23303952065625810808172311729"
+      },
+      "conditional_mean": {
+        "denominator": "10",
+        "numerator": "7"
+      },
+      "conditional_mse": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "16737648713425753261918116773309"
+      },
+      "conditional_second_moment": {
+        "denominator": "32",
+        "numerator": "17"
+      },
+      "conditional_variance": {
+        "denominator": "800",
+        "numerator": "33"
+      },
+      "current_state": 3,
+      "history_id": 15,
+      "history_probability": {
+        "denominator": "16",
+        "numerator": "1"
+      },
+      "input": [
+        {
+          "denominator": "1",
+          "numerator": "1"
+        },
+        {
+          "denominator": "1",
+          "numerator": "1"
+        }
+      ],
+      "nominal_successor": 2,
+      "prediction_exact": {
+        "denominator": "9007199254740992",
+        "numerator": "6335570742338139"
+      },
+      "prediction_hex": "0x1.6822b038be25bp-1",
+      "previous_state": 3,
+      "weighted_bayes_mse": {
+        "denominator": "12800",
+        "numerator": "33"
+      },
+      "weighted_excess_mse": {
+        "denominator": "32451855365842672678315602057625600",
+        "numerator": "23303952065625810808172311729"
+      },
+      "weighted_mse": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "16737648713425753261918116773309"
+      }
+    }
+  ],
+  "history_count": 16,
+  "joint_probability_mass": {
+    "denominator": "1",
+    "numerator": "1"
+  },
+  "references": {
+    "bayes_mse": {
+      "denominator": "160",
+      "numerator": "9"
+    },
+    "best_constant_mse": {
+      "denominator": "32",
+      "numerator": "5"
+    },
+    "best_constant_prediction": {
+      "denominator": "2",
+      "numerator": "1"
+    },
+    "nominal_successor_mse": {
+      "denominator": "16",
+      "numerator": "1"
+    }
+  },
+  "schema": "kahm.exact_population_audit.v1",
+  "triple_count": 64,
+  "triples": [
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 0,
+      "history_id": 0,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 0,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "59159947684214603080179041458921"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 0,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "1005719110631648252363043704801657"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 0,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "106561192919009915267150230084329"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 1,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "106561192919009915267150230084329"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 0,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "2148475005339160900340028730792681"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 2,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "2148475005339160900340028730792681"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 0,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "4142987572524516573225936042875625"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 3,
+      "weighted_squared_loss": {
+        "denominator": "332306998946228968225951765070086144",
+        "numerator": "828597514504903314645187208575125"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 1,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "1869139207798772820815884707225"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 4,
+      "weighted_squared_loss": {
+        "denominator": "1298074214633706907132624082305024",
+        "numerator": "373827841559754564163176941445"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 1,
+      "history_id": 1,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 1,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "58208681159476213129398838681"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 5,
+      "weighted_squared_loss": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "989547579711095623199780257577"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 1,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "4042251229250259406736646333849"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 6,
+      "weighted_squared_loss": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "4042251229250259406736646333849"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 1,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "9837224303980339208030379697561"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 7,
+      "weighted_squared_loss": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "9837224303980339208030379697561"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 2,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "40788283816942107255309062090529"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 8,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "40788283816942107255309062090529"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 2,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "17096329318211756037426521550625"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 9,
+      "weighted_squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "3419265863642351207485304310125"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 2,
+      "history_id": 2,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 2,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "136034726228559237582317399841"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 10,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "2312590345885507038899395797297"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 2,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "6867694632975713655620653788961"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 11,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "6867694632975713655620653788961"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 3,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "16558356054706603002164943290529"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 12,
+      "weighted_squared_loss": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "16558356054706603002164943290529"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 3,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "8662991869059702798520508776609"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 13,
+      "weighted_squared_loss": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "8662991869059702798520508776609"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 3,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "478167099135278800211858981025"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 14,
+      "weighted_squared_loss": {
+        "denominator": "1298074214633706907132624082305024",
+        "numerator": "95633419827055760042371796205"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 3,
+      "history_id": 3,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 3,
+      "previous_state": 0,
+      "squared_loss": {
+        "denominator": "20282409603651670423947251286016",
+        "numerator": "188706514857755005547643699361"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 15,
+      "weighted_squared_loss": {
+        "denominator": "6490371073168534535663120411525120",
+        "numerator": "3208010752581835094309942889137"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 4,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "7533089456764367694701779741089"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 16,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "7533089456764367694701779741089"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 0,
+      "history_id": 4,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 1,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "242898762448939224076571896225"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 17,
+      "weighted_squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "825855792326393361860344447165"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 4,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "16086131779295587918747033135521"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 18,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "16086131779295587918747033135521"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 4,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "39219555490457665084042702219681"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 19,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "39219555490457665084042702219681"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 5,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "1267650600228229401496703205376",
+        "numerator": "656865697550262289771984728721"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 20,
+      "weighted_squared_loss": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "656865697550262289771984728721"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 5,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "1267650600228229401496703205376",
+        "numerator": "279838395503025570596456379025"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 21,
+      "weighted_squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "55967679100605114119291275805"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 1,
+      "history_id": 5,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 2,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "1267650600228229401496703205376",
+        "numerator": "1152766494138157806663381649"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 22,
+      "weighted_squared_loss": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "19597030400348682713277488033"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 5,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "1267650600228229401496703205376",
+        "numerator": "99494439532487464192398733969"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 23,
+      "weighted_squared_loss": {
+        "denominator": "405648192073033408478945025720320",
+        "numerator": "99494439532487464192398733969"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 6,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "5070602400912917605986812821504",
+        "numerator": "4281920504157628222831310028481"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 24,
+      "weighted_squared_loss": {
+        "denominator": "1622592768292133633915780102881280",
+        "numerator": "4281920504157628222831310028481"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 6,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "5070602400912917605986812821504",
+        "numerator": "2269030781217143091483282915009"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 25,
+      "weighted_squared_loss": {
+        "denominator": "1622592768292133633915780102881280",
+        "numerator": "2269030781217143091483282915009"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 6,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "5070602400912917605986812821504",
+        "numerator": "144727235678516931032283496129"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 26,
+      "weighted_squared_loss": {
+        "denominator": "1622592768292133633915780102881280",
+        "numerator": "144727235678516931032283496129"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 2,
+      "history_id": 6,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 3,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "5070602400912917605986812821504",
+        "numerator": "33313413080375901929311190721"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 27,
+      "weighted_squared_loss": {
+        "denominator": "1622592768292133633915780102881280",
+        "numerator": "566328022366390332798290242257"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 3,
+      "history_id": 7,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 0,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "56769660317270529088083132035121"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 28,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "965084225393598994497413244597057"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 7,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "109826923491467702745033648255025"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 29,
+      "weighted_squared_loss": {
+        "denominator": "332306998946228968225951765070086144",
+        "numerator": "21965384698293540549006729651005"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 7,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "2163052771790422410757870804152369"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 30,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "2163052771790422410757870804152369"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 7,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 1,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "4163221356915179945113757443829809"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 31,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "4163221356915179945113757443829809"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 8,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "39602519081883936229901938265961"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 32,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "39602519081883936229901938265961"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 8,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "16331729255963654703203721482089"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 33,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "16331729255963654703203721482089"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 0,
+      "history_id": 8,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 2,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "213764009600597285728164843369"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 34,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "3633988163210153857378802337273"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 8,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "7366588589157821394950824988521"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 35,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "7366588589157821394950824988521"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 9,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "62723637804377584336863017468025"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 36,
+      "weighted_squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "12544727560875516867372603493605"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 9,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "32126516507534334486242687090809"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 37,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "32126516507534334486242687090809"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 9,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "1355888319325340420922903265401"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 38,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "1355888319325340420922903265401"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 1,
+      "history_id": 9,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 3,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "1182381427959596206223449817209"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 39,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "20100484275313135505798646892553"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 2,
+      "history_id": 10,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 0,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "60536930499414256814424087750801"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 40,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "1029127818490042365845209491763617"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 10,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "104731691884758212595591949215889"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 41,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "104731691884758212595591949215889"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 10,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "2140232536606006484856863795603601"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 42,
+      "weighted_squared_loss": {
+        "denominator": "1661534994731144841129758825350430720",
+        "numerator": "2140232536606006484856863795603601"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 10,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "4131538619941910801336967780526225"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 43,
+      "weighted_squared_loss": {
+        "denominator": "332306998946228968225951765070086144",
+        "numerator": "826307723988382160267393556105245"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 11,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "29877857695698444200131327024369"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 44,
+      "weighted_squared_loss": {
+        "denominator": "103845937170696552570609926584401920",
+        "numerator": "29877857695698444200131327024369"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 3,
+      "history_id": 11,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 1,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "926338028418585910328293711089"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 45,
+      "weighted_squared_loss": {
+        "denominator": "103845937170696552570609926584401920",
+        "numerator": "15747746483115960475580993088513"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 11,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "64717756315768891874405734800625"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 46,
+      "weighted_squared_loss": {
+        "denominator": "20769187434139310514121985316880384",
+        "numerator": "12943551263153778374881146960125"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 11,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 2,
+      "squared_loss": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "157460694270399056128286209203441"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 47,
+      "weighted_squared_loss": {
+        "denominator": "103845937170696552570609926584401920",
+        "numerator": "157460694270399056128286209203441"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 12,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "63858326839711006716453805531609"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 48,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "63858326839711006716453805531609"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 12,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "32940031764223209397263061656025"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 49,
+      "weighted_squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "6588006352844641879452612331205"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 0,
+      "history_id": 12,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "1527056018725120394802450833881"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 50,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "1527056018725120394802450833881"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 0,
+      "history_id": 12,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 3,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "1032375348714828711532583887321"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 51,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "17550380928152088096053926084457"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 1,
+      "history_id": 13,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 0,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "1298074214633706907132624082305024",
+        "numerator": "5500353964357431080235401666769"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 52,
+      "weighted_squared_loss": {
+        "denominator": "415383748682786210282439706337607680",
+        "numerator": "93506017394076328364001828335073"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 13,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "1298074214633706907132624082305024",
+        "numerator": "44381123599756933086712850211025"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 53,
+      "weighted_squared_loss": {
+        "denominator": "83076749736557242056487941267521536",
+        "numerator": "8876224719951386617342570042205"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 13,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "1298074214633706907132624082305024",
+        "numerator": "608920493358196027274401778163921"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 54,
+      "weighted_squared_loss": {
+        "denominator": "415383748682786210282439706337607680",
+        "numerator": "608920493358196027274401778163921"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 1,
+      "history_id": 13,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "1298074214633706907132624082305024",
+        "numerator": "1134579093481235619455613257572561"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 55,
+      "weighted_squared_loss": {
+        "denominator": "415383748682786210282439706337607680",
+        "numerator": "1134579093481235619455613257572561"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 14,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "26857818142938077145953635575025"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 56,
+      "weighted_squared_loss": {
+        "denominator": "20769187434139310514121985316880384",
+        "numerator": "5371563628587615429190727115005"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 2,
+      "history_id": 14,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 1,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "460841776529801706394894116081"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 57,
+      "weighted_squared_loss": {
+        "denominator": "103845937170696552570609926584401920",
+        "numerator": "7834310201006629008713199973377"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 14,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 2,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "69361346665623273370960918914289"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 58,
+      "weighted_squared_loss": {
+        "denominator": "103845937170696552570609926584401920",
+        "numerator": "69361346665623273370960918914289"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 2,
+      "history_id": 14,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "324518553658426726783156020576256",
+        "numerator": "164658827921125020475085685171441"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 59,
+      "weighted_squared_loss": {
+        "denominator": "103845937170696552570609926584401920",
+        "numerator": "164658827921125020475085685171441"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 15,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 0,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "40139456631171037674372613983321"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "triple_id": 60,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "40139456631171037674372613983321"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 15,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 1,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "16677184997710495754331962657881"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "triple_id": 61,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "16677184997710495754331962657881"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "17"
+      },
+      "current_state": 3,
+      "history_id": 15,
+      "is_nominal_successor": true,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "17"
+      },
+      "next_state": 2,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "176256136266917550171536936025"
+      },
+      "target": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "triple_id": 62,
+      "weighted_squared_loss": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "599270863307519670583225582485"
+      }
+    },
+    {
+      "conditional_probability": {
+        "denominator": "20",
+        "numerator": "1"
+      },
+      "current_state": 3,
+      "history_id": 15,
+      "is_nominal_successor": false,
+      "joint_probability": {
+        "denominator": "320",
+        "numerator": "1"
+      },
+      "next_state": 3,
+      "previous_state": 3,
+      "squared_loss": {
+        "denominator": "81129638414606681695789005144064",
+        "numerator": "7137598908283881266051762539609"
+      },
+      "target": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "triple_id": 63,
+      "weighted_squared_loss": {
+        "denominator": "25961484292674138142652481646100480",
+        "numerator": "7137598908283881266051762539609"
+      }
+    }
+  ]
+}

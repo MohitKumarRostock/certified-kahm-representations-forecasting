@@ -1,0 +1,45 @@
+{
+  "elapsed_seconds": 26.917206524001813,
+  "environment_inherits_host_numerical_dependencies": true,
+  "fresh_scientific_experiment_performed": false,
+  "installed_import_origin_checked": true,
+  "isolated_python": true,
+  "metadata_and_license_checked": true,
+  "package_files_compared": 34,
+  "readme_exact_utf8_match": true,
+  "results": {
+    "inspect": {
+      "anchors": {
+        "audit_sha256": "65e1bd54dcbc87994f197b15d6fd0f7e56a0f8eb2ef1cb4b699022d2e02c52eb",
+        "certificate_sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446",
+        "freeze_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5"
+      },
+      "certificate_reverified": false,
+      "mode": "archive_identity_only",
+      "model_replayed": false,
+      "population_risk_recomputed": false,
+      "status": "archive_identity_checked"
+    },
+    "verify": {
+      "anchors": {
+        "audit_sha256": "65e1bd54dcbc87994f197b15d6fd0f7e56a0f8eb2ef1cb4b699022d2e02c52eb",
+        "certificate_sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446",
+        "freeze_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5"
+      },
+      "certificate_reverified": true,
+      "mode": "full_read_only_verification",
+      "model_replayed": true,
+      "population_risk_recomputed": true,
+      "status": "passed"
+    }
+  },
+  "schema": "kahm.public_installed_wheel_validation.v1",
+  "status": "passed",
+  "version": "0.1.0",
+  "wheel": {
+    "bytes": 157058,
+    "path": "dist/kahm_demonstrator-0.1.0-py3-none-any.whl",
+    "sha256": "d34201a61cbbd5de90ae9980c2af85a18ae4a954f1525e83e9ab928787955fc0"
+  },
+  "wheel_RECORD_hashes_checked": true
+}

@@ -1,0 +1,206 @@
+{
+  "all_three_requirements_met": true,
+  "any_kahm_requirement_met": true,
+  "assessment_plan_path": "assessment_plan.json",
+  "assessment_plan_sha256": "1150444047d34e3b81dc1bf024deada215bd711768a5b7ce1d676a587c2d2170",
+  "calibration_identity": {
+    "calibration_plan_sha256": "2d0722e21855c984819480ac3cf28cc47ffb6bbc7fed8a1944b546012ac5ada7",
+    "data_sha256": "989274ebc09c533c5fd0b34a26bd028546f82cacc0010f7587c496a9a92d6e85",
+    "dataset_manifest_sha256": "67a389a7ab59552b065c97bc215c693c637a261100cd0849eee8b8dbb433dd3f",
+    "episode_count": 4096,
+    "receipt_path": "calibration_receipt.json",
+    "receipt_sha256": "cb8778f9ad06de2bf2c62cd57bfed358972ca2928e7189d2019c4b2e474d299f",
+    "run_id": "public-v0.1.0"
+  },
+  "calibration_protocol_sha256": "26d62b5c737e67f4cdb08250f10eddc8bf1c06c996b034c6bc6e1356f4e19c04",
+  "candidates": [
+    {
+      "bank_id": null,
+      "bound_path": "bounds/raw.json",
+      "bound_sha256": "d15f5b7b80365400e89cb0bb081b15e25e7927c604018a1ab531dbf4f0ca7fbb",
+      "candidate_id": "raw",
+      "empirical_mse": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "685942479030621336985628067540446985"
+      },
+      "failure": null,
+      "frozen_state_sha256": "8348ae41df4888258e760020d55c1af9305bf096d0fb94c0802b80bb632e04bc",
+      "status": "requirement_met",
+      "upper_endpoint": {
+        "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+        "numerator": "488968561145369732839739125329222577906073475936575667012675"
+      },
+      "upper_endpoint_decimal_18": "0.076071470660035393"
+    },
+    {
+      "bank_id": "cap_2",
+      "bound_path": "bounds/kahm_mem.json",
+      "bound_sha256": "f8616669d1a3a8a15bd93d62353d3853eefcb7816a2b4116c04ec855d0d0db8b",
+      "candidate_id": "kahm_mem",
+      "empirical_mse": {
+        "denominator": "21267647932558653966460912964485513216",
+        "numerator": "1371884978136572561752631146330096251"
+      },
+      "failure": null,
+      "frozen_state_sha256": "f1dbda4d5f178bcb930c30565e3ca7b417e50ababf75cb29e4c0f86e2e0bd2c3",
+      "status": "requirement_met",
+      "upper_endpoint": {
+        "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+        "numerator": "1955874270739427404227185048683186709999020649189588276396481"
+      },
+      "upper_endpoint_decimal_18": "0.076071471677418599"
+    },
+    {
+      "bank_id": "cap_2",
+      "bound_path": "bounds/kahm_local.json",
+      "bound_sha256": "abe9301dcaacd310be96fc4865dae97b6be8fc2cab0d32e21d89774638646268",
+      "candidate_id": "kahm_local",
+      "empirical_mse": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "685942519693215482778597544342018925"
+      },
+      "failure": null,
+      "frozen_state_sha256": "896f3a81086a42fc78b9fb46d299b0df378639afb5fa7c7ffde211a1f84844d1",
+      "status": "requirement_met",
+      "upper_endpoint": {
+        "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+        "numerator": "977937175273681580006270660570021941086620970155216373286307"
+      },
+      "upper_endpoint_decimal_18": "0.076071474781456121"
+    }
+  ],
+  "contract_sha256": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+  "family_work": {
+    "maximum_integer_bits": 32768,
+    "maximum_integer_bits_seen": 524,
+    "maximum_series_terms": 1000000,
+    "series_terms": 63616
+  },
+  "files": [
+    {
+      "bytes": 4124,
+      "path": "assessment_plan.json",
+      "sha256": "1150444047d34e3b81dc1bf024deada215bd711768a5b7ce1d676a587c2d2170"
+    },
+    {
+      "bytes": 205254,
+      "path": "bounds/kahm_local.json",
+      "sha256": "abe9301dcaacd310be96fc4865dae97b6be8fc2cab0d32e21d89774638646268"
+    },
+    {
+      "bytes": 205651,
+      "path": "bounds/kahm_mem.json",
+      "sha256": "f8616669d1a3a8a15bd93d62353d3853eefcb7816a2b4116c04ec855d0d0db8b"
+    },
+    {
+      "bytes": 205283,
+      "path": "bounds/raw.json",
+      "sha256": "d15f5b7b80365400e89cb0bb081b15e25e7927c604018a1ab531dbf4f0ca7fbb"
+    },
+    {
+      "bytes": 597,
+      "path": "calibration_receipt.json",
+      "sha256": "cb8778f9ad06de2bf2c62cd57bfed358972ca2928e7189d2019c4b2e474d299f"
+    },
+    {
+      "bytes": 2679762,
+      "path": "loss_ledger.jsonl",
+      "sha256": "f22eb720efa27ab6acb50779ac497851adc3909e4d6d4100838f9b0f3fc789e7"
+    },
+    {
+      "bytes": 13435,
+      "path": "sources/calibration_ledger.py",
+      "sha256": "56d8d0719b8d9aec5d5c96a7294fa0ec52260d0495f39495d46a6e7817cbc2f7"
+    },
+    {
+      "bytes": 24973,
+      "path": "sources/certificate_workflow.py",
+      "sha256": "a182eba110c6496569f9e16c6720f034ae3ce23cccdb674bc8420a9b160855a3"
+    },
+    {
+      "bytes": 34375,
+      "path": "sources/risk_bounds.py",
+      "sha256": "ca2ffa62e9de5f13eefffa26b057bd07a8110218abbf240025df327b47bbd551"
+    },
+    {
+      "bytes": 17872,
+      "path": "sources/verified_arithmetic.py",
+      "sha256": "2b0dbd5f84ace66425b4a7c7288f34d255aaf76607a486250c3c750a7c756b62"
+    }
+  ],
+  "freeze_record_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5",
+  "guarantee": {
+    "between_candidate_independence_required": false,
+    "class_optimality_or_representation_superiority_claimed": false,
+    "coverage_statement": "Conditional on development and under the stipulated premises, the probability that any reported valid upper endpoint fails to cover its fitted risk is at most 1/20. No additional conditioning on availability or acceptance is used.",
+    "evaluation_family": "the three selected predictors frozen before calibration",
+    "family_size": 3,
+    "per_candidate_failure_probability": {
+      "denominator": 60,
+      "numerator": 1
+    },
+    "per_prediction_interval_coverage_claimed": false,
+    "primary_mse_tolerance": {
+      "denominator": 10,
+      "numerator": 1
+    },
+    "risk": "population scalar MSE of the actual frozen predictor under the declared benchmark law",
+    "sampling_premise_status": "declared statistical model; not independently proved by deterministic PRNG metadata",
+    "simultaneous_confidence": {
+      "denominator": 20,
+      "numerator": 19
+    },
+    "statistical_premises": "iid calibration episodes from the stipulated law, independent of all development; bounded squared losses",
+    "total_failure_probability": {
+      "denominator": 20,
+      "numerator": 1
+    },
+    "type": "simultaneous_one_sided_fitted_mse_upper_bounds",
+    "unavailable_candidates": "retained without an endpoint; their probability allocation is not reassigned"
+  },
+  "ledger_path": "loss_ledger.jsonl",
+  "ledger_sha256": "f22eb720efa27ab6acb50779ac497851adc3909e4d6d4100838f9b0f3fc789e7",
+  "ledger_summary": {
+    "candidate_ids": [
+      "raw",
+      "kahm_mem",
+      "kahm_local"
+    ],
+    "count": 4096,
+    "empirical_risks": {
+      "kahm_local": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "685942519693215482778597544342018925"
+      },
+      "kahm_mem": {
+        "denominator": "21267647932558653966460912964485513216",
+        "numerator": "1371884978136572561752631146330096251"
+      },
+      "raw": {
+        "denominator": "10633823966279326983230456482242756608",
+        "numerator": "685942479030621336985628067540446985"
+      }
+    },
+    "loss_sums": {
+      "kahm_local": {
+        "denominator": "2596148429267413814265248164610048",
+        "numerator": "685942519693215482778597544342018925"
+      },
+      "kahm_mem": {
+        "denominator": "5192296858534827628530496329220096",
+        "numerator": "1371884978136572561752631146330096251"
+      },
+      "raw": {
+        "denominator": "2596148429267413814265248164610048",
+        "numerator": "685942479030621336985628067540446985"
+      }
+    },
+    "run_id": "public-v0.1.0",
+    "schema": "kahm.calibration_ledger_summary.v1"
+  },
+  "model_population_risk_evaluated": false,
+  "models_refitted": false,
+  "record_sha256": "f8b4e0a06f6487fd5c62796bd4d3eeb07fae00562ccfcfe0c2cc0b22ea0ce471",
+  "schema": "kahm.fitted_risk_certificate_family.v1",
+  "status": "assessment_complete"
+}

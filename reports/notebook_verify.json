@@ -1,0 +1,94 @@
+{
+  "cell_count": 16,
+  "cells": [
+    {
+      "elapsed_seconds": 0.002,
+      "id": "configuration",
+      "output_count": 1,
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 26.431,
+      "id": "load-evidence",
+      "output_count": 2,
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "id": "evidence-identities",
+      "output_count": 1,
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 0.002,
+      "id": "representations",
+      "output_count": 3,
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "id": "forecast-results",
+      "output_count": 2,
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "id": "risk-results",
+      "output_count": 1,
+      "status": "passed"
+    },
+    {
+      "elapsed_seconds": 0.391,
+      "id": "risk-figure",
+      "output_count": 1,
+      "status": "passed"
+    }
+  ],
+  "certificate_reverified": true,
+  "code_cells_executed": 7,
+  "elapsed_seconds": 26.923,
+  "executor": "fresh IPython InteractiveShell process; sequential code cells",
+  "fresh_experiment_started": false,
+  "guarded_entry_points": [
+    "kahm_demo.audit_workflow.audit_certificate_family",
+    "kahm_demo.calibration_ledger.write_calibration_ledger",
+    "kahm_demo.certificate_workflow.certify_frozen_family",
+    "kahm_demo.certificate_workflow.certify_upper_bound",
+    "kahm_demo.certificate_workflow.materialize_calibration",
+    "kahm_demo.certificate_workflow.write_calibration_ledger",
+    "kahm_demo.datasets.generate_bundle",
+    "kahm_demo.datasets.materialize_calibration",
+    "kahm_demo.datasets.sample_episodes",
+    "kahm_demo.encoder.fit_encoder",
+    "kahm_demo.encoder.fit_encoder_candidates",
+    "kahm_demo.encoder_workflow.fit_development_encoders",
+    "kahm_demo.encoder_workflow.fit_encoder_candidates",
+    "kahm_demo.forecast_workflow.fit_development_forecasters",
+    "kahm_demo.forecast_workflow.fit_readout_features",
+    "kahm_demo.forecast_workflow.fit_ridge_grid",
+    "kahm_demo.freeze.freeze_forecasters",
+    "kahm_demo.readout_features.fit_readout_features",
+    "kahm_demo.reproduce.audit_certificate_family",
+    "kahm_demo.reproduce.certify_frozen_family",
+    "kahm_demo.reproduce.fit_development_encoders",
+    "kahm_demo.reproduce.fit_development_forecasters",
+    "kahm_demo.reproduce.freeze_forecasters",
+    "kahm_demo.reproduce.generate_bundle",
+    "kahm_demo.reproduce.reproduce_demo",
+    "kahm_demo.ridge.fit_ridge",
+    "kahm_demo.ridge.fit_ridge_grid",
+    "kahm_demo.risk_bounds.certify_upper_bound",
+    "kahm_demo.sampling.sample_episodes"
+  ],
+  "jupyter_kernel_or_server_started": false,
+  "mode": "verify",
+  "model_replayed": true,
+  "output_sha256": "96b6e3cce949c31cc2b726e84ce97a923e9fece4f0e71b3cae8832e397ab6ac1",
+  "population_risk_recomputed": true,
+  "primary_evidence_file_count": 552,
+  "primary_evidence_unchanged": true,
+  "result_mode": "full_read_only_verification",
+  "schema": "kahm.notebook_mode_execution.v1",
+  "status": "passed",
+  "structure_and_python_syntax_checked": true
+}
