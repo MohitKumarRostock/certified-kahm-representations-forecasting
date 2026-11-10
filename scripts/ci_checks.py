@@ -223,6 +223,8 @@ def run_test_gate(project, *, mode, report):
     project = _project(project)
     path = _report_path(report, project)
     log_path = path.with_suffix(".log")
+    if log_path == path:
+        log_path = path.with_name(path.name + ".log")
     if _present(log_path):
         raise FileExistsError(f"CI test log already exists: {log_path}")
     record = {

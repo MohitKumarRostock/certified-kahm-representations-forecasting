@@ -12,15 +12,16 @@ its specific technical claims.
 | --- | --- |
 | Repository | `MohitKumarRostock/certified-kahm-representations-forecasting` |
 | Package | `kahm-demonstrator` |
-| Version | `0.1.0` |
+| Version | `0.1.1` |
 | Software author | Mohit Kumar |
 | Copyright | Copyright 2026 Mohit Kumar |
 | License | Apache-2.0; complete terms in [LICENSE](../LICENSE) |
 | Software citation | [CITATION.cff](../CITATION.cff) and [CITATION.md](../CITATION.md) |
 
-No software DOI or author identifier is invented. Publication state is recorded
-in `PUBLICATION_STATUS.json`. A prepared archive or workflow configuration is
-not evidence that a public GitHub release or remote CI run already exists.
+No software DOI or author identifier is invented. `PUBLICATION_STATUS.json`
+records release preparation. GitHub's commit, release, and workflow records
+establish actual publication and remote CI state; a prepared archive or
+workflow configuration alone does not establish either.
 
 ## What the release contains
 
@@ -36,6 +37,12 @@ encoder banks, all 225 search states, selected model freeze, reserved calibratio
 outcomes, exact loss ledger, verified endpoints, and exact finite-law population
 audit. Every candidate and outcome is retained. A wheel provides the software;
 the complete project also provides these experiment artifacts.
+
+Version `0.1.1` is an interface and documentation patch. The primary experiment
+remains `public-v0.1.0`, and its evidence and original validation reports are
+retained unchanged. See [the changelog](../CHANGELOG.md) for the fixes and
+[the patch validation report](../reports/PATCH_0.1.1_VALIDATION.md) for checks
+performed on this software version.
 
 The public primary run was defined by a local plan before its execution:
 master seed `20261110`, run ID `public-v0.1.0`, 4,096 training episodes,
@@ -76,7 +83,9 @@ python scripts/ci_checks.py fresh-wheel --project . --output ../kahm-release-che
 
 The fresh-wheel command runs one separate complete experiment and retains all
 results. Do not repeatedly change seeds or run identities to obtain acceptance.
-For strict verification in the primary runtime:
+For strict verification of the historical primary experiment, use the complete
+unmodified [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
+in the primary runtime. Run this command from that original source directory:
 
 ```bash
 python scripts/ci_checks.py strict-primary --project . --report ../kahm-release-strict.json
@@ -86,6 +95,12 @@ The recorded runtime includes the full Python build, architecture, and complete
 NumPy/BLAS configuration. Matching Python and NumPy version numbers alone is
 insufficient. A strict mismatch fails; it is never replaced by an inspection
 result under a verification label. See [CI.md](CI.md).
+
+The encoder-loader correction in `0.1.1` changes a source file bound by the
+primary freeze. Consequently, even a matching runtime cannot strictly replay
+the historical primary evidence using `0.1.1` source. Inspection remains
+available. Fresh experiments created with `0.1.1` record their own source and
+runtime identities and are verified against those identities.
 
 Before distributing a package, inspect its wheel metadata and check the archive
 manifest after extracting it into a clean directory. Confirm that imports come

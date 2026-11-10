@@ -8,9 +8,11 @@ fresh experiment; ``kahm_demo reproduce`` is a separate explicit operation.
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 import json
 from pathlib import Path
 
+from kahm_demo.cli import parse_history_observation
 from kahm_demo.tutorial import history_from_observations, inspect_primary, verify_primary
 
 
@@ -18,7 +20,8 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path("."))
     parser.add_argument("--mode", choices=("inspect", "verify"), default="inspect")
-    parser.add_argument("--history", type=float, nargs=2, default=[0.25, 0.75])
+    parser.add_argument("--history", type=parse_history_observation, nargs=2,
+                        default=[Fraction(1, 4), Fraction(3, 4)])
     args = parser.parse_args(argv)
     try:
         history = history_from_observations(args.history)

@@ -81,6 +81,38 @@ class GateTests(unittest.TestCase):
         self.assertEqual(ci._read(self.report), result)
         self.assertIn("synthetic unit failure", self.report.with_suffix(".log").read_text())
 
+    def test_log_suffix_report_retains_json_and_test_log(self):
+        for status in ("passed", "failed"):
+            with self.subTest(status=status):
+                report = self.root / f"{status}.log"
+                calls = []
+                def action(test):
+                    calls.append("called")
+                    if status == "failed":
+                        test.fail("synthetic unit failure")
+                with mock.patch.object(ci, "discover_tests", return_value=small_suite(action)):
+                    result = ci.run_test_gate(self.project, mode="portable", report=report)
+                log_path = report.with_name(report.name + ".log")
+                self.assertEqual(calls, ["called"])
+                self.assertEqual(result["status"], status)
+                self.assertEqual(result["tests_run"], 1)
+                self.assertEqual(ci._read(report), result)
+                self.assertEqual(Path(result["log_path"]), log_path)
+                log = log_path.read_text()
+                self.assertIn("Ran 1 test", log)
+                self.assertIn("synthetic unit failure" if status == "failed" else "OK", log)
+
+    def test_existing_log_for_log_suffix_report_is_preserved_before_discovery(self):
+        report = self.root / "portable.log"
+        log_path = self.root / "portable.log.log"
+        log_path.write_text("retained earlier test log")
+        with mock.patch.object(ci, "discover_tests", return_value=small_suite()) as discover:
+            with self.assertRaises(FileExistsError):
+                ci.run_test_gate(self.project, mode="portable", report=report)
+        discover.assert_not_called()
+        self.assertFalse(report.exists())
+        self.assertEqual(log_path.read_text(), "retained earlier test log")
+
     def test_unexpected_unittest_skip_is_a_failed_gate(self):
         with mock.patch.object(ci, "discover_tests", return_value=small_suite(lambda test: test.skipTest("unapproved skip"))):
             result = ci.run_test_gate(self.project, mode="portable", report=self.report)

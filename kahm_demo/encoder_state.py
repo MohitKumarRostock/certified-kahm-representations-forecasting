@@ -244,7 +244,10 @@ def load_encoder(path: Path) -> KAHMEncoder:
         raise ValueError("encoder belongs to another scientific contract")
     if record.get("status") != "development_bank_unselected":
         raise ValueError("unsupported encoder development status")
-    if record.get("runtime", {}).get("canonical_method") != CANONICAL_ENCODER_METHOD:
+    runtime = record.get("runtime")
+    if not isinstance(runtime, dict):
+        raise ValueError("encoder runtime metadata must be an object")
+    if runtime.get("canonical_method") != CANONICAL_ENCODER_METHOD:
         raise ValueError("unsupported canonical encoder inference convention")
     state = record.get("state")
     if hashlib.sha256(canonical_json_bytes(state)).hexdigest() != record.get("state_sha256"):

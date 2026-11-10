@@ -24,27 +24,27 @@
     {
       "bytes": 525,
       "path": ".gitignore",
-      "sha256": "4fd0ea6475ee4b53f31c5d53b337bb8e1d47d1c6eb186d05a6f1190be0c2a5c3"
+      "sha256": "6cfb6d9e004cd2aaaf2a251e933587e8d85959d2d869fb8efd130ab82d0cbda5"
     },
     {
-      "bytes": 1269,
+      "bytes": 2640,
       "path": "CHANGELOG.md",
-      "sha256": "61de833d7a011332f6f076d5eca9f5cea55aac56c95a4bf4f0518a66bfef59a1"
+      "sha256": "644f8bb2d535649925bd3cab7bfcce86266f667197b118b37bb1b9a304eea7c8"
     },
     {
       "bytes": 815,
       "path": "CITATION.cff",
-      "sha256": "c96517d394d5b0f30e3c6b8f7ba50d3b3e28a3c935377db084656acdc200c96e"
+      "sha256": "ffcfa1035cb0393df66bfb7c5f943d9ebaaaceb5da3b4d2933d3edbca4122b5e"
     },
     {
-      "bytes": 2541,
+      "bytes": 2857,
       "path": "CITATION.md",
-      "sha256": "55f4a4a8de5128a49d3bff4a9060c9c35bc403e53a8784725e101f6286e95e7d"
+      "sha256": "0d32db5b6b4bd795d8714c998153214052da1dfb2892158cf32b920b95e65ce3"
     },
     {
-      "bytes": 8261,
+      "bytes": 8725,
       "path": "CONTRIBUTING.md",
-      "sha256": "a9a3779014161e03266d648ae961c6789a8cd0e3063d1a11dbf69a0eb073b670"
+      "sha256": "3c6232366a36581f52351b018be08c35db61b3bd450f34be668a3d48013700e9"
     },
     {
       "bytes": 11358,
@@ -57,14 +57,14 @@
       "sha256": "7b2664b2462be9b3faa8fd7cc7e40f5285b1a74995b6361f3f112d87209e0e15"
     },
     {
-      "bytes": 655,
+      "bytes": 1302,
       "path": "PUBLICATION_STATUS.json",
-      "sha256": "331e8d5002eaafd63762f70ccced39151148cecb51d44d5d60d939afc22ff3f4"
+      "sha256": "42e8d32f41aea82b7e3921dc16457aaf483743cbcb7b5fa97d89dc1680ba7647"
     },
     {
-      "bytes": 9798,
+      "bytes": 11305,
       "path": "README.md",
-      "sha256": "9390d69c6e00a56aa8156714e8f9bb4fd53c14bbe13059271b85d8bcc710519e"
+      "sha256": "efb78e7579c8310f64e6be7a9fadc96a2c365795ae21252f27ce366a54a9cf93"
     },
     {
       "bytes": 11017,
@@ -187,9 +187,9 @@
       "sha256": "67a389a7ab59552b065c97bc215c693c637a261100cd0849eee8b8dbb433dd3f"
     },
     {
-      "bytes": 157058,
-      "path": "dist/kahm_demonstrator-0.1.0-py3-none-any.whl",
-      "sha256": "d34201a61cbbd5de90ae9980c2af85a18ae4a954f1525e83e9ab928787955fc0"
+      "bytes": 157625,
+      "path": "dist/kahm_demonstrator-0.1.1-py3-none-any.whl",
+      "sha256": "5ccc0916bad192858f954ce3075537d01d1634132eca98ca44b51dd7b596fad4"
     },
     {
       "bytes": 16164,
@@ -212,9 +212,9 @@
       "sha256": "7f98a1e73ee8cd86e0ec20acfd8849890c2607ae7327d608be103735b534d145"
     },
     {
-      "bytes": 9092,
+      "bytes": 10081,
       "path": "docs/CI.md",
-      "sha256": "7f0d01a0b1720715a09931e61ea4a80ed3303420e832bd8caec3e8d985c59009"
+      "sha256": "e0e19eadbf2d31d5e9d0d7619d3603d74c70d7c5ca8cc533e47e4f510a406b5f"
     },
     {
       "bytes": 12864,
@@ -242,9 +242,9 @@
       "sha256": "e68d916199a4a134b5dedf59886c1df85425088834408075944e4598137f0d54"
     },
     {
-      "bytes": 10936,
+      "bytes": 12549,
       "path": "docs/QUICKSTART.md",
-      "sha256": "af08291c1c271a8638980e287fb6b89740c3dfcdf61035cdf1574741c78d6d92"
+      "sha256": "2ee40ad985c61308c5e2d2f1bb4422d2fa5f1682c290a358693fae87632bb4e1"
     },
     {
       "bytes": 15466,
@@ -252,19 +252,19 @@
       "sha256": "733bed29e517bbbeb653715ec1d44f18482116ccd1aba048db356e1b67f9c4c4"
     },
     {
-      "bytes": 5627,
+      "bytes": 6630,
       "path": "docs/RELEASE_GUIDE.md",
-      "sha256": "9a2146b3f30c678c760a04fe326be843e98b05ae40295b5673086b3b96cbcd84"
+      "sha256": "6cdcd8d992255469807270b27d6cf7d0a75798a7d9bf1da6c47ae2d59b31e7c1"
     },
     {
-      "bytes": 12945,
+      "bytes": 14093,
       "path": "docs/TECHNICAL_OVERVIEW.md",
-      "sha256": "52a0bdec13616d170b6a1b15ef3ff4188f7ef4cb461289528ae4c839fe5fa55f"
+      "sha256": "01d6e357c7faa5efd10561dcd6e05340e9116c1af0fdc86501876f6f6c474167"
     },
     {
-      "bytes": 14678,
+      "bytes": 16205,
       "path": "docs/TUTORIAL.md",
-      "sha256": "cd2ad4b9bed4558f12316e17a6d9db52e25e14c6edb9102fe603a95d6bf0af71"
+      "sha256": "dfd4de3956c0e1fdffcf8079f0f67a2e31d94b8590d49beca71bac710db35dcd"
     },
     {
       "bytes": 109563,
@@ -322,9 +322,9 @@
       "sha256": "e5cfbf5180119ce89f7a49fe51018eddcb96351c9b69c3551637e518ec9406db"
     },
     {
-      "bytes": 3526,
+      "bytes": 3673,
       "path": "examples/guided_tutorial.py",
-      "sha256": "b62a22a8c3f9931a6275fee33c7ac92db487625d9af043fdebebb199fa2373cb"
+      "sha256": "3a52f0ea796c5814491ec5d1d60dd96c479fc6041f76f67f459450d628ebd774"
     },
     {
       "bytes": 2010,
@@ -1769,7 +1769,7 @@
     {
       "bytes": 100,
       "path": "kahm_demo/__init__.py",
-      "sha256": "97400117504cc209ade85eb0a81f49fa56c80e09262a2d2e17e2817b1f260b98"
+      "sha256": "8c610ab1229879e1c55d898fb1d7fd9a1e11d59a584037905e662fc33c638742"
     },
     {
       "bytes": 49,
@@ -1807,9 +1807,9 @@
       "sha256": "a182eba110c6496569f9e16c6720f034ae3ce23cccdb674bc8420a9b160855a3"
     },
     {
-      "bytes": 15226,
+      "bytes": 15666,
       "path": "kahm_demo/cli.py",
-      "sha256": "8f4ed9e569ec46a8fc7b8cf8587ad397d6a1a27a970ff4cf7f8ca45fe1944d60"
+      "sha256": "9c5a5038cd0308d66d9df5b183cf93f2c66a4cbeb3940fc484682f7756ea5993"
     },
     {
       "bytes": 1894,
@@ -1827,9 +1827,9 @@
       "sha256": "24f394ba634ea91ead5941153c121d4c469e1251c601306fe65f028bb3c707bd"
     },
     {
-      "bytes": 12928,
+      "bytes": 13055,
       "path": "kahm_demo/encoder_state.py",
-      "sha256": "62ca70887a22ab5385b396c455f63cba2f83939ccd617e75870a3580e195f927"
+      "sha256": "8e2c107f57433d8d02ffd438b646a977f2d39984358fdef7ea3d1eccaa33455a"
     },
     {
       "bytes": 15394,
@@ -3112,19 +3112,24 @@
       "sha256": "78c31f010ab42c3862dfbe548f94a321241b3c2ccdca4d614b18e315912b831c"
     },
     {
-      "bytes": 119462,
+      "bytes": 121453,
       "path": "notebooks/01_kahm_certified_forecasting.html",
-      "sha256": "e9df74daaca917848297baf323cab9b541853374647051da4d027c9992af8bae"
+      "sha256": "41eafbc9e61ae7978a1cf8921072109e540bc06764953a3204df3f2a2e235e5a"
     },
     {
-      "bytes": 93237,
+      "bytes": 94843,
       "path": "notebooks/01_kahm_certified_forecasting.ipynb",
-      "sha256": "821200388286079c0b02a6301d824811cbfa6dbe0790223bf9d3bf4a4413fa62"
+      "sha256": "a7852083864308ffbddfe9eaec03ad04c7fda925cc33cda8bbb76e26d2446f69"
     },
     {
       "bytes": 887,
       "path": "pyproject.toml",
-      "sha256": "b34ce72a5e8a4e3dfcd409f652a3aa6338d25ec8162fa8edb28d10cb20cb46f7"
+      "sha256": "d9c456e2aab3df1fcc69ad3a75fa2f1ccf9603207c55cd6d092aa74cdddcb08b"
+    },
+    {
+      "bytes": 7140,
+      "path": "reports/PATCH_0.1.1_VALIDATION.md",
+      "sha256": "4b4c58b1e5753823da10d444be1f89eac9835ac2bcd6b7fd3bc83d2d6e27ad56"
     },
     {
       "bytes": 5748,
@@ -3150,6 +3155,11 @@
       "bytes": 3076,
       "path": "reports/notebook_verify.json",
       "sha256": "be7064286013e825f9e2db443e44031babdb297ffa5f4355905e7c60a17f4fa3"
+    },
+    {
+      "bytes": 3680,
+      "path": "reports/patch_0.1.1_validation.json",
+      "sha256": "5fc26869b3ecf3f08c69dc66ab868f36be68a2b376b4633dce4bd1bf00fa5968"
     },
     {
       "bytes": 44023,
@@ -3242,9 +3252,9 @@
       "sha256": "a4dad5c81c7bf50c307f224b3b0b67cc9f02dc5cc8596e6c894ba0c42d697b61"
     },
     {
-      "bytes": 31006,
+      "bytes": 31085,
       "path": "scripts/ci_checks.py",
-      "sha256": "7b583b1f7622b80baa64ce13179b6315273eaf4d314c77e96e8e29c361cf111b"
+      "sha256": "880ea7b2a4480cc632fb3db010c2112e49bc0ef12847d87f8a84fae4f6cc8812"
     },
     {
       "bytes": 34855,
@@ -3267,9 +3277,14 @@
       "sha256": "c3f3368939dc61854d63e239aa7ed92508165486599b3606dfefbc3fd10cfe09"
     },
     {
-      "bytes": 20607,
+      "bytes": 22375,
       "path": "tests/test_ci_checks.py",
-      "sha256": "e58f54eb1d387155e12b3048d368726d90248dd9105423b1a054ecd3e585db5c"
+      "sha256": "111cd3f672db4442faa444fe5ea07ab8612c9a9f582f0b0c51cc6c30af3d9948"
+    },
+    {
+      "bytes": 4203,
+      "path": "tests/test_cli_boundaries.py",
+      "sha256": "c4b9a8a2f7c1154d108f47ab724154d15e3f11f409a7431262286da3c4c9f3ba"
     },
     {
       "bytes": 24833,
@@ -3277,9 +3292,9 @@
       "sha256": "5022f320c6029f90d611f379b061e54844ef0056b8a7651fb24b06ef08d7cf9f"
     },
     {
-      "bytes": 12922,
+      "bytes": 13786,
       "path": "tests/test_encoder.py",
-      "sha256": "955c6e480fbc01ec478848a503099ed14c41369837db55c0de6cfdc0b4f88bac"
+      "sha256": "d9481ef7ecfeeeed43b9108ba66a0e7d113fe4bef482ab43b4adf15108ac7dd8"
     },
     {
       "bytes": 15811,
@@ -3362,7 +3377,22 @@
       "sha256": "8a316f2ae4e632aa7f4178e36312d9bfea93cfec8a0a353f92fa5af0f38f9e12"
     }
   ],
-  "package_version": "0.1.0",
+  "historical_validation_report": {
+    "bytes": 5748,
+    "path": "reports/RELEASE_VALIDATION.md",
+    "sha256": "c74302a0958ab043456249311931872b38ef8412e9626b9aaed231a12662e22d"
+  },
+  "package_version": "0.1.1",
+  "patch_validation_record": {
+    "bytes": 3680,
+    "path": "reports/patch_0.1.1_validation.json",
+    "sha256": "5fc26869b3ecf3f08c69dc66ab868f36be68a2b376b4633dce4bd1bf00fa5968"
+  },
+  "patch_validation_report": {
+    "bytes": 7140,
+    "path": "reports/PATCH_0.1.1_VALIDATION.md",
+    "sha256": "4b4c58b1e5753823da10d444be1f89eac9835ac2bcd6b7fd3bc83d2d6e27ad56"
+  },
   "primary_artifacts": {
     "audit": {
       "path": "audits/primary/audit.json",
@@ -3377,6 +3407,7 @@
       "sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5"
     }
   },
+  "primary_evidence_software_version": "0.1.0",
   "primary_run_id": "public-v0.1.0",
   "schema": "kahm.public_release_manifest.v1",
   "self_hash_excluded": true,
@@ -3387,9 +3418,9 @@
     "repository": "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting"
   },
   "validated_wheel": {
-    "bytes": 157058,
-    "path": "dist/kahm_demonstrator-0.1.0-py3-none-any.whl",
-    "sha256": "d34201a61cbbd5de90ae9980c2af85a18ae4a954f1525e83e9ab928787955fc0"
+    "bytes": 157625,
+    "path": "dist/kahm_demonstrator-0.1.1-py3-none-any.whl",
+    "sha256": "5ccc0916bad192858f954ce3075537d01d1634132eca98ca44b51dd7b596fad4"
   },
   "validation_report_sha256": "416c850e1e97f0bc6bb093b25c708438b23f5f1a2cd8ff13d782ff704b7e78d5"
 }

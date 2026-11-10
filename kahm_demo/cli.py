@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 import json
 from pathlib import Path
 import sys
@@ -11,6 +12,14 @@ from ._util import read_json, write_json
 from .contract import validate_contract
 from .datasets import generate_bundle, materialize_calibration, verify_bundle
 from .oracle import exact_risk, parse_prediction_table, reference_summary
+
+
+def parse_history_observation(value: str) -> Fraction:
+    """Keep the user's numeric token exact until finite-support validation."""
+    try:
+        return Fraction(value)
+    except (ValueError, ZeroDivisionError, OverflowError) as error:
+        raise argparse.ArgumentTypeError("history observations must be finite numbers") from error
 
 
 def _emit(value, output=None):
@@ -101,7 +110,8 @@ def main(argv=None) -> int:
     tutorial = commands.add_parser("tutorial", help="inspect archived primary evidence, or explicitly re-verify and replay it")
     tutorial.add_argument("--project", type=Path, default=Path("."))
     tutorial.add_argument("--mode", choices=("inspect", "verify"), default="inspect")
-    tutorial.add_argument("--history", type=float, nargs=2, default=[0.25, 0.75])
+    tutorial.add_argument("--history", type=parse_history_observation, nargs=2,
+                          default=[Fraction(1, 4), Fraction(3, 4)])
     reproduce = commands.add_parser("reproduce", help="run one fresh development, freeze, certificate, and audit experiment")
     reproduce.add_argument("--output", type=Path, required=True)
     reproduce.add_argument("--master-seed", type=int, default=20261110)

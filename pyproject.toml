@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kahm-demonstrator"
-version = "0.1.0"
+version = "0.1.1"
 description = "Reproducible KAHM soft-state forecasting demonstration with verified fitted-risk bounds"
 requires-python = ">=3.12"
 dependencies = ["numpy>=2.0,<3"]

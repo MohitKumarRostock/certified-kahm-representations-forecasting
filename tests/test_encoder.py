@@ -11,9 +11,10 @@ from unittest import mock
 import numpy as np
 
 from kahm_demo._util import canonical_json_bytes, read_json, sha256_file, write_json
+from kahm_demo.contract import CONTRACT_SHA256
 from kahm_demo.datasets import generate_bundle, load_development
 from kahm_demo.encoder import fit_encoder, fit_encoder_candidates
-from kahm_demo.encoder_state import (encoder_state_fingerprint, load_encoder,
+from kahm_demo.encoder_state import (ENCODER_SCHEMA, encoder_state_fingerprint, load_encoder,
                                     save_encoder, validate_encoder)
 from kahm_demo.encoder_workflow import (fit_development_encoders, support_feature_table,
                                        verify_encoder_bundle)
@@ -153,6 +154,22 @@ class EncoderTests(unittest.TestCase):
         changed_bank = replace(bank, models=(changed_model,) + bank.models[1:])
         with self.assertRaisesRegex(ValueError, "metric"):
             validate_encoder(changed_bank)
+
+
+class EncoderMetadataTests(unittest.TestCase):
+    def test_loader_rejects_nonobject_runtime_metadata_with_value_error(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "malformed-encoder.json"
+            for runtime in (None, [], "historical-runtime", True, 42):
+                with self.subTest(runtime=runtime):
+                    write_json(path, {
+                        "schema": ENCODER_SCHEMA,
+                        "contract_sha256": CONTRACT_SHA256,
+                        "status": "development_bank_unselected",
+                        "runtime": runtime,
+                    })
+                    with self.assertRaisesRegex(ValueError, "encoder runtime metadata must be an object"):
+                        load_encoder(path)
 
 
 class EncoderWorkflowTests(unittest.TestCase):

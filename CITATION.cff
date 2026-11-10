@@ -8,7 +8,7 @@ title: KAHM forecasting demonstrator
 authors:
   - given-names: Mohit
     family-names: Kumar
-version: 0.1.0
+version: 0.1.1
 license: Apache-2.0
 repository-code: https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting
 abstract: >-

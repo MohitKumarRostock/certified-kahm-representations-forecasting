@@ -1,6 +1,6 @@
 # Technical overview: workflow and artifact interfaces
 
-Version `0.1.0` supplies an executable controlled benchmark from training data
+Version `0.1.1` supplies an executable controlled benchmark from training data
 to frozen forecasts, calibration losses, checked risk bounds, and an exact
 population audit. The [method overview](METHOD_OVERVIEW.md) gives the conceptual
 map; this guide describes the lifecycle, interfaces, and retained artifacts.
@@ -22,7 +22,12 @@ The tutorial's primary paths are `data/primary`, `frozen/primary`,
 identities and displays recorded results; it does not replay the numerical
 models or reverify their endpoint inequalities.
 
-For explicit numerical verification:
+The retained primary evidence belongs to `public-v0.1.0`. Version `0.1.1`
+corrects encoder artifact input validation, changing execution-source bytes
+bound by that historical freeze. Inspection remains available in `0.1.1`.
+For numerical verification of the primary evidence, use the complete unmodified
+[`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
+and its exact recorded runtime. Run this command from that original project:
 
 ```bash
 python -m kahm_demo tutorial --project . --mode verify --history 0.25 0.75
@@ -35,8 +40,8 @@ stops the operation rather than silently reducing its scope.
 
 Runtime identity includes the full Python build string, machine information,
 NumPy version, and NumPy/BLAS configuration, as well as numerical source bytes.
-Package-version pins alone do not establish that identity. A different runtime
-can create its own complete development run and assessment.
+Package-version pins alone do not establish that identity. A fresh `0.1.1`
+experiment creates its own source/runtime identities, freeze, and assessment.
 
 The [notebook](../notebooks/01_kahm_certified_forecasting.ipynb) defaults to
 inspection; its Run All does not fit models or generate calibration data. Its
@@ -87,7 +92,8 @@ every product and result must be finite before clipping. Batch inference reuses
 the same row calculation and may cache identical histories while retaining order
 and multiplicity. Loading stored arrays does not rerun model fitting.
 
-Use the frozen interface once the baseline artifacts are present:
+The following example replays the historical baseline. Run it with the
+unmodified `v0.1.0` source and exact recorded runtime described above:
 
 ```python
 from pathlib import Path
@@ -100,6 +106,10 @@ print(model.inspect_one(history))
 print(model.predict([history, history]))
 print(model.freeze_record_sha256)
 ```
+
+After creating a fresh `0.1.1` run at `runs/tutorial`, use its matching
+`0.1.1` source/runtime and replace the freeze path with
+`runs/tutorial/frozen/freeze.json`.
 
 Inference-only commands check the predictor's freeze, not the separate risk
 certificate. The data APIs require full frozen-model verification before
@@ -141,7 +151,8 @@ records the complete procedure and work limits.
 | `unresolved` | A valid endpoint exceeds `1/10`; this does not establish excessive actual risk |
 | `certificate_unavailable` | The required endpoint calculation or verification was not established |
 
-The certificate-verification interface is:
+This certificate-verification example also uses the historical baseline and
+requires the unmodified `v0.1.0` source and exact recorded runtime:
 
 ```python
 from pathlib import Path
@@ -154,6 +165,10 @@ check = verify_certificate_bundle(
 )
 print(check["candidates"])
 ```
+
+For a fresh `0.1.1` run at `runs/tutorial`, use its matching source/runtime and
+the paths `runs/tutorial/certificates/certificate.json`, `runs/tutorial/data`,
+and `runs/tutorial/frozen/freeze.json`, respectively.
 
 ## 5. Audit the exact benchmark risk afterwards
 
@@ -174,6 +189,9 @@ may be below the Bayes population risk. Model-specific oracle risks never enter
 development or certificate construction. See [POPULATION_AUDIT.md](POPULATION_AUDIT.md).
 
 ## 6. Run the complete procedure in a fresh directory
+
+Use the installed `0.1.1` package from its project directory. The new run binds
+the current sources and runtime:
 
 ```bash
 python -m kahm_demo reproduce --output runs/tutorial --master-seed 20261110 --run-id tutorial-v0.1

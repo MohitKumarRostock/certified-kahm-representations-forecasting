@@ -1,0 +1,120 @@
+{
+  "archive_inspection": {
+    "report": "archive-inspection.json",
+    "sha256": "343f8d1ea29b42cceffc477cc51695dfc5df6e14c4d78d2249edce1bbe037756",
+    "status": "passed"
+  },
+  "focused_regression_evidence": "Observed outputs from the three implementation checks; full portable-suite evidence is recorded by the subsequent GitHub workflow.",
+  "focused_regressions": [
+    {
+      "command": "python -B -m unittest discover -s tests -p test_cli_boundaries.py -v",
+      "elapsed_seconds": 2.626,
+      "status": "passed",
+      "tests_run": 4
+    },
+    {
+      "command": "python -B -m unittest discover -s tests -p test_encoder.py -v",
+      "elapsed_seconds": 1.261,
+      "status": "passed",
+      "tests_run": 19
+    },
+    {
+      "command": "python -B -m unittest discover -s tests -p test_ci_checks.py -v",
+      "elapsed_seconds": 0.032,
+      "status": "passed",
+      "tests_run": 28
+    }
+  ],
+  "fresh_wheel": {
+    "all_outcomes_retained": true,
+    "automatic_retries": false,
+    "elapsed_seconds": 104.192,
+    "original_primary_numerical_verification_performed": false,
+    "pipeline_invocations": 1,
+    "report": "fresh-wheel/ci_report.json",
+    "run_id": "release-v0.1.1-check",
+    "runtime_identity_checks_relaxed": false,
+    "sha256": "351d8e4bc260edcf14f876dc63f944b88cb2d1a1ecfc10ab0d01730b916aaad3",
+    "status": "passed"
+  },
+  "historical_payloads": {
+    "all_original_sha256_and_sizes_match": true,
+    "count": 574,
+    "counts_by_directory": {
+      "audits": 7,
+      "certificates": 11,
+      "data": 6,
+      "encoders": 6,
+      "frozen": 287,
+      "models": 235,
+      "reports": 22
+    }
+  },
+  "installed_wheel_boundary_checks": [
+    {
+      "case": "supported exact input",
+      "exit_code": 0,
+      "history": [
+        ".2500",
+        "7.5E-1"
+      ],
+      "status": "passed",
+      "stderr": ""
+    },
+    {
+      "case": "off-support near decimal",
+      "exit_code": 2,
+      "history": [
+        "0.25000000000000001",
+        "0.75"
+      ],
+      "status": "passed",
+      "stderr": "error: history observations must lie exactly in the finite support {0, 0.25, 0.75, 1}\n"
+    },
+    {
+      "case": "underflowing off-support token",
+      "exit_code": 2,
+      "history": [
+        "1e-400",
+        "0.75"
+      ],
+      "status": "passed",
+      "stderr": "error: history observations must lie exactly in the finite support {0, 0.25, 0.75, 1}\n"
+    }
+  ],
+  "notebook": {
+    "changed_cell_ids": [
+      "welcome",
+      "setup",
+      "load-explanation",
+      "benchmark",
+      "fresh-run",
+      "adaptation"
+    ],
+    "code_cells_reexecuted_for_this_patch": false,
+    "code_outputs_execution_counts_and_metadata_unchanged": true,
+    "only_markdown_sources_changed": true
+  },
+  "package_version": "0.1.1",
+  "schema": "kahm.patch_package_validation.v1",
+  "scope": "A local preparation record. It does not assert an unobserved remote CI result, human peer review, browser execution, or strict numerical replay of the original primary example.",
+  "static_html": {
+    "browser_rendering_exercised": false,
+    "bytes": 121453,
+    "embedded_png_count": 1,
+    "external_scripts": [],
+    "external_stylesheets": [],
+    "local_links_checked": 7,
+    "sha256": "41eafbc9e61ae7978a1cf8921072109e540bc06764953a3204df3f2a2e235e5a"
+  },
+  "status": "passed",
+  "wheel": {
+    "bytes": 157625,
+    "filename": "kahm_demonstrator-0.1.1-py3-none-any.whl",
+    "license_and_notice_bytes_match": true,
+    "metadata_author_version_license_checked": true,
+    "package_source_files_match": 34,
+    "record_entries_verified": 40,
+    "sha256": "5ccc0916bad192858f954ce3075537d01d1634132eca98ca44b51dd7b596fad4"
+  }
+}

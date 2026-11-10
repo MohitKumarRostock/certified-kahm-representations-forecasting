@@ -1,15 +1,26 @@
 # Quick start
 
-Start by inspecting the supplied experiment. Choose strict verification when
-your runtime matches the saved one, or run a fresh experiment to create evidence
-in your own supported environment. These are separate operations with explicit
-output labels. The complete method and guarantee are documented locally; start with
+Start by inspecting the supplied experiment. Version 0.1.1 can inspect the
+historical baseline or run a fresh experiment with its own evidence. Strict
+verification of the baseline requires unmodified v0.1.0 sources and the exact
+recorded runtime. These operations have explicit output labels.
+The complete method and guarantee are documented locally; start with
 [Method overview](METHOD_OVERVIEW.md) for the technical reading path.
 
 ## 1. Prepare the complete project
 
-Use Python **3.12 or newer** and open a terminal in the project directory. For
-the supplied walkthrough, that directory must contain `kahm_demo/`,
+Use Python **3.12 or newer**. Download the complete
+[Certified_KAHM_Representations_Forecasting_v0.1.1.zip](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/download/v0.1.1/Certified_KAHM_Representations_Forecasting_v0.1.1.zip)
+from the [v0.1.1 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1).
+Place the ZIP in a fresh directory and open a terminal there, then extract and
+enter the project:
+
+```bash
+python -m zipfile -e Certified_KAHM_Representations_Forecasting_v0.1.1.zip .
+cd certified-kahm-representations-forecasting
+```
+
+For the supplied walkthrough, the project directory must contain `kahm_demo/`,
 `data/primary/`, `frozen/primary/`, `certificates/primary/`, and `audits/primary/`.
 A wheel installs the code but does not include these experiment directories.
 
@@ -84,17 +95,27 @@ layout, one history's forecasts, and the separate meanings of calibration mean
 
 **Run All does not start training or create calibration data.** The fresh-run
 command is displayed in Markdown, outside executable cells. Changing `MODE` to
-`"verify"` requests the strict checks in the next section.
+`"verify"` requests the strict checks in the next section; the historical
+baseline requires the v0.1.0 release and its exact recorded runtime.
 
-The [HTML walkthrough](../notebooks/01_kahm_certified_forecasting.html) is a
-static reading copy with recorded inspection output. Opening it performs no
-verification. The [release validation report](../reports/RELEASE_VALIDATION.md) records
-the checks performed on the supplied files. Opening the HTML does not execute
-a notebook kernel or verify a certificate.
+For the [HTML walkthrough](../notebooks/01_kahm_certified_forecasting.html), open
+the extracted `notebooks/01_kahm_certified_forecasting.html` file in your browser.
+Keep it in the complete project so its relative documentation links work.
+It is a static reading copy with recorded inspection output; opening it does
+not execute a notebook kernel or verify a certificate. The
+[historical validation report](../reports/RELEASE_VALIDATION.md) records the
+checks performed for the v0.1.0 baseline.
 Official application setup is documented by
 [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html).
 
 ## 4. Verify the supplied numerical evidence
+
+The supplied evidence is the historical `public-v0.1.0` experiment. Version
+0.1.1 fixes encoder artifact input validation, changing execution-source bytes
+bound by that freeze. It can inspect the historical archive, but cannot pass
+its strict source-identity check. Obtain the unmodified
+[v0.1.0 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
+and use the exact recorded runtime. Run this command from that v0.1.0 project:
 
 ```bash
 python -m kahm_demo tutorial --project . --mode verify --history 0.25 0.75
@@ -112,7 +133,7 @@ Verification reads existing data and states. It does not sample, refit, repeat
 the endpoint root search, or create a replacement assessment. Failure stops the
 operation; inspection is never substituted for a failed verification.
 
-### If your runtime does not match
+### If your sources or runtime do not match
 
 The primary records name CPython 3.12.14 and NumPy 2.3.5. They also bind the
 full Python build string, machine architecture, complete NumPy/BLAS build
@@ -134,7 +155,8 @@ particular snapshot. Do not edit archived identities to override a mismatch.
 | `verify-certificate` | Frozen preflight, exact calibration losses, and direct checks of issued endpoints |
 | `verify-audit` | Certificate verification plus recomputation of exact benchmark risks and comparisons |
 
-For example:
+These commands have the same source/runtime requirement. For the historical
+baseline, run them from the unmodified v0.1.0 project in its recorded runtime:
 
 ```bash
 python -m kahm_demo forecast-frozen --freeze frozen/primary/freeze.json --candidate kahm_local --history 0.25 0.75
@@ -149,7 +171,9 @@ assessment. It does not mean that no certificate exists. The installed
 
 ## 5. Run a fresh complete experiment
 
-This is an explicit operation that fits models and generates new artifacts:
+Return to the v0.1.1 project and its installed package for a fresh experiment.
+This explicit operation fits models and generates new artifacts bound to the
+current sources and runtime:
 
 ```bash
 python -m kahm_demo reproduce --output runs/tutorial --master-seed 20261110 --run-id tutorial-v0.1
@@ -204,7 +228,7 @@ calibrated family.
 | --- | --- |
 | Missing primary archive or identity mismatch | Use the complete unmodified project and the correct `--project` path. The wheel alone is insufficient for archive inspection. |
 | Unsupported history | Use exactly two supported observation values in temporal order. The tutorial is a finite-benchmark interface. |
-| Strict source/runtime mismatch | Read the archive with `inspect`, or create a fresh development run in your current environment. |
+| Strict source/runtime mismatch | Inspect with v0.1.1, verify the historical baseline with unmodified v0.1.0 sources and its exact runtime, or create a fresh v0.1.1 experiment. |
 | Existing reproduction output | Preserve it. A new execution needs a genuinely fresh destination; the command cannot resume or overwrite a run. |
 | `unresolved` | A valid upper endpoint exceeds the tolerance; this does not establish that the actual risk exceeds it. |
 | `certificate_unavailable` | The required endpoint was not established; retain the diagnostic and all candidates. |

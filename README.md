@@ -1,6 +1,6 @@
 # KAHM forecasting demonstrator
 
-**Version `0.1.0` · Apache-2.0 · Standalone methods and reproducible assessment**
+**Version `0.1.1` · Apache-2.0 · Standalone methods and reproducible assessment**
 
 Based on our research, this project demonstrates forecasting with
 **geometry-induced soft states** and checkable upper bounds on the fitted
@@ -35,14 +35,26 @@ Feature widths and total search effort differ; no equal-capacity or general
 KAHM-superiority claim is made.
 
 The [benchmark](docs/BENCHMARK.md) predicts the next scalar observation from two
-past observations. Its four values are `0`, `0.25`, `0.75`, and `1`. Fresh
-independent episodes and a known finite law make both statistical calibration
-and exact population-risk auditing possible.
+past observations. Its four values are `0`, `0.25`, `0.75`, and `1`. Statistical
+calibration assumes a stipulated iid episode model, independent of development;
+the pseudorandom generator provides reproducible samples, not proof of that
+premise. The known finite law also permits exact population-risk auditing.
 
 ## Start with the supplied experiment
 
-Use Python **3.12 or newer** from the complete project directory. The package
-wheel supplies code; archive inspection also needs the release evidence folders.
+Use Python **3.12 or newer**. Download
+[Certified_KAHM_Representations_Forecasting_v0.1.1.zip](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/download/v0.1.1/Certified_KAHM_Representations_Forecasting_v0.1.1.zip)
+from the [v0.1.1 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1).
+Place the ZIP in a fresh directory and open a terminal there, then extract and
+enter the project:
+
+```bash
+python -m zipfile -e Certified_KAHM_Representations_Forecasting_v0.1.1.zip .
+cd certified-kahm-representations-forecasting
+```
+
+The complete ZIP contains both code and experiment evidence; the wheel contains code only.
+From the extracted project directory:
 
 ```bash
 python -m pip install .
@@ -74,17 +86,27 @@ python -m jupyterlab notebooks/01_kahm_certified_forecasting.ipynb
 ```
 
 The notebook defaults to inspection. **Run All does not fit models or sample
-calibration data.** The HTML walkthrough is a static reading copy.
+calibration data.** For the static reading copy, open the extracted
+`notebooks/01_kahm_certified_forecasting.html` file in your browser. Keep it in
+the complete project so its relative documentation links work. Opening the HTML
+performs no verification.
 
 ## Three ways to use the project
 
 | Path | Work performed | When to use it |
 | --- | --- | --- |
 | **Inspect** | Check archive identities and display recorded values | Learn the example without matching its original numerical runtime |
-| **Verify** | Replay saved models, recompute exact losses, check issued endpoints, and reproduce the population audit | Check the evidence in an exactly matching source/runtime environment |
-| **Fresh experiment** | Generate data, fit all 225 configurations, select, freeze, calibrate, certify, and audit | Run the procedure in your own supported runtime |
+| **Verify historical baseline** | Replay saved models, recompute exact losses, check issued endpoints, and reproduce the population audit | Use unmodified v0.1.0 sources and the exact recorded runtime |
+| **Fresh experiment** | Generate data, fit all 225 configurations, select, freeze, calibrate, certify, and audit | Use v0.1.1 in your own supported runtime, with its own records |
 
 ### Verify the supplied experiment
+
+The supplied baseline remains `public-v0.1.0`. Version 0.1.1 fixes encoder
+artifact input validation, so its execution-source bytes differ from that
+historical freeze. Inspection remains available in v0.1.1; strict verification
+of the baseline requires the unmodified
+[v0.1.0 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
+**and the exact recorded runtime**. From that v0.1.0 project directory:
 
 ```bash
 python -m kahm_demo tutorial --project . --mode verify --history 0.25 0.75
@@ -97,6 +119,9 @@ neither refits models nor samples replacement observations or searches for new
 endpoints. An incompatible environment needs its own fresh experiment.
 
 ### Run a fresh experiment
+
+Use the installed v0.1.1 package from the v0.1.1 project directory. This creates
+new evidence for the current sources and runtime:
 
 ```bash
 python -m kahm_demo reproduce --output runs/tutorial --master-seed 20261110 --run-id tutorial-v0.1

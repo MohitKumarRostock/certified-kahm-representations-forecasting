@@ -1,14 +1,15 @@
 # CI: portable checks and strict recorded-runtime verification
 
-The prepared GitHub workflow checks the package on its current runner and runs
+The GitHub workflow checks the package on its current runner and runs
 one new, complete demonstration there. The original primary snapshot retains its
 exact runtime and source checks. A normal GitHub-hosted Python installation is
 not claimed to match the recorded CPython build, NumPy/BLAS configuration, or
 other numerical runtime metadata.
 
-The workflow is prepared locally. Its presence is not evidence that it has run
-on GitHub. Execution evidence must identify the actual run and its retained
-reports.
+The configuration defines the checks; an observed GitHub run and its retained
+reports establish the result for a particular commit. Use the repository's
+[Actions page](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/actions)
+to inspect those records.
 
 ## Four explicit commands
 
@@ -23,6 +24,9 @@ fresh external directory for the installed-wheel demonstration.
 | `python scripts/ci_checks.py strict-primary --project . --report /tmp/kahm-strict-primary.json` | The three recorded-primary integration tests pass after an explicit matching-runtime/source precheck. |
 
 Each command exits nonzero on failure. Test reports are never overwritten.
+Reports normally use a `.json` suffix and their test logs use `.log`. If the
+requested report itself ends in `.log`, the test log appends another `.log`
+suffix so the JSON report and test output remain separate.
 The fresh-wheel command refuses existing output, retains its plan and any partial
 evidence on failure, and never resumes or retries an experiment automatically.
 Successful CI execution does not require an accepted certificate or successful
@@ -59,8 +63,10 @@ also remain included. Their temporary models and certificates are created and
 checked on the same executing runtime; they do not relax the original snapshot.
 
 The ordinary command `python -m unittest discover -s tests -v` still runs the
-complete suite. Use it when the recorded primary runtime is available. The
-portable command makes its narrower scope visible in its report.
+complete suite, including the historical primary checks. Those positive checks
+require the original `v0.1.0` source as well as its recorded primary runtime.
+For the current `0.1.1` source, use the portable gate and fresh-wheel integration
+gate. The portable command makes its narrower scope visible in its report.
 
 ## Installed-wheel and fresh-run gate
 
@@ -103,6 +109,13 @@ the workflow and evidence are functioning correctly. A failed calculation or
 verification cannot pass.
 
 ## Strict primary gate
+
+The bundled primary experiment was created with `0.1.0`. Version `0.1.1`
+corrects encoder-loader input validation, changing a source file recorded by
+that experiment's freeze. Historical strict verification therefore requires
+the complete unmodified [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
+and the exact recorded runtime. A `0.1.1` fresh run instead freezes and verifies
+its own current source/runtime identity.
 
 `strict-primary` performs the recorded runtime/source compatibility check first.
 If it is incompatible or unavailable, the command writes a failed report and

@@ -1,15 +1,15 @@
 # Guided tutorial: KAHM forecasting and fitted-risk certificates
 
 Start with the supplied results, inspect what each representation contains, and
-then decide whether to verify the saved experiment in your runtime or build a
-fresh experiment. The notebook defaults to **archive inspection**. Its default
-cells read existing evidence; they do not fit models, sample data, or issue new
-certificates.
+then decide whether to verify the historical experiment in its original
+source/runtime environment or build a fresh v0.1.1 experiment. The notebook
+defaults to **archive inspection**. Its default cells read existing evidence;
+they do not fit models, sample data, or issue new certificates.
 
-Use the complete project directory, containing `kahm_demo/`, `frozen/primary/`,
-`certificates/primary/`, and `audits/primary/`. Installing the package alone does
-not supply those archived experiment directories. The scientific definitions
-remain in [the fixed contract](../kahm_demo/specification.json).
+Use the complete project directory, containing `kahm_demo/`, `data/primary/`,
+`frozen/primary/`, `certificates/primary/`, and `audits/primary/`. Installing the
+package alone does not supply those archived experiment directories. The
+scientific definitions remain in [the fixed contract](../kahm_demo/specification.json).
 
 The `tutorial` helper recognizes the supplied primary archive using fixed
 artifact identities. Its `--project` argument points to this complete project,
@@ -20,8 +20,8 @@ not to an arbitrary replacement experiment.
 | Route | What it does | What its success establishes |
 | --- | --- | --- |
 | `inspect`, the default | Checks archive hashes and record bindings; displays saved features, forecasts, and assessment values | Archive identity and consistency of the displayed records. It makes no current-runtime model replay or mathematical certificate-verification claim. |
-| `verify` | Calls the existing strict verifiers, replays the frozen models, checks exact calibration losses and issued endpoints, and recomputes the population audit | The existing verification checks pass in the current source/runtime environment, under the certificate's declared statistical assumptions. |
-| `reproduce`, a separate command | Generates a fresh development experiment, fits all 225 settings, freezes the selected family, calibrates it, and audits it | A new complete experiment with its own recorded runtime and outcomes. Its acceptance results need not match the supplied run. |
+| `verify` | With unmodified v0.1.0 sources and the exact recorded runtime, replays the historical models, checks exact calibration losses and issued endpoints, and recomputes the population audit | The verification checks pass for the historical baseline, under the certificate's declared statistical assumptions. |
+| `reproduce`, a separate command | Using v0.1.1, generates a fresh development experiment, fits all 225 settings, freezes the selected family, calibrates it, and audits it | A new complete experiment with its own source/runtime identities and outcomes. Its acceptance results need not match the supplied run. |
 
 Archive inspection is useful on a different machine. A hash match establishes
 which recorded bytes were read; it does not execute the archived predictor or
@@ -31,8 +31,18 @@ existing source and numerical-runtime requirements rather than weakening them.
 
 ## 2. Open the notebook
 
-Use Python 3.12 or newer. From the project root, an isolated environment and the
-optional tutorial dependencies can be installed with:
+Use Python 3.12 or newer. Download the complete
+[Certified_KAHM_Representations_Forecasting_v0.1.1.zip](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/download/v0.1.1/Certified_KAHM_Representations_Forecasting_v0.1.1.zip)
+from the [v0.1.1 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1).
+Place the ZIP in a fresh directory and open a terminal there, then extract and
+enter the project:
+
+```bash
+python -m zipfile -e Certified_KAHM_Representations_Forecasting_v0.1.1.zip .
+cd certified-kahm-representations-forecasting
+```
+
+From this root, create an isolated environment and install the tutorial dependencies:
 
 ```bash
 python -m venv .venv
@@ -51,8 +61,10 @@ ordered histories whose entries belong to `{0, 0.25, 0.75, 1}`.
 The notebook presents the benchmark, representation comparison, one archived
 forecast, the three risk quantities, and the retained assessment outcomes. Its
 fresh-run command is deliberately separate from cell execution. Switching
-`MODE` to `"verify"` requests the strict checks described below; it does not
-retrain or generate replacement calibration data.
+`MODE` to `"verify"` requests the strict checks described below. For the supplied
+baseline, those checks require the unmodified v0.1.0 release and its exact
+recorded runtime; v0.1.1 has different execution-source bytes. Verification
+does not retrain or generate replacement calibration data.
 
 The [JupyterLab installation guide](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) and
 [JupyterLab startup guide](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html)
@@ -74,9 +86,11 @@ The corresponding script is:
 python -m examples.guided_tutorial --project . --mode inspect --history 0.25 0.75
 ```
 
-Open [the HTML reading view](../notebooks/01_kahm_certified_forecasting.html)
-for the guided explanation and saved output without a notebook server. Opening
-that static page performs no new model or certificate verification. The terminal
+For [the HTML reading view](../notebooks/01_kahm_certified_forecasting.html), open
+the extracted `notebooks/01_kahm_certified_forecasting.html` file in your browser.
+Keep it in the complete project so its relative documentation links work.
+This supplies the guided explanation and saved output without a notebook
+server. Opening it performs no model or certificate verification. The terminal
 commands perform the selected checks when invoked.
 
 ## 3. Understand the forecasting problem
@@ -188,6 +202,13 @@ rollout accuracy, or general KAHM superiority. See
 
 ## 6. Request strict verification
 
+The retained baseline is `public-v0.1.0`. Version 0.1.1 fixes encoder artifact
+input validation, changing source bytes that the historical freeze binds.
+Inspection remains available in v0.1.1. For strict verification, obtain the
+unmodified [v0.1.0 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
+and use the exact recorded runtime. Run both commands below from that v0.1.0
+project directory:
+
 ```bash
 python -m kahm_demo tutorial --project . --mode verify --history 0.25 0.75
 ```
@@ -216,7 +237,8 @@ remove a failed runtime check to obtain a passing verification result.
 
 ## 7. Build a fresh full experiment
 
-Run this intentionally separate command from the project root:
+Return to the v0.1.1 project and its installed package. Run this separate
+command from its root to create evidence for the current sources and runtime:
 
 ```bash
 python -m kahm_demo reproduce --output runs/tutorial --master-seed 20261110 --run-id tutorial-v0.1

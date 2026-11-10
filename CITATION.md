@@ -10,7 +10,7 @@ Its methods and assumptions are documented within the repository.
 | Software author | Mohit Kumar |
 | Copyright holder | Mohit Kumar |
 | Software title | KAHM forecasting demonstrator |
-| Version | `0.1.0` |
+| Version | `0.1.1` |
 | Software licence | Apache-2.0 |
 | Repository | `https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting` |
 | Software DOI and release date | Not assigned here |
@@ -18,7 +18,7 @@ Its methods and assumptions are documented within the repository.
 Use [CITATION.cff](CITATION.cff) for machine-readable metadata. A plain-text
 citation can identify the software as:
 
-> Mohit Kumar. KAHM forecasting demonstrator. Version 0.1.0.
+> Mohit Kumar. KAHM forecasting demonstrator. Version 0.1.1.
 > https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting
 
 Add the Git commit or archive SHA-256 of the actual copy used and the access or
@@ -38,6 +38,10 @@ State which activity you performed:
 For numerical results, identify the run, model freeze, certificate, and audit
 records. Report all relevant candidate outcomes and distinguish empirical
 calibration MSE `q`, statistical upper endpoint `U`, and exact benchmark risk `R`.
+The bundled primary results belong to the unchanged `public-v0.1.0` experiment.
+Version `0.1.1` improves the software interface and documentation; it does not
+replace those results with a new primary experiment. Strict replay of that
+historical experiment requires the original `v0.1.0` source and recorded runtime.
 The meaning of those quantities is in
 [Certificates explained](docs/CERTIFICATES_EXPLAINED.md).
 

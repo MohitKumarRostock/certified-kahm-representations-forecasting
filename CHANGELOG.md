@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.1.1
+
+This patch improves first use and error handling while retaining the complete
+`public-v0.1.0` experiment and its recorded outcomes.
+
+- Add explicit complete-ZIP download, extraction, project-directory, and local
+  HTML viewing instructions. Include `data/primary/` in the tutorial prerequisites.
+- Check tutorial command-line observations as exact numbers before accepting
+  values from the finite benchmark support. Apply the same rule to the package
+  CLI and the human-readable guided tutorial.
+- Reject malformed encoder runtime metadata with a controlled validation error.
+- Keep a CI report whose name ends in `.log` separate from its test log, retaining
+  both the JSON report and test output.
+- Clarify the stipulated iid calibration premise in the introductory explanation.
+
+The corrected encoder loader changes a source file bound by the historical
+primary freeze. Archive inspection remains supported, but strict replay of the
+original primary evidence requires the complete unmodified `v0.1.0` source and
+its exact recorded runtime. New experiments use `0.1.1` and retain their own
+source/runtime identities. No primary model, data, loss, endpoint, or audit is
+rewritten by this patch.
+
+See [patch validation](reports/PATCH_0.1.1_VALIDATION.md) for the checks performed
+and [the release guide](docs/RELEASE_GUIDE.md) for preservation requirements.
+
 ## 0.1.0 — self-contained public edition
 
 - Provides a complete finite-benchmark demonstration of RAW, KAHM membership,

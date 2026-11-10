@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>KAHM forecasting demonstrator — public edition 0.1.0</title>
+  <title>KAHM forecasting demonstrator — public edition 0.1.1</title>
   <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,7 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { line-height: 1.25; }
@@ -119,12 +120,13 @@ div.output { margin-bottom:1.2em; }
 <body>
 <header id="title-block-header">
 <h1 class="title">KAHM forecasting demonstrator — public edition
-0.1.0</h1>
+0.1.1</h1>
 </header>
 <div id="welcome" class="cell markdown">
 <h1 id="kahm-soft-state-forecasting-from-representation-to-a-checked-risk-bound">KAHM
 soft-state forecasting: from representation to a checked risk bound</h1>
-<p><strong>Guided demonstration · version 0.1.0</strong></p>
+<p><strong>Guided demonstration · software v0.1.1 · historical baseline
+public-v0.1.0</strong></p>
 <p>This notebook connects one observed history to its geometry-induced
 features, three fitted forecasts, and the archived evidence supporting
 their fitted-risk bounds. It uses the completed four-state benchmark
@@ -141,16 +143,23 @@ risk <strong>R</strong>.</li>
 for new data.</li>
 </ol>
 <p><strong>Default: archive inspection.</strong> Saved outputs below are
-an executed inspection example. They do not certify the runtime in which
-you open this file. Run the cells in order; change <code>MODE</code> to
-<code>&quot;verify&quot;</code> only when you intend full numerical verification.
-The mode is repeated in each results section.</p>
+the historical v0.1.0 inspection example. They do not certify the
+runtime in which you open this file. Run the cells in order with
+<code>MODE = &quot;inspect&quot;</code>. Historical numerical verification
+requires unmodified v0.1.0 sources and the exact recorded runtime, as
+described below. The mode is repeated in each results section.</p>
 </div>
 <div id="setup" class="cell markdown">
 <h2 id="1-choose-a-path">1. Choose a path</h2>
-<p>From the complete project directory, use Python 3.12 or newer:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="st">&#39;.[tutorial]&#39;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> jupyterlab notebooks/01_kahm_certified_forecasting.ipynb</span></code></pre></div>
+<p>Use Python 3.12 or newer. Download the complete <a href="https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/download/v0.1.1/Certified_KAHM_Representations_Forecasting_v0.1.1.zip">Certified_KAHM_Representations_Forecasting_v0.1.1.zip</a>
+from the <a href="https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1">v0.1.1
+release</a>. Place the ZIP in a fresh directory and open a terminal
+there, then extract and enter the project. See the <a href="../docs/QUICKSTART.md">quick start</a> for isolated-environment
+setup.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> zipfile <span class="at">-e</span> Certified_KAHM_Representations_Forecasting_v0.1.1.zip .</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> certified-kahm-representations-forecasting</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="st">&#39;.[tutorial]&#39;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> jupyterlab notebooks/01_kahm_certified_forecasting.ipynb</span></code></pre></div>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -175,22 +184,24 @@ forecasts, q, U, and R</td>
 <td><code>verify</code> — explicit</td>
 <td>Inspect identities, verify the existing freeze and certificate,
 recompute exact benchmark risks, replay forecasts</td>
-<td>Must match the archived Python build, NumPy build/BLAS
-configuration, and execution sources</td>
+<td>Requires the unmodified v0.1.0 release and exact archived Python
+build and NumPy/BLAS configuration</td>
 </tr>
 <tr class="odd">
 <td>Fresh experiment — separate command</td>
 <td>Fit, select, freeze, calibrate, certify, and audit a new run</td>
-<td>Creates new identities in the supported current runtime</td>
+<td>Uses v0.1.1 and creates its own source/runtime identities</td>
 </tr>
 </tbody>
 </table>
 <p>For a terminal-only introduction, use
 <code>python -m kahm_demo tutorial --project .</code> or
-<code>python -m examples.guided_tutorial --project .</code>. The
-supplied HTML version is a static reading copy with recorded inspection
-outputs. Neither inspection nor this notebook&#39;s <strong>Run All</strong>
-starts a fresh experiment.</p>
+<code>python -m examples.guided_tutorial --project .</code>. For the
+static reading copy, open the extracted
+<code>notebooks/01_kahm_certified_forecasting.html</code> file in your
+browser. Keep it in the complete project so relative documentation links
+work. Opening it performs no verification. Neither inspection nor this
+notebook&#39;s <strong>Run All</strong> starts a fresh experiment.</p>
 </div>
 <div id="configuration" class="cell code" data-execution_count="1">
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
@@ -239,9 +250,16 @@ for checking that the archive is intact.</p>
 chain and then replays the three selected-history predictions. It does
 not refit models, sample new calibration observations, or search for new
 endpoints.</p>
-<p>Verification stops on an incompatible runtime or changed evidence. It
-never substitutes archive inspection for a failed numerical check.
-Python and NumPy version pins alone are insufficient: the stored
+<p>Version 0.1.1 fixes encoder artifact input validation, so its
+execution-source bytes differ from the retained
+<code>public-v0.1.0</code> freeze. Inspection remains available. For
+historical verification, use the notebook and unmodified sources from
+the <a href="https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0">v0.1.0
+release</a> in the exact recorded runtime; only there should you select
+<code>MODE = &quot;verify&quot;</code>.</p>
+<p>Verification stops on incompatible sources, runtime, or changed
+evidence. It never substitutes archive inspection for a failed numerical
+check. Python and NumPy version pins alone are insufficient: the stored
 identity also includes the full Python build string and NumPy/BLAS build
 configuration. A mismatch calls for an explicit fresh run in your
 environment, with its own freeze and assessment.</p>
@@ -287,12 +305,14 @@ three matched representations</h2>
 <p>The observation alphabet is <strong>0, 0.25, 0.75, 1</strong>,
 indexed by four state labels. The history contains two observations in
 time order. There are 16 possible histories and 64 history-target
-combinations. The package supplies independent episodes under a
-stipulated stationary history and transition law; it does not treat
-overlapping windows from a single trajectory as independent calibration.
-Each episode draws an ordered state pair <code>(a, b)</code> uniformly.
-Its next state is <code>(a + b) mod 4</code> with probability 17/20, and
-each other state with probability 1/20.</p>
+combinations. Calibration assumes iid episodes under a stipulated
+stationary history and transition law, independent of development. The
+pseudorandom generator provides reproducible samples, not proof of the
+iid premise. Overlapping windows from a single trajectory are not
+treated as independent calibration. Each episode draws an ordered state
+pair <code>(a, b)</code> uniformly. Its next state is
+<code>(a + b) mod 4</code> with probability 17/20, and each other state
+with probability 1/20.</p>
 <p>The public primary development run used 4,096 training episodes and
 1,024 validation episodes. It retained all 225 declared readout
 candidates, then froze the selected RAW, MEM, and LOCAL predictors
@@ -549,8 +569,10 @@ assumptions.</p>
 <div id="fresh-run" class="cell markdown">
 <h2 id="7-run-one-fresh-experiment-explicitly">7. Run one fresh
 experiment explicitly</h2>
-<p>Use a new directory. The command below performs the complete
-established workflow in your runtime. It commits a reproduction plan
+<p>Use the installed v0.1.1 package from its project root and choose a
+new output directory. The command below performs the complete
+established workflow in your runtime, creating its own source
+identities, freeze, and assessment. It commits a reproduction plan
 before work, retains all 225 development fits, freezes the selected
 three predictors, materializes the reserved calibration stream, issues
 the assessment, and audits the result.</p>
@@ -629,9 +651,9 @@ losses need newly justified bounds. Multi-step latent rollouts require
 their own modeling and certification.</p>
 <p>Continue with <a href="../docs/TUTORIAL.md">the full tutorial</a> and
 <a href="../docs/ADAPTING_TO_NEW_DATA.md">the adaptation guide</a>,
-which map these decisions to the current modules. Validation evidence
-for this release is in <a href="../reports/RELEASE_VALIDATION.md">the
-release validation report</a>.</p>
+which map these decisions to the current modules. The checks performed
+for the v0.1.0 baseline are in <a href="../reports/RELEASE_VALIDATION.md">the historical validation
+report</a>.</p>
 </div>
 </body>
 </html>

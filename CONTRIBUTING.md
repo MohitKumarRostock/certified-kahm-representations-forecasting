@@ -46,10 +46,14 @@ The notebook and plotting dependencies are optional:
 python -m pip install -e '.[tutorial]'
 ```
 
-Installing the package does not reproduce the supplied primary runtime.
-Strict replay checks the recorded Python build, NumPy/BLAS configuration,
-machine, and numerical source identities. Version constraints or a successful
-installation alone do not establish that match.
+The bundled primary experiment was created with `0.1.0`. Version `0.1.1`
+corrects encoder-loader validation, changing source bytes bound by its freeze.
+Historical strict replay requires the complete unmodified
+[`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
+and its exact recorded runtime. It checks the Python build, NumPy/BLAS
+configuration, machine, and numerical sources; version pins or installation
+alone do not establish that match. Current `0.1.1` development uses the portable
+and fresh-wheel gates below.
 
 ## Checks to run
 
@@ -61,7 +65,7 @@ documented in [CI.md](docs/CI.md).
 | Check the supplied archive without replaying it | `python scripts/ci_checks.py archive-inspect --project . --report ../kahm-archive-inspection.json` |
 | Run the portable regression checks | `python scripts/ci_checks.py portable --project . --report ../kahm-portable-checks.json` |
 | Build an isolated wheel and complete a fresh integration run | `python scripts/ci_checks.py fresh-wheel --project . --output ../kahm-contribution-run --run-id contribution-check` |
-| Explicitly verify the original primary run in its matching runtime | `python scripts/ci_checks.py strict-primary --project . --report ../kahm-strict-primary.json` |
+| Verify the historical primary run from unmodified v0.1.0 sources in its exact recorded runtime | `python scripts/ci_checks.py strict-primary --project . --report ../kahm-strict-primary.json` |
 
 The fresh-wheel output must be a new directory outside the checkout. For a
 later run, choose another unused directory and retain the earlier result.
@@ -76,7 +80,9 @@ exclusion list is maintained in the check runner and documented in `CI.md`.
 A portable pass is not a strict-primary pass. Strict verification fails on an
 execution identity mismatch and does not substitute archive inspection.
 
-The ordinary full suite is also available in a matching environment:
+The ordinary full suite includes the historical primary checks. Run it from
+the unmodified `v0.1.0` project in its exact recorded runtime; the current
+`0.1.1` source uses the portable gate:
 
 ```bash
 python -m unittest discover -s tests -v
