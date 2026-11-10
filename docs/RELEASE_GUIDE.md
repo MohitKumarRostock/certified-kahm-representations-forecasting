@@ -55,8 +55,12 @@ prove the iid statistical premise.
 
 The exact primary freeze, certificate, and audit identities are listed in
 `reports/RELEASE_VALIDATION.md` and checked by `kahm_demo.tutorial`.
-`RELEASE_MANIFEST.json` lists the size and SHA-256 digest of each release payload.
-The manifest does not include itself, avoiding a circular digest.
+The retained `RELEASE_MANIFEST.json` lists the size and SHA-256 digest of each
+payload in the published [v0.1.1 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1).
+It describes that release snapshot and excludes itself to avoid a circular
+digest. Later documentation commits on `main` can differ from its entries;
+their Git commit identities record those changes. Check the manifest against
+the v0.1.1 tag or complete release ZIP.
 
 The tutorial's presentation anchors are assigned after the primary evidence
 has been issued. The archived source snapshot keeps their pre-issuance

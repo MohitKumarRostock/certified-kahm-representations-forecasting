@@ -53,18 +53,19 @@ jupyter lab
 
 On Windows PowerShell, activate with `.venv\Scripts\Activate.ps1`. In JupyterLab,
 open [01_kahm_certified_forecasting.ipynb](../notebooks/01_kahm_certified_forecasting.ipynb)
-and choose the Python kernel from this environment. Run the cells in order with
-`MODE = "inspect"`. Start with the history `[0.25, 0.75]`; its entries mean
-**previous observed value, current observed value**. The archive covers the 16
-ordered histories whose entries belong to `{0, 0.25, 0.75, 1}`.
+and choose the Python kernel from this environment. In the interactive notebook,
+run the cells in order with `MODE = "inspect"`. Start with the history
+`[0.25, 0.75]`; its entries mean **previous observed value, current observed value**.
+The archive covers the 16 ordered histories whose entries belong to
+`{0, 0.25, 0.75, 1}`.
 
 The notebook presents the benchmark, representation comparison, one archived
 forecast, the three risk quantities, and the retained assessment outcomes. Its
-fresh-run command is deliberately separate from cell execution. Switching
-`MODE` to `"verify"` requests the strict checks described below. For the supplied
-baseline, those checks require the unmodified v0.1.0 release and its exact
-recorded runtime; v0.1.1 has different execution-source bytes. Verification
-does not retrain or generate replacement calibration data.
+fresh-run command is deliberately separate from cell execution. In the interactive
+notebook, switching `MODE` to `"verify"` requests the strict checks described below.
+For the supplied baseline, those checks require the unmodified v0.1.0 release
+and its exact recorded runtime; v0.1.1 has different execution-source bytes.
+Verification does not retrain or generate replacement calibration data.
 
 The [JupyterLab installation guide](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) and
 [JupyterLab startup guide](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html)
@@ -90,8 +91,9 @@ For [the HTML reading view](../notebooks/01_kahm_certified_forecasting.html), op
 the extracted `notebooks/01_kahm_certified_forecasting.html` file in your browser.
 Keep it in the complete project so its relative documentation links work.
 This supplies the guided explanation and saved output without a notebook
-server. Opening it performs no model or certificate verification. The terminal
-commands perform the selected checks when invoked.
+server. It does not run cells or update when you change `HISTORY` elsewhere.
+Opening it performs no model or certificate verification. The terminal commands
+perform the selected checks when invoked.
 
 ## 3. Understand the forecasting problem
 
@@ -141,6 +143,58 @@ relative to local means and bases. It preserves MEM exactly as its prefix.
 The primary selected bank is `cap_2`; both `cap_1` and `cap_2` remain in the
 development archive. [ENCODER_DESIGN.md](ENCODER_DESIGN.md) gives the equations
 and numerical fallback rules.
+
+### Worked LOCAL example for the archived history
+
+This fixed example uses the archived history `[0.25, 0.75]` and its selected
+`cap_2` encoder. Its standardized input is approximately
+`z = (-0.63748245, 0.64854399)`. The first six LOCAL entries repeat MEM. Each
+remaining pair describes the input's position relative to one local model,
+multiplied by that model's membership:
+`phi[j] * (P[j].T @ (z - mu[j]))`.
+
+**This worked example stays fixed when `HISTORY` changes.** In the interactive
+notebook, rerun the cells in order to update the displayed outputs for the
+selected history. This table always explains the archived history `[0.25, 0.75]`.
+
+The membership column fills LOCAL positions 1–6 in row order. The appended
+coordinate pairs occupy the positions shown below. Partition and group IDs
+use the archive's zero-based numbering; **vector positions are one-based**.
+
+| Partition / group | Membership | Local coordinates | Weighted coordinates | LOCAL positions |
+| --- | ---: | --- | --- | --- |
+| 0 / 0 | 0.999990 | (0.633088, 0.317347) | (0.633082, 0.317344) | 7–8 |
+| 0 / 1 | 9.60705e-06 | (0.633088, −1.58673) | (6.08210e-06, −1.52438e-05) | 9–10 |
+| 1 / 0 | 1.35854e-05 | (0.317347, 1.58272) | (4.31129e-06, 2.15019e-05) | 11–12 |
+| 1 / 1 | 1.35816e-05 | (−1.58673, −0.316544) | (−2.15504e-05, −4.29918e-06) | 13–14 |
+| 1 / 2 | 0.999973 | (0.317347, −0.316544) | (0.317338, −0.316535) | 15–16 |
+| 1 / 3 | 7.31951e-16 | (−1.58673, 1.58272) | (−1.16141e-15, 1.15847e-15) | 17–18 |
+
+Table values are rounded to six significant digits; small nonzero values use
+scientific notation. Memberships normalize separately within each partition.
+The six memberships together are not a single probability distribution.
+
+For partition 0, group 0, the stored local PCA mean is approximately
+`(-0.95482909, 0.01545624)`. Subtracting it from `z` gives
+`(0.31734664, 0.63308774)`. This model's PCA basis orders the second input
+direction first, so its local coordinates are `(0.63308774, 0.31734664)`.
+Multiplying both by its membership, approximately `0.99999039`, gives
+`(0.63308166, 0.31734359)`. These become LOCAL entries 7 and 8. The arithmetic
+shown here is rounded for reading.
+
+The next model has membership only about `0.00000960705`. Its unweighted
+coordinates have ordinary size, but the small membership makes entries 9 and
+10 much smaller. LOCAL therefore retains both geometric affinity and the
+input's local position, with each position block scaled by its affinity.
+Six memberships plus six two-coordinate blocks give **18 LOCAL entries**.
+
+The values come from the retained [encoder](../encoders/primary/cap_2.json) and
+[feature records](../encoders/primary/cap_2_features.json). This is a worked
+explanation of feature construction using the `public-v0.1.0` archive. It does
+not establish strict replay of the historical predictor, certificate, or
+population audit.
+
+### From representations to forecasts
 
 Each branch then receives training-only column scaling, Gaussian Nyström
 features using common raw-history landmark identities, and ridge regression

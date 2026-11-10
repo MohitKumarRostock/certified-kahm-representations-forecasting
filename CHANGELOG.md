@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased — documentation refinements
+
+- Identify cell execution and changes to `HISTORY` as interactive-notebook
+  actions; explain that the static HTML displays saved output.
+- Add a fixed worked LOCAL example for the archived history `[0.25, 0.75]`,
+  connecting the six MEM memberships, local PCA coordinates, weighted
+  coordinates, and all 18 vector positions.
+
+These documentation changes retain the notebook code and saved outputs.
+The published v0.1.1 tag, package assets, and release manifest remain the
+original release snapshot.
+
 ## 0.1.1
 
 This patch improves first use and error handling while retaining the complete

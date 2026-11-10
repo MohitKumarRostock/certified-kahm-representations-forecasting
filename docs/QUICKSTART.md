@@ -89,14 +89,16 @@ python -m jupyterlab notebooks/01_kahm_certified_forecasting.ipynb
 
 Select the Python kernel from the environment in which you installed the
 package. The [notebook](../notebooks/01_kahm_certified_forecasting.ipynb) defaults
-to `MODE = "inspect"`. Run its cells in order. It shows the representation
-layout, one history's forecasts, and the separate meanings of calibration mean
-`q`, upper endpoint `U`, and benchmark population risk `R`.
+to `MODE = "inspect"`. In the interactive notebook, run its cells in order.
+It shows the representation layout, one history's forecasts, and the separate
+meanings of calibration mean `q`, upper endpoint `U`, and benchmark population
+risk `R`.
 
 **Run All does not start training or create calibration data.** The fresh-run
-command is displayed in Markdown, outside executable cells. Changing `MODE` to
-`"verify"` requests the strict checks in the next section; the historical
-baseline requires the v0.1.0 release and its exact recorded runtime.
+command is displayed in Markdown, outside executable cells. In the interactive
+notebook, changing `MODE` to `"verify"` requests the strict checks in the next
+section; the historical baseline requires the v0.1.0 release and its exact
+recorded runtime.
 
 For the [HTML walkthrough](../notebooks/01_kahm_certified_forecasting.html), open
 the extracted `notebooks/01_kahm_certified_forecasting.html` file in your browser.
