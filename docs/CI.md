@@ -108,6 +108,17 @@ refit, or retry. A completed pipeline with such outcomes can pass CI because
 the workflow and evidence are functioning correctly. A failed calculation or
 verification cannot pass.
 
+## Retained class-risk evidence gate
+
+The workflow extracts the committed numerical verification bundle into a new
+runner directory and uses the installed wheel to execute `verify-class-risk`.
+The check validates the supplied study against the current numerical-source
+identities and recomputes its mathematical witnesses and statistical endpoints.
+It records the verification summary separately. No optimization, model fitting,
+or replacement calibration sample is used. This gate will fail if a later
+source change is incompatible with the retained study; documentation-only
+changes outside the fingerprint roster leave it applicable.
+
 ## Class-risk extension gate
 
 After the original fresh demonstration, the GitHub workflow uses the **installed
@@ -130,6 +141,8 @@ models to new lower/upper assessments. Class acceptance, exclusion, unresolved
 cases, unavailable endpoints and realized coverage are scientific outcomes, not
 criteria for passing CI. The [lower-certificate guide](LOWER_CERTIFICATES.md)
 and [proof](LOWER_CERTIFICATE_PROOF.md) define the statistical scope.
+The [scientific reference](SCIENTIFIC_REFERENCE.md) supplies the common
+terminology and interpretation.
 
 ## Strict primary gate
 
@@ -137,8 +150,8 @@ The bundled primary experiment was created with `0.1.0`. Version `0.1.1`
 corrects encoder-loader input validation, changing a source file recorded by
 that experiment's freeze. Historical strict verification therefore requires
 the complete unmodified [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
-and the exact recorded runtime. A `0.1.1` fresh run instead freezes and verifies
-its own current source/runtime identity.
+and the exact recorded runtime. A fresh run made with the current package instead freezes and verifies
+its own source/runtime identity.
 
 `strict-primary` performs the recorded runtime/source compatibility check first.
 If it is incompatible or unavailable, the command writes a failed report and

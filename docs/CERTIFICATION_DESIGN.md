@@ -1,6 +1,6 @@
 # Exact calibration losses and verified fitted-risk upper bounds
 
-In version 0.1.0, this stage evaluates the three already frozen computational
+The `certify` stage, introduced in version 0.1.0, evaluates the three already frozen computational
 predictors under the [calibration protocol](../kahm_demo/calibration_protocol.json)
 that was fixed with their freeze.
 It does not choose or refit predictors. Its numerical routines are implemented
@@ -9,6 +9,12 @@ in `calibration_ledger.py`, and `certificate_workflow.py` binds those calculatio
 to the actual frozen family and reserved data. The complete statistical proof
 and numerical enclosure argument are in
 [Fitted-risk guarantee](FITTED_RISK_GUARANTEE.md).
+
+This document specifies that fixed fitted-predictor workflow. The separate
+`class-risk` workflow adds lower confidence bounds on optimal class risk,
+admissibility checks, and its own prespecified confidence allocation; see
+[LOWER_CERTIFICATES.md](LOWER_CERTIFICATES.md). The common definitions and
+decision rules are in [SCIENTIFIC_REFERENCE.md](SCIENTIFIC_REFERENCE.md).
 
 ## Statistical object and assumptions
 

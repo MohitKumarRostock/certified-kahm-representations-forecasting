@@ -1,15 +1,19 @@
-# Guided tutorial: KAHM forecasting and fitted-risk certificates
+# Guided tutorial: KAHM forecasting and risk certificates
 
 Start with the supplied results, inspect what each representation contains, and
 then decide whether to verify the historical experiment in its original
-source/runtime environment or build a fresh v0.1.1 experiment. The notebook
+source/runtime environment or build a fresh experiment. The notebook
 defaults to **archive inspection**. Its default cells read existing evidence;
 they do not fit models, sample data, or issue new certificates.
 
 Use the complete project directory, containing `kahm_demo/`, `data/primary/`,
 `frozen/primary/`, `certificates/primary/`, and `audits/primary/`. Installing the
 package alone does not supply those archived experiment directories. The
-scientific definitions remain in [the fixed contract](../kahm_demo/specification.json).
+original fitted-predictor definitions remain in
+[the fixed contract](../kahm_demo/specification.json). The class-risk workflow
+has a separate plan and is introduced in Section 8 below. The
+[scientific reference](SCIENTIFIC_REFERENCE.md) gives self-contained definitions
+of the common terminology and both statistical targets.
 
 The `tutorial` helper recognizes the supplied primary archive using fixed
 artifact identities. Its `--project` argument points to this complete project,
@@ -21,7 +25,8 @@ not to an arbitrary replacement experiment.
 | --- | --- | --- |
 | `inspect`, the default | Checks archive hashes and record bindings; displays saved features, forecasts, and assessment values | Archive identity and consistency of the displayed records. It makes no current-runtime model replay or mathematical certificate-verification claim. |
 | `verify` | With unmodified v0.1.0 sources and the exact recorded runtime, replays the historical models, checks exact calibration losses and issued endpoints, and recomputes the population audit | The verification checks pass for the historical baseline, under the certificate's declared statistical assumptions. |
-| `reproduce`, a separate command | Using v0.1.1, generates a fresh development experiment, fits all 225 settings, freezes the selected family, calibrates it, and audits it | A new complete experiment with its own source/runtime identities and outcomes. Its acceptance results need not match the supplied run. |
+| `reproduce`, a separate command | Using the current package, generates a fresh development experiment, fits all 225 settings, freezes the selected family, calibrates it, and audits it | A new complete fitted-predictor experiment with its own source/runtime identities and outcomes. Its decisions need not match the supplied run. |
+| `class-risk` / `verify-class-risk`, separate commands | Assess prescribed Lipschitz decoder classes and verify their archived optimization witnesses | Lower confidence bounds on optimal class risk, fitted-predictor upper bounds, admissibility checks, and class-risk decisions under the stated premises |
 
 Archive inspection is useful on a different machine. A hash match establishes
 which recorded bytes were read; it does not execute the archived predictor or
@@ -31,14 +36,10 @@ existing source and numerical-runtime requirements rather than weakening them.
 
 ## 2. Open the notebook
 
-Use Python 3.12 or newer. Download the complete
-[Certified_KAHM_Representations_Forecasting_v0.1.1.zip](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/download/v0.1.1/Certified_KAHM_Representations_Forecasting_v0.1.1.zip)
-from the [v0.1.1 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1).
-Place the ZIP in a fresh directory and open a terminal there, then extract and
-enter the project:
+Use Python 3.12 or newer and obtain the complete published repository:
 
 ```bash
-python -m zipfile -e Certified_KAHM_Representations_Forecasting_v0.1.1.zip .
+git clone https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting.git
 cd certified-kahm-representations-forecasting
 ```
 
@@ -64,7 +65,7 @@ forecast, the three risk quantities, and the retained assessment outcomes. Its
 fresh-run command is deliberately separate from cell execution. In the interactive
 notebook, switching `MODE` to `"verify"` requests the strict checks described below.
 For the supplied baseline, those checks require the unmodified v0.1.0 release
-and its exact recorded runtime; v0.1.1 has different execution-source bytes.
+and its exact recorded runtime; later releases have different execution-source bytes.
 Verification does not retrain or generate replacement calibration data.
 
 The [JupyterLab installation guide](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) and
@@ -258,7 +259,7 @@ rollout accuracy, or general KAHM superiority. See
 
 The retained baseline is `public-v0.1.0`. Version 0.1.1 fixes encoder artifact
 input validation, changing source bytes that the historical freeze binds.
-Inspection remains available in v0.1.1. For strict verification, obtain the
+Inspection remains available in the current package. For strict verification, obtain the
 unmodified [v0.1.0 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
 and use the exact recorded runtime. Run both commands below from that v0.1.0
 project directory:
@@ -291,7 +292,7 @@ remove a failed runtime check to obtain a passing verification result.
 
 ## 7. Build a fresh full experiment
 
-Return to the v0.1.1 project and its installed package. Run this separate
+Use the current project and its installed package. Run this separate
 command from its root to create evidence for the current sources and runtime:
 
 ```bash
@@ -335,6 +336,53 @@ For the supplied experiment, the authoritative records are
 [audit.json](../audits/primary/audit.json). Model files preserve their historical
 development statuses; the enclosing freeze and the separate certificate supply
 their later authorities. The public run plan and stage outputs are retained in `reports/`.
+
+## 8. Assess a prescribed decoder class
+
+The previous sections assess the risk of three fitted predictors. The
+`class-risk` workflow also asks whether **any** decoder satisfying a fixed
+Lipschitz constraint can meet an MSE threshold $\tau$.
+
+From the matching checkout, verify the retained study without fitting or
+solving new optimization problems:
+
+```bash
+python -m zipfile -e reports/lower_certificates_v1/full_verification_bundle.zip runs/retained-lower-study
+python -m kahm_demo verify-class-risk --run runs/retained-lower-study/run
+```
+
+Use a fresh extraction directory. The verifier checks the saved numerical
+witnesses and source identities, and replays the saved calibration stream in
+memory. It assesses exact archived tables on the finite benchmark support;
+it does not replay the original executable encoder in a different runtime.
+
+Read the [retained report](../reports/lower_certificates_v1/report.md) with
+three questions in mind:
+
+1. Does the lower confidence bound $L$ exceed $\tau$? If so, the prescribed
+   class is excluded from meeting that requirement.
+2. Does an **admissible** fitted table have an upper bound $U\leq\tau$? If so,
+   the class contains a predictor meeting the requirement.
+3. If neither conclusion follows, is the outcome retained as unresolved?
+
+The short-history control demonstrates a class exclusion established by
+larger blocks but missed by the pairwise bound. The MEM example demonstrates
+why an accurate fitted predictor outside the prescribed class cannot supply
+an upper bound on that class's optimum. These are different diagnostic uses.
+
+To assess the fresh features produced in Section 7, create a separate output:
+
+```bash
+python -m kahm_demo class-risk --freeze runs/tutorial/frozen/freeze.json --output runs/tutorial-class-risk
+python -m kahm_demo verify-class-risk --run runs/tutorial-class-risk
+```
+
+The [class-risk guide](LOWER_CERTIFICATES.md) defines the fixed menu, confidence
+allocation, optimization records, and parameter options. Its
+[proof](LOWER_CERTIFICATE_PROOF.md) derives the block hierarchy and both lower
+confidence constructions. The new assessment has its own calibration stream
+and confidence allocation; it does not extend the original three-endpoint
+guarantee by relabeling its records.
 
 For a real dataset, continue with
 [ADAPTING_TO_NEW_DATA.md](ADAPTING_TO_NEW_DATA.md). That is an engineering and

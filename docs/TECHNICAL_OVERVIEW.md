@@ -1,11 +1,13 @@
 # Technical overview: workflow and artifact interfaces
 
-Version `0.1.1` supplies an executable controlled benchmark from training data
-to frozen forecasts, calibration losses, checked risk bounds, and an exact
-population audit. The [method overview](METHOD_OVERVIEW.md) gives the conceptual
-map; this guide describes the lifecycle, interfaces, and retained artifacts.
-Baseline availability and realized results are recorded in the
-[README](../README.md#public-baseline).
+The package supplies a controlled benchmark from training data to frozen
+forecasts, fitted-predictor upper confidence bounds, lower confidence bounds
+on optimal class risk, and an independent known-law population audit.
+The [scientific reference](SCIENTIFIC_REFERENCE.md) defines the mathematical
+objects; the [method overview](METHOD_OVERVIEW.md) maps them to modules.
+This guide describes the lifecycle, interfaces, and retained artifacts.
+Historical baseline instructions are recorded in the
+[README](../README.md#learn-from-the-historical-fitted-predictor-example).
 
 ## 1. Read or recompute an existing experiment
 
@@ -24,7 +26,7 @@ models or reverify their endpoint inequalities.
 
 The retained primary evidence belongs to `public-v0.1.0`. Version `0.1.1`
 corrects encoder artifact input validation, changing execution-source bytes
-bound by that historical freeze. Inspection remains available in `0.1.1`.
+bound by that historical freeze. Inspection remains available in later releases.
 For numerical verification of the primary evidence, use the complete unmodified
 [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
 and its exact recorded runtime. Run this command from that original project:
@@ -40,7 +42,7 @@ stops the operation rather than silently reducing its scope.
 
 Runtime identity includes the full Python build string, machine information,
 NumPy version, and NumPy/BLAS configuration, as well as numerical source bytes.
-Package-version pins alone do not establish that identity. A fresh `0.1.1`
+Package-version pins alone do not establish that identity. A fresh current-source
 experiment creates its own source/runtime identities, freeze, and assessment.
 
 The [notebook](../notebooks/01_kahm_certified_forecasting.ipynb) defaults to
@@ -107,8 +109,8 @@ print(model.predict([history, history]))
 print(model.freeze_record_sha256)
 ```
 
-After creating a fresh `0.1.1` run at `runs/tutorial`, use its matching
-`0.1.1` source/runtime and replace the freeze path with
+After creating a fresh run at `runs/tutorial`, use its matching
+source/runtime and replace the freeze path with
 `runs/tutorial/frozen/freeze.json`.
 
 Inference-only commands check the predictor's freeze, not the separate risk
@@ -166,7 +168,7 @@ check = verify_certificate_bundle(
 print(check["candidates"])
 ```
 
-For a fresh `0.1.1` run at `runs/tutorial`, use its matching source/runtime and
+For a fresh run at `runs/tutorial`, use its matching source/runtime and
 the paths `runs/tutorial/certificates/certificate.json`, `runs/tutorial/data`,
 and `runs/tutorial/frozen/freeze.json`, respectively.
 
@@ -188,9 +190,9 @@ frequency or improve the original confidence level. A calibration sample mean
 may be below the Bayes population risk. Model-specific oracle risks never enter
 development or certificate construction. See [POPULATION_AUDIT.md](POPULATION_AUDIT.md).
 
-## 6. Run the complete procedure in a fresh directory
+## 6. Run the fitted-predictor procedure in a fresh directory
 
-Use the installed `0.1.1` package from its project directory. The new run binds
+Use the installed package from its project directory. The new run binds
 the current sources and runtime:
 
 ```bash
@@ -249,8 +251,57 @@ consistency; they do not authenticate historical chronology or make writable
 directories tamper-proof. Repeating verification supplies no new independent
 statistical sample.
 
-The certificate concerns the actual frozen computational predictor. It provides
-no per-forecast interval, class optimum, input-recovery theorem, predictive
-sufficiency, Koopman closure, or rollout guarantee. Broader applications need
-new data and justified evaluation assumptions, as described in
-[ADAPTING_TO_NEW_DATA.md](ADAPTING_TO_NEW_DATA.md).
+The fitted-predictor certificate concerns the actual frozen computational
+predictor. Its upper bound does not assess the optimum over a decoder class.
+The separate class-risk procedure below supplies that assessment for prescribed
+classes. Neither procedure provides per-forecast intervals, predictive
+sufficiency, Koopman closure, or a recursive-rollout guarantee. Broader
+applications need new data and justified evaluation assumptions, as described
+in [ADAPTING_TO_NEW_DATA.md](ADAPTING_TO_NEW_DATA.md).
+
+## 8. Assess optimal class risk and verify its witnesses
+
+The `class-risk` workflow consumes a verified archive identity and its
+feature/prediction tables. It treats those represented numbers as exact
+functions on all 16 benchmark histories, rather than replaying a historical
+encoder under the current numerical runtime. It binds the input tables,
+representations, metrics, Lipschitz bounds, fitted tables, calibration menu,
+block partitions, source snapshot, and failure allocations before generating
+its own calibration episodes.
+
+```bash
+python -m kahm_demo class-risk --freeze frozen/primary/freeze.json --output runs/class-risk
+python -m kahm_demo verify-class-risk --run runs/class-risk
+```
+
+For the fresh development run in Section 6, replace `--freeze` with
+`runs/tutorial/frozen/freeze.json` and use a new output directory. All
+occurrences retain their statistical weight when repeated feature values are
+aggregated for optimization.
+
+| Layer | Implementation | Established quantity or check |
+| --- | --- | --- |
+| Class specification and membership | `lipschitz_class.py` | Exact coordinates, prescribed metric and Lipschitz bound, and admissibility of fitted tables |
+| Optimization and confidence bounds | `class_bounds.py` | Verified dual lower bounds, block-score calibration, empirical-risk calibration, and fitted-risk upper endpoints |
+| Known-law audit | `class_oracle.py` | Reference bounds on optimal class risk and checks of the issued sample certificates |
+| Plan, retained evidence, and verification | `class_risk_workflow.py` | Input/source identity, calibration-stream identity, every witness, and all decisions |
+
+The result compares lower confidence bound $L$ on optimal class risk
+$R_\kappa^*$ and fitted-predictor upper bound $U$ with an MSE threshold $\tau$.
+`class_excluded` requires $L>\tau$. `requirement_met` requires an admissible
+fitted table and $U\leq\tau$. Otherwise the assessment remains unresolved;
+unavailable endpoints and conflicting conclusions stay visible. The
+confidence budget includes the entire prespecified family, including shared
+sample prefixes and all requested block sizes.
+
+The default single-size run contains 60 endpoints. The retained three-size
+study contains 180 endpoints with total failure allocation $0.05$. Neither
+allocation is combined automatically with the original three-endpoint
+`certify` assessment. The known-law audit occurs after sample certificate
+issuance and does not choose the class or replace an endpoint.
+
+The [class-risk guide](LOWER_CERTIFICATES.md) documents the full artifact map,
+retained results, and supported options. The [proof](LOWER_CERTIFICATE_PROOF.md)
+derives the hierarchy and numerical/statistical guarantees. Full empirical
+optimization remains inexpensive on this finite support; the study does not
+establish a computational advantage for blocking on larger feature spaces.

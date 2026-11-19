@@ -1,58 +1,78 @@
 # Citing the software
 
-This project is the **KAHM forecasting demonstrator**, an executable example of
-geometry-induced representations, frozen forecasting models, fitted-risk upper
-certificates, and exact population auditing under a controlled benchmark law.
-Its methods and assumptions are documented within the repository.
+**KAHM forecasting demonstrator**, version **0.2.0**, is a standalone
+implementation of representation-based forecasting and risk certification.
+It supplies lower confidence bounds on optimal class risk, upper confidence
+bounds on fitted-predictor risk, admissibility checks, and independent
+population auditing under a controlled finite benchmark law.
 
 | Field | Value |
 | --- | --- |
 | Software author | Mohit Kumar |
-| Copyright holder | Mohit Kumar |
 | Software title | KAHM forecasting demonstrator |
-| Version | `0.1.1` |
+| Version | `0.2.0` |
 | Software licence | Apache-2.0 |
-| Repository | `https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting` |
-| Software DOI and release date | Not assigned here |
+| Repository | <https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting> |
+| Software DOI | No DOI is assigned in this repository |
 
-Use [CITATION.cff](CITATION.cff) for machine-readable metadata. A plain-text
-citation can identify the software as:
+Use [CITATION.cff](CITATION.cff) for machine-readable metadata. A software
+reference can be written as:
 
-> Mohit Kumar. KAHM forecasting demonstrator. Version 0.1.1.
+> Kumar, Mohit. KAHM forecasting demonstrator. Version 0.2.0. GitHub.
 > https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting
 
-Add the Git commit or archive SHA-256 of the actual copy used and the access or
-execution date appropriate to your record. Do not invent a software DOI or use
-a publication date that has not been established.
+Add the **exact Git commit** of the copy used, obtained with `git rev-parse HEAD`,
+and the access or execution date appropriate to your record. A commit-specific
+GitHub URL or a versioned source archive identifies an immutable source snapshot;
+the default branch can change. Use an observed tag or release date only when
+that tag or release actually exists. Do not invent a software DOI.
 
-## Identify the evidence you used
+The documentation is independent of an external manuscript. A later research
+article can reference this repository and its identified software version;
+using the implementation does not require that article to be available.
 
-State which activity you performed:
+## Identify the scientific evidence
 
-- **Archive inspection:** checked identities and displayed retained results.
-- **Strict verification:** replayed the supplied computational models and checked
-  their certificates and audit in the required source/runtime environment.
-- **Fresh experiment:** ran development, freezing, calibration, certification,
-  and auditing under a separately recorded run identity.
+For the retained lower/upper study, cite run
+`lower-certificates-20261119-v1` and identify the study plan and bundle digests
+from [the manifest](reports/lower_certificates_v1/manifest.json). The
+[study report](reports/lower_certificates_v1/report.md) and
+[summary](reports/lower_certificates_v1/summary.json) retain all 15 assessments
+and the 180-endpoint confidence allocation.
 
-For numerical results, identify the run, model freeze, certificate, and audit
-records. Report all relevant candidate outcomes and distinguish empirical
-calibration MSE `q`, statistical upper endpoint `U`, and exact benchmark risk `R`.
-The bundled primary results belong to the unchanged `public-v0.1.0` experiment.
-Version `0.1.1` improves the software interface and documentation; it does not
-replace those results with a new primary experiment. Strict replay of that
-historical experiment requires the original `v0.1.0` source and recorded runtime.
-The meaning of those quantities is in
-[Certificates explained](docs/CERTIFICATES_EXPLAINED.md).
+For a new assessment, retain its plan, class definitions, calibration
+observations, certificate records, verification summary, and population audit.
+State the representation, metric, Lipschitz bound, output interval, target law,
+MSE threshold, calibration size, and joint confidence budget. Distinguish the
+optimal class risk, fitted-predictor risk, and the issued lower and upper
+confidence bounds. Displayed decimals do not replace the exact fractions that
+determine the decisions.
 
-## Research and authorship scope
+State which activity was performed:
 
-This implementation is based on our research. The authorship metadata here
-identify the software author; they do not assert sole authorship of every
-underlying research contribution. The local [method overview](docs/METHOD_OVERVIEW.md)
-and [risk guarantee](docs/FITTED_RISK_GUARANTEE.md) define the construction and
-claim made by this software.
+- **Archive inspection:** checked archive identities and displayed recorded values.
+- **Class-risk verification:** checked retained source identities, numerical
+  witnesses, confidence endpoints, admissibility, decisions, and audit records.
+- **Strict historical verification:** replayed the original fitted models in
+  their required source/runtime environment and checked their original evidence.
+- **Fresh experiment:** created separately identified development and/or
+  calibration records and retained every outcome.
 
-The request to cite the software is voluntary. It adds no scholarly-citation,
-research-only, or noncommercial condition to [Apache-2.0](LICENSE). Required
-licence and attribution notices remain governed by the licence itself.
+The original fitted-predictor experiment remains `public-v0.1.0`; version 0.2.0
+does not rewrite its models, calibration losses, endpoints, or audit. Strict
+replay of that historical experiment requires its original v0.1.0 sources and
+recorded runtime. The retained class-risk study evaluates the frozen
+finite-support computational tables and has its own independent calibration
+protocol and numerical witnesses.
+
+## Research and licence scope
+
+Software authorship does not assert sole authorship of every underlying
+mathematical idea. The [scientific reference](docs/SCIENTIFIC_REFERENCE.md),
+[self-contained class-risk proof](docs/LOWER_CERTIFICATE_PROOF.md), and
+[fitted-risk guarantee](docs/FITTED_RISK_GUARANTEE.md) define the implemented
+claims and acknowledge relevant prior work.
+
+The request to cite the software is voluntary. It adds no research-only,
+noncommercial, or scholarly-citation condition to [Apache-2.0](LICENSE).
+Required licence and attribution notices remain governed by the licence.

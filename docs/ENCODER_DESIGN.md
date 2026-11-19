@@ -1,11 +1,16 @@
 # Gaussian KAHM encoder and soft-state representations
 
-This guide defines the encoder used by version `0.1.0`. It fits geometry from
+This guide defines the encoder introduced in version `0.1.0` and retained by
+the current forecasting workflow. It fits geometry from
 training inputs, produces membership-only and locally enriched representations,
 and supplies two banks for development selection. Readout fitting and shared-bank
 selection are defined in [READOUT_DESIGN.md](READOUT_DESIGN.md). The statistical
-claim concerns the complete frozen predictor described in
-[CERTIFICATION_DESIGN.md](CERTIFICATION_DESIGN.md), rather than this encoder alone.
+upper-confidence claim concerns the complete frozen fitted predictor described
+in [CERTIFICATION_DESIGN.md](CERTIFICATION_DESIGN.md). The `class-risk`
+workflow instead uses the archived representation coordinates, a prescribed
+feature metric, and a Lipschitz bound to define a decoder class; see
+[LOWER_CERTIFICATES.md](LOWER_CERTIFICATES.md). Encoder construction alone
+establishes neither risk statement.
 
 ## 1. Definitions and implementation map
 
@@ -249,6 +254,10 @@ uniform-state replacement for an encoder failure. A valid freeze must check all
 
 Residuals, PCA diagnostics, and successful replay are engineering evidence. They
 are not verified error enclosures around an ideal real-arithmetic Gaussian map.
-The certificate concerns the actual frozen computational predictor, with bounded
-forecast loss on the declared evaluation law. Encoder construction alone
-establishes neither predictive sufficiency nor a performance advantage for LOCAL.
+The fitted-predictor certificate concerns the actual frozen computational
+predictor, with bounded forecast loss on the declared evaluation law. Class-risk
+certification treats the archived feature values as exact represented numbers;
+it does not prove that they enclose ideal real-arithmetic encoder outputs.
+The metric and Lipschitz bound are specified on these coordinates before
+calibration. Encoder construction alone establishes neither predictive
+sufficiency nor a performance advantage for LOCAL.

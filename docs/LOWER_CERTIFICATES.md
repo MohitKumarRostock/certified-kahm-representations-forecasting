@@ -1,33 +1,57 @@
-# Lower and upper certificates for a decoder class
+# Using lower class-risk and upper fitted-risk certificates
 
-The `class-risk` command assesses the best population mean squared error that
-can be attained by a declared Lipschitz decoder class. It complements the
-original fitted-predictor upper-bound workflow with verified optimization
-lower bounds, two statistical lower-bound constructions, and a separate
-population audit.
+The `class-risk` command assesses the optimal population mean squared error
+(MSE) over a prescribed Lipschitz decoder class. It computes verified
+empirical-risk lower bounds, calibrates them into lower confidence bounds
+on optimal class risk, and reports upper confidence bounds on the risk of
+fixed fitted predictors. A separate population audit supplies references
+after those certificates are issued.
 
-The assessment is specific to a representation, its coordinates and metric,
-a Lipschitz bound, and the benchmark distribution. It does not establish that
-a representation fails for every possible decoder.
+Start with the [scientific reference](SCIENTIFIC_REFERENCE.md) for the
+definitions, assumptions, and interpretation. The
+[proof note](LOWER_CERTIFICATE_PROOF.md) gives the full mathematical
+arguments. This guide covers execution and retained evidence.
 
 ## Run the example
 
-From the complete repository or release archive, with the package installed:
+From a complete source checkout, use Python 3.12+ with NumPy 2.x.
+The following small run exercises all five classes with fewer blocks and
+optimization sweeps than the default study:
 
 ```bash
+python -m pip install .
 python -m kahm_demo class-risk \
   --freeze frozen/primary/freeze.json \
-  --output runs/class-risk
+  --output runs/class-risk \
+  --sample-sizes 128 \
+  --block-sizes 2 8 \
+  --solver-sweeps 10 \
+  --run-id class-risk-quickstart-v1
 
 python -m kahm_demo verify-class-risk --run runs/class-risk
 ```
+
+This is an execution example; small samples and a small optimization budget
+can leave threshold decisions unresolved. Its five classes and two block
+sizes give 30 one-sided endpoints, each allocated $0.05/30=1/600$.
+The separate population audit still uses at least 200 proposal sweeps on
+the small support.
 
 Use a new output directory for each execution. The command refuses to
 overwrite or resume a retained run. It also refuses to write inside an input
 scientific bundle. A failure leaves the partial evidence and a failure record;
 it does not replace calibration observations or retry with a different seed.
 
-The default assessment uses:
+To run the default assessment instead, use a different output directory:
+
+```bash
+python -m kahm_demo class-risk \
+  --freeze frozen/primary/freeze.json \
+  --output runs/class-risk-default
+python -m kahm_demo verify-class-risk --run runs/class-risk-default
+```
+
+Its defaults are:
 
 | Choice | Default |
 | --- | --- |
@@ -38,7 +62,7 @@ The default assessment uses:
 | Calibration episodes | $n=4096$ |
 | Block sizes | $2,8,16,32,64$ |
 | Repetitions | 1 |
-| MSE tolerance | $\tau=0.1$ |
+| MSE threshold | $\tau=0.1$ |
 | Total failure probability | $\delta=0.05$ |
 | Calibration optimization proposal budget | 100 coordinate sweeps per problem |
 | Master seed / run ID | `20261119` / `class-risk-v1` |
@@ -54,9 +78,6 @@ The original three upper endpoints and their confidence allocation remain
 historical results. This extension issues a new assessment with its own
 allocation.
 
-The separate population audit uses at least 200 proposal sweeps. This can
-tighten its reference interval without changing any issued sample certificate.
-
 ## What is assessed
 
 The source freeze identifies archived computational feature and prediction
@@ -65,32 +86,34 @@ those development tables, copies the required inputs, and freezes the new
 class specification before drawing calibration episodes. It does **not**
 replay a historical model in the current numerical runtime.
 
-For a class $\mathcal G_\kappa(d)$ of decoders with outputs in $[0,1]$, define
+For the prescribed representation $\Gamma$, feature metric $d$, and
+Lipschitz bound $\kappa$, let $\mathcal G_\kappa(d)$ contain all measurable
+$\kappa$-Lipschitz decoders into $I=[0,1]$. Their optimal class risk is
 
 $$
-R^*_{\Gamma,\kappa}
+R_\kappa^*
 =\inf_{g\in\mathcal G_\kappa(d)}
 \mathbb E[(Y-g(\Gamma(X)))^2].
 $$
 
 The workflow constructs a lower confidence bound $L$ on this infimum and an
-upper confidence bound $U$ on the archived fitted predictor's risk. The
-combined statement
+upper confidence bound $U_{\rm fit}$ on the archived fitted predictor's
+risk $R_{\rm fit}=\mathbb E[(Y-\widehat f(X))^2]$. The combined statement
 
 $$
-L\le R^*_{\Gamma,\kappa}\le R(\widehat g\circ\Gamma)\le U
+L\le R_\kappa^*\le R_{\rm fit}\le U_{\rm fit}
 $$
 
 requires the fitted prediction table to satisfy the declared class constraints.
 All 120 pairs of supported histories are checked using exact squared-distance
 inequalities. A passing table has a matching Lipschitz extension; this check
-does not establish global regularity of the executable nonlinear readout on
+does not establish the global Lipschitz bound of the executable nonlinear readout on
 arbitrary feature inputs.
 
 | Reported decision | Meaning |
 | --- | --- |
 | `class_excluded` | $L>\tau$: every decoder in the specified class fails the requirement. |
-| `requirement_met` | An admissible fitted table has $U\le\tau$. |
+| `requirement_met` | An admissible fitted table has $U_{\rm fit}\le\tau$. |
 | `unresolved` | Neither conclusion has been established. |
 | `conflicting_certificates` | The issued lower and admissible upper conclusions conflict; the result is retained for inspection. |
 
@@ -116,11 +139,15 @@ $$
 C_b=\frac{\lfloor b^2/4\rfloor}{b(b-1)}.
 $$
 
-The **block lower bound** calibrates the average normalized score using the
-$K_b$ disjoint blocks. The **empirical-optimum lower bound** calibrates
-$n^{-1}\sum_k\underline Q_{b,k}$ using the full episode count $n$. Unused
-observations remain in that denominator. Both calculations use exactly the
-same optimization witnesses.
+The **block lower confidence bound** calibrates the average normalized
+score using the $K_b$ independent true block scores in $[0,C_b]$. The
+**empirical-risk lower confidence bound** calibrates
+$d_{n,b}=n^{-1}\sum_k\underline Q_{b,k}\le a_n$, where $a_n$ is the
+minimum empirical MSE on all $n$ observations. It uses the full episode
+count $n$ by comparison with each fixed decoder's iid losses; it does not
+assume that the optimized value $d_{n,b}$ is an iid average.
+Unused observations remain in its denominator. Both calculations use
+exactly the same optimization witnesses.
 
 A separate optimization of all calibration observations gives a full
 empirical-optimum lower bound. Repeated histories are aggregated with their
@@ -129,11 +156,12 @@ variables even when $n$ is large. Every sampled occurrence retains its weight.
 The reported combined lower endpoint is the maximum of the declared valid
 lower endpoints and zero.
 
-Larger blocks improve the population hierarchy, but they reduce the number of
-independent block scores at fixed $n$. A reported lower confidence bound need
-not increase with block size. This small benchmark also makes full empirical
-optimization inexpensive; it does not by itself establish a computational
-advantage for blocking on large feature spaces.
+Larger blocks can increase the expected score $\mathcal W_b$ while reducing
+the number of independent block scores at fixed $n$. A reported lower
+confidence bound need not increase with block size, and neither calibration
+route always dominates the other. This small benchmark also makes full
+empirical optimization inexpensive; it does not by itself establish a
+computational advantage for blocking on large feature spaces.
 
 The complete mathematical argument is in
 [Lower-certificate proof](LOWER_CERTIFICATE_PROOF.md).
@@ -162,9 +190,9 @@ $$
 $$
 
 Thus $\mathcal W_2=0.0390625$ and $\mathcal W_8\approx0.0982244$ lie below
-the tolerance, whereas $\mathcal W_{16}\approx0.1254176$ lies above it. This is
+the threshold, whereas $\mathcal W_{16}\approx0.1254176$ lies above it. This is
 an analytical reference, not a promise that a finite-sample endpoint at $b=16$
-will exceed the tolerance. The experiment measures how calibration size and
+will exceed the threshold. The experiment measures how calibration size and
 block size affect that decision.
 
 ### RAW, MEM, and LOCAL geometry
@@ -178,8 +206,8 @@ The current MEM fitted predictor has low risk but fails the $\kappa=2$
 admissibility check in these coordinates. Its fitted-risk upper endpoint
 remains meaningful for that predictor; it is not used as an upper bound on the
 constrained class optimum. All 16 archived MEM vectors are distinct, so this
-result concerns decoder regularity and geometry rather than unrestricted
-information loss.
+result concerns the prescribed Lipschitz decoder class and feature geometry.
+It does not establish unrestricted information loss.
 
 These reference facts are checked by the population audit after sample
 certificates have been saved and verified. The audit does not choose a class,
@@ -188,12 +216,13 @@ readout, calibration seed, or endpoint.
 ## Retained validation study
 
 The [recorded study](../reports/lower_certificates_v1/report.md) uses sample
-sizes 1,024, 4,096, and 16,384, the five default block sizes, $\kappa=2$, and
+sizes 1,024, 4,096, and 16,384, the five default block sizes,
+$\kappa=2$ for RAW/MEM/LOCAL, $\kappa=4$ for the history controls, and
 one repetition. Its family contains 180 endpoints, each with failure
 allocation $1/3600$. All endpoints were numerically available.
 
 At $n=4096$, the MEM class has combined lower endpoint approximately
-**0.11470296**, exceeding the 0.1 tolerance. RAW and LOCAL have admissible
+**0.11470296**, exceeding the 0.1 MSE threshold. RAW and LOCAL have admissible
 upper endpoints approximately **0.07227278**. At $n=1024$, MEM remains
 unresolved; that result is retained.
 
@@ -212,8 +241,9 @@ hierarchy, and calibration-size tradeoff.
 
 ## Change the declared study
 
-For a study of calibration size and regularity, declare the entire menu in one
-command:
+For a larger study of calibration size and the Lipschitz bound, declare the
+entire menu in one command. This example deliberately requests many more
+assessments than the quickstart:
 
 ```bash
 python -m kahm_demo class-risk \
@@ -236,10 +266,10 @@ accepted for Lipschitz bounds, `--delta`, and `--tolerance`.
 Within a repetition, sample sizes use prefixes of the same reserved stream.
 The joint confidence allocation includes every requested sample size,
 repetition, class, and bound. With $J$ Lipschitz bounds, $S$ sample sizes, $R$
-repetitions, and $B$ block sizes, its endpoint count is
+repetitions, and $H$ block sizes, its endpoint count is
 
 $$
-N_{\rm endpoints}=(3J+2)SR(2B+2).
+N_{\rm endpoints}=(3J+2)SR(2H+2).
 $$
 
 More comparisons therefore reduce the allocation per endpoint. Different
@@ -252,7 +282,7 @@ not a new independent replication.
 | File or directory | Contents |
 | --- | --- |
 | `class_risk_plan.json` | Frozen menu, sample streams, confidence allocation, source and input identities |
-| `classes.json` | Exact coordinates, metrics, regularity bounds, and prediction tables |
+| `classes.json` | Exact coordinates, metrics, Lipschitz bounds, and prediction tables |
 | `inputs/`, `sources/` | Copied development inputs and assessment sources |
 | `calibration/` | All sampled episodes, including repeats |
 | `certificates/` | Lower/upper endpoints, admissibility records, and block/full optimization witnesses |

@@ -1,10 +1,11 @@
-# Release guide
+# Release and reproducibility guide
 
-The public edition is self-contained. Its method definitions, benchmark,
-implementation decisions, guarantee proof, and numerical verification rules
-are supplied in this repository. The release's introductory research statement
-is an origin statement; the local mathematics and recorded evidence support
-its specific technical claims.
+Version **0.2.0** is the standalone class-risk edition of the KAHM forecasting
+demonstrator. Its scientific definitions, proofs, implementation, benchmark,
+recorded experiments, and reproduction instructions are contained in this
+repository. The [scientific reference](SCIENTIFIC_REFERENCE.md) is the main
+entry point; [CITATION.md](../CITATION.md) explains how to identify the software
+and the particular experiment used.
 
 ## Software identity
 
@@ -12,120 +13,125 @@ its specific technical claims.
 | --- | --- |
 | Repository | `MohitKumarRostock/certified-kahm-representations-forecasting` |
 | Package | `kahm-demonstrator` |
-| Version | `0.1.1` |
+| Version | `0.2.0` |
 | Software author | Mohit Kumar |
 | Copyright | Copyright 2026 Mohit Kumar |
-| License | Apache-2.0; complete terms in [LICENSE](../LICENSE) |
-| Software citation | [CITATION.cff](../CITATION.cff) and [CITATION.md](../CITATION.md) |
+| License | [Apache-2.0](../LICENSE) |
+| Citation metadata | [CITATION.cff](../CITATION.cff) |
 
-No software DOI or author identifier is invented. `PUBLICATION_STATUS.json`
-records release preparation. GitHub's commit, release, and workflow records
-establish actual publication and remote CI state; a prepared archive or
-workflow configuration alone does not establish either.
+GitHub commit, tag, release, and workflow records establish the actual remote
+publication and CI state. `PUBLICATION_STATUS.json` describes the prepared
+software and validation scope; it is not a substitute for those remote records.
+No software DOI or author identifier is invented.
 
-## What the release contains
+## Source, package, and numerical evidence
 
-The [README](../README.md) and [quick start](QUICKSTART.md) lead to an
-inspection-only walkthrough, the guided notebook, and the static reading view.
-[Method overview](METHOD_OVERVIEW.md) links the complete local definitions.
-[Fitted-risk guarantee](FITTED_RISK_GUARANTEE.md) gives the proof and numerical
-conditions behind the certificate, and [Certificates explained](CERTIFICATES_EXPLAINED.md)
-interprets its practical scope.
+| Artifact | Contents and use |
+| --- | --- |
+| Complete Git checkout or GitHub source archive | Package source, tests, documentation, notebooks, figures, and both retained experiments |
+| [Version 0.2.0 wheel](../dist/kahm_demonstrator-0.2.0-py3-none-any.whl) | Validated installable package; the complete project is still needed for the supplied experiment files |
+| `reports/lower_certificates_v1/full_verification_bundle.zip` | Retained class-risk run, calibration data, class definitions, witnesses, source snapshot, and population audits; not a full source release |
+| `reports/lower_certificates_v1/manifest.json` | SHA-256 identities of the retained study plan, summary, verification ZIP, and original development wheel |
+| Historical `RELEASE_MANIFEST.json` | Inventory of the published v0.1.1 snapshot; apply it only to that historical release |
 
-The supplied evidence includes the public primary development data, both
-encoder banks, all 225 search states, selected model freeze, reserved calibration
-outcomes, exact loss ledger, verified endpoints, and exact finite-law population
-audit. Every candidate and outcome is retained. A wheel provides the software;
-the complete project also provides these experiment artifacts.
+The package already identified itself as 0.2.0 when the retained class-risk
+study was created. Completing the documentation changes the wheel's descriptive
+metadata when it is rebuilt, but does not change the numerical package sources.
+The original development wheel remains in the study directory with its
+original manifest digest. A newly built distribution must retain its own
+digest; do not overwrite the historical wheel or its manifest to make them
+agree with a later build.
 
-Version `0.1.1` is an interface and documentation patch. The primary experiment
-remains `public-v0.1.0`, and its evidence and original validation reports are
-retained unchanged. See [the changelog](../CHANGELOG.md) for the fixes and
-[the patch validation report](../reports/PATCH_0.1.1_VALIDATION.md) for checks
-performed on this software version.
+## Two retained scientific records
 
-The public primary run was defined by a local plan before its execution:
-master seed `20261110`, run ID `public-v0.1.0`, 4,096 training episodes,
-1,024 validation episodes, and 4,096 reserved calibration episodes. A local
-plan and editable hashes do not constitute independent public preregistration.
-The random-stream construction is a reproducibility mechanism and does not
-prove the iid statistical premise.
+The original fitted-predictor experiment is `public-v0.1.0`. It retains all 225
+development fits, selected models, calibration losses, upper certificates, and
+population audits. Later versions preserve this evidence. Archive inspection
+remains available, while strict replay requires the complete unmodified
+[v0.1.0 source](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
+and its exact recorded Python/NumPy/BLAS runtime.
 
-## Evidence identities and preservation
+The separate class-risk study is `lower-certificates-20261119-v1`. It treats the
+archived finite-support feature and prediction tables as its exact computational
+objects, declares its own calibration stream, and retains five classes, three
+sample sizes, five block sizes, and all 180 confidence endpoints. Its numerical
+witnesses can be checked using the current matching numerical sources without
+replaying the historical encoder. The [study report](../reports/lower_certificates_v1/report.md)
+and [class-risk guide](LOWER_CERTIFICATES.md) explain the scope.
 
-The exact primary freeze, certificate, and audit identities are listed in
-`reports/RELEASE_VALIDATION.md` and checked by `kahm_demo.tutorial`.
-The retained `RELEASE_MANIFEST.json` lists the size and SHA-256 digest of each
-payload in the published [v0.1.1 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1).
-It describes that release snapshot and excludes itself to avoid a circular
-digest. Later documentation commits on `main` can differ from its entries;
-their Git commit identities record those changes. Check the manifest against
-the v0.1.1 tag or complete release ZIP.
+A saved local plan and editable hashes do not constitute independent public
+preregistration. Pseudorandom streams provide reproducibility; the statistical
+premise remains iid calibration episodes independent of development.
 
-The tutorial's presentation anchors are assigned after the primary evidence
-has been issued. The archived source snapshot keeps their pre-issuance
-unassigned values; `tutorial.py` is outside the scientific execution-source
-roster. This avoids placing a freeze's own digest inside the bytes it hashes.
-The issued scientific artifacts are never rewritten to change those anchors.
+## Preserve source and evidence identities
 
-Do not edit retained evidence to make a changed implementation pass an old
-verification. A change to an execution source, specification, statistical
-protocol, or numerical rule requires the appropriate versioned workflow and
-new evidence. Preserve all outcomes of that new run.
+Do not edit retained data, predictions, witnesses, endpoints, or source
+snapshots to make a changed implementation pass an old verification. A change
+to a source or resource included in a run's identity requires a separately
+identified assessment under the changed implementation. Even a cosmetic edit
+to a source file can change its hash. Documentation outside that roster can be
+updated while the numerical study remains unchanged.
 
-## Validation commands
+The tutorial presentation anchors are assigned after the primary evidence is
+issued. `tutorial.py` is outside that original execution-source roster, so a
+freeze need not contain its own digest. Keep this distinction explicit; never
+rewrite an issued scientific artifact to adjust a presentation anchor.
 
-From a complete checkout, install the build dependencies and use unused output
-paths:
+## Validation before publication
+
+The [standalone 0.2.0 validation report](../reports/standalone_0.2.0/report.md)
+records the checks actually completed for this edition.
+
+From a complete checkout with Python 3.12+, install the declared gate
+dependencies and use fresh output paths outside the checkout:
 
 ```bash
 python -m pip install 'numpy==2.3.5' 'setuptools>=77.0.3' wheel
-python scripts/ci_checks.py archive-inspect --project . --report ../kahm-release-archive.json
-python scripts/ci_checks.py portable --project . --report ../kahm-release-portable.json
-python scripts/ci_checks.py fresh-wheel --project . --output ../kahm-release-check --run-id release-check
+python scripts/ci_checks.py archive-inspect --project . --report ../kahm-release-checks/archive-inspection.json
+python scripts/ci_checks.py portable --project . --report ../kahm-release-checks/portable-tests.json
+python scripts/ci_checks.py fresh-wheel --project . --output ../kahm-release-checks/fresh-wheel --run-id release-check-v0.2
 ```
 
-The fresh-wheel command runs one separate complete experiment and retains all
-results. Do not repeatedly change seeds or run identities to obtain acceptance.
-For strict verification of the historical primary experiment, use the complete
-unmodified [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
-in the primary runtime. Run this command from that original source directory:
+Then verify the retained study with the installed wheel:
 
 ```bash
-python scripts/ci_checks.py strict-primary --project . --report ../kahm-release-strict.json
+python -m zipfile -e reports/lower_certificates_v1/full_verification_bundle.zip ../kahm-release-checks/retained-class-risk
+../kahm-release-checks/fresh-wheel/venv/bin/python -I -B -m kahm_demo verify-class-risk --run ../kahm-release-checks/retained-class-risk/run
 ```
 
-The recorded runtime includes the full Python build, architecture, and complete
-NumPy/BLAS configuration. Matching Python and NumPy version numbers alone is
-insufficient. A strict mismatch fails; it is never replaced by an inspection
-result under a verification label. See [CI.md](CI.md).
+Finally test the path from newly fitted models to class-risk assessment:
 
-The encoder-loader correction in `0.1.1` changes a source file bound by the
-primary freeze. Consequently, even a matching runtime cannot strictly replay
-the historical primary evidence using `0.1.1` source. Inspection remains
-available. Fresh experiments created with `0.1.1` record their own source and
-runtime identities and are verified against those identities.
+```bash
+../kahm-release-checks/fresh-wheel/venv/bin/python -I -B -m kahm_demo class-risk --freeze ../kahm-release-checks/fresh-wheel/run/frozen/freeze.json --output ../kahm-release-checks/new-class-risk --sample-sizes 1024 4096 --block-sizes 2 8 16 32 64 --solver-sweeps 64 --run-id release-class-check-v0.2
+../kahm-release-checks/fresh-wheel/venv/bin/python -I -B -m kahm_demo verify-class-risk --run ../kahm-release-checks/new-class-risk
+```
 
-Before distributing a package, inspect its wheel metadata and check the archive
-manifest after extracting it into a clean directory. Confirm that imports come
-from that extraction or an isolated installation. The validation report must
-name only checks actually performed on this version. Remote CI needs its own
-observed run URL and result.
+These interpreter paths are for POSIX environments; on Windows the virtual
+environment interpreter is `venv/Scripts/python.exe`. The fresh-wheel gate
+builds an isolated package installation and executes one full fitted-predictor
+pipeline. It does not itself invoke `class-risk`; the final commands above and
+the GitHub workflow perform that separate integration check.
 
-## Publishing and later versions
+Retain all outcomes. Requirement satisfaction, class exclusion, unresolved
+results, and realized coverage misses are scientific results, not criteria for
+selecting which software checks to report. A failed calculation or numerical
+verification fails the gate. [CI.md](CI.md) documents the exact portable and
+historical-runtime boundaries.
 
-Publish the identified source and assets at the confirmed repository. Record
-the actual commit, tag, release URL, asset digests, and observed CI results when
-available. Use the complete Apache-2.0 license and notice, retain applicable
-third-party notices, and keep the software citation consistent with the actual
-version and publication date.
+For documentation changes, also check relative links, mathematical notation,
+citation metadata, and that every stated command matches the implemented CLI.
+Do not add numerical experiments solely to validate prose.
 
-A later public research reference can be added as further reading without
-becoming a runtime dependency. Adding a bibliography alone does not change
-an existing certificate. Changing a hash-bound resource or execution source
-does change its identity and must be handled through the documented workflow.
+## Publish and cite an identified snapshot
 
-The software release does not extend the statistical claim beyond the stated
-conditional iid family of three frozen predictors, bounded squared loss, and
-one calibration experiment. The exact population audit is available because
-this benchmark has a known finite law.
+Publish the completed source to the confirmed GitHub repository after the
+applicable gates pass. Identify the resulting commit and, if created, its tag
+or release. Check the remote CI result for the exact published source. A
+prepared archive, local test result, or configured workflow does not establish
+a successful remote run.
+
+Build distributable archives from that identified source, exclude temporary
+runs and local environments, and retain their SHA-256 digests separately.
+Preserve the Apache-2.0 licence, notice, and applicable third-party attribution.
+Use the actual version and commit in scientific references. The implementation
+and its documentation remain independently usable when cited by another work.

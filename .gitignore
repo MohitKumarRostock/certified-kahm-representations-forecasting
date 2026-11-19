@@ -22,6 +22,7 @@ Thumbs.db
 .env
 .env.*
 
-# Retain the one validated release wheel so the manifest also holds in a checkout.
+# Retain validated distribution wheels alongside their versioned evidence.
 dist/*
 !dist/kahm_demonstrator-0.1.1-py3-none-any.whl
+!dist/kahm_demonstrator-0.2.0-py3-none-any.whl

@@ -1,0 +1,30 @@
+{
+  "exit_code": 0,
+  "inspection": {
+    "anchors": {
+      "audit_sha256": "65e1bd54dcbc87994f197b15d6fd0f7e56a0f8eb2ef1cb4b699022d2e02c52eb",
+      "certificate_sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446",
+      "freeze_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5"
+    },
+    "archive_identity_checked": true,
+    "calibration_losses_recomputed": false,
+    "candidate_ids": [
+      "raw",
+      "kahm_mem",
+      "kahm_local"
+    ],
+    "certificate_reverified": false,
+    "mode": "archive_identity_only",
+    "model_replayed": false,
+    "package_file": "/workspace/scratch/6f1b06143b15/certified-kahm-completion/kahm_demo/__init__.py",
+    "package_version": "0.2.0",
+    "population_risk_recomputed": false,
+    "schema": "kahm.ci_archive_inspection.v1",
+    "status": "passed",
+    "stdlib_only": true
+  },
+  "original_primary_numerical_verification_performed": false,
+  "schema": "kahm.ci_archive_gate.v1",
+  "status": "passed",
+  "stderr": ""
+}

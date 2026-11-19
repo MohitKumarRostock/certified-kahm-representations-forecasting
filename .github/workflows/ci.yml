@@ -35,6 +35,10 @@ jobs:
         env:
           KAHM_CI_RUN_ID: ci-${{ github.run_id }}
         run: python scripts/ci_checks.py fresh-wheel --project . --output "${RUNNER_TEMP}/kahm-ci/fresh-wheel" --run-id "${KAHM_CI_RUN_ID}"
+      - name: Verify the retained class-risk study with the installed wheel
+        run: |
+          python -m zipfile -e reports/lower_certificates_v1/full_verification_bundle.zip "${RUNNER_TEMP}/kahm-ci/retained-class-risk"
+          "${RUNNER_TEMP}/kahm-ci/fresh-wheel/venv/bin/python" -I -B -m kahm_demo verify-class-risk --run "${RUNNER_TEMP}/kahm-ci/retained-class-risk/run" > "${RUNNER_TEMP}/kahm-ci/retained-class-risk-verification.json"
       - name: Assess lower and upper class risks with the installed wheel
         env:
           KAHM_CLASS_RUN_ID: class-ci-${{ github.run_id }}

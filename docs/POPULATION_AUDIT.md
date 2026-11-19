@@ -1,10 +1,16 @@
 # Exact benchmark population-risk audit
 
-In version 0.1.0, the population audit evaluates the three already frozen computational predictors
+The fitted-predictor population audit, introduced in version 0.1.0, evaluates the three already frozen computational predictors
 against the stipulated finite benchmark law, after the fitted-risk certificate has
 been issued and verified. The scientific contract explicitly requires
 this independent reference audit and retention of every realized coverage
 outcome. Its implementation is `population_audit.py` plus `audit_workflow.py`.
+
+The `class-risk` workflow has an additional known-law audit implemented in
+`class_oracle.py`. It bounds optimal risk over prescribed Lipschitz decoder
+classes after sample certificates have been issued. Section 8 describes that
+extension; the common risk terminology is in
+[SCIENTIFIC_REFERENCE.md](SCIENTIFIC_REFERENCE.md).
 
 ## 1. Three different quantities
 
@@ -189,6 +195,29 @@ python -m kahm_demo audit-certificate --certificate certificates/replay/certific
 Repeating an exact calculation supplies no new independent statistical evidence.
 The `verify-certificate` command checks the issued certificate without
 evaluating model-specific population risks.
+
+## 8. Reference bounds on optimal class risk
+
+For each prescribed representation, metric, and Lipschitz bound, the class-risk
+audit optimizes squared loss under the known finite population law. Verified
+dual witnesses provide lower bounds on optimal class risk $R_\kappa^*$, and
+feasible prediction tables provide upper bounds. These deterministic
+population-reference bounds are distinct from the lower and upper confidence
+bounds obtained from calibration observations.
+
+For the retained study, the audit establishes the RAW and LOCAL optimal class
+risks exactly as $9/160$, the short-history optimum as $5/32$, and a verified
+interval for the MEM optimum. Those statements concern the specified feature
+coordinates, metric, Lipschitz bound, and benchmark law. They do not establish
+an intrinsic ordering of representations under unrestricted decoders.
+
+The audit checks the original sample bounds and decisions without selecting a
+different class, replacing observations, or repairing an endpoint. A known-law
+reference can explain an unresolved certificate, but it does not change the
+certificate's status or estimate repeated-sampling coverage. The
+[class-risk guide](LOWER_CERTIFICATES.md) and
+[proof](LOWER_CERTIFICATE_PROOF.md) define the reference calculations and
+verification records.
 
 ## Local mathematical basis
 

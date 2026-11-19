@@ -1,0 +1,269 @@
+{
+  "archive_inspection": {
+    "anchors": {
+      "audit_sha256": "65e1bd54dcbc87994f197b15d6fd0f7e56a0f8eb2ef1cb4b699022d2e02c52eb",
+      "certificate_sha256": "b7586d0afa78c0f832feb482132499bd923d5bf35cdd53bd5e84f52f6d9c9446",
+      "freeze_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5"
+    },
+    "archive_identity_checked": true,
+    "calibration_losses_recomputed": false,
+    "candidate_ids": [
+      "raw",
+      "kahm_mem",
+      "kahm_local"
+    ],
+    "certificate_reverified": false,
+    "mode": "archive_identity_only",
+    "model_replayed": false,
+    "package_file": "/workspace/scratch/6f1b06143b15/completion-checks/fresh-wheel/venv/lib/python3.12/site-packages/kahm_demo/__init__.py",
+    "package_version": "0.2.0",
+    "population_risk_recomputed": false,
+    "schema": "kahm.ci_archive_inspection.v1",
+    "status": "passed",
+    "stdlib_only": true
+  },
+  "automatic_retries_performed": false,
+  "elapsed_seconds": 74.326,
+  "fresh_pipeline_invocation_count": 1,
+  "fresh_reproduction": {
+    "all_outcomes_retained": true,
+    "audit_summary": {
+      "all_available_endpoints_cover": true,
+      "all_three_covered": true,
+      "all_three_endpoints_available": true,
+      "all_three_population_requirements_met": true,
+      "available_endpoint_count": 3,
+      "candidate_count": 3,
+      "coverage_miss_count": 0,
+      "coverage_outcome": "all_three_covered",
+      "covered_endpoint_count": 3,
+      "population_requirement_met_count": 3,
+      "unavailable_endpoint_count": 0
+    },
+    "automatic_retries_performed": false,
+    "candidate_ids": [
+      "raw",
+      "kahm_mem",
+      "kahm_local"
+    ],
+    "candidates": [
+      {
+        "bank_id": null,
+        "bayes_reference_mse": {
+          "denominator": "160",
+          "numerator": "9"
+        },
+        "calibration_empirical_mse": {
+          "denominator": "21267647932558653966460912964485513216",
+          "numerator": "1256195892649381128500493714131934295"
+        },
+        "candidate_id": "raw",
+        "certificate_status": "requirement_met",
+        "empirical_minus_population_risk": {
+          "denominator": "106338239662793269832304564822427566080",
+          "numerator": "274353161070801142293534945461895859"
+        },
+        "exact_population_mse": {
+          "denominator": "415383748682786210282439706337607680",
+          "numerator": "23463383992875408203941146973428811"
+        },
+        "excess_over_bayes_decimal_18_approximate": "0.000236042285668619",
+        "fitted_excess_over_bayes": {
+          "denominator": "415383748682786210282439706337607680",
+          "numerator": "98048129468683875553913491938379"
+        },
+        "frozen_state_sha256": "68d763bc9a8c3cb7e4a4d53bce839539944f0f08e5f5650796feaca133bfa29b",
+        "independent_exact_decomposition_checked": true,
+        "issued_upper_endpoint": {
+          "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+          "numerator": "1804834739836323637618824288595879455708329074254811520979409"
+        },
+        "issued_upper_endpoint_decimal_18": "0.070196963500099881",
+        "population_audit_path": "population/raw.json",
+        "population_audit_sha256": "75d5eac439fd35f9b1416fc9c12840dadee4113aa6863943204871c26f5013d7",
+        "population_mse_decimal_18_approximate": "0.056486042285668619",
+        "population_requirement_met": true,
+        "prediction_table_sha256": "6e1c77d481edbea0ca3f1b57a208b40d431885726932f477cc01e15f9a4a75f4",
+        "primary_mse_tolerance": {
+          "denominator": "10",
+          "numerator": "1"
+        },
+        "realized_coverage": "covered",
+        "upper_minus_empirical_risk": {
+          "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+          "numerator": "286187090718639832234843498025563236162198917425856358273489"
+        },
+        "upper_minus_population_risk": {
+          "denominator": "128555043540719222043356967387293008201776239502623426824110080",
+          "numerator": "1762608073704581806074541841953924881974937542066972027492629"
+        }
+      },
+      {
+        "bank_id": "cap_2",
+        "bayes_reference_mse": {
+          "denominator": "160",
+          "numerator": "9"
+        },
+        "calibration_empirical_mse": {
+          "denominator": "10633823966279326983230456482242756608",
+          "numerator": "628097938702700492986921633884903409"
+        },
+        "candidate_id": "kahm_mem",
+        "certificate_status": "requirement_met",
+        "empirical_minus_population_risk": {
+          "denominator": "53169119831396634916152282411213783040",
+          "numerator": "137176526226558185040055549540717877"
+        },
+        "exact_population_mse": {
+          "denominator": "415383748682786210282439706337607680",
+          "numerator": "23463384119429252186676192342842181"
+        },
+        "excess_over_bayes_decimal_18_approximate": "0.000236042590335916",
+        "fitted_excess_over_bayes": {
+          "denominator": "415383748682786210282439706337607680",
+          "numerator": "98048256022527858288958861351749"
+        },
+        "frozen_state_sha256": "9cc12070b092acfecaa0d6c42807b691ebf8cfb21013da6d8593f0fb5db8813f",
+        "independent_exact_decomposition_checked": true,
+        "issued_upper_endpoint": {
+          "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+          "numerator": "902417359946718596370795211952231776179812846374984059132289"
+        },
+        "issued_upper_endpoint_decimal_18": "0.070196962724444337",
+        "population_audit_path": "population/kahm_mem.json",
+        "population_audit_sha256": "ade85f8998c2e95cbdf3d1e643bb90a970ee8a0ecf29fd5f73aa5216f100837b",
+        "population_mse_decimal_18_approximate": "0.056486042590335916",
+        "population_requirement_met": true,
+        "prediction_table_sha256": "eebf93dc786aad8fc1571fce93328f2552fc4bbc96b511ab710f835ad95da940",
+        "primary_mse_tolerance": {
+          "denominator": "10",
+          "numerator": "1"
+        },
+        "realized_coverage": "covered",
+        "upper_minus_empirical_risk": {
+          "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+          "numerator": "143093544602297287675386093883844110745654910301224343378305"
+        },
+        "upper_minus_population_risk": {
+          "denominator": "64277521770359611021678483693646504100888119751311713412055040",
+          "numerator": "881303967411815966881322737171902439235614590366131302399877"
+        }
+      },
+      {
+        "bank_id": "cap_2",
+        "bayes_reference_mse": {
+          "denominator": "160",
+          "numerator": "9"
+        },
+        "calibration_empirical_mse": {
+          "denominator": "10633823966279326983230456482242756608",
+          "numerator": "628097943113124194592255317274132441"
+        },
+        "candidate_id": "kahm_local",
+        "certificate_status": "requirement_met",
+        "empirical_minus_population_risk": {
+          "denominator": "53169119831396634916152282411213783040",
+          "numerator": "137176568293168373572657891831265341"
+        },
+        "exact_population_mse": {
+          "denominator": "207691874341393105141219853168803840",
+          "numerator": "11731691981533017966361791775544519"
+        },
+        "excess_over_bayes_decimal_18_approximate": "0.000236042213905165",
+        "fitted_excess_over_bayes": {
+          "denominator": "207691874341393105141219853168803840",
+          "numerator": "49024049829655802168175034799303"
+        },
+        "frozen_state_sha256": "46149d0c9e785ff3ee1b100f24e46006da2de8fd49e23d94b97568bc3e06abcb",
+        "independent_exact_decomposition_checked": true,
+        "issued_upper_endpoint": {
+          "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+          "numerator": "451208682858320385873168877710025238818346155948861586614101"
+        },
+        "issued_upper_endpoint_decimal_18": "0.070196963173273261",
+        "population_audit_path": "population/kahm_local.json",
+        "population_audit_sha256": "90f412cae44fa0bdf347e935d497a2aa29e6e8e3aaac93888483c6979e07e9b8",
+        "population_mse_decimal_18_approximate": "0.056486042213905165",
+        "population_requirement_met": true,
+        "prediction_table_sha256": "2a2a0ac6ddc05e965adf4c403ab71786ccc7af9502c8859becb3c5250e29267c",
+        "primary_mse_tolerance": {
+          "denominator": "10",
+          "numerator": "1"
+        },
+        "realized_coverage": "covered",
+        "upper_minus_empirical_risk": {
+          "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+          "numerator": "71546772520172187369956959784904162596304844093955844286293"
+        },
+        "upper_minus_population_risk": {
+          "denominator": "32138760885179805510839241846823252050444059875655856706027520",
+          "numerator": "440652010228731301392424231660425053277332471637526205154473"
+        }
+      }
+    ],
+    "certificate_summary": {
+      "all_three_requirements_met": true,
+      "any_kahm_requirement_met": true,
+      "status_counts": {
+        "certificate_unavailable": 0,
+        "requirement_met": 3,
+        "unresolved": 0
+      }
+    },
+    "master_seed_integer": "20261110",
+    "pipeline_complete": true,
+    "principal_artifacts": {
+      "audit": {
+        "path": "audits/audit.json",
+        "sha256": "c3c7763b500e50a6a9dcaabce571449d6aea24d304e487b0c08423d40005ec9a"
+      },
+      "certificate": {
+        "path": "certificates/certificate.json",
+        "sha256": "df0ba1bea01cc1f54facb95444c521bafb7b2efcb89f42289145991cf4efba75"
+      },
+      "dataset_manifest": {
+        "path": "data/manifest.json",
+        "sha256": "b25259ca3378ce6c0c19ee0327568536614c6db1056f69e4de27a793f35a98e7"
+      },
+      "encoder_manifest": {
+        "path": "encoders/manifest.json",
+        "sha256": "d208ce4558363cbcc22813e518793edc981e10f47c41db48ba5bcf8f4d9c5b17"
+      },
+      "freeze": {
+        "path": "frozen/freeze.json",
+        "sha256": "12c25f8fc5806c89a0aa29f9db0fdb71cce74042841ffb8e2ae1feebc693d7be"
+      },
+      "model_manifest": {
+        "path": "models/manifest.json",
+        "sha256": "4230aae6f28d014564fe3a2aa24eab2b9fd44eed0e73010c98f7d425ae7ce173"
+      }
+    },
+    "reproduction_sha256": "df31451e9a962c3c9bcaf04d69f03896195dae7b733393c935d008fe2a202ac5",
+    "run_id": "completion-ci-20261119"
+  },
+  "installed_probe": {
+    "checkout_shadowed_import": false,
+    "installed_package_source_hashes_match": true,
+    "installed_prefix": "/workspace/scratch/6f1b06143b15/completion-checks/fresh-wheel/venv",
+    "numpy_version": "2.3.5",
+    "package_file": "/workspace/scratch/6f1b06143b15/completion-checks/fresh-wheel/venv/lib/python3.12/site-packages/kahm_demo/__init__.py",
+    "package_version": "0.2.0",
+    "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "python_version": "3.12.14",
+    "schema": "kahm.ci_installed_probe.v1",
+    "status": "passed"
+  },
+  "original_primary_numerical_verification_performed": false,
+  "output": "/workspace/scratch/6f1b06143b15/completion-checks/fresh-wheel",
+  "package_version": "0.2.0",
+  "plan_sha256": "2d7f910595fa188b455d8136a3b6ac2b6ae1ceba426c9c02d74a867f561f6473",
+  "report_path": "/workspace/scratch/6f1b06143b15/completion-checks/fresh-wheel/ci_report.json",
+  "runtime_identity_checks_relaxed": false,
+  "schema": "kahm.ci_fresh_wheel.v1",
+  "scope": "CI pass means the installed package and the complete fresh pipeline executed successfully on this runner. All three scientific outcomes are retained, including unresolved or unavailable certificates and coverage misses. The fresh certificate keeps its conditional iid premises. The archived primary example received identity-only inspection; its original numerical runtime identity was neither relaxed nor claimed to match.",
+  "status": "passed",
+  "wheel": {
+    "path": "/workspace/scratch/6f1b06143b15/completion-checks/fresh-wheel/wheelhouse/kahm_demonstrator-0.2.0-py3-none-any.whl",
+    "sha256": "4a7dc9a5fdd5e63825ef438c42dec0b053757710932d11535aee9e01a1b0a520"
+  }
+}

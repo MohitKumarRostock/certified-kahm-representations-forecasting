@@ -20,8 +20,9 @@ A fresh run fits new models and uses its own data and evidence directories.
 
 The [scientific contract](kahm_demo/specification.json) defines the finite
 benchmark, evaluation family, loss, confidence allocation, and claim limits.
-The [method overview](docs/METHOD_OVERVIEW.md) links the complete local
-definitions and the fitted-risk proof. Improvements should keep
+The [scientific reference](docs/SCIENTIFIC_REFERENCE.md) defines the
+terminology and claims; the [method overview](docs/METHOD_OVERVIEW.md) links
+the implementation and both fitted-risk and class-risk proofs. Improvements should keep
 the distinction between a fitted predictor, an entire decoder class, and a
 representation's information content explicit.
 

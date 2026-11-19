@@ -1,6 +1,6 @@
 # Frozen forecasting family and calibration interface
 
-In version 0.1.0, the freeze stage binds the three selected computational forecasters and the complete
+The freeze stage, introduced in version 0.1.0, binds the three selected computational forecasters and the complete
 calibration protocol into a self-contained snapshot. It executes the saved
 models and verifies their development provenance without refitting them,
 generating calibration observations, or evaluating their oracle population
@@ -9,6 +9,15 @@ risks. **A successful freeze is not a statistical risk certificate.**
 The implementation is [freeze.py](../kahm_demo/freeze.py). The
 [scientific contract](../kahm_demo/specification.json) governs the scientific scope;
 [READOUT_DESIGN.md](READOUT_DESIGN.md) describes the completed development search.
+
+The `class-risk` workflow can reuse the archived feature and prediction tables
+as exact functions on the finite benchmark support. It commits a separate
+class-risk plan containing the representations, metrics, Lipschitz bounds,
+sample sizes, block partitions, and confidence allocation before its own
+calibration draw. It does not extend the original three-endpoint allocation or
+claim historical model replay from table-identity checks. See
+[LOWER_CERTIFICATES.md](LOWER_CERTIFICATES.md) and
+[SCIENTIFIC_REFERENCE.md](SCIENTIFIC_REFERENCE.md).
 
 ## 1. Public API and commands
 

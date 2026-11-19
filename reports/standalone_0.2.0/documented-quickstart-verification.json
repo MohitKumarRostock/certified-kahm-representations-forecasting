@@ -1,0 +1,433 @@
+{
+  "alpha_per_endpoint": {
+    "denominator": "600",
+    "numerator": "1"
+  },
+  "assessments": [
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "1",
+            "numerator": "0"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.18903246599802515,
+          "empirical_lower": {
+            "denominator": "1",
+            "numerator": "0"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "2048",
+            "numerator": "1"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "67699845898419233783545856",
+            "numerator": "25"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.3044914459969732,
+          "empirical_lower": {
+            "denominator": "58028439341502200385896448",
+            "numerator": "933569167825"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "10752",
+            "numerator": "25"
+          }
+        }
+      ],
+      "class_id": "raw_k2_1",
+      "class_upper": {
+        "denominator": "401734511064747568885490523085290650630550748445698208825344",
+        "numerator": "48066425941943583535688796432008442627115987724767655794521"
+      },
+      "fitted_risk": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617660910893348877587862446939"
+      },
+      "fitted_upper": {
+        "denominator": "401734511064747568885490523085290650630550748445698208825344",
+        "numerator": "48066425941943583535688796432008442627115987724767655794521"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "2323458711233748103451293777920",
+        "numerator": "3958835351957675105600618203"
+      },
+      "lower_coverage": "covered",
+      "n": 128,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "raw",
+      "status": "unresolved",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": false,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "105312291668557186697918027683670432318895095400549111254310977536",
+            "numerator": "72869735728273881668111117500755064960293889529719030304051535"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.34701666299952194,
+          "empirical_lower": {
+            "denominator": "52656145834278593348959013841835216159447547700274555627155488768",
+            "numerator": "1516495173192338332105500791297639773458588360613823900032095"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "1393796574908163946345982392040522594123776",
+            "numerator": "28539452326884590287030021118793036699385"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "1474372083359800613770852387571386052464531335607687557560353685504",
+            "numerator": "12515438224920379802170209733365816508650010747120182650095566699"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.3710770899997442,
+          "empirical_lower": {
+            "denominator": "6582018229284824168619876730229402019930943462534319453394436096",
+            "numerator": "103011820590641093541454084539184395873675327528594433417410321"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "9756576024357147624421876744283658158866432",
+            "numerator": "765633585823036247212602820839957992928513"
+          }
+        }
+      ],
+      "class_id": "kahm_mem_k2_1",
+      "class_upper": null,
+      "fitted_risk": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617511918206923147658928940087"
+      },
+      "fitted_upper": {
+        "denominator": "1569275433846670190958947355801916604025588861116008628224",
+        "numerator": "187759455167950367668992089891531615344470734126516108507"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "4706143033938649280563211862114022444250624575712038409177021808640",
+        "numerator": "169276232805287192586485089217437883149982145916399257579397196777"
+      },
+      "lower_coverage": "covered",
+      "n": 128,
+      "optimal_risk_lower": {
+        "denominator": "6968982874540819731729911960202612970618880",
+        "numerator": "930601236463086678503893445200439813596433"
+      },
+      "optimal_risk_upper": {
+        "denominator": "73075081866545145910184241635814150982796627148800",
+        "numerator": "9759053031114869812360870143584899988682774300403"
+      },
+      "repetition": 0,
+      "representation": "kahm_mem",
+      "status": "unresolved",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "1",
+            "numerator": "0"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.17040973600524012,
+          "empirical_lower": {
+            "denominator": "1",
+            "numerator": "0"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "2048",
+            "numerator": "1"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "67699845898419233783545856",
+            "numerator": "25"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.2562123829993652,
+          "empirical_lower": {
+            "denominator": "58028439341502200385896448",
+            "numerator": "933569167825"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "10752",
+            "numerator": "25"
+          }
+        }
+      ],
+      "class_id": "kahm_local_k2_1",
+      "class_upper": {
+        "denominator": "401734511064747568885490523085290650630550748445698208825344",
+        "numerator": "48066418721421324586996452829869687967282028702822656721153"
+      },
+      "fitted_risk": {
+        "denominator": "83076749736557242056487941267521536",
+        "numerator": "4688647074824915106329509302933647"
+      },
+      "fitted_upper": {
+        "denominator": "401734511064747568885490523085290650630550748445698208825344",
+        "numerator": "48066418721421324586996452829869687967282028702822656721153"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "2323458711233748103451293777920",
+        "numerator": "3958835351957675105600618203"
+      },
+      "lower_coverage": "covered",
+      "n": 128,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "kahm_local",
+      "status": "unresolved",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "309485009821345068724781056",
+            "numerator": "1762762546053563922585549"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.31651814399810974,
+          "empirical_lower": {
+            "denominator": "154742504910672534362390528",
+            "numerator": "120463738690912232716389"
+          },
+          "expected_block_score": {
+            "denominator": "128",
+            "numerator": "5"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "2048",
+            "numerator": "87"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "386856262276681335905976320",
+            "numerator": "5266080743705060218390031"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.3068081399978837,
+          "empirical_lower": {
+            "denominator": "618970019642690137449562112",
+            "numerator": "13614939649779654662259343"
+          },
+          "expected_block_score": {
+            "denominator": "3670016",
+            "numerator": "360485"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "7680",
+            "numerator": "721"
+          }
+        }
+      ],
+      "class_id": "short_history_k4_1",
+      "class_upper": {
+        "denominator": "31934181188194066954628713940350447462675120128",
+        "numerator": "9187712344491009130742862866674677678873953315"
+      },
+      "fitted_risk": {
+        "denominator": "29717252501208459130944",
+        "numerator": "4644498292884865719313"
+      },
+      "fitted_upper": {
+        "denominator": "31934181188194066954628713940350447462675120128",
+        "numerator": "9187712344491009130742862866674677678873953315"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "lower": {
+        "denominator": "704078397343560031348876902400",
+        "numerator": "43114380752396692435421108301"
+      },
+      "lower_coverage": "covered",
+      "n": 128,
+      "optimal_risk_lower": {
+        "denominator": "32",
+        "numerator": "5"
+      },
+      "optimal_risk_upper": {
+        "denominator": "32",
+        "numerator": "5"
+      },
+      "repetition": 0,
+      "representation": "short_history",
+      "status": "unresolved",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "1",
+            "numerator": "0"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.1695888189933612,
+          "empirical_lower": {
+            "denominator": "1",
+            "numerator": "0"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "2048",
+            "numerator": "1"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "67699845898419233783545856",
+            "numerator": "25"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.2026980650043697,
+          "empirical_lower": {
+            "denominator": "58028439341502200385896448",
+            "numerator": "933569167825"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "10752",
+            "numerator": "25"
+          }
+        }
+      ],
+      "class_id": "full_history_k4_1",
+      "class_upper": {
+        "denominator": "2227006733095160451897870468010256859530098595162300334251657025028096",
+        "numerator": "266455140862955875990202469309625917515433559692753119188023014937543"
+      },
+      "fitted_risk": {
+        "denominator": "46053419841034295809141637127819337717409382400",
+        "numerator": "2599141604105483387342305489301305145799480601"
+      },
+      "fitted_upper": {
+        "denominator": "2227006733095160451897870468010256859530098595162300334251657025028096",
+        "numerator": "266455140862955875990202469309625917515433559692753119188023014937543"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "lower": {
+        "denominator": "2323458711233748103451293777920",
+        "numerator": "3958835351957675105600618203"
+      },
+      "lower_coverage": "covered",
+      "n": 128,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "full_history",
+      "status": "unresolved",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    }
+  ],
+  "calibration_stream_replayed_in_memory": true,
+  "delta": {
+    "denominator": "20",
+    "numerator": "1"
+  },
+  "endpoint_count": 30,
+  "interpretation": "Numerical/provenance verification is distinct from favorable decisions and realized coverage. Statistical validity assumes iid calibration independent of development.",
+  "models_replayed": false,
+  "numerical_witnesses_checked": true,
+  "plan_sha256": "84dc3ea80738f5ca0e900dd21a20164e23d11b444c52430496727947d90875c0",
+  "population_audit_checked": true,
+  "run_id": "class-risk-quickstart-v1",
+  "schema": "kahm.class_risk_verification.v1",
+  "source_identity_matches": true,
+  "status": "verified",
+  "status_counts": {
+    "unresolved": 5
+  },
+  "unavailable_endpoint_count": 0
+}
