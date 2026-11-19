@@ -1,0 +1,126 @@
+{
+  "alpha_per_endpoint": {
+    "denominator": "3600",
+    "numerator": "1"
+  },
+  "benchmark_id": "four_state_order2_modular_v1",
+  "block_sizes": [
+    2,
+    8,
+    16,
+    32,
+    64
+  ],
+  "class_ids": [
+    "raw_k2_1",
+    "kahm_mem_k2_1",
+    "kahm_local_k2_1",
+    "short_history_k4_1",
+    "full_history_k4_1"
+  ],
+  "classes_sha256": "a292007e07961a20a8ce42dc4d56a97f73da93ac0b9971ff27521ebdb3f4b52a",
+  "delta": {
+    "denominator": "20",
+    "numerator": "1"
+  },
+  "endpoint_count": 180,
+  "inputs": {
+    "dataset_manifest.json": "67a389a7ab59552b065c97bc215c693c637a261100cd0849eee8b8dbb433dd3f",
+    "features.json": "e04c0b4a2bd74fc16b5b72cb9c0b8a9d13ef9ee186500b7ed7ba13090b456797",
+    "predictions/kahm_local.json": "52df243696d80ea7c183744090fd93e3c592af142ff6c682c0a50add8311cdb0",
+    "predictions/kahm_mem.json": "d1e1b28ed544842e7b10a135ab56fe9b0f341a57ec2ef92d188113d72974f159",
+    "predictions/raw.json": "f75eafd61a4b248d764abdc527b8fc96e3aa8b953c962cf5f7e5159aa73a733e",
+    "source_freeze.json": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5",
+    "training.jsonl": "3dd4c6c8cf94161130111f5d54b0d16afca524b3fa4ac5df4a33ad1c31eb1d1e"
+  },
+  "kappas": [
+    {
+      "denominator": "1",
+      "numerator": "2"
+    }
+  ],
+  "master_seed": "20261119",
+  "protocol": "kahm.class_risk_protocol.v1",
+  "repetitions": 1,
+  "run_id": "lower-certificates-20261119-v1",
+  "runtime": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "sample_sizes": [
+    1024,
+    4096,
+    16384
+  ],
+  "schema": "kahm.class_risk_plan.v1",
+  "scope": {
+    "confidence_scope": "all declared repetitions, sample sizes, classes, block and empirical lower bounds, and fitted upper bounds jointly",
+    "global_executable_readout_lipschitz_claimed": false,
+    "historical_model_replayed": false,
+    "ideal_real_arithmetic_encoder_claimed": false,
+    "iid_calibration_independent_of_development_assumed": true,
+    "population_oracle_used_for_certification": false,
+    "prefixes_share_observations": true,
+    "representation": "exact finite-support computational feature table",
+    "seed_replay_is_new_independent_evidence": false
+  },
+  "solver_sweeps": 100,
+  "source_freeze_sha256": "d9de3f2511dd70a2f1a9eaf7fb7fbb772cfa192a4d141ff472d7e032efeed5e5",
+  "source_run_id": "public-v0.1.0",
+  "sources": {
+    "__init__.py": "7c4b52b9a5a984424d5afab0873e5cbe4e73d0a4b36de7f18b7f24ba56b55665",
+    "_util.py": "60ecb707fa4317325747adcadb4c56c14b4b77a98bc44665457eb53724420810",
+    "calibration_protocol.json": "26d62b5c737e67f4cdb08250f10eddc8bf1c06c996b034c6bc6e1356f4e19c04",
+    "calibration_protocol.py": "94a21c17ad0b66149b4c83fbc0344008b5481af8daaf73b597f310a368737455",
+    "class_bounds.py": "1a1b6f81639e5de6e4ceca4efb5371e6be59f933054689311a548a7402b29f31",
+    "class_oracle.py": "c9e623f60e6f45a9316570c29f55e53b8c805128ae9c4ec7028307e6c2a2d87f",
+    "class_risk_workflow.py": "426ba668cafe0efc87275d95f4a19c9ec34da84e2e989abc604b00077c06e2b4",
+    "cli.py": "0c5bccf2dc5c455b94356af5f7119ab4e790c38dff29d0c9ce4f604af3b4880a",
+    "contract.py": "98fdaafd00059a3dcf0544ba6aec42a383464370c6cdcd07e66c31c2bb68522a",
+    "law.py": "fbe59e8ac9d7efdbb6dee630ea285230f08cd1f0298c25d807759fd6d3e6a8dd",
+    "lipschitz_class.py": "9b68d597939bcf59e2c1aabf1f658cc5bb7a61350a426ab35444c7cbb456659c",
+    "oracle.py": "ac582478713162db6bc5c1ee785121f4840a5328a1521086ea98bc71fd9523c5",
+    "sampling.py": "d5764a642de70cf1c8e77dd4d60d9dd9144976c40ff937113b15fa9ec2953e00",
+    "specification.json": "83a9fa471044e967d2055e7b507132749b7e64ab1a2788eac71024d83c52b4f7",
+    "verified_arithmetic.py": "2b0dbd5f84ace66425b4a7c7288f34d255aaf76607a486250c3c750a7c756b62"
+  },
+  "streams": [
+    {
+      "benchmark_id": "four_state_order2_modular_v1",
+      "derivation": {
+        "algorithm": "SHA-256",
+        "canonical_json": "{\"benchmark_id\":\"four_state_order2_modular_v1\",\"master_seed\":\"20261119\",\"namespace\":\"kahm-demonstrator-episode-stream-v1\",\"role\":\"calibration\",\"run_id\":\"class-risk-v1:lower-certificates-20261119-v1:rep-0\"}",
+        "digest_hex": "22455f3207b05bc7d7a1df510b4ea73b1b4ff39ce2a65ab4485f1bdb1b4e669f",
+        "encoding": "UTF-8; ASCII JSON escapes; sorted keys; compact separators",
+        "integer_interpretation": "unsigned big-endian 256-bit integer",
+        "namespace": "kahm-demonstrator-episode-stream-v1"
+      },
+      "integer_metadata_encoding": "base-10 strings unless marked hexadecimal",
+      "master_seed_integer": "20261119",
+      "rng": {
+        "algorithm": "Mersenne Twister (MT19937)",
+        "implementation": "random.Random",
+        "python_full_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "state_format_version": 3
+      },
+      "role": "calibration",
+      "run_id": "class-risk-v1:lower-certificates-20261119-v1:rep-0",
+      "sampler_version": "fresh-pair-ticket-v1",
+      "sampling_rule": {
+        "duplicate_policy": "retain every sampled episode",
+        "episode_dependence": "fresh pair and ticket for every episode",
+        "pair_draw": "pair_id = rng.randrange(16); a, b = divmod(pair_id, 4)",
+        "successor": "(a+b)%4 for tickets 0..15; ticket-16 for tickets 16..19",
+        "ticket_draw": "ticket = rng.randrange(20)"
+      },
+      "seed_hex": "0x22455f3207b05bc7d7a1df510b4ea73b1b4ff39ce2a65ab4485f1bdb1b4e669f",
+      "seed_integer": "15501206314010779912520660241590364141692885067950752380065543353188119111327"
+    }
+  ],
+  "tolerance": {
+    "denominator": "10",
+    "numerator": "1"
+  }
+}

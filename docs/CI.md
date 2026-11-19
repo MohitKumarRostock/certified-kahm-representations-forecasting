@@ -65,7 +65,7 @@ checked on the same executing runtime; they do not relax the original snapshot.
 The ordinary command `python -m unittest discover -s tests -v` still runs the
 complete suite, including the historical primary checks. Those positive checks
 require the original `v0.1.0` source as well as its recorded primary runtime.
-For the current `0.1.1` source, use the portable gate and fresh-wheel integration
+For the current source, use the portable gate and fresh-wheel integration
 gate. The portable command makes its narrower scope visible in its report.
 
 ## Installed-wheel and fresh-run gate
@@ -107,6 +107,29 @@ remain reported outcomes; none triggers a replacement sample, alternative seed,
 refit, or retry. A completed pipeline with such outcomes can pass CI because
 the workflow and evidence are functioning correctly. A failed calculation or
 verification cannot pass.
+
+## Class-risk extension gate
+
+After the original fresh demonstration, the GitHub workflow uses the **installed
+wheel's** interpreter in isolated mode to run `class-risk` on that new run's
+freeze. It declares sample sizes 1,024 and 4,096, block sizes 2, 8, 16, 32 and 64,
+and 64 solver sweeps before generating a separate calibration stream. The
+original three representation classes use Lipschitz bound 2; the two analytical
+history controls use bound 4. The new protocol divides one failure budget across
+every endpoint in this family.
+
+A second installed-wheel command, `verify-class-risk`, rechecks the retained
+optimization witnesses, confidence endpoints, class membership and population
+audits without fitting or optimizing. It replays the declared PRNG stream in
+memory to compare against the saved observations; it does not replace files or
+treat that replay as independent evidence. All class-risk records are uploaded
+with the other CI artifacts, including partial output after failure.
+
+These steps test both the package integration and the path from freshly fitted
+models to new lower/upper assessments. Class acceptance, exclusion, unresolved
+cases, unavailable endpoints and realized coverage are scientific outcomes, not
+criteria for passing CI. The [lower-certificate guide](LOWER_CERTIFICATES.md)
+and [proof](LOWER_CERTIFICATE_PROOF.md) define the statistical scope.
 
 ## Strict primary gate
 

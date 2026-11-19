@@ -22,6 +22,13 @@ def parse_history_observation(value: str) -> Fraction:
         raise argparse.ArgumentTypeError("history observations must be finite numbers") from error
 
 
+def parse_exact_fraction(value: str) -> Fraction:
+    try:
+        return Fraction(value)
+    except (ValueError, ZeroDivisionError, OverflowError) as error:
+        raise argparse.ArgumentTypeError("expected a finite decimal or rational number") from error
+
+
 def _emit(value, output=None):
     if output:
         path = Path(output)
@@ -118,6 +125,21 @@ def main(argv=None) -> int:
     reproduce.add_argument("--run-id", default="tutorial-v0.1")
     reproduce.add_argument("--training-count", type=int, default=4096)
     reproduce.add_argument("--validation-count", type=int, default=1024)
+    class_risk = commands.add_parser("class-risk", help="issue and audit lower and upper certificates for declared Lipschitz classes")
+    class_risk.add_argument("--freeze", type=Path, required=True,
+                            help="source freeze.json; archived tables or a separate fresh development run")
+    class_risk.add_argument("--output", type=Path, required=True)
+    class_risk.add_argument("--sample-sizes", type=int, nargs="+", default=[4096])
+    class_risk.add_argument("--block-sizes", type=int, nargs="+", default=[2, 8, 16, 32, 64])
+    class_risk.add_argument("--kappas", type=parse_exact_fraction, nargs="+", default=[Fraction(2)])
+    class_risk.add_argument("--repetitions", type=int, default=1)
+    class_risk.add_argument("--delta", type=parse_exact_fraction, default=Fraction(1, 20))
+    class_risk.add_argument("--tolerance", type=parse_exact_fraction, default=Fraction(1, 10))
+    class_risk.add_argument("--solver-sweeps", type=int, default=100)
+    class_risk.add_argument("--master-seed", type=int, default=20261119)
+    class_risk.add_argument("--run-id", default="class-risk-v1")
+    verify_class = commands.add_parser("verify-class-risk", help="recheck saved class-risk witnesses without optimizing or fitting")
+    verify_class.add_argument("--run", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
         validate_contract()
@@ -223,6 +245,17 @@ def main(argv=None) -> int:
                 progress=lambda stage: print(f"[reproduce] {stage}", file=sys.stderr, flush=True),
             )
             _emit(result)
+        elif args.command == "class-risk":
+            from .class_risk_workflow import run_class_risk
+            _emit(run_class_risk(
+                args.freeze, args.output, sample_sizes=args.sample_sizes, block_sizes=args.block_sizes,
+                kappas=args.kappas, repetitions=args.repetitions, delta=args.delta, tolerance=args.tolerance,
+                sweeps=args.solver_sweeps, master_seed=args.master_seed, run_id=args.run_id,
+                progress=lambda stage: print(f"[class-risk] {stage}", file=sys.stderr, flush=True),
+            ))
+        elif args.command == "verify-class-risk":
+            from .class_risk_workflow import verify_class_risk
+            _emit(verify_class_risk(args.run))
         return 0
     except (ValueError, TypeError, KeyError, OSError, ImportError) as exc:
         parser.exit(2, f"error: {exc}\n")

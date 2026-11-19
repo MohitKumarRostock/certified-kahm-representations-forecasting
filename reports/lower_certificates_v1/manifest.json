@@ -1,0 +1,43 @@
+{
+  "local_checks": {
+    "focused_tests_after_input_limit_guard": {
+      "path": "focused_tests.log",
+      "status": "passed",
+      "tests_run": 37
+    },
+    "installed_class_risk": {
+      "path": "installed_class_risk_summary.json",
+      "status": "verified"
+    },
+    "installed_wheel": {
+      "path": "installed_wheel_check.json",
+      "status": "passed"
+    },
+    "portable_tests": {
+      "path": "portable_tests.json",
+      "status": "passed",
+      "tests_run": 470
+    }
+  },
+  "numerical_reassessment_after_parameter_guard": {
+    "all_15_assessment_values_unchanged": true,
+    "new_independent_repetition": false,
+    "same_declared_calibration_stream": true
+  },
+  "package_version": "0.2.0",
+  "plan_sha256": "cdfb84eff2d138ee649e8adddff7bd9f91e673407ddf5e8cfddd8a3ec37041ba",
+  "schema": "kahm.class_risk_validation_delivery.v1",
+  "source_commit_base": "c4e51534f3837b0eabfbeb9f1406027c7e8025c8",
+  "statistical_scope": "One prespecified prefix study; no empirical coverage-frequency or general forecasting-superiority claim.",
+  "study_run_id": "lower-certificates-20261119-v1",
+  "summary_sha256": "675302526079bdde0b73e99ef3758bec963f276b4b82adcf7543f34d6ef5a9a9",
+  "verification_bundle": {
+    "bytes": 11666268,
+    "path": "full_verification_bundle.zip",
+    "sha256": "f506bf58c0e6df424f9e5109c2511f724b2239c793595c076fccfe737e0ffb85"
+  },
+  "wheel": {
+    "path": "kahm_demonstrator-0.2.0-py3-none-any.whl",
+    "sha256": "06113441381b6c990cfbaa370ff73e00ded5af1b668de506e19a606e78c7026a"
+  }
+}

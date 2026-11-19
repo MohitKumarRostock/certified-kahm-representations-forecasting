@@ -1,6 +1,54 @@
 # KAHM forecasting demonstrator
 
-**Version `0.1.1` · Apache-2.0 · Standalone methods and reproducible assessment**
+**Development version `0.2.0` · Apache-2.0 · Standalone methods and reproducible assessment**
+
+## Lower and upper risk certificates
+
+The new `class-risk` workflow assesses the best achievable population MSE of
+declared Lipschitz decoder classes. It retains verified optimization witnesses,
+both lower-confidence constructions from the companion manuscript, fitted-risk
+upper bounds, and exact finite-support class-membership checks. The known
+benchmark law is used only after certification, for a separate population audit.
+
+From this checkout, install the current package and run:
+
+```bash
+python -m pip install .
+python -m kahm_demo class-risk --freeze frozen/primary/freeze.json --output runs/class-risk
+python -m kahm_demo verify-class-risk --run runs/class-risk
+```
+
+The output directory must be new. Defaults assess RAW, KAHM MEM, and KAHM LOCAL
+at Lipschitz bound `2`, plus short- and full-history analytical controls at bound
+`4`. The study uses 4,096 **fresh** calibration episodes and block sizes
+`2, 8, 16, 32, 64`. One joint failure budget of `0.05` covers all 60 endpoints.
+The new assessment treats the saved feature and prediction tables as exact
+finite-support computational functions; it does not replay the historical
+encoder or claim that its nonlinear readout is globally Lipschitz.
+
+For a larger prespecified study:
+
+```bash
+python -m kahm_demo class-risk --freeze frozen/primary/freeze.json --output runs/class-risk-study --sample-sizes 1024 4096 16384 --block-sizes 2 8 16 32 64 --run-id class-risk-study-v1
+```
+
+A freeze from a separate fresh `reproduce` run can be supplied instead. The
+confidence budget is allocated across the entire requested study before its
+calibration observations are generated. Numerical failures, unresolved cases,
+and realized coverage misses remain in the output.
+
+Read the [lower-certificate guide](docs/LOWER_CERTIFICATES.md) and
+[mathematical guarantee](docs/LOWER_CERTIFICATE_PROOF.md), or inspect the
+[completed study, figures, wheel, and full verification bundle](reports/lower_certificates_v1/report.md). Each completed run
+contains a readable `report.md`, exact `summary.json`, calibration observations,
+class definitions, numerical witnesses, and independent population audits.
+
+## Original fitted-predictor demonstration
+
+The following walkthrough and the published `v0.1.1` release retain the original
+upper-only experiment. Its archived scientific records have not been rewritten.
+The separate class-risk workflow above is available in the current source and
+built package; it is not included in the older release ZIP.
 
 Based on our research, this project demonstrates forecasting with
 **geometry-induced soft states** and checkable upper bounds on the fitted

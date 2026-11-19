@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.2.0 — development
+
+- Added the separately versioned `class-risk` assessment protocol and
+  `verify-class-risk` command.
+- Added exact finite-support Lipschitz class definitions and membership checks,
+  weighted dual optimization witnesses, verified primal bounds, and generic
+  lower/upper binary-KL confidence endpoints.
+- Implemented both manuscript lower-confidence constructions, including reuse
+  of identical block witnesses for the empirical-optimum bound.
+- Added short/full-history analytical controls and population class-optimum
+  audits that run after sample certificates are issued.
+- Added a retained 180-endpoint study, complete verification archive, scientific
+  figures, mathematical documentation, and 51 focused numerical/provenance tests.
+- Added installed-wheel class-risk integration to GitHub Actions.
+
+The published 0.1.1 archive and original primary scientific records remain
+historical releases. The new protocol uses its own calibration observations,
+class definitions, confidence budget, source snapshots, and result records.
+
 ## Unreleased — documentation refinements
 
 - Identify cell execution and changes to `HISTORY` as interactive-notebook
