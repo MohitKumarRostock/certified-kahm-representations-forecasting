@@ -1,28 +1,27 @@
 # Quick start
 
-Start by inspecting the supplied experiment. Version 0.1.1 can inspect the
-historical baseline or run a fresh experiment with its own evidence. Strict
-verification of the baseline requires unmodified v0.1.0 sources and the exact
-recorded runtime. These operations have explicit output labels.
-The complete method and guarantee are documented locally; start with
-[Method overview](METHOD_OVERVIEW.md) for the technical reading path.
+Start with the retained class-risk study or inspect the original fitted-risk
+experiment. The current package can also run fresh experiments with their own
+evidence. Strict replay of the original baseline requires unmodified v0.1.0
+sources and its exact recorded runtime; verification of the class-risk study
+checks its archived numerical witnesses without historical model replay.
+The [scientific reference](SCIENTIFIC_REFERENCE.md) explains the guarantees,
+and the [method overview](METHOD_OVERVIEW.md) maps them to the implementation.
 
 ## 1. Prepare the complete project
 
-Use Python **3.12 or newer**. Download the complete
-[Certified_KAHM_Representations_Forecasting_v0.1.1.zip](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/download/v0.1.1/Certified_KAHM_Representations_Forecasting_v0.1.1.zip)
-from the [v0.1.1 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1).
-Place the ZIP in a fresh directory and open a terminal there, then extract and
-enter the project:
+Use Python **3.12 or newer** and obtain the complete published repository:
 
 ```bash
-python -m zipfile -e Certified_KAHM_Representations_Forecasting_v0.1.1.zip .
+git clone https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting.git
 cd certified-kahm-representations-forecasting
 ```
 
 For the supplied walkthrough, the project directory must contain `kahm_demo/`,
 `data/primary/`, `frozen/primary/`, `certificates/primary/`, and `audits/primary/`.
 A wheel installs the code but does not include these experiment directories.
+The class-risk study additionally uses `reports/lower_certificates_v1/`.
+Use a documented release or commit when reproducing or citing a study.
 
 An optional isolated environment keeps installation separate from other work:
 
@@ -38,7 +37,44 @@ The source-directory inspection command below uses only the standard library;
 it can also run directly from the complete checkout without installing NumPy.
 Fitting and strict numerical verification require the numerical dependencies.
 
-## 2. Inspect the archived example
+## 2. Verify the retained class-risk study
+
+From the matching source checkout, extract the evidence into a fresh directory
+and run its verifier:
+
+```bash
+python -m zipfile -e reports/lower_certificates_v1/full_verification_bundle.zip runs/retained-lower-study
+python -m kahm_demo verify-class-risk --run runs/retained-lower-study/run
+```
+
+The archive contains the retained observations, class definitions, numerical
+witnesses, source snapshots, and population audit. It is an evidence bundle,
+not the complete source distribution; the checkout or supplied wheel provides
+the executable package. Verification recomputes the witness checks, source
+identities, and calibration-stream identity. It neither fits models nor solves
+new optimization problems, and it does not replay the historical encoder.
+
+Read [the study report](../reports/lower_certificates_v1/report.md) for the
+five-class comparison, block hierarchy, sample-size tradeoff, and retained
+unresolved result. A lower confidence bound $L>\tau$ excludes the prescribed
+class; an admissible fitted predictor with upper bound $U\leq\tau$ meets the
+MSE requirement. See [Certificates explained](CERTIFICATES_EXPLAINED.md).
+
+To create a separate, single-size assessment on the same archived features:
+
+```bash
+python -m kahm_demo class-risk --freeze frozen/primary/freeze.json --output runs/class-risk
+python -m kahm_demo verify-class-risk --run runs/class-risk
+```
+
+This command creates a new class specification and calibration plan with its
+own confidence allocation. It uses exact archived feature/prediction tables
+on the benchmark support. The [class-risk guide](LOWER_CERTIFICATES.md)
+documents parameters, assumptions, and the complete retained design. Reusing
+the same seed and run ID replays observations rather than creating another
+independent replication.
+
+## 3. Inspect the original fitted-risk example
 
 ```bash
 python -m kahm_demo tutorial --project . --mode inspect --history 0.25 0.75
@@ -80,7 +116,7 @@ python -m examples.guided_tutorial --project . --mode inspect --history 0.25 0.7
 The `tutorial` helper is anchored to the supplied primary experiment. It does
 not search for another run or accept arbitrary replacement artifact identities.
 
-## 3. Use the notebook or static reading view
+## 4. Use the notebook or static reading view
 
 ```bash
 python -m pip install '.[tutorial]'
@@ -110,7 +146,7 @@ checks performed for the v0.1.0 baseline.
 Official application setup is documented by
 [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html).
 
-## 4. Verify the supplied numerical evidence
+## 5. Verify the original fitted-risk numerical evidence
 
 The supplied evidence is the historical `public-v0.1.0` experiment. Version
 0.1.1 fixes encoder artifact input validation, changing execution-source bytes
@@ -171,9 +207,9 @@ assessment. It does not mean that no certificate exists. The installed
 `kahm-demo` executable exposes the same command interface as
 `python -m kahm_demo`.
 
-## 5. Run a fresh complete experiment
+## 6. Run a fresh fitted-predictor experiment
 
-Return to the v0.1.1 project and its installed package for a fresh experiment.
+Use the current project and its installed package for a fresh experiment.
 This explicit operation fits models and generates new artifacts bound to the
 current sources and runtime:
 
@@ -224,15 +260,26 @@ changing identities until a favorable assessment appears requires an appropriate
 statistical design; the fixed confidence statement applies to one final
 calibrated family.
 
-## 6. Common questions and failures
+The resulting freeze can also supply the class-risk workflow:
+
+```bash
+python -m kahm_demo class-risk --freeze runs/tutorial/frozen/freeze.json --output runs/tutorial-class-risk
+python -m kahm_demo verify-class-risk --run runs/tutorial-class-risk
+```
+
+This uses that run's newly fitted feature tables. Its outcomes can differ from
+the retained class-risk study, which assesses the original archived tables.
+
+## 7. Common questions and failures
 
 | Situation | Meaning and next step |
 | --- | --- |
 | Missing primary archive or identity mismatch | Use the complete unmodified project and the correct `--project` path. The wheel alone is insufficient for archive inspection. |
 | Unsupported history | Use exactly two supported observation values in temporal order. The tutorial is a finite-benchmark interface. |
-| Strict source/runtime mismatch | Inspect with v0.1.1, verify the historical baseline with unmodified v0.1.0 sources and its exact runtime, or create a fresh v0.1.1 experiment. |
+| Strict source/runtime mismatch | Inspect with the current package, verify the historical baseline with unmodified v0.1.0 sources and its exact runtime, or create a fresh experiment. Do not change archived identities to bypass the check. |
 | Existing reproduction output | Preserve it. A new execution needs a genuinely fresh destination; the command cannot resume or overwrite a run. |
-| `unresolved` | A valid upper endpoint exceeds the tolerance; this does not establish that the actual risk exceeds it. |
+| `unresolved` | Available bounds establish neither the relevant adequacy decision nor class exclusion. An upper endpoint above the threshold does not prove excessive risk. |
+| `class_excluded` | The class-risk lower confidence bound exceeds the MSE threshold for the prescribed representation, metric, and Lipschitz bound. |
 | `certificate_unavailable` | The required endpoint was not established; retain the diagnostic and all candidates. |
 | `coverage_miss` | The known benchmark risk exceeds an issued endpoint; the audit retains this outcome without changing the bound. |
 | `pipeline_complete` with a disappointing result | The engineering workflow completed. Acceptance and coverage are deliberately independent of that completion status. |

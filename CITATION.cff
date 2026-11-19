@@ -1,24 +1,25 @@
 cff-version: 1.2.0
 message: >-
-  If you use this software, please cite the software version and commit or
-  archive identity used. See CITATION.md for citation guidance and the scope
-  of the supplied evidence.
+  If you use this software, please cite the software version and exact commit
+  or archive identity used. See CITATION.md for experiment identification.
 type: software
 title: KAHM forecasting demonstrator
 authors:
   - given-names: Mohit
     family-names: Kumar
-version: 0.1.1
+version: 0.2.0
 license: Apache-2.0
 repository-code: https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting
 abstract: >-
-  A self-contained demonstration of geometry-induced KAHM soft-state
-  representations for scalar forecasting, with frozen computational
-  predictors, conditional fitted-risk upper certificates, and an exact
-  finite-benchmark population audit.
+  A standalone demonstration of KAHM representations for scalar forecasting,
+  with lower confidence bounds on optimal risk over prescribed Lipschitz
+  decoder classes, upper confidence bounds on fitted-predictor risk,
+  admissibility checks, a blockwise risk hierarchy, verified numerical
+  witnesses, and independent finite-benchmark population audits.
 keywords:
   - KAHM
   - forecasting
   - representation learning
+  - Lipschitz regression
   - risk certification
   - reproducibility

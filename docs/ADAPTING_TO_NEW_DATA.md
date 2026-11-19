@@ -1,8 +1,9 @@
 # Adapting the demonstrator to a new forecasting problem
 
 This package is a complete **controlled four-state benchmark**, with a fixed
-two-observation input, scalar one-step target, three selected predictors, and
-a known finite evaluation law. It does not provide a generic CSV, pandas,
+two-observation input, scalar one-step target, three selected predictors,
+prescribed Lipschitz decoder classes, and a known finite evaluation law.
+It does not provide a generic CSV, pandas,
 time-series, or dataset adapter. `reproduce` reruns this benchmark with fresh
 artifacts; it does not import a new problem.
 
@@ -23,17 +24,30 @@ Write a new scientific contract that answers these questions:
 | Target | Observation definition, forecast horizon, units, measurement representation, and any transformation |
 | Evaluation population | Which future subjects, machines, episodes, locations, or time periods the expected loss concerns |
 | Evaluation unit | The independent unit, or an explicit dependence model with a suitable theorem |
-| Loss and tolerance | A defined loss for every admissible outcome, its justified range or other assumptions, and a tolerance in declared units |
+| Loss and threshold | A defined loss for every admissible outcome, its justified range or other assumptions, and an MSE threshold $\tau$ in declared units |
 | Development protocol | Training and validation roles, geometry/readout menus, baselines, selection rules, and tie handling |
-| Final family | Exactly which frozen predictors and reported horizons receive coverage, with a fixed failure-probability allocation |
+| Final family | Exactly which frozen predictors, prescribed decoder classes, sample sizes, bounds, and horizons receive coverage, with a fixed failure-probability allocation |
 | Numerical object | The implemented prediction rule, precision, clipping, failures/abstentions, and source/runtime identity |
 
 A fitted-risk certificate can target the actual implemented predictor. It does
 not require proving full-history injectivity, predictive sufficiency, or exact
 Koopman closure of the encoding. Those are separate mathematical claims. Ridge
 regularization is also a fitting penalty, not a verified hard Lipschitz bound
-on the rounded decoder. The current example certifies fitted scalar MSE; it
-does not certify an optimum over a representation or decoder class.
+on the rounded decoder. The `certify` workflow bounds fitted-predictor MSE.
+The separate `class-risk` workflow bounds optimal class risk
+$R_\kappa^*$ for a prescribed representation, metric, Lipschitz bound, and
+output interval. Its currently implemented data interface remains specific to
+the finite benchmark.
+
+For class-risk assessment, also declare the feature coordinates, metric $d$,
+Lipschitz bound $\kappa$, bounded interval $I$ containing targets and
+predictions, and the scientific reason for those choices. Fix them using
+development information before calibration. The constraint is
+$|g(u)-g(v)|\leq\kappa d(u,v)$, so rescaling coordinates while holding
+$\kappa$ fixed can change the assessed class. A fitted predictor supplies an
+upper bound on $R_\kappa^*$ only after its class membership has been justified.
+The current all-support table check does not transfer to arbitrary unseen
+inputs or establish global regularity of a nonlinear executable readout.
 
 Use [BENCHMARK.md](BENCHMARK.md) and the
 [scientific contract](../kahm_demo/specification.json) as a worked specification,
@@ -56,17 +70,22 @@ implemented `Dataset` interface. The existing `Episode` contains three integer
 states and is specific to the four-state generator.
 
 Do not deduplicate repeated observations out of training or calibration losses.
-The current code deduplicates only selected reference/landmark identities and
-caches repeated inference; every episode still contributes its full weight.
+The fitted-predictor code deduplicates selected reference/landmark identities
+and caches repeated inference; every episode still contributes its full weight.
+Class-risk optimization also aggregates repeated feature values using their
+counts and target sums. This preserves the objective and each occurrence's
+weight; it does not discard observations.
 For real data, establish whether repeated rows are independent observations,
 repeated measurements of one unit, or duplicate records before assigning that
 weight. Preserve exclusion rules and missingness decisions made during design.
 
 ### Trajectories require a justified evaluation design
 
-The current 4,096 calibration examples are stipulated independent episodes,
-each starting from a newly drawn history pair. They are not 4,096 overlapping
-windows cut from one trajectory. A chronological split alone does not make
+The original fitted-predictor protocol uses 4,096 stipulated independent
+calibration episodes, each starting from a newly drawn history pair. The
+class-risk protocol permits a prespecified sample-size menu under the same iid
+episode assumption. These are not overlapping windows cut from one trajectory.
+A chronological split alone does not make
 windows within the calibration segment iid; overlap and temporal dependence
 remain.
 
@@ -100,13 +119,23 @@ identifies the places an application implementation must address.
 | Saved prediction rule | `encoder_state.py`, `forecast_state.py`, `freeze.py` | Bind preprocessing, state, inference semantics, source/runtime, and evaluation policy. Replace the assumption that 16 history outputs fully enumerate the input support. |
 | Calibration loss evidence | `calibration_ledger.py`, `certificate_workflow.py` | Generalize the fixed 4,096-episode/16-history interface; evaluate actual frozen predictions for every calibration occurrence and retain exact or verified loss arithmetic. |
 | Statistical endpoint | `risk_bounds.py`, `verified_arithmetic.py` | Use the new justified theorem, sample size, family allocation, loss scale, and numerical work policy; independently verify reported endpoints. |
+| Decoder classes and lower bounds | `lipschitz_class.py`, `class_bounds.py`, `class_risk_workflow.py` | Define the new representation, metric, Lipschitz constraints, target range, optimization enclosures, fitted-predictor admissibility, and complete confidence allocation; replace the finite-table source adapter. |
 | Population audit and reports | `oracle.py`, `population_audit.py`, `audit_workflow.py` | Use a population oracle only when the new probability law and support genuinely permit it. Otherwise report what is observable without inventing exact population risk. |
+| Class-optimum reference audit | `class_oracle.py` | Supply known-law reference optimization only when justified, and keep it independent of sample-certificate construction. |
 
-The current endpoint protocol fixes `n=4096`, three candidates, per-candidate
+The original `certify` endpoint protocol fixes `n=4096`, three candidates, per-candidate
 failure probability `1/60`, and tolerance `1/10`. These are not generic command
 line certificate parameters. Changing a number in a report cannot adapt the
 mathematical or numerical procedure. A generalized implementation needs a
 matching validated protocol and tests for its new parameter domain.
+
+The class-risk command already accepts declared menus of calibration sample
+sizes, block sizes, Lipschitz bounds, and repetitions. Those options change
+the assessment on the existing benchmark; they are not a new-data adapter.
+Its simultaneous allocation covers the entire supplied menu. See
+[LOWER_CERTIFICATES.md](LOWER_CERTIFICATES.md) for the supported parameters
+and [SCIENTIFIC_REFERENCE.md](SCIENTIFIC_REFERENCE.md) for the statistical
+objects and assumptions.
 
 ### Keep the MEM/LOCAL comparison identifiable
 
@@ -221,6 +250,8 @@ do not supply that oracle. Keep the quantities distinct:
 | --- | --- |
 | Reserved sample with a valid evaluation design | Observed loss `q`, with sample identity and every included occurrence |
 | Applicable theorem and verified numerical endpoint | Fitted-risk upper endpoint `U`, its confidence scope, assumptions, and status |
+| Verified empirical-risk optimization and an applicable population theorem | Lower confidence bound `L` on optimal class risk, with its representation, metric, Lipschitz bound, and complete allocation |
+| An admissible fitted predictor | A valid fitted-risk upper bound can also bound optimal class risk from above |
 | Fully known finite law and evaluated support | Exact population risk `R` and the realized comparison with `U` |
 | Additional held-out sample | Another empirical estimate under its stated sampling design, rather than exact `R` |
 
@@ -234,18 +265,25 @@ An application deliverable should include the new contract, data-role and
 sampling records, complete implementation, development settings and selection
 history, frozen executable state, runtime/source identities, calibration loss
 evidence, endpoint checks, all candidate statuses, and a reproduction guide.
-Report the performance of those fitted procedures. Claims about general
-representation superiority, sufficiency, or decoder-class limits require
-separate evidence.
+Report the performance of those fitted procedures and distinguish it from
+class-risk decisions. A valid class lower bound above $\tau$ excludes the
+specified class; an unresolved bound is not evidence that the class meets the
+threshold. General representation superiority or sufficiency would require
+additional claims and evidence beyond this class-specific assessment.
 
 ## Local methods and guarantees
 
-The current task and sampling law are defined in [BENCHMARK.md](BENCHMARK.md).
+The [scientific reference](SCIENTIFIC_REFERENCE.md) defines the common
+statistical objects and decision rules. The current task and sampling law are
+defined in [BENCHMARK.md](BENCHMARK.md).
 The construction is documented in [ENCODER_DESIGN.md](ENCODER_DESIGN.md) and
 [READOUT_DESIGN.md](READOUT_DESIGN.md). The bounded iid loss argument and its
 numerical direction are derived in
 [FITTED_RISK_GUARANTEE.md](FITTED_RISK_GUARANTEE.md); the implemented assessment
 protocol is detailed in [CERTIFICATION_DESIGN.md](CERTIFICATION_DESIGN.md).
+Class-risk optimization, admissibility, and its two lower-confidence
+constructions are defined in [LOWER_CERTIFICATES.md](LOWER_CERTIFICATES.md)
+and proved in [LOWER_CERTIFICATE_PROOF.md](LOWER_CERTIFICATE_PROOF.md).
 The known-law audit and its scope are in [POPULATION_AUDIT.md](POPULATION_AUDIT.md).
 [METHOD_OVERVIEW.md](METHOD_OVERVIEW.md) connects these layers to the code.
 

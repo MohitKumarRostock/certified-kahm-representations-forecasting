@@ -20,8 +20,9 @@ A fresh run fits new models and uses its own data and evidence directories.
 
 The [scientific contract](kahm_demo/specification.json) defines the finite
 benchmark, evaluation family, loss, confidence allocation, and claim limits.
-The [method overview](docs/METHOD_OVERVIEW.md) links the complete local
-definitions and the fitted-risk proof. Improvements should keep
+The [scientific reference](docs/SCIENTIFIC_REFERENCE.md) defines the
+terminology and claims; the [method overview](docs/METHOD_OVERVIEW.md) links
+the implementation and both fitted-risk and class-risk proofs. Improvements should keep
 the distinction between a fitted predictor, an entire decoder class, and a
 representation's information content explicit.
 
@@ -52,7 +53,7 @@ Historical strict replay requires the complete unmodified
 [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
 and its exact recorded runtime. It checks the Python build, NumPy/BLAS
 configuration, machine, and numerical sources; version pins or installation
-alone do not establish that match. Current `0.1.1` development uses the portable
+alone do not establish that match. Current development uses the portable
 and fresh-wheel gates below.
 
 ## Checks to run
@@ -82,7 +83,7 @@ execution identity mismatch and does not substitute archive inspection.
 
 The ordinary full suite includes the historical primary checks. Run it from
 the unmodified `v0.1.0` project in its exact recorded runtime; the current
-`0.1.1` source uses the portable gate:
+source uses the portable gate:
 
 ```bash
 python -m unittest discover -s tests -v
@@ -95,6 +96,15 @@ new numerical experiment. A change to fitting or verification needs the
 relevant regression coverage and a fresh integration result.
 
 ## Preserve the original evidence
+
+The versioned class-risk extension has additional instructions in
+[LOWER_CERTIFICATES.md](docs/LOWER_CERTIFICATES.md) and its mathematical
+[guarantee](docs/LOWER_CERTIFICATE_PROOF.md). Its focused tests cover numerical
+endpoints, optimization witnesses, finite-law audits, and complete workflow
+provenance. A substantive change to these calculations requires a new retained
+`class-risk` run. Use a fresh output directory and keep the sampling identity and
+all unfavorable outcomes visible. A fresh installed-wheel run should also assess
+the new model freeze through the class-risk command.
 
 The primary artifacts are retained scientific records. Do not rewrite their
 contents to make a new implementation pass an old check. This includes

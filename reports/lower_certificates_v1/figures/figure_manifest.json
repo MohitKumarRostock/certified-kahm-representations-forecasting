@@ -1,0 +1,39 @@
+{
+  "decimal_coordinates": "descriptive approximations; exact JSON fractions govern decisions",
+  "figures": [
+    {
+      "path": "class_risk_intervals.png",
+      "sha256": "fec7b0f2aa79c5c42043d5639d3e01b4e3d201cbf9f70a811d26e52c75cbeb8d"
+    },
+    {
+      "path": "class_risk_intervals.pdf",
+      "sha256": "34a9c67b39d26f632987d57db2aa77bf3c43ea486aee4bc46fe868aa8681d967"
+    },
+    {
+      "path": "block_hierarchy.png",
+      "sha256": "7903bdcbfc032b0ae8c2cfb8d9dab84ceb395071749bb1542c3d09d8e8d0d316"
+    },
+    {
+      "path": "block_hierarchy.pdf",
+      "sha256": "7a05587d84055592581a2508a742795bc72edbf88d47ae6af0cc3979cd1effa9"
+    },
+    {
+      "path": "sample_size_tradeoff.png",
+      "sha256": "a6461d084c0b26e5f4cc4d90e11692a6a5f9b53376514d983d30bd0545a8e4e7"
+    },
+    {
+      "path": "sample_size_tradeoff.pdf",
+      "sha256": "d0c83b898715aceea9b8ec852661b6f92938ad7e75940eba4fa0e89b34a898f6"
+    }
+  ],
+  "missing_endpoint_rule": "unavailable endpoints omitted, never replaced by zero",
+  "run_id": "lower-certificates-20261119-v1",
+  "schema": "kahm.class_risk_figure_export.v1",
+  "scope": "rendered retained values; no numerical verification or new experiment",
+  "selected_repetition": 0,
+  "selected_sample_size": 16384,
+  "source_sha256": {
+    "class_risk_plan.json": "cdfb84eff2d138ee649e8adddff7bd9f91e673407ddf5e8cfddd8a3ec37041ba",
+    "summary.json": "675302526079bdde0b73e99ef3758bec963f276b4b82adcf7543f34d6ef5a9a9"
+  }
+}

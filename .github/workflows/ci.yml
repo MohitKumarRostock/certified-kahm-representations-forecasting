@@ -35,6 +35,23 @@ jobs:
         env:
           KAHM_CI_RUN_ID: ci-${{ github.run_id }}
         run: python scripts/ci_checks.py fresh-wheel --project . --output "${RUNNER_TEMP}/kahm-ci/fresh-wheel" --run-id "${KAHM_CI_RUN_ID}"
+      - name: Verify the retained class-risk study with the installed wheel
+        run: |
+          python -m zipfile -e reports/lower_certificates_v1/full_verification_bundle.zip "${RUNNER_TEMP}/kahm-ci/retained-class-risk"
+          "${RUNNER_TEMP}/kahm-ci/fresh-wheel/venv/bin/python" -I -B -m kahm_demo verify-class-risk --run "${RUNNER_TEMP}/kahm-ci/retained-class-risk/run" > "${RUNNER_TEMP}/kahm-ci/retained-class-risk-verification.json"
+      - name: Assess lower and upper class risks with the installed wheel
+        env:
+          KAHM_CLASS_RUN_ID: class-ci-${{ github.run_id }}
+        run: >-
+          "${RUNNER_TEMP}/kahm-ci/fresh-wheel/venv/bin/python" -I -B -m kahm_demo class-risk
+          --freeze "${RUNNER_TEMP}/kahm-ci/fresh-wheel/run/frozen/freeze.json"
+          --output "${RUNNER_TEMP}/kahm-ci/class-risk"
+          --sample-sizes 1024 4096 --block-sizes 2 8 16 32 64
+          --solver-sweeps 64 --run-id "${KAHM_CLASS_RUN_ID}"
+      - name: Recheck retained class-risk witnesses without optimization
+        run: >-
+          "${RUNNER_TEMP}/kahm-ci/fresh-wheel/venv/bin/python" -I -B -m kahm_demo verify-class-risk
+          --run "${RUNNER_TEMP}/kahm-ci/class-risk"
       - name: Retain reports, logs, and all fresh outcomes even on failure
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -51,3 +68,4 @@ jobs:
             ${{ runner.temp }}/kahm-ci/fresh-wheel/logs/
             ${{ runner.temp }}/kahm-ci/fresh-wheel/wheelhouse/
             ${{ runner.temp }}/kahm-ci/fresh-wheel/run/
+            ${{ runner.temp }}/kahm-ci/class-risk/

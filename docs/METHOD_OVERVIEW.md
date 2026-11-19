@@ -1,9 +1,11 @@
 # Method and implementation overview
 
-Based on our research, this project combines a geometric representation with a
-complete forecasting and assessment workflow. This guide maps its mathematical
-objects to local definitions and executable modules. The repository defines
-the method and its guarantee through the local guides and executable code.
+This project combines a geometric representation, fitted forecasting models,
+and risk certificates for both individual predictors and prescribed decoder
+classes. This guide maps the mathematical objects to their definitions and
+executable modules. The [scientific reference](SCIENTIFIC_REFERENCE.md) gives
+the self-contained statement of the problem, assumptions, hierarchy, and
+decision rules.
 
 ## 1. Separate the objects being constructed
 
@@ -14,13 +16,15 @@ the method and its guarantee through the local guides and executable code.
 | Soft-state representation | Reconstruction scores to MEM or membership-weighted input coordinates in LOCAL | [Encoder design](ENCODER_DESIGN.md), section 5 | `soft_state.py`, `encoder.py` |
 | Readout and selection | Training targets and validation losses to three selected clipped predictors | [Readout design](READOUT_DESIGN.md) | `readout_features.py`, `ridge.py`, `selection.py`, `forecast_workflow.py` |
 | Frozen predictor | Complete saved state to canonical predictions and bound source/runtime identities | [Freeze interface](FREEZE_INTERFACE.md) | `forecast_state.py`, `freeze.py` |
-| Risk assessment | Reserved calibration losses to checked upper endpoints | [Risk guarantee](FITTED_RISK_GUARANTEE.md), [certification](CERTIFICATION_DESIGN.md) | `calibration_ledger.py`, `verified_arithmetic.py`, `risk_bounds.py`, `certificate_workflow.py` |
-| Population audit | Known finite law and frozen predictions to exact risks and retained comparisons | [Population audit](POPULATION_AUDIT.md) | `population_audit.py`, `audit_workflow.py` |
+| Fitted-predictor risk assessment | Reserved calibration losses to checked upper confidence bounds | [Fitted-risk guarantee](FITTED_RISK_GUARANTEE.md), [certification](CERTIFICATION_DESIGN.md) | `calibration_ledger.py`, `verified_arithmetic.py`, `risk_bounds.py`, `certificate_workflow.py` |
+| Optimal class-risk assessment | Fixed representation, metric, and Lipschitz bound to lower confidence bounds and admissibility checks | [Class-risk guide](LOWER_CERTIFICATES.md), [proof](LOWER_CERTIFICATE_PROOF.md) | `lipschitz_class.py`, `class_bounds.py`, `class_risk_workflow.py` |
+| Population audit | Known finite law to fitted risks, bounds on optimal class risk, and retained coverage comparisons | [Population audit](POPULATION_AUDIT.md), [class-risk guide](LOWER_CERTIFICATES.md) | `population_audit.py`, `audit_workflow.py`, `class_oracle.py` |
 
-The encoder is fitted without forecasting targets. A readout makes the complete
-forecasting model. The certificate then assesses that actual fitted model under
-the stated law. A useful geometric description alone does not establish its
-prediction error.
+The encoder is fitted without forecasting targets. A fitted decoder, also
+called the readout in the implementation, completes the forecasting model.
+An upper confidence bound assesses that fitted predictor. A lower confidence
+bound assesses the best risk attainable by any decoder satisfying the
+prescribed class constraints. These statements have different targets.
 
 ## 2. Gaussian KAHM features
 
@@ -65,7 +69,7 @@ interpretability of this comparison. They do not make feature widths, retained
 kernel ranks, effective capacities, or total search effort equal. The assessed
 objects are the complete selected procedures.
 
-## 4. Empirical error, upper endpoint, and population risk
+## 4. Fitted-predictor risk and its upper confidence bound
 
 | Quantity | Definition | What establishes it |
 | --- | --- | --- |
@@ -73,7 +77,7 @@ objects are the complete selected procedures.
 | `U` | Conservative statistical upper endpoint for the fitted population risk | The stated sampling assumptions, bounded-loss argument, and verified endpoint arithmetic |
 | `R` | Exact expectation under this known benchmark law | All 64 weighted history-target cases, evaluated after certification |
 
-The certificate conditions on development: the selected predictors are fixed
+The original `certify` workflow conditions on development: the selected predictors are fixed
 before calibration. With 4,096 iid calibration episodes independent of development,
 allocation `1/60` per candidate bounds the probability that any reported valid
 endpoint misses its risk by `1/20`. The local proof derives this from a
@@ -90,7 +94,61 @@ measure long-run coverage frequency, improve the confidence level, or repair a
 miss. A calibration mean can lie below the Bayes population risk without a
 contradiction because `q` is a finite-sample observation.
 
-## 5. Computational and scientific scope
+## 5. Optimal class risk and the block hierarchy
+
+Fix a representation $\Gamma$, a feature metric $d$, a Lipschitz bound
+$\kappa\geq0$, and a common target and prediction interval $I=[0,1]$.
+An admissible decoder satisfies
+
+$$
+g:\mathcal U\to I,\qquad
+|g(u)-g(v)|\leq\kappa d(u,v).
+$$
+
+Its population MSE is $R(g)=\mathbb E[(Y-g(\Gamma(X)))^2]$, and the
+**optimal class risk** is $R_\kappa^*=\inf_g R(g)$ over these decoders.
+The `class-risk` workflow freezes the class specification before drawing its
+own iid calibration episodes, independently of development.
+
+For $b\geq2$ observations, the block score $T_b$ is the minimum total squared
+error subject to all pairwise Lipschitz constraints, divided by $b-1$.
+The expected scores satisfy
+
+$$
+\mathcal W_2\leq\mathcal W_3\leq\cdots\leq R_\kappa^*,
+\qquad \mathcal W_b=\mathbb E[T_b].
+$$
+
+The [proof](LOWER_CERTIFICATE_PROOF.md) derives this hierarchy and its
+convergence on the implemented finite feature support. Numerically verified
+optimization lower bounds support two statistical constructions: a bound
+using independent block scores and a bound on minimum empirical risk using
+the same optimization witnesses. Full empirical optimization is also retained.
+Taking the maximum of the prespecified, simultaneously valid lower endpoints
+gives $L\leq R_\kappa^*$ on the joint confidence event.
+
+An upper bound $U$ on a fitted predictor's risk also bounds optimal class risk
+only when that predictor is admissible. On the benchmark support, the verifier
+checks all required pairwise constraints on its prediction table. For the MSE
+threshold $\tau$:
+
+| Decision | Required evidence |
+| --- | --- |
+| `class_excluded` | $L>\tau$: every decoder in the prescribed class exceeds the threshold |
+| `requirement_met` | An admissible fitted prediction table has $U\leq\tau$ |
+| `unresolved` | Neither conclusion has been established |
+
+The workflow retains conflicting conclusions and unavailable individual
+endpoints for inspection. It does not replace calibration observations to
+obtain a favorable decision. Its confidence allocation is separate from the
+original three-endpoint `certify` protocol.
+
+The [retained study](../reports/lower_certificates_v1/report.md) compares RAW,
+MEM, LOCAL, and short/full-history controls at three calibration sizes. It
+demonstrates class exclusion missed by pairwise certification, admissible
+predictors meeting the threshold, and an unresolved small-sample result.
+
+## 6. Computational and scientific scope
 
 Saved numerical arrays and canonical inference define the predictor. Residual
 checks, state replay, and source/runtime matching are engineering checks. They
@@ -98,11 +156,21 @@ are distinct from a verified error enclosure around an ideal real-arithmetic
 Gaussian function. Certification concerns the represented predictions and the
 stated evaluation law.
 
-The workflow establishes no representation-class optimum, full-history
-injectivity, predictive sufficiency, Markov property, Koopman closure, certified
-latent rollout, or general superiority. A fitted-risk upper bound does not
-require those claims. A new application needs its own task, loss, data design,
-and justified assessment; see [ADAPTING_TO_NEW_DATA.md](ADAPTING_TO_NEW_DATA.md).
+The class-risk workflow treats archived feature coordinates and prediction
+tables as exact computational functions on the 16 supported histories. Its
+admissibility check establishes the existence of a matching Lipschitz decoder;
+it does not establish global regularity of the original executable readout.
+The known-law audit supplies independent reference bounds on optimal class
+risk after sample certificates are issued.
+
+Class exclusion is specific to $(\Gamma,d,\kappa)$ and the evaluation law.
+Changing the coordinates, metric, or Lipschitz bound changes the assessed
+class. The results establish no general representation superiority,
+predictive sufficiency, Koopman closure, or recursive-rollout guarantee.
+This small finite benchmark also does not establish a computational advantage
+of blocks over full empirical optimization. A new application needs its own
+task, data design, and justified assessment; see
+[ADAPTING_TO_NEW_DATA.md](ADAPTING_TO_NEW_DATA.md).
 
 Software authorship is recorded in [CITATION.md](../CITATION.md). It does not
 assign sole authorship of all underlying research contributions. The method

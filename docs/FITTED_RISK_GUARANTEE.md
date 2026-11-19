@@ -1,7 +1,8 @@
 # Fitted-risk guarantee and its numerical verification
 
-This version 0.1.0 demonstrator is based on our research. This note gives a self-contained
-proof of its fitted-risk guarantee and describes the arithmetic conditions
+This note gives a self-contained proof of the fitted-predictor upper-confidence
+guarantee introduced in version 0.1.0 and retained by the `certify` workflow.
+It describes the arithmetic conditions
 that make a reported numerical endpoint conservative. All assumptions and
 constants needed for the argument appear below.
 
@@ -10,6 +11,14 @@ already selected, frozen computational predictors. It does not assert that a
 representation is sufficient, that a decoder is optimal, or that any individual
 forecast lies in a prediction interval. The confidence statement is conditional
 on development and on the stated sampling premises.
+
+The additional `class-risk` workflow supplies lower confidence bounds on
+optimal class risk and checks whether a fitted predictor is admissible for
+that class. Its self-contained argument is in
+[LOWER_CERTIFICATE_PROOF.md](LOWER_CERTIFICATE_PROOF.md). The
+[scientific reference](SCIENTIFIC_REFERENCE.md) explains how the two
+guarantees combine while keeping their statistical targets and allocations
+distinct. The fixed three-predictor protocol proved below is unchanged.
 
 ## 1. Predictors, risk, and the calibration experiment
 

@@ -1,21 +1,29 @@
 # What the forecasting certificates mean
 
-The certificate gives an upper bound on the **population mean squared error of
-a particular frozen forecasting model**, under a declared evaluation law and
-sampling assumptions. It is a statement about expected loss over that
-population. It does not provide an interval for each next observation or
-guarantee that every individual forecast has small error.
+The demonstrator supports two complementary risk statements under a declared
+evaluation law and sampling assumptions:
 
-The demonstrator reports three such models: RAW, KAHM MEM, and KAHM LOCAL.
+| Workflow | Statistical target | What a conclusive result establishes |
+| --- | --- | --- |
+| `certify` | Population MSE of a particular frozen fitted predictor | Its upper confidence bound is at most the MSE threshold |
+| `class-risk` | Minimum population MSE over a prescribed Lipschitz decoder class | A lower confidence bound excludes every decoder in the class, or an admissible fitted predictor's upper bound establishes that the class can meet the threshold |
+
+Both concern expected loss over the specified population. Neither gives a
+prediction interval for every next observation or guarantees that every
+individual forecast has small error. The
+[scientific reference](SCIENTIFIC_REFERENCE.md) defines the common terminology
+and gives a self-contained account of the hierarchy and its assumptions.
+
+The original fitted-predictor workflow reports three models: RAW, KAHM MEM, and KAHM LOCAL.
 They are selected during development and fixed before final calibration.
 Their geometry, preprocessing, decoder, numerical behavior, and clipping rule
 are all part of the assessed predictor. The governing definitions are the
 [scientific contract](../kahm_demo/specification.json) and
-[calibration protocol](../kahm_demo/calibration_protocol.json). Version 0.1.0
-includes the complete local proof in
+[calibration protocol](../kahm_demo/calibration_protocol.json). Its complete
+proof is in
 [FITTED_RISK_GUARANTEE.md](FITTED_RISK_GUARANTEE.md).
 
-## Three numbers with different jobs
+## Three numbers in the fitted-predictor workflow
 
 | Quantity | Meaning | Where it comes from |
 | --- | --- | --- |
@@ -45,7 +53,7 @@ datasets do not supply such an oracle. A justified fitted-risk certificate can
 still be possible without an exact population audit; a test-set average must
 remain labeled as an empirical estimate rather than exact `R`.
 
-## What “95% simultaneous” means
+## What “95% simultaneous” means for the original three predictors
 
 The final family contains exactly three selected predictors. They share 4,096
 calibration episodes. Each receives failure-probability allocation `1/60`,
@@ -84,7 +92,7 @@ from development. Arbitrary overlapping windows from a single trajectory do
 not inherit this guarantee by being called “episodes.” A new application needs
 an evaluation design and theorem appropriate to its sampling dependence.
 
-## Acceptance and realized coverage are different decisions
+## Fitted-predictor decisions and realized coverage
 
 The primary requirement is population MSE at most the exact rational `1/10`.
 The **certificate status** uses the issued endpoint:
@@ -120,7 +128,7 @@ investigated, rather than repaired by selecting another seed or changing the
 endpoint after seeing the audit. The software preserves all candidates,
 unavailable results, unresolved requirements, and partial failure evidence.
 
-## How the numerical evidence is constructed
+## How fitted-predictor numerical evidence is constructed
 
 The workflow has five distinct stages:
 
@@ -179,13 +187,76 @@ audit deliberately recomputes exact model risks, while certificate-only
 verification does not use them. Instructions are in
 [QUICKSTART.md](QUICKSTART.md).
 
+## Lower confidence bounds on optimal class risk
+
+The `class-risk` workflow fixes a representation $\Gamma$, feature metric $d$,
+Lipschitz bound $\kappa$, and output interval $I=[0,1]$. The **optimal class
+risk** is
+
+$$
+R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}
+\mathbb E[(Y-g(\Gamma(X)))^2],
+$$
+
+where every $g$ maps to $I$ and satisfies
+$|g(u)-g(v)|\leq\kappa d(u,v)$. A numerical optimization lower bound on one
+dataset is first an empirical-risk statement. Independent iid calibration and
+the stated statistical inequalities turn it into a lower confidence bound
+$L$ on this population optimum. These two kinds of bound must not be
+interchanged.
+
+The workflow computes lower bounds from blocks of observations, reuses the
+same optimization witnesses in an empirical-risk construction, and also
+retains a full empirical-optimization bound. The entire menu and confidence
+allocation are fixed before calibration. A fitted-predictor upper bound $U$
+is computed separately. The risk sandwich
+
+$$
+L\leq R_\kappa^*\leq R(\widehat g)\leq U
+$$
+
+requires $\widehat g$ to belong to the prescribed class. The implementation
+checks all pairwise constraints on its finite prediction table. Passing those
+checks gives a matching Lipschitz extension; it does not prove global
+regularity of the original executable readout away from the checked support.
+
+For a prescribed MSE threshold $\tau$, the class decisions are:
+
+| Status | Meaning |
+| --- | --- |
+| `class_excluded` | $L>\tau$, so every decoder in the prescribed class exceeds the threshold |
+| `requirement_met` | The fitted table is admissible and $U\leq\tau$ |
+| `unresolved` | Neither conclusion follows from the available bounds |
+| `conflicting_certificates` | The lower and admissible upper conclusions conflict; the result is retained for inspection |
+
+Individual endpoints can be `certificate_unavailable`; their allocations are
+not reassigned. An inadmissible fitted predictor can still have a valid upper
+bound on its own risk, but that endpoint cannot establish the adequacy of the
+specified class.
+
+The [retained class-risk study](../reports/lower_certificates_v1/report.md)
+uses five classes, three calibration prefixes, five block sizes, and a total
+of 180 endpoints, each with failure allocation $1/3600$. Their allocations
+sum to $0.05$. This is a separate simultaneous guarantee from the historical
+three-predictor assessment. Shared observations and nested prefixes do not
+require independence between endpoints for the union bound. One retained
+study illustrates realized decisions; it does not estimate coverage frequency
+or the probability of obtaining a conclusive decision.
+
+The known-law class audit supplies exact optima or verified intervals after
+certificate issuance. It does not replace an unresolved decision with an
+oracle conclusion. The [class-risk guide](LOWER_CERTIFICATES.md) explains the
+commands and evidence, and the [proof](LOWER_CERTIFICATE_PROOF.md) derives the
+mathematics.
+
 ## Scope when moving beyond this benchmark
 
-The current certificate concerns one final frozen family, one scalar horizon,
-one bounded squared loss, and the declared evaluation population. It does not
-establish pointwise forecast accuracy, decoder-class optimality, representation
-information retention, global Lipschitz admissibility, certified recursive
-rollout, or performance under a changed law.
+The certificates concern fixed predictors or prescribed decoder classes, one
+scalar horizon, bounded squared loss, and the declared evaluation population.
+Class-risk conclusions additionally depend on the feature coordinates, metric,
+and Lipschitz bound. In particular, excluding the MEM class at one bound does
+not establish that its representation loses information for every possible
+decoder.
 
 A new dataset, changed loss or clipping rule, multiple horizons, a modified
 predictor, or repeated attempts require a newly justified assessment design.
@@ -193,8 +264,10 @@ The current package has no generic CSV adapter. The
 [adaptation guide](ADAPTING_TO_NEW_DATA.md) maps those decisions to the modules
 that would need to change.
 
-For the complete mathematical proof, read
-[FITTED_RISK_GUARANTEE.md](FITTED_RISK_GUARANTEE.md). For implementation details, read
+For the mathematical arguments, read
+[SCIENTIFIC_REFERENCE.md](SCIENTIFIC_REFERENCE.md),
+[FITTED_RISK_GUARANTEE.md](FITTED_RISK_GUARANTEE.md), and
+[LOWER_CERTIFICATE_PROOF.md](LOWER_CERTIFICATE_PROOF.md). For implementation details, read
 [CERTIFICATION_DESIGN.md](CERTIFICATION_DESIGN.md),
 [FREEZE_INTERFACE.md](FREEZE_INTERFACE.md), and
 [POPULATION_AUDIT.md](POPULATION_AUDIT.md). The

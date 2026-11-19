@@ -65,7 +65,7 @@ checked on the same executing runtime; they do not relax the original snapshot.
 The ordinary command `python -m unittest discover -s tests -v` still runs the
 complete suite, including the historical primary checks. Those positive checks
 require the original `v0.1.0` source as well as its recorded primary runtime.
-For the current `0.1.1` source, use the portable gate and fresh-wheel integration
+For the current source, use the portable gate and fresh-wheel integration
 gate. The portable command makes its narrower scope visible in its report.
 
 ## Installed-wheel and fresh-run gate
@@ -108,14 +108,50 @@ refit, or retry. A completed pipeline with such outcomes can pass CI because
 the workflow and evidence are functioning correctly. A failed calculation or
 verification cannot pass.
 
+## Retained class-risk evidence gate
+
+The workflow extracts the committed numerical verification bundle into a new
+runner directory and uses the installed wheel to execute `verify-class-risk`.
+The check validates the supplied study against the current numerical-source
+identities and recomputes its mathematical witnesses and statistical endpoints.
+It records the verification summary separately. No optimization, model fitting,
+or replacement calibration sample is used. This gate will fail if a later
+source change is incompatible with the retained study; documentation-only
+changes outside the fingerprint roster leave it applicable.
+
+## Class-risk extension gate
+
+After the original fresh demonstration, the GitHub workflow uses the **installed
+wheel's** interpreter in isolated mode to run `class-risk` on that new run's
+freeze. It declares sample sizes 1,024 and 4,096, block sizes 2, 8, 16, 32 and 64,
+and 64 solver sweeps before generating a separate calibration stream. The
+original three representation classes use Lipschitz bound 2; the two analytical
+history controls use bound 4. The new protocol divides one failure budget across
+every endpoint in this family.
+
+A second installed-wheel command, `verify-class-risk`, rechecks the retained
+optimization witnesses, confidence endpoints, class membership and population
+audits without fitting or optimizing. It replays the declared PRNG stream in
+memory to compare against the saved observations; it does not replace files or
+treat that replay as independent evidence. All class-risk records are uploaded
+with the other CI artifacts, including partial output after failure.
+
+These steps test both the package integration and the path from freshly fitted
+models to new lower/upper assessments. Class acceptance, exclusion, unresolved
+cases, unavailable endpoints and realized coverage are scientific outcomes, not
+criteria for passing CI. The [lower-certificate guide](LOWER_CERTIFICATES.md)
+and [proof](LOWER_CERTIFICATE_PROOF.md) define the statistical scope.
+The [scientific reference](SCIENTIFIC_REFERENCE.md) supplies the common
+terminology and interpretation.
+
 ## Strict primary gate
 
 The bundled primary experiment was created with `0.1.0`. Version `0.1.1`
 corrects encoder-loader input validation, changing a source file recorded by
 that experiment's freeze. Historical strict verification therefore requires
 the complete unmodified [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
-and the exact recorded runtime. A `0.1.1` fresh run instead freezes and verifies
-its own current source/runtime identity.
+and the exact recorded runtime. A fresh run made with the current package instead freezes and verifies
+its own source/runtime identity.
 
 `strict-primary` performs the recorded runtime/source compatibility check first.
 If it is incompatible or unavailable, the command writes a failed report and

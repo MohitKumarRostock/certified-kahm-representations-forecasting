@@ -1,11 +1,14 @@
 # Benchmark, forecast target, and data protocol
 
-This document defines the controlled task used by version `0.1.0`. The
+This document defines the controlled task introduced in version `0.1.0` and
+used by both fitted-predictor and class-risk assessments. The
 machine-readable [scientific contract](../kahm_demo/specification.json),
 [readout specification](../kahm_demo/readout_specification.json), and
 [calibration protocol](../kahm_demo/calibration_protocol.json) bind its concrete
-implementation. Changing the task requires a separately identified contract
-and assessment.
+original fitted-predictor implementation. The class-risk assessment has a
+separate plan on the same task, described in Section 7. Changing the task
+requires a separately identified contract and assessment. The
+[scientific reference](SCIENTIFIC_REFERENCE.md) defines the common notation.
 
 ## 1. One-step forecasting from two observations
 
@@ -119,7 +122,7 @@ Both $Y$ and $f_{m,D}(X)$ lie in `[0,1]`, so the squared loss lies in
 empirical target-variance normalization is used. The certificate concerns the
 actual computational prediction values, not an ideal real-arithmetic substitute.
 
-## 5. Fixed assessment protocol
+## 5. Original fitted-predictor assessment protocol
 
 | Setting | Value |
 | --- | --- |
@@ -128,7 +131,7 @@ actual computational prediction values, not an ideal real-arithmetic substitute.
 | Failure probability per predictor | `1/60` |
 | Total failure probability | `1/20` |
 | Simultaneous confidence | At least `19/20`, under the declared premises |
-| Population-MSE tolerance | Exact `1/10` |
+| Population-MSE threshold $\tau$ | Exact `1/10` |
 | Numerical mean | Exact rational mean of all represented squared losses |
 | Endpoint | Verified upper enclosure of the upper binary-KL inverse |
 
@@ -181,3 +184,44 @@ Exact risk is a special benefit of this controlled law. A general dataset need
 not supply an oracle, and a fitted-risk upper certificate does not require one.
 The [adaptation guide](ADAPTING_TO_NEW_DATA.md) explains which task, dependence,
 loss, and implementation assumptions must be reconsidered for an application.
+
+## 7. Class-risk assessment on the same evaluation law
+
+The `class-risk` workflow assesses optimal population MSE over prescribed
+Lipschitz decoder classes. It uses the same 16 histories and 64 history–target
+triples, with independently drawn calibration episodes. It commits its own
+class definitions, calibration-size menu, block partitions, numerical sources,
+and confidence allocation before generating that calibration sample.
+
+The retained study uses the following five classes:
+
+| Representation | Coordinates and metric | Lipschitz bound |
+| --- | --- | ---: |
+| RAW | Archived history features before the readout's internal column scaling; Euclidean distance | $\kappa=2$ |
+| KAHM MEM | Archived membership features before readout scaling; Euclidean distance | $\kappa=2$ |
+| KAHM LOCAL | Archived membership and local input coordinates before readout scaling; Euclidean distance | $\kappa=2$ |
+| Short history | Current observation in its original units; Euclidean distance | $\kappa=4$ |
+| Full history | Previous and current observations in their original units; Euclidean distance | $\kappa=4$ |
+
+Targets and decoder outputs lie in $I=[0,1]$, and the MSE threshold is
+$\tau=1/10$. The original stored feature and fitted-prediction values are
+interpreted as exact computational tables on the benchmark support. A fitted
+table is checked for class membership separately; a successful check ensures
+that some Lipschitz decoder agrees with the table on that support.
+
+The retained study declares sample sizes $1{,}024$, $4{,}096$, and $16{,}384$,
+block sizes $2,8,16,32,64$, and one repetition. Each class/sample-size
+assessment includes one fitted-risk upper endpoint, five block lower
+endpoints, five empirical-risk lower endpoints using the same block witnesses,
+and one full empirical-risk lower endpoint. The resulting 180 allocations are
+each $1/3600$, summing to $\delta=0.05$. These allocations are separate from
+the original three-predictor protocol in Section 5. The default command uses
+one calibration size, giving 60 endpoints with allocation $1/1200$ each.
+
+The short-history optimum is $5/32$, whereas the full-history optimum is
+$9/160$. The known-law audit also checks RAW/MEM/LOCAL reference quantities
+after the sample certificates have been saved and verified. It does not
+determine the lower confidence bound from calibration or change an unresolved
+decision. The [class-risk guide](LOWER_CERTIFICATES.md) documents the exact
+study, commands, and preserved results; the
+[proof](LOWER_CERTIFICATE_PROOF.md) derives the hierarchy and reference risks.

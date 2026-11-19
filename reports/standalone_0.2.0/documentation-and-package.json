@@ -1,0 +1,13 @@
+{
+  "schema": "kahm.standalone_documentation_validation.v1",
+  "status": "passed",
+  "markdown_files_checked": 22,
+  "missing_relative_links": [],
+  "unresolved_local_anchors": [],
+  "citation_version": "0.2.0",
+  "wheel_sha256": "64851ae36065d0b35825c2516f7162224342477c20d5e160dc333b6016ae2a73",
+  "package_files_checked": 38,
+  "wheel_package_sources_match_checkout": true,
+  "wheel_description_matches_readme": true,
+  "numerical_sources_unchanged": true
+}

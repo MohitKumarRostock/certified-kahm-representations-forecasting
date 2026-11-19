@@ -33,6 +33,15 @@ selection procedure. The bounded-loss certificate for the resulting frozen
 predictors is justified separately in
 [FITTED_RISK_GUARANTEE.md](FITTED_RISK_GUARANTEE.md).
 
+Here **readout** means the implemented fitted decoder. A prescribed Lipschitz
+decoder class in the separate [class-risk workflow](LOWER_CERTIFICATES.md)
+can contain many other decoders. Ridge regularization, output clipping, and a
+small fitted error do not by themselves establish membership in that class.
+The class-risk workflow checks the fitted prediction table against its
+prescribed metric and Lipschitz bound before using a fitted-risk upper bound
+as an upper bound on optimal class risk. The
+[scientific reference](SCIENTIFIC_REFERENCE.md) defines these distinct targets.
+
 ## 2. Representations and training-only transformations
 
 An input is the ordered pair of observed values

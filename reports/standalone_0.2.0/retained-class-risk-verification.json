@@ -1,0 +1,2165 @@
+{
+  "alpha_per_endpoint": {
+    "denominator": "3600",
+    "numerator": "1"
+  },
+  "assessments": [
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "77371252455336267181195264",
+            "numerator": "12985233681109914035711"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.5315927429983276,
+          "empirical_lower": {
+            "denominator": "38685626227668133590597632",
+            "numerator": "363182014829707668875"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "16384",
+            "numerator": "61"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "309485009821345068724781056",
+            "numerator": "258139692527968454697195"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.43248762100120075,
+          "empirical_lower": {
+            "denominator": "928455029464035206174343168",
+            "numerator": "1733249361772992822826405"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "172032",
+            "numerator": "1885"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "4352132950612665028942233600",
+            "numerator": "5971066189691263751623723"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.425879882001027,
+          "empirical_lower": {
+            "denominator": "37138201178561408246973726720",
+            "numerator": "224842391978078784110501069"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "921600",
+            "numerator": "17923"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "402949482787391279479664934912",
+            "numerator": "781985117182494080426048869"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.38615830300113885,
+          "empirical_lower": {
+            "denominator": "4332790137498830962146934784",
+            "numerator": "64223854352510648367580391"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "6666240",
+            "numerator": "223637"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "6141730019904592888843280056320",
+            "numerator": "5108857428499764157756217257"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.35950461399625055,
+          "empirical_lower": {
+            "denominator": "1559804449499579146372896522240",
+            "numerator": "33325706685222710427997239311"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "20321280",
+            "numerator": "867767"
+          }
+        }
+      ],
+      "class_id": "raw_k2_1",
+      "class_upper": {
+        "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+        "numerator": "566966044533493086570604722977072061677842924506082047684319"
+      },
+      "fitted_risk": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617660910893348877587862446939"
+      },
+      "fitted_upper": {
+        "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+        "numerator": "566966044533493086570604722977072061677842924506082047684319"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "144541931230417561878516468979822126694400",
+        "numerator": "4343586149239458794149383294467379100189"
+      },
+      "lower_coverage": "covered",
+      "n": 1024,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "raw",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": false,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "842498333348457493583344221469363458551160763204392890034487820288",
+            "numerator": "13707373025744839264888742289039374400685480867875641586904265655"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.5980916990010883,
+          "empirical_lower": {
+            "denominator": "842498333348457493583344221469363458551160763204392890034487820288",
+            "numerator": "4634620984593549989364081021633153251099672139170720681472020475"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "11150372599265311570767859136324180752990208",
+            "numerator": "383943081368442350599800759400255917364665"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "3450873173395281893717377931138512726225554486085193277581262111899648",
+            "numerator": "155538390948306442067395316095048904103916366786087280464851817081305"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.6071960749977734,
+          "empirical_lower": {
+            "denominator": "3450873173395281893717377931138512726225554486085193277581262111899648",
+            "numerator": "159855254509886094644947666214089146592315239017569110779407214021595"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "39962935395766876669632007144585863818716905472",
+            "numerator": "3434247822678525942189347288185969285759058115"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "252749500004537248075003266440809037565348228961317867010346346086400",
+            "numerator": "12604406423916286400859201538462124957661154852918229816700518872693"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.660166305002349,
+          "empirical_lower": {
+            "denominator": "107839786668602559178668060348078522694548577690162289924414440996864",
+            "numerator": "7278993578847537230164384535726225795404512330459494309714686904395"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "3345111779779593471230357740897254225897062400",
+            "numerator": "361869400277229602945424729946540798172648267"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "8357583466816698336346774676976085508827514770987577469142119177256960",
+            "numerator": "354567953672075304045735253182593538571233201206663436105780716853639"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.5971357390008052,
+          "empirical_lower": {
+            "denominator": "539198933343012795893340301740392613472742888450811449622072204984320",
+            "numerator": "43877674137969903973188771505191139363829981825979797859318339252279"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "13826462023088986347752145329041984133707857920",
+            "numerator": "1685236080787265516671196045438387962073558253"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "1857708825033348773351274008339946426105309482865686322526045643735040",
+            "numerator": "48805734594147703424860455122128494771314415514500599980184241952933"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.494153986001038,
+          "empirical_lower": {
+            "denominator": "1887196266700544785626691056091374147154600109577840073677252717445120",
+            "numerator": "167548752424991019779327833874041408651333003250122550249158734347473"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "12293285790690006006771564697797409280171704320",
+            "numerator": "1584012099376983543714673488097621846984402079"
+          }
+        }
+      ],
+      "class_id": "kahm_mem_k2_1",
+      "class_upper": null,
+      "fitted_risk": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617511918206923147658928940087"
+      },
+      "fitted_upper": {
+        "denominator": "1606938044258990275541962092341162602522202993782792835301376",
+        "numerator": "141741507876273837888972530070033822912018265473851505921501"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "94435335318547206100497595315876232644408414069678154795865818297578217262809088",
+        "numerator": "9048790578268652317819969589936167228282410004773084216640498917246180399459019"
+      },
+      "lower_coverage": "covered",
+      "n": 1024,
+      "optimal_risk_lower": {
+        "denominator": "6968982874540819731729911960202612970618880",
+        "numerator": "930601236463086678503893445200439813596433"
+      },
+      "optimal_risk_upper": {
+        "denominator": "73075081866545145910184241635814150982796627148800",
+        "numerator": "9759053031114869812360870143584899988682774300403"
+      },
+      "repetition": 0,
+      "representation": "kahm_mem",
+      "status": "unresolved",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "77371252455336267181195264",
+            "numerator": "12985233681109914035711"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.5894731720036361,
+          "empirical_lower": {
+            "denominator": "38685626227668133590597632",
+            "numerator": "363182014829707668875"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "16384",
+            "numerator": "61"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "309485009821345068724781056",
+            "numerator": "258139692527968454697195"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.49469299399788724,
+          "empirical_lower": {
+            "denominator": "928455029464035206174343168",
+            "numerator": "1733249361772992822826405"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "172032",
+            "numerator": "1885"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "4352132950612665028942233600",
+            "numerator": "5971066189691263751623723"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.43005694200110156,
+          "empirical_lower": {
+            "denominator": "37138201178561408246973726720",
+            "numerator": "224842391978078784110501069"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "921600",
+            "numerator": "17923"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "402949482787391279479664934912",
+            "numerator": "781985117182494080426048869"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.41491550999489846,
+          "empirical_lower": {
+            "denominator": "4332790137498830962146934784",
+            "numerator": "64223854352510648367580391"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "6666240",
+            "numerator": "223637"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "6141730019904592888843280056320",
+            "numerator": "5108857428499764157756217257"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.39044116099830717,
+          "empirical_lower": {
+            "denominator": "1559804449499579146372896522240",
+            "numerator": "33325706685222710427997239311"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "20321280",
+            "numerator": "867767"
+          }
+        }
+      ],
+      "class_id": "kahm_local_k2_1",
+      "class_upper": {
+        "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+        "numerator": "566966027871924911561930222130178786302654752642986844840941"
+      },
+      "fitted_risk": {
+        "denominator": "83076749736557242056487941267521536",
+        "numerator": "4688647074824915106329509302933647"
+      },
+      "fitted_upper": {
+        "denominator": "6427752177035961102167848369364650410088811975131171341205504",
+        "numerator": "566966027871924911561930222130178786302654752642986844840941"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "144541931230417561878516468979822126694400",
+        "numerator": "4343586149239458794149383294467379100189"
+      },
+      "lower_coverage": "covered",
+      "n": 1024,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "kahm_local",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "1237940039285380274899124224",
+            "numerator": "28497777165317018773044845"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.5848973269967246,
+          "empirical_lower": {
+            "denominator": "1237940039285380274899124224",
+            "numerator": "10161947816173465554583201"
+          },
+          "expected_block_score": {
+            "denominator": "128",
+            "numerator": "5"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "16384",
+            "numerator": "721"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "8123981507810308054025502720",
+            "numerator": "467976335862642238230798161"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.427272836001066,
+          "empirical_lower": {
+            "denominator": "3713820117856140824697372672",
+            "numerator": "212961284154533092164625063"
+          },
+          "expected_block_score": {
+            "denominator": "3670016",
+            "numerator": "360485"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "215040",
+            "numerator": "21869"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "58492666856234217988983619584",
+            "numerator": "3735909905084123584240375315"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.387180295001599,
+          "empirical_lower": {
+            "denominator": "346623210999906476971754782720",
+            "numerator": "28212660491286067675811494683"
+          },
+          "expected_block_score": {
+            "denominator": "34359738368",
+            "numerator": "4309316203"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "19353600",
+            "numerator": "2437963"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "29933390149920495047060823736320",
+            "numerator": "1703414797248932206947707826011"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.37634666999656474,
+          "empirical_lower": {
+            "denominator": "118842243771396506390315925504",
+            "numerator": "11640018516154976887804324537"
+          },
+          "expected_block_score": {
+            "denominator": "4574792530279968800768",
+            "numerator": "645645307680778565765"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "74280960",
+            "numerator": "10548923"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "8005089746437340132424190829527040",
+            "numerator": "299001348444860057672096843178443"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.39106933300354285,
+          "empirical_lower": {
+            "denominator": "5613959042956056716245536425902080",
+            "numerator": "593539060274744852880269071414627"
+          },
+          "expected_block_score": {
+            "denominator": "57167437642717661861846934048537059524608",
+            "numerator": "8507059178746267953738552660223953768535"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "1609062174720",
+            "numerator": "239653286863"
+          }
+        }
+      ],
+      "class_id": "short_history_k4_1",
+      "class_upper": {
+        "denominator": "62564926409523069951925643638237611355445133312",
+        "numerator": "12841859650210131104421224776175666773763607407"
+      },
+      "fitted_risk": {
+        "denominator": "29717252501208459130944",
+        "numerator": "4644498292884865719313"
+      },
+      "fitted_upper": {
+        "denominator": "62564926409523069951925643638237611355445133312",
+        "numerator": "12841859650210131104421224776175666773763607407"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "lower": {
+        "denominator": "164778309369844169776011894723706880",
+        "numerator": "18732502087592173323216287052501997"
+      },
+      "lower_coverage": "covered",
+      "n": 1024,
+      "optimal_risk_lower": {
+        "denominator": "32",
+        "numerator": "5"
+      },
+      "optimal_risk_upper": {
+        "denominator": "32",
+        "numerator": "5"
+      },
+      "repetition": 0,
+      "representation": "short_history",
+      "status": "class_excluded",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "77371252455336267181195264",
+            "numerator": "12985233681109914035711"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 0.5181347079997067,
+          "empirical_lower": {
+            "denominator": "38685626227668133590597632",
+            "numerator": "363182014829707668875"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "16384",
+            "numerator": "61"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "309485009821345068724781056",
+            "numerator": "258139692527968454697195"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.413508928999363,
+          "empirical_lower": {
+            "denominator": "928455029464035206174343168",
+            "numerator": "1733249361772992822826405"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "172032",
+            "numerator": "1885"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "4352132950612665028942233600",
+            "numerator": "5971066189691263751623723"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.4185887570056366,
+          "empirical_lower": {
+            "denominator": "37138201178561408246973726720",
+            "numerator": "224842391978078784110501069"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "921600",
+            "numerator": "17923"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "402949482787391279479664934912",
+            "numerator": "781985117182494080426048869"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.4709882259994629,
+          "empirical_lower": {
+            "denominator": "4332790137498830962146934784",
+            "numerator": "64223854352510648367580391"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "6666240",
+            "numerator": "223637"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "6141730019904592888843280056320",
+            "numerator": "5108857428499764157756217257"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.3583722219991614,
+          "empirical_lower": {
+            "denominator": "1559804449499579146372896522240",
+            "numerator": "33325706685222710427997239311"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "20321280",
+            "numerator": "867767"
+          }
+        }
+      ],
+      "class_id": "full_history_k4_1",
+      "class_upper": {
+        "denominator": "445401346619032090379574093602051371906019719032460066850331405005619200",
+        "numerator": "39287052852013612585805043160030419896753219493439200288328493382519137"
+      },
+      "fitted_risk": {
+        "denominator": "46053419841034295809141637127819337717409382400",
+        "numerator": "2599141604105483387342305489301305145799480601"
+      },
+      "fitted_upper": {
+        "denominator": "445401346619032090379574093602051371906019719032460066850331405005619200",
+        "numerator": "39287052852013612585805043160030419896753219493439200288328493382519137"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "lower": {
+        "denominator": "144541931230417561878516468979822126694400",
+        "numerator": "4343586149239458794149383294467379100189"
+      },
+      "lower_coverage": "covered",
+      "n": 1024,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "full_history",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "154742504910672534362390528",
+            "numerator": "136396137360391797639555"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 1.2627235790059785,
+          "empirical_lower": {
+            "denominator": "154742504910672534362390528",
+            "numerator": "32636604020260800219633"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "65536",
+            "numerator": "219"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "464227514732017603087171584",
+            "numerator": "1904685834984410841938825"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.7946340819980833,
+          "empirical_lower": {
+            "denominator": "3713820117856140824697372672",
+            "numerator": "18562322999261939154095755"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "24576",
+            "numerator": "283"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "4642275147320176030871715840",
+            "numerator": "35282386089960437953873847"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.6976555670044036,
+          "empirical_lower": {
+            "denominator": "1547425049106725343623905280",
+            "numerator": "19033817526482167768313389"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "153600",
+            "numerator": "3259"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "167895617828079699783193722880",
+            "numerator": "1776823762919310611568019009"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.6405878730001859,
+          "empirical_lower": {
+            "denominator": "693246421999812953943509565440",
+            "numerator": "15454421678139345893381153773"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "26664960",
+            "numerator": "887473"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "200546286364231604533658124288",
+            "numerator": "2018426443805288983800576419"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.5380529260000912,
+          "empirical_lower": {
+            "denominator": "2495687119199326634196634435584",
+            "numerator": "77720703842941678572349798213"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "162570240",
+            "numerator": "7057013"
+          }
+        }
+      ],
+      "class_id": "raw_k2_1",
+      "class_upper": {
+        "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+        "numerator": "1858206117606548126828314975481499456780663719274605091035865"
+      },
+      "fitted_risk": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617660910893348877587862446939"
+      },
+      "fitted_upper": {
+        "denominator": "25711008708143844408671393477458601640355247900524685364822016",
+        "numerator": "1858206117606548126828314975481499456780663719274605091035865"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "243823382992715686675971478867929147808530315608064000",
+        "numerator": "10438112065813073479799917226228721143282478450727639"
+      },
+      "lower_coverage": "covered",
+      "n": 4096,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "raw",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": false,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "1684996666696914987166688442938726917102321526408785780068975640576",
+            "numerator": "40390330788170880461341994643257224258087199534760587941373784075"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 1.624599959999614,
+          "empirical_lower": {
+            "denominator": "421249166674228746791672110734681729275580381602196445017243910144",
+            "numerator": "4256729328353563426269279553948372968778509606874584650533241265"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "22300745198530623141535718272648361505980416",
+            "numerator": "760504962178279344277271562347673680579055"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "6901746346790563787434755862277025452451108972170386555162524223799296",
+            "numerator": "438648527657347328754953313661217260014919281877746340975085963978933"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 1.3311747139960062,
+          "empirical_lower": {
+            "denominator": "82820956161486765449217070347324305429413307666044638661950290685591552",
+            "numerator": "4917146972065507889121150141685767661414607658089998795432236689927561"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "479555224749202520035584085735030365824602865664",
+            "numerator": "41041947373059669353800639349122710624420431497"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "38822323200696921304320501725308268170037487968458424372789198758871040",
+            "numerator": "3008287910353250938267021143919711077591603910624332167160863870224297"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 1.4383249400052591,
+          "empirical_lower": {
+            "denominator": "3450873173395281893717377931138512726225554486085193277581262111899648",
+            "numerator": "290577832309876118923097212790539194898794794243461851728673091532991"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "64226146171768194647622868625227281137223598080",
+            "numerator": "7008609297913320068042416345638751682489731043"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "234012337070867553417709690955330394247170413587652169135979336963194880",
+            "numerator": "18467668211089781514912738675709799656583548862834126641676421439841709"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 1.3288047020032536,
+          "empirical_lower": {
+            "denominator": "45292710400813074855040585346192979531710402629868161768254065218682880",
+            "numerator": "4519446044863090723143283354847841664335580542530879684292873335132633"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "2322845619878949706422360415279053334462920130560",
+            "numerator": "285946088528826798116062822188537073784850252241"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "237786729604268642988963073067513142541479613806807849283333842398085120",
+            "numerator": "16290399002446873851853145862364337184309837338018222010333155221823759"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.9281578110021655,
+          "empirical_lower": {
+            "denominator": "30195140267208716570027056897461986354473601753245441178836043479121920",
+            "numerator": "3233971276245138705483967603604658943732838932437971166365477849355243"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "196692572651040096108345035164758548482747269120",
+            "numerator": "25409891507182456075044901198578841005417805243"
+          }
+        }
+      ],
+      "class_id": "kahm_mem_k2_1",
+      "class_upper": null,
+      "fitted_risk": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617511918206923147658928940087"
+      },
+      "fitted_upper": {
+        "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+        "numerator": "929103055944786068099399083725027252030248849798812177303421"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "174052021006041797106326999269514437970065177637244664346595591238555883382958104510464000",
+        "numerator": "19964282185387225488288195459394793199475695534219405605382886334534873201927069477966423"
+      },
+      "lower_coverage": "covered",
+      "n": 4096,
+      "optimal_risk_lower": {
+        "denominator": "6968982874540819731729911960202612970618880",
+        "numerator": "930601236463086678503893445200439813596433"
+      },
+      "optimal_risk_upper": {
+        "denominator": "73075081866545145910184241635814150982796627148800",
+        "numerator": "9759053031114869812360870143584899988682774300403"
+      },
+      "repetition": 0,
+      "representation": "kahm_mem",
+      "status": "class_excluded",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "154742504910672534362390528",
+            "numerator": "136396137360391797639555"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 1.2399543680003262,
+          "empirical_lower": {
+            "denominator": "154742504910672534362390528",
+            "numerator": "32636604020260800219633"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "65536",
+            "numerator": "219"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "464227514732017603087171584",
+            "numerator": "1904685834984410841938825"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.746508944001107,
+          "empirical_lower": {
+            "denominator": "3713820117856140824697372672",
+            "numerator": "18562322999261939154095755"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "24576",
+            "numerator": "283"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "4642275147320176030871715840",
+            "numerator": "35282386089960437953873847"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.7069780059973709,
+          "empirical_lower": {
+            "denominator": "1547425049106725343623905280",
+            "numerator": "19033817526482167768313389"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "153600",
+            "numerator": "3259"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "167895617828079699783193722880",
+            "numerator": "1776823762919310611568019009"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.5919862390001072,
+          "empirical_lower": {
+            "denominator": "693246421999812953943509565440",
+            "numerator": "15454421678139345893381153773"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "26664960",
+            "numerator": "887473"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "200546286364231604533658124288",
+            "numerator": "2018426443805288983800576419"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.4842359399990528,
+          "empirical_lower": {
+            "denominator": "2495687119199326634196634435584",
+            "numerator": "77720703842941678572349798213"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "162570240",
+            "numerator": "7057013"
+          }
+        }
+      ],
+      "class_id": "kahm_local_k2_1",
+      "class_upper": {
+        "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+        "numerator": "929103057108360108640144769093581538487753222940043590782083"
+      },
+      "fitted_risk": {
+        "denominator": "83076749736557242056487941267521536",
+        "numerator": "4688647074824915106329509302933647"
+      },
+      "fitted_upper": {
+        "denominator": "12855504354071922204335696738729300820177623950262342682411008",
+        "numerator": "929103057108360108640144769093581538487753222940043590782083"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "243823382992715686675971478867929147808530315608064000",
+        "numerator": "10438112065813073479799917226228721143282478450727639"
+      },
+      "lower_coverage": "covered",
+      "n": 4096,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "kahm_local",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "9903520314283042199192993792",
+            "numerator": "334713914531166251193048369"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 1.063592874997994,
+          "empirical_lower": {
+            "denominator": "4951760157141521099596496896",
+            "numerator": "72233824038271602310625437"
+          },
+          "expected_block_score": {
+            "denominator": "128",
+            "numerator": "5"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "65536",
+            "numerator": "2987"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "3639543715499018008203425218560",
+            "numerator": "277043162421904059193965747551"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.6680583339984878,
+          "empirical_lower": {
+            "denominator": "86655802749976619242938695680",
+            "numerator": "6084905713687995295486023557"
+          },
+          "expected_block_score": {
+            "denominator": "3670016",
+            "numerator": "360485"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "6021120",
+            "numerator": "598219"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "1114146035356842247409211801600",
+            "numerator": "103898050530773220644893871179"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.5828830610043951,
+          "empirical_lower": {
+            "denominator": "297105609428491265975789813760",
+            "numerator": "29360556529341751377508025407"
+          },
+          "expected_block_score": {
+            "denominator": "34359738368",
+            "numerator": "4309316203"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "1843200",
+            "numerator": "232417"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "3928757457177064974926733115392",
+            "numerator": "382050174063917192333366630615"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.5149108769983286,
+          "empirical_lower": {
+            "denominator": "99134238345973252413921867857920",
+            "numerator": "11650391837064714277362238617943"
+          },
+          "expected_block_score": {
+            "denominator": "4574792530279968800768",
+            "numerator": "645645307680778565765"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "2859816960",
+            "numerator": "408512989"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "447404465928382940001188025462266265600",
+            "numerator": "38657461892622407655650347085934942893"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.48434282500238623,
+          "empirical_lower": {
+            "denominator": "3550829094669705873025301789383065600",
+            "numerator": "446034450991096320245753204846384447"
+          },
+          "expected_block_score": {
+            "denominator": "57167437642717661861846934048537059524608",
+            "numerator": "8507059178746267953738552660223953768535"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "370084300185600",
+            "numerator": "55287296670677"
+          }
+        }
+      ],
+      "class_id": "short_history_k4_1",
+      "class_upper": {
+        "denominator": "18394088364399782565866139229641857738500869193728",
+        "numerator": "3325436263898687016413673443277598774769427028031"
+      },
+      "fitted_risk": {
+        "denominator": "29717252501208459130944",
+        "numerator": "4644498292884865719313"
+      },
+      "fitted_upper": {
+        "denominator": "18394088364399782565866139229641857738500869193728",
+        "numerator": "3325436263898687016413673443277598774769427028031"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "lower": {
+        "denominator": "5441761237502074620214705975337248882688",
+        "numerator": "733352066567042680048707755178932164851"
+      },
+      "lower_coverage": "covered",
+      "n": 4096,
+      "optimal_risk_lower": {
+        "denominator": "32",
+        "numerator": "5"
+      },
+      "optimal_risk_upper": {
+        "denominator": "32",
+        "numerator": "5"
+      },
+      "repetition": 0,
+      "representation": "short_history",
+      "status": "class_excluded",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "154742504910672534362390528",
+            "numerator": "136396137360391797639555"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 1.2064301630016416,
+          "empirical_lower": {
+            "denominator": "154742504910672534362390528",
+            "numerator": "32636604020260800219633"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "65536",
+            "numerator": "219"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "464227514732017603087171584",
+            "numerator": "1904685834984410841938825"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 0.7500521030015079,
+          "empirical_lower": {
+            "denominator": "3713820117856140824697372672",
+            "numerator": "18562322999261939154095755"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "24576",
+            "numerator": "283"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "4642275147320176030871715840",
+            "numerator": "35282386089960437953873847"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 0.6318523020017892,
+          "empirical_lower": {
+            "denominator": "1547425049106725343623905280",
+            "numerator": "19033817526482167768313389"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "153600",
+            "numerator": "3259"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "167895617828079699783193722880",
+            "numerator": "1776823762919310611568019009"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 0.510976359997585,
+          "empirical_lower": {
+            "denominator": "693246421999812953943509565440",
+            "numerator": "15454421678139345893381153773"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "26664960",
+            "numerator": "887473"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "200546286364231604533658124288",
+            "numerator": "2018426443805288983800576419"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.4549196510051843,
+          "empirical_lower": {
+            "denominator": "2495687119199326634196634435584",
+            "numerator": "77720703842941678572349798213"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "162570240",
+            "numerator": "7057013"
+          }
+        }
+      ],
+      "class_id": "full_history_k4_1",
+      "class_upper": {
+        "denominator": "104800316851536962442252727906365028683769345654696486317725036471910400",
+        "numerator": "7574210612524406018540594060713623397321412557586014655103943254051589"
+      },
+      "fitted_risk": {
+        "denominator": "46053419841034295809141637127819337717409382400",
+        "numerator": "2599141604105483387342305489301305145799480601"
+      },
+      "fitted_upper": {
+        "denominator": "104800316851536962442252727906365028683769345654696486317725036471910400",
+        "numerator": "7574210612524406018540594060713623397321412557586014655103943254051589"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "lower": {
+        "denominator": "243823382992715686675971478867929147808530315608064000",
+        "numerator": "10438112065813073479799917226228721143282478450727639"
+      },
+      "lower_coverage": "covered",
+      "n": 4096,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "full_history",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "2475880078570760549798248448",
+            "numerator": "6025075081827851403716509"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 4.7164580060052685,
+          "empirical_lower": {
+            "denominator": "1237940039285380274899124224",
+            "numerator": "1171457257632137259023967"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "262144",
+            "numerator": "1087"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "259967408249929857728816087040",
+            "numerator": "2050561494615220334943378377"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 2.3457060369983083,
+          "empirical_lower": {
+            "denominator": "148552804714245632987894906880",
+            "numerator": "1174450280912363266789369573"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "13762560",
+            "numerator": "170897"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "1114146035356842247409211801600",
+            "numerator": "14625325071089827096346889703"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 1.8411432069988223,
+          "empirical_lower": {
+            "denominator": "297105609428491265975789813760",
+            "numerator": "4645330692705204842685444613"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "14745600",
+            "numerator": "310099"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "6907705419212421933937113169920",
+            "numerator": "130218421978479312710049045043"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 1.3676882250001654,
+          "empirical_lower": {
+            "denominator": "6239217797998316585491586088960",
+            "numerator": "160919059667892309123828315487"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "319979520",
+            "numerator": "10225597"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "13102357375796464829532330786816",
+            "numerator": "290101428494024187227066508857"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 1.1734337260058965,
+          "empirical_lower": {
+            "denominator": "2614529362970723140586950361088",
+            "numerator": "93135575664671443669309087165"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "476872704",
+            "numerator": "20169551"
+          }
+        }
+      ],
+      "class_id": "raw_k2_1",
+      "class_upper": {
+        "denominator": "102844034832575377634685573909834406561420991602098741459288064",
+        "numerator": "6426862591012493058373230892883733056555452072912818279811369"
+      },
+      "fitted_risk": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617660910893348877587862446939"
+      },
+      "fitted_upper": {
+        "denominator": "102844034832575377634685573909834406561420991602098741459288064",
+        "numerator": "6426862591012493058373230892883733056555452072912818279811369"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "26687190635103014349500655418988169468990474492879411609600",
+        "numerator": "1278241450379102891331955873270965064670384049645899828341"
+      },
+      "lower_coverage": "covered",
+      "n": 16384,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "raw",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": false,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "13479973333575319897333507543509815336818572211270286240551805124608",
+            "numerator": "402728367052703513571830234692755928250955006247821123937144441823"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 4.408892347004439,
+          "empirical_lower": {
+            "denominator": "6739986666787659948666753771754907668409286105635143120275902562304",
+            "numerator": "93087636698055994077175060069133963231894069498183185452710958133"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "178405961588244985132285746181186892047843328",
+            "numerator": "6301111721119645023156583518090460891880803"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "1932488977101357860481731641437567126686310512207708235445506782663802880",
+            "numerator": "142458156397938607714302812062210080551436220811113528599016418687097703"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 3.881531986000482,
+          "empirical_lower": {
+            "denominator": "103526195201858456811521337934155381786766634582555798327437863356989440",
+            "numerator": "6876461423991816929791373590059327079730213069069273298768527747256997"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "9591104494984050400711681714700607316492057313280",
+            "numerator": "815934984452866653767154949288742018207388682109"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "41410478080743382724608535173662152714706653833022319330975145342795776",
+            "numerator": "3807180671755166531641661776414990173871756260394485115759538231138267"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 4.652573924002354,
+          "empirical_lower": {
+            "denominator": "165641912322973530898434140694648610858826615332089277323900581371183104",
+            "numerator": "15260013072546477780529489795421105056802186154217033711329872831928559"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "2055236677496582228723931796007272996391155138560",
+            "numerator": "222303800001277135046695584908361473202479342843"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "3744197393133880854683355055285286307954726617402434706175669391411118080",
+            "numerator": "371624344888043066667473777858396902801930527945516826547684867960923071"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 4.694191059999866,
+          "empirical_lower": {
+            "denominator": "3864977954202715720963463282875134253372621024415416470891013565327605760",
+            "numerator": "418200427247574449299550957142660389401019409092675361151458293023623019"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "74331059836126390605515533288929706702813444177920",
+            "numerator": "9065712904003896134185247247877271457974563809629"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "23540886230822595655907344233683801111606481766873977079050050397410426880",
+            "numerator": "2265573273930911658847781773817756889837902745603493057716336642479121643"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 3.095195522000722,
+          "empirical_lower": {
+            "denominator": "664293085878591764540595251744163699798419238571399705934392956540682240",
+            "numerator": "76827119694779442694221795495809936865958416525918479365126694756800301"
+          },
+          "expected_block_score": null,
+          "hierarchy_coverage": "reference_unavailable",
+          "mean_lower_score": {
+            "denominator": "19472564692452969514726158481311096299791979642880",
+            "numerator": "2490313237503809910428004536179567172014152119641"
+          }
+        }
+      ],
+      "class_id": "kahm_mem_k2_1",
+      "class_upper": null,
+      "fitted_risk": {
+        "denominator": "207691874341393105141219853168803840",
+        "numerator": "11721617511918206923147658928940087"
+      },
+      "fitted_upper": {
+        "denominator": "102844034832575377634685573909834406561420991602098741459288064",
+        "numerator": "6426862510631841694718852981841053406853526362232260161491807"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "128759930747832870834646726267832836603782840643000435552046876749948164182749682188104499200",
+        "numerator": "15935791711479023309282888842493965610453268482111132178296945843384619994770326650289376311"
+      },
+      "lower_coverage": "covered",
+      "n": 16384,
+      "optimal_risk_lower": {
+        "denominator": "6968982874540819731729911960202612970618880",
+        "numerator": "930601236463086678503893445200439813596433"
+      },
+      "optimal_risk_upper": {
+        "denominator": "73075081866545145910184241635814150982796627148800",
+        "numerator": "9759053031114869812360870143584899988682774300403"
+      },
+      "repetition": 0,
+      "representation": "kahm_mem",
+      "status": "class_excluded",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "2475880078570760549798248448",
+            "numerator": "6025075081827851403716509"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 4.363289435998013,
+          "empirical_lower": {
+            "denominator": "1237940039285380274899124224",
+            "numerator": "1171457257632137259023967"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "262144",
+            "numerator": "1087"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "259967408249929857728816087040",
+            "numerator": "2050561494615220334943378377"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 2.3025742819954758,
+          "empirical_lower": {
+            "denominator": "148552804714245632987894906880",
+            "numerator": "1174450280912363266789369573"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "13762560",
+            "numerator": "170897"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "1114146035356842247409211801600",
+            "numerator": "14625325071089827096346889703"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 1.6961454339980264,
+          "empirical_lower": {
+            "denominator": "297105609428491265975789813760",
+            "numerator": "4645330692705204842685444613"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "14745600",
+            "numerator": "310099"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "6907705419212421933937113169920",
+            "numerator": "130218421978479312710049045043"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 1.398813001003873,
+          "empirical_lower": {
+            "denominator": "6239217797998316585491586088960",
+            "numerator": "160919059667892309123828315487"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "319979520",
+            "numerator": "10225597"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "13102357375796464829532330786816",
+            "numerator": "290101428494024187227066508857"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 1.0522817249948275,
+          "empirical_lower": {
+            "denominator": "2614529362970723140586950361088",
+            "numerator": "93135575664671443669309087165"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "476872704",
+            "numerator": "20169551"
+          }
+        }
+      ],
+      "class_id": "kahm_local_k2_1",
+      "class_upper": {
+        "denominator": "102844034832575377634685573909834406561420991602098741459288064",
+        "numerator": "6426862518060966187434900685681683558375581959547732145255439"
+      },
+      "fitted_risk": {
+        "denominator": "83076749736557242056487941267521536",
+        "numerator": "4688647074824915106329509302933647"
+      },
+      "fitted_upper": {
+        "denominator": "102844034832575377634685573909834406561420991602098741459288064",
+        "numerator": "6426862518060966187434900685681683558375581959547732145255439"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "lower": {
+        "denominator": "26687190635103014349500655418988169468990474492879411609600",
+        "numerator": "1278241450379102891331955873270965064670384049645899828341"
+      },
+      "lower_coverage": "covered",
+      "n": 16384,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "kahm_local",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "2475880078570760549798248448",
+            "numerator": "89010650322853301747159175"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 4.065842035000969,
+          "empirical_lower": {
+            "denominator": "19807040628566084398385987584",
+            "numerator": "331201953834806486968651925"
+          },
+          "expected_block_score": {
+            "denominator": "128",
+            "numerator": "5"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "262144",
+            "numerator": "10975"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "45494296443737725102542815232",
+            "numerator": "3957961166249851616873596435"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 1.7031695550031145,
+          "empirical_lower": {
+            "denominator": "32495926031241232216102010880",
+            "numerator": "2532132765862679657765979179"
+          },
+          "expected_block_score": {
+            "denominator": "3670016",
+            "numerator": "360485"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "376320",
+            "numerator": "37217"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "18383409583387897082251994726400",
+            "numerator": "2014777241049785516873123396419"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 1.3618799820033018,
+          "empirical_lower": {
+            "denominator": "34315697888990741220203723489280",
+            "numerator": "3721245899819671661146706864861"
+          },
+          "expected_block_score": {
+            "denominator": "34359738368",
+            "numerator": "4309316203"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "425779200",
+            "numerator": "53773541"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "10536553332772014256565409955184640",
+            "numerator": "1255700148602689708916642556513181"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 1.3249097899970366,
+          "empirical_lower": {
+            "denominator": "19033773762426864463472998628720640",
+            "numerator": "2419760507434529717319219612043577"
+          },
+          "expected_block_score": {
+            "denominator": "4574792530279968800768",
+            "numerator": "645645307680778565765"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "183028285440",
+            "numerator": "26031957269"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "439555264771744642808184726769945804800",
+            "numerator": "51704390836997175863949486875861356673"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 0.8886796860024333,
+          "empirical_lower": {
+            "denominator": "12403675901848173342029904106382950400",
+            "numerator": "1691602192731933158716236589260536071"
+          },
+          "expected_block_score": {
+            "denominator": "57167437642717661861846934048537059524608",
+            "numerator": "8507059178746267953738552660223953768535"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "363591593164800",
+            "numerator": "54425308744549"
+          }
+        }
+      ],
+      "class_id": "short_history_k4_1",
+      "class_upper": {
+        "denominator": "11319438993476789271302239525933450916000534888448",
+        "numerator": "1911419782949994386057056977330454944259066789507"
+      },
+      "fitted_risk": {
+        "denominator": "29717252501208459130944",
+        "numerator": "4644498292884865719313"
+      },
+      "fitted_upper": {
+        "denominator": "11319438993476789271302239525933450916000534888448",
+        "numerator": "1911419782949994386057056977330454944259066789507"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "lower": {
+        "denominator": "857590548633808091354720213339781461966848",
+        "numerator": "125025200957159969493455193848547254516167"
+      },
+      "lower_coverage": "covered",
+      "n": 16384,
+      "optimal_risk_lower": {
+        "denominator": "32",
+        "numerator": "5"
+      },
+      "optimal_risk_upper": {
+        "denominator": "32",
+        "numerator": "5"
+      },
+      "repetition": 0,
+      "representation": "short_history",
+      "status": "class_excluded",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    },
+    {
+      "admissible": true,
+      "blocks": [
+        {
+          "block_lower": {
+            "denominator": "2475880078570760549798248448",
+            "numerator": "6025075081827851403716509"
+          },
+          "block_size": 2,
+          "elapsed_seconds": 4.119528966999496,
+          "empirical_lower": {
+            "denominator": "1237940039285380274899124224",
+            "numerator": "1171457257632137259023967"
+          },
+          "expected_block_score": {
+            "denominator": "2560",
+            "numerator": "9"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "262144",
+            "numerator": "1087"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "259967408249929857728816087040",
+            "numerator": "2050561494615220334943378377"
+          },
+          "block_size": 8,
+          "elapsed_seconds": 2.1200501670027734,
+          "empirical_lower": {
+            "denominator": "148552804714245632987894906880",
+            "numerator": "1174450280912363266789369573"
+          },
+          "expected_block_score": {
+            "denominator": "300647710720",
+            "numerator": "3738662793"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "13762560",
+            "numerator": "170897"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "1114146035356842247409211801600",
+            "numerator": "14625325071089827096346889703"
+          },
+          "block_size": 16,
+          "elapsed_seconds": 1.7856594460026827,
+          "empirical_lower": {
+            "denominator": "297105609428491265975789813760",
+            "numerator": "4645330692705204842685444613"
+          },
+          "expected_block_score": {
+            "denominator": "36893488147419103232",
+            "numerator": "788209002685546875"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "14745600",
+            "numerator": "310099"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "6907705419212421933937113169920",
+            "numerator": "130218421978479312710049045043"
+          },
+          "block_size": 32,
+          "elapsed_seconds": 1.241915937003796,
+          "empirical_lower": {
+            "denominator": "6239217797998316585491586088960",
+            "numerator": "160919059667892309123828315487"
+          },
+          "expected_block_score": {
+            "denominator": "105487533745490923673646128303848145551360",
+            "numerator": "3450837197235036446674066478024829918729"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "319979520",
+            "numerator": "10225597"
+          }
+        },
+        {
+          "block_lower": {
+            "denominator": "13102357375796464829532330786816",
+            "numerator": "290101428494024187227066508857"
+          },
+          "block_size": 64,
+          "elapsed_seconds": 1.0476184639992425,
+          "empirical_lower": {
+            "denominator": "2614529362970723140586950361088",
+            "numerator": "93135575664671443669309087165"
+          },
+          "expected_block_score": {
+            "denominator": "1157920892373161954235709850086879078532699846656405640394575840079131296399360",
+            "numerator": "49891095920106188640882909375831346625704759743142214963658045268201085972919"
+          },
+          "hierarchy_coverage": "covered",
+          "mean_lower_score": {
+            "denominator": "476872704",
+            "numerator": "20169551"
+          }
+        }
+      ],
+      "class_id": "full_history_k4_1",
+      "class_upper": {
+        "denominator": "8144481766748015366940783425866082229138646290879269793834631405817036800",
+        "numerator": "508959657658372476284649405477332375981914571787380743823626381004529531"
+      },
+      "fitted_risk": {
+        "denominator": "46053419841034295809141637127819337717409382400",
+        "numerator": "2599141604105483387342305489301305145799480601"
+      },
+      "fitted_upper": {
+        "denominator": "8144481766748015366940783425866082229138646290879269793834631405817036800",
+        "numerator": "508959657658372476284649405477332375981914571787380743823626381004529531"
+      },
+      "kappa": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "lower": {
+        "denominator": "26687190635103014349500655418988169468990474492879411609600",
+        "numerator": "1278241450379102891331955873270965064670384049645899828341"
+      },
+      "lower_coverage": "covered",
+      "n": 16384,
+      "optimal_risk_lower": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "optimal_risk_upper": {
+        "denominator": "160",
+        "numerator": "9"
+      },
+      "repetition": 0,
+      "representation": "full_history",
+      "status": "requirement_met",
+      "unavailable_endpoints": 0,
+      "upper_coverage": "covered"
+    }
+  ],
+  "calibration_stream_replayed_in_memory": true,
+  "delta": {
+    "denominator": "20",
+    "numerator": "1"
+  },
+  "endpoint_count": 180,
+  "interpretation": "Numerical/provenance verification is distinct from favorable decisions and realized coverage. Statistical validity assumes iid calibration independent of development.",
+  "models_replayed": false,
+  "numerical_witnesses_checked": true,
+  "plan_sha256": "cdfb84eff2d138ee649e8adddff7bd9f91e673407ddf5e8cfddd8a3ec37041ba",
+  "population_audit_checked": true,
+  "run_id": "lower-certificates-20261119-v1",
+  "schema": "kahm.class_risk_verification.v1",
+  "source_identity_matches": true,
+  "status": "verified",
+  "status_counts": {
+    "class_excluded": 5,
+    "requirement_met": 9,
+    "unresolved": 1
+  },
+  "unavailable_endpoint_count": 0
+}

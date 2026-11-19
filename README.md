@@ -1,210 +1,237 @@
 # KAHM forecasting demonstrator
 
-**Version `0.1.1` · Apache-2.0 · Standalone methods and reproducible assessment**
+**Version 0.2.0 · Apache-2.0 · Standalone implementation and scientific documentation**
 
-Based on our research, this project demonstrates forecasting with
-**geometry-induced soft states** and checkable upper bounds on the fitted
-models' population mean squared error. It connects an observed history to
-Gaussian Kernel Affine Hull Machine (KAHM) features, a fitted nonlinear readout,
-and a retained record of development, calibration, certification, and auditing.
-The method, assumptions, and numerical rules are documented in this repository.
+This project demonstrates **risk certification for fixed representations and
+prescribed Lipschitz decoder classes**. It combines lower confidence bounds on
+optimal class risk with upper confidence bounds on fitted-predictor risk. The
+result can establish that every decoder in a class exceeds a mean squared
+error (MSE) threshold, establish that an admissible fitted predictor meets the
+threshold, or leave the decision unresolved.
 
+The implementation, mathematical definitions, proofs, assumptions, benchmark,
+and recorded experiments are documented here. No external manuscript is needed
+to understand or run the demonstrator.
+
+[Scientific reference](docs/SCIENTIFIC_REFERENCE.md) ·
 [Quick start](docs/QUICKSTART.md) ·
-[Guided notebook](notebooks/01_kahm_certified_forecasting.ipynb) ·
-[HTML walkthrough](notebooks/01_kahm_certified_forecasting.html) ·
-[Certificates explained](docs/CERTIFICATES_EXPLAINED.md)
+[Class-risk guide](docs/LOWER_CERTIFICATES.md) ·
+[Retained results](reports/lower_certificates_v1/report.md) ·
+[Software citation](CITATION.md)
 
-## What the example does
+## The scientific question
 
-Fit the geometry and readout on training data, select using validation data,
-freeze the complete computational predictors, and assess reserved calibration
-observations. A separate exact population-risk audit then checks their issued
-bounds under a known finite probability law.
+Fix a representation $\Gamma$, feature metric $d$, Lipschitz bound $\kappa$,
+bounded target and prediction interval $I$, and evaluation distribution.
+The **optimal class risk** is
 
-| Predictor | Representation supplied to the readout |
+$$
+R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}
+\mathbb E[(Y-g(\Gamma(X)))^2],
+\qquad
+\mathcal G_\kappa(d)=\{g:\mathcal U\to I:
+|g(u)-g(v)|\leq\kappa d(u,v)\}.
+$$
+
+For a fixed MSE threshold $\tau$, a lower confidence bound $L$ and a
+fitted-predictor upper confidence bound $U_{\mathrm{fit}}$ support these decisions:
+
+| Decision | Required evidence | Interpretation |
+| --- | --- | --- |
+| `class_excluded` | $L>\tau$ | Every decoder in the declared class exceeds the threshold. |
+| `requirement_met` | An admissible fitted predictor with $U_{\mathrm{fit}}\leq\tau$ | The fitted predictor and its class meet the threshold. |
+| `unresolved` | Available bounds establish neither conclusion | The current evidence does not determine whether the class meets the requirement. |
+
+A fitted predictor outside the declared class can still have a valid upper
+bound on its own risk. Its fitted-risk upper endpoint is not used as an upper
+bound on the class optimum without an admissibility argument.
+Numerical unavailability and conflicting outcomes are recorded separately.
+These are population mean-error statements, not prediction intervals for
+individual observations.
+
+## Install the complete project
+
+Use Python **3.12 or newer**. Clone the repository, then install the package:
+
+```bash
+git clone https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting.git
+cd certified-kahm-representations-forecasting
+python -m pip install .
+```
+
+For a reproducible scientific reference, also record the exact commit with
+`git rev-parse HEAD`; [CITATION.md](CITATION.md) describes version and run
+identification. The wheel contains the package. The complete checkout or GitHub
+source archive additionally contains documentation, tests, figures, and
+retained experiment evidence.
+
+## Verify the retained class-risk experiment
+
+This is the shortest route to checking the supplied results:
+
+```bash
+python -m zipfile -e reports/lower_certificates_v1/full_verification_bundle.zip runs/retained-class-risk
+python -m kahm_demo verify-class-risk --run runs/retained-class-risk/run
+```
+
+Use a new extraction directory. Verification checks the source identities,
+calibration observations, optimization witnesses, confidence endpoints,
+admissibility, decisions, and population audit. It does not refit models or
+solve new optimization problems. It replays the saved pseudorandom stream in
+memory to check the identities of the recorded observations.
+
+The ZIP is a **numerical verification bundle**, including the assessment's
+source snapshot. It is not a substitute for the complete software checkout.
+The [manifest](reports/lower_certificates_v1/manifest.json) identifies the
+retained bundle, study plan, summary, and development wheel by SHA-256.
+
+## Run a separate class-risk assessment
+
+```bash
+python -m kahm_demo class-risk --freeze frozen/primary/freeze.json --output runs/class-risk --run-id local-class-risk-v1
+python -m kahm_demo verify-class-risk --run runs/class-risk
+```
+
+The output directory must be new. Defaults assess RAW, KAHM MEM, and KAHM LOCAL
+at Lipschitz bound `2`, and short- and full-history controls at bound `4`.
+The run declares 4,096 calibration episodes, block sizes `2, 8, 16, 32, 64`, and
+a joint failure budget of `0.05` across all 60 endpoints before generating its
+calibration observations. Reusing a seed and run identity replays the same
+observations; it does not create an independent repetition.
+
+A larger planned assessment can declare all sample sizes together:
+
+```bash
+python -m kahm_demo class-risk --freeze frozen/primary/freeze.json --output runs/class-risk-study --sample-sizes 1024 4096 16384 --block-sizes 2 8 16 32 64 --run-id local-class-risk-study-v1
+```
+
+The [class-risk guide](docs/LOWER_CERTIFICATES.md) explains every option and
+retained record. The same observations and optimization witnesses support two
+lower-confidence constructions: expected block-score bounds and
+empirical-risk-based bounds. A separate full empirical optimization is also
+reported. Unresolved outcomes, numerical failures, and realized coverage misses
+are retained.
+
+## Retained scientific results
+
+The supplied study fixes five classes, three calibration sizes, five block
+sizes, and **180 one-sided confidence endpoints** with total failure
+allocation `0.05`. At 4,096 calibration episodes and $\tau=0.1$:
+
+| Declared class | Lower confidence bound | Admissible fitted upper bound | Decision |
+| --- | ---: | ---: | --- |
+| RAW, $\kappa=2$ | 0.042810136 | 0.072272782 | Requirement met |
+| KAHM MEM, $\kappa=2$ | 0.114702961 | Unavailable: fitted predictor is inadmissible | Class excluded |
+| KAHM LOCAL, $\kappa=2$ | 0.042810136 | 0.072272781 | Requirement met |
+| Short history, $\kappa=4$ | 0.134763734 | 0.180788316 | Class excluded |
+| Full history, $\kappa=4$ | 0.042810136 | 0.072272784 | Requirement met |
+
+These are descriptive decimal approximations; exact stored fractions govern
+all decisions. MEM remains unresolved at 1,024 episodes. At 16,384 episodes,
+short-history blocks of sizes 16, 32, and 64 establish exclusion that the
+pairwise bound misses. The full empirical-optimum certificate is stronger in
+this small benchmark; no computational advantage of blocking is established.
+
+![Block hierarchy and finite-sample certificates](reports/lower_certificates_v1/figures/block_hierarchy.png)
+
+The [study report](reports/lower_certificates_v1/report.md) contains the
+interpretation, all three figures, and replay commands. The
+[machine-readable summary](reports/lower_certificates_v1/summary.json) retains
+all 15 class/sample-size assessments, including the unresolved case. The
+[scientific reference](docs/SCIENTIFIC_REFERENCE.md) explains what these results
+establish and their limits.
+
+## Representations and benchmark
+
+The finite benchmark predicts the next scalar observation from two past
+observations. Each observation is in `{0, 0.25, 0.75, 1}`: there are 16 possible
+histories and 64 history-target cases. Calibration assumes iid episodes from
+the declared law, independent of development. The known finite law is used for
+a separate population audit after the sample certificates have been issued.
+
+| Representation | Features supplied to the readout |
 | --- | --- |
 | RAW | Training-standardized observed history |
 | KAHM MEM | Relative local reconstruction affinities, normalized within each partition |
-| KAHM LOCAL | The identical memberships plus membership-weighted local coordinates of the input |
+| KAHM LOCAL | The same memberships plus membership-weighted local coordinates |
 
-MEM and LOCAL use the **same fitted Gaussian KAHM bank**. Memberships describe
-local geometry; they are not calibrated probabilities of latent regimes. LOCAL
-preserves MEM and appends `phi[j] * P[j].T @ (z-mu[j])`. Each branch uses the same
-Gaussian Nyström and ridge readout procedure, followed by clipping to `[0,1]`.
-Feature widths and total search effort differ; no equal-capacity or general
-KAHM-superiority claim is made.
+MEM and LOCAL use the same fitted Gaussian Kernel Affine Hull Machine (KAHM)
+bank. Memberships describe local geometry; they are not calibrated probabilities
+of latent regimes. The fitted readout uses Gaussian Nyström features, ridge
+regression, and output clipping. Feature widths and total search effort differ.
 
-The [benchmark](docs/BENCHMARK.md) predicts the next scalar observation from two
-past observations. Its four values are `0`, `0.25`, `0.75`, and `1`. Statistical
-calibration assumes a stipulated iid episode model, independent of development;
-the pseudorandom generator provides reproducible samples, not proof of that
-premise. The known finite law also permits exact population-risk auditing.
+For class-risk assessment, saved feature and prediction tables are exact
+finite-support computational functions. Euclidean geometry is assessed before
+the readout's internal column scaling. An admissible table has a Lipschitz
+extension, but the check does not establish global regularity of the original
+nonlinear executable readout. In particular, the MEM exclusion is specific to
+its coordinates, metric, and Lipschitz bound; it does not establish unrestricted
+information loss. See [benchmark](docs/BENCHMARK.md),
+[encoder design](docs/ENCODER_DESIGN.md), and [readout design](docs/READOUT_DESIGN.md).
 
-## Start with the supplied experiment
+## Fit and assess new predictors
 
-Use Python **3.12 or newer**. Download
-[Certified_KAHM_Representations_Forecasting_v0.1.1.zip](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/download/v0.1.1/Certified_KAHM_Representations_Forecasting_v0.1.1.zip)
-from the [v0.1.1 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.1).
-Place the ZIP in a fresh directory and open a terminal there, then extract and
-enter the project:
+The original fitted-predictor workflow remains available in version 0.2.0:
 
 ```bash
-python -m zipfile -e Certified_KAHM_Representations_Forecasting_v0.1.1.zip .
-cd certified-kahm-representations-forecasting
+python -m kahm_demo reproduce --output runs/fresh-models --master-seed 20261110 --run-id fresh-models-v0.2
+python -m kahm_demo class-risk --freeze runs/fresh-models/frozen/freeze.json --output runs/fresh-class-risk --run-id fresh-class-risk-v0.2
 ```
 
-The complete ZIP contains both code and experiment evidence; the wheel contains code only.
-From the extracted project directory:
+`reproduce` generates development data, fits all 225 declared configurations,
+selects and freezes predictors, calibrates fitted-risk upper bounds, and
+performs a separate population audit. The second command assesses those frozen
+models using its own declared class-risk calibration stream. All outcomes and
+partial failures are retained. A completed workflow need not meet the risk
+threshold.
+
+## Learn from the historical fitted-predictor example
+
+The unchanged `public-v0.1.0` experiment is also supplied. Inspect it with:
 
 ```bash
-python -m pip install .
 python -m kahm_demo tutorial --project . --mode inspect --history 0.25 0.75
 ```
 
-The history order is **previous observation, current observation**. Inspection
-checks fixed archive hashes and bindings, then displays recorded features,
-forecasts, and all three assessment outcomes. Its scope is explicit:
+History order is **previous observation, current observation**. Inspection
+checks archive identities and displays stored values; it does not replay the
+models or reverify their original numerical certificates. Strict replay of that
+historical experiment requires its unmodified `v0.1.0` sources and exact
+recorded numerical runtime. Current-source experiments retain their own
+identities. [CI.md](docs/CI.md) explains the separate verification gates.
 
-```json
-{
-  "mode": "archive_identity_only",
-  "archive_identity_checked": true,
-  "model_replayed": false,
-  "certificate_reverified": false,
-  "population_risk_recomputed": false
-}
-```
+The [guided notebook](notebooks/01_kahm_certified_forecasting.ipynb) and
+[static HTML walkthrough](notebooks/01_kahm_certified_forecasting.html) teach
+this fitted-predictor example. Install `python -m pip install '.[tutorial]'` for
+JupyterLab. The notebook defaults to inspection; running all cells does not fit
+models or draw calibration data. The class-risk extension is covered by its
+[standalone guide](docs/LOWER_CERTIFICATES.md) and retained study.
 
-This is an excerpt of the expected output. Archive identity alone does not
-establish current-runtime model replay or mathematical certificate verification.
+## Documentation map
 
-For the notebook:
-
-```bash
-python -m pip install '.[tutorial]'
-python -m jupyterlab notebooks/01_kahm_certified_forecasting.ipynb
-```
-
-The notebook defaults to inspection. **Run All does not fit models or sample
-calibration data.** For the static reading copy, open the extracted
-`notebooks/01_kahm_certified_forecasting.html` file in your browser. Keep it in
-the complete project so its relative documentation links work. Opening the HTML
-performs no verification.
-
-## Three ways to use the project
-
-| Path | Work performed | When to use it |
-| --- | --- | --- |
-| **Inspect** | Check archive identities and display recorded values | Learn the example without matching its original numerical runtime |
-| **Verify historical baseline** | Replay saved models, recompute exact losses, check issued endpoints, and reproduce the population audit | Use unmodified v0.1.0 sources and the exact recorded runtime |
-| **Fresh experiment** | Generate data, fit all 225 configurations, select, freeze, calibrate, certify, and audit | Use v0.1.1 in your own supported runtime, with its own records |
-
-### Verify the supplied experiment
-
-The supplied baseline remains `public-v0.1.0`. Version 0.1.1 fixes encoder
-artifact input validation, so its execution-source bytes differ from that
-historical freeze. Inspection remains available in v0.1.1; strict verification
-of the baseline requires the unmodified
-[v0.1.0 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
-**and the exact recorded runtime**. From that v0.1.0 project directory:
-
-```bash
-python -m kahm_demo tutorial --project . --mode verify --history 0.25 0.75
-```
-
-Strict verification refuses source or runtime mismatches. The identity includes
-the full Python build string, machine architecture, NumPy/BLAS configuration,
-and execution-source bytes. **Version pins alone are insufficient.** Verification
-neither refits models nor samples replacement observations or searches for new
-endpoints. An incompatible environment needs its own fresh experiment.
-
-### Run a fresh experiment
-
-Use the installed v0.1.1 package from the v0.1.1 project directory. This creates
-new evidence for the current sources and runtime:
-
-```bash
-python -m kahm_demo reproduce --output runs/tutorial --master-seed 20261110 --run-id tutorial-v0.1
-```
-
-The output directory must be new. Defaults are 4,096 training, 1,024 validation,
-and 4,096 calibration episodes. A completed run writes `reproduction.json` and
-the complete data, models, freeze, certificate, and audit. Pipeline completion
-is distinct from meeting the risk tolerance. All candidate outcomes and partial
-failures remain recorded, without automatic overwrite, resume, or retry.
-Reusing a stream identity provides reproducibility, not new independent evidence.
-
-## Public baseline
-
-The public primary experiment ran once with master seed `20261110`, run ID
-`public-v0.1.0`, and 4,096/1,024/4,096 training, validation, and calibration
-episodes. It retained all 225 development fits and all three final outcomes.
-
-| Predictor | Calibration MSE q (approx.) | Population MSE R (approx.) | Issued upper U (rounded up) | Assessment | Audit |
-| --- | ---: | ---: | ---: | --- | --- |
-| RAW | 0.064505721 | 0.056437536 | 0.076071471 | `requirement_met` | `covered` |
-| KAHM MEM | 0.064505722 | 0.056437535 | 0.076071472 | `requirement_met` | `covered` |
-| KAHM LOCAL | 0.064505725 | 0.056437536 | 0.076071475 | `requirement_met` | `covered` |
-
-This one experiment meets the fixed MSE tolerance of `0.1` for all three
-predictors under the stated assumptions, and the exact benchmark risks lie below all three
-issued endpoints. The nearly equal fitted risks do not establish a general
-advantage for either KAHM representation. See
-[the validation report](reports/RELEASE_VALIDATION.md) for identities and checks.
-
-For each predictor, `q` denotes its calibration sample mean, `U` its verified
-statistical upper endpoint, and `R` its exact benchmark population MSE. Exact
-fractions govern comparisons; displayed decimals have stated rounding rules.
-
-Conditional on development, under the **declared iid calibration law independent
-of development**, the probability that any reported valid upper endpoint misses
-its fitted risk is at most `1/20`. Each of the three predictors receives allocation
-`1/60`. There is no extra conditioning on acceptance or numerical availability,
-and an unavailable candidate's allocation is not reassigned. The fixed MSE
-tolerance is `1/10`. This is a population mean-error bound, not an interval for
-an individual forecast. The [local proof](docs/FITTED_RISK_GUARANTEE.md) states
-and derives the guarantee; stream labels alone do not prove its iid premise.
-
-## What a complete run retains
-
-| Location | Contents |
+| Document | Purpose |
 | --- | --- |
-| `models/primary/`, `encoders/primary/` | Both geometry banks, all 225 fitted development states, and selection records |
-| `frozen/primary/` | Selected states, canonical predictions, full development snapshot, and source/runtime identities |
-| `certificates/primary/`, `data/primary/calibration/` | Every calibration episode, exact loss ledger, endpoints, statuses, and verification evidence |
-| `audits/primary/` | All 64 weighted cases per predictor and every coverage comparison |
-| `kahm_demo/`, `tests/`, `examples/` | Implementation, regression tests, and executable walkthroughs |
+| [Scientific reference](docs/SCIENTIFIC_REFERENCE.md) | Definitions, terminology, hierarchy, statistical guarantees, and interpretation |
+| [Class-risk guide](docs/LOWER_CERTIFICATES.md) | Commands, numerical objects, study design, and retained outputs |
+| [Class-risk proof](docs/LOWER_CERTIFICATE_PROOF.md) | Self-contained derivation of the lower and upper guarantees |
+| [Fitted-risk guarantee](docs/FITTED_RISK_GUARANTEE.md) | The original bounded-loss upper-confidence construction |
+| [Certificates explained](docs/CERTIFICATES_EXPLAINED.md) | Decisions and the distinction between a class and a fitted predictor |
+| [Method overview](docs/METHOD_OVERVIEW.md) and [technical overview](docs/TECHNICAL_OVERVIEW.md) | Implementation map, APIs, and artifact lifecycle |
+| [Freeze interface](docs/FREEZE_INTERFACE.md) and [population audit](docs/POPULATION_AUDIT.md) | Provenance checks and independent known-law references |
+| [Adapting to new data](docs/ADAPTING_TO_NEW_DATA.md) | What must be specified and implemented for another task |
+| [CI](docs/CI.md) and [release guide](docs/RELEASE_GUIDE.md) | Tests, packaging, and preservation of scientific evidence |
 
-These are the release baseline paths. Fresh runs place the same workflow layers
-under their requested output directory. Inspection, strict verification, and
-new execution are separate activities and are labeled accordingly.
+The package has no generic CSV or arbitrary time-series adapter. A new task
+requires an appropriate data interface, target bounds, sampling model, metric,
+and decoder class. Overlapping trajectory windows are not automatically iid.
+The demonstrator makes no general forecasting-superiority, computation-saving,
+Koopman-closure, or certified latent-rollout claim.
 
-## Scope and documentation
-
-The known law permits exact `R` here. General applications usually lack that
-oracle. The package has **no generic CSV or time-series adapter**; a new task
-needs its own data interface, evaluation design, and justified certificate.
-Overlapping trajectory windows are not automatically iid. The example makes
-no claim of representation optimality, predictive sufficiency, Koopman closure,
-certified latent rollout, or equivalence to an ideal real-arithmetic KAHM map.
-
-| Read next | Purpose |
-| --- | --- |
-| [Benchmark](docs/BENCHMARK.md) and [method overview](docs/METHOD_OVERVIEW.md) | Complete task, data roles, and implementation map |
-| [Encoder](docs/ENCODER_DESIGN.md) and [readout](docs/READOUT_DESIGN.md) | Formulas, numerical conventions, and development selection |
-| [Risk guarantee](docs/FITTED_RISK_GUARANTEE.md) and [certification](docs/CERTIFICATION_DESIGN.md) | Statistical proof, exact loss arithmetic, and verified endpoints |
-| [Freeze interface](docs/FREEZE_INTERFACE.md) and [population audit](docs/POPULATION_AUDIT.md) | Provenance gates and exact reference checks |
-| [Full tutorial](docs/TUTORIAL.md) and [technical overview](docs/TECHNICAL_OVERVIEW.md) | Walkthrough, APIs, and artifact lifecycle |
-| [Adapting to new data](docs/ADAPTING_TO_NEW_DATA.md) | Application design and required module changes |
-| [CI guide](docs/CI.md) | Portable checks and the separate strict runtime gate |
-
-## Software and release information
+## Citation, licence, and contributions
 
 Software author: **Mohit Kumar**. Copyright **2026 Mohit Kumar**.
-Licensed under [Apache-2.0](LICENSE); see [NOTICE](NOTICE),
-[CITATION.md](CITATION.md), and [CITATION.cff](CITATION.cff).
-
-Repository:
-[MohitKumarRostock/certified-kahm-representations-forecasting](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting).
-See the [release guide](docs/RELEASE_GUIDE.md) for artifact preservation and
-validation, and the [contribution guide](CONTRIBUTING.md) to propose improvements.
+Licensed under [Apache-2.0](LICENSE); see [NOTICE](NOTICE).
+[CITATION.cff](CITATION.cff) supplies machine-readable software metadata;
+[CITATION.md](CITATION.md) explains how to cite the version, commit, and exact
+experiment used. [CONTRIBUTING.md](CONTRIBUTING.md) describes the validation and
+evidence-preservation workflow.

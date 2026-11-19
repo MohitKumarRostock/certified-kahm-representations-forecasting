@@ -1,0 +1,53 @@
+{
+  "schema": "kahm.standalone_release_validation_manifest.v1",
+  "package_version": "0.2.0",
+  "date": "2026-11-19",
+  "numerical_source_base_commit": "820c41cda14e5ac574eeac1cc6b19e5bdf11ab7b",
+  "numerical_sources_changed": false,
+  "artifacts": {
+    "archive-inspection.json": {
+      "bytes": 1019,
+      "sha256": "f2816291781b1c478df68b86e8320b298f221ffa9969ae05ca5c6c58e69de11d"
+    },
+    "documentation-and-package.json": {
+      "bytes": 461,
+      "sha256": "2450ca89ae11405dbdc0d48c99d957f93ec012358c61cefe3875e4110723a450"
+    },
+    "documented-quickstart-verification.json": {
+      "bytes": 13933,
+      "sha256": "eadd8b7f1fd3a71053d39cd3f8fa2e7c2bdeae6555fd8f96cc508836f2bf7cfe"
+    },
+    "final-installed-package.json": {
+      "bytes": 298,
+      "sha256": "d444ef3fc0df09b50ab31da54cdf68cfcb8bd8a6dcbcb33275c61f50c4c21a69"
+    },
+    "final-wheel-quickstart-verification.json": {
+      "bytes": 13933,
+      "sha256": "eadd8b7f1fd3a71053d39cd3f8fa2e7c2bdeae6555fd8f96cc508836f2bf7cfe"
+    },
+    "fresh-class-risk-verification.json": {
+      "bytes": 52055,
+      "sha256": "7083832ca269b67b24182b1fd3cc7a65033f39c7fd9012f94f4b38ad16f453f6"
+    },
+    "fresh-wheel-check.json": {
+      "bytes": 12183,
+      "sha256": "c5acb1aae2e70b1f5d23e7c3f024191b6c2b0056d87e0aefadcaa5be8e71360c"
+    },
+    "portable-tests.json": {
+      "bytes": 50006,
+      "sha256": "898e755a9a4a841fb0dd0bc523f1c35f2480b2fbb9ebd7e96d0b2a6b4efe3399"
+    },
+    "portable-tests.log": {
+      "bytes": 74238,
+      "sha256": "ff516f179afe9f1cf3d30d4df64616ee4511342556cc3cac6ba5167923829fde"
+    },
+    "retained-class-risk-verification.json": {
+      "bytes": 78069,
+      "sha256": "21a5e0c44cd40a7a13756354bc7796a50ee44c0f4bb0627057c52cca253d8b09"
+    }
+  },
+  "final_wheel": {
+    "path": "dist/kahm_demonstrator-0.2.0-py3-none-any.whl",
+    "sha256": "64851ae36065d0b35825c2516f7162224342477c20d5e160dc333b6016ae2a73"
+  }
+}
