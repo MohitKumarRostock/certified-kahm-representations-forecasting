@@ -6,8 +6,8 @@ lower confidence bounds on the **optimal class risk** and upper confidence
 bounds on **fitted-predictor risk**. These are different quantities: a fitted
 predictor can fail even when another decoder in its class could succeed.
 
-This reference defines the mathematical objects, assumptions, and
-interpretation without requiring an accompanying paper. The
+This reference gives self-contained definitions, assumptions, and
+interpretations. The
 [implementation guide](LOWER_CERTIFICATES.md) gives commands and artifact
 formats; the [proof note](LOWER_CERTIFICATE_PROOF.md) proves the results and
 explains the numerical witnesses.
@@ -219,7 +219,7 @@ The assessed features are the exact represented values in archived tables.
 All support-pair constraints are checked for an admissible fitted table, and
 the Lipschitz extension argument supplies a decoder agreeing with that table.
 This establishes the stated finite-support risk comparison. It does not
-establish that the original executable nonlinear readout obeys the same
+establish that the executable nonlinear readout obeys the same
 Lipschitz bound on arbitrary inputs, or that binary64 features equal an ideal
 real-arithmetic encoder.
 
@@ -227,10 +227,10 @@ The benchmark law is known, so a separate **population audit** can bound
 optimal class risk and evaluate fitted risk after the sample certificates
 have been saved and checked. It supplies reference quantities, not inputs
 to class selection, confidence-endpoint construction, or seed selection.
-A retained audit can record a coverage miss without changing the issued
+An audit can record a coverage miss without changing the issued
 certificate.
 
-The [retained study](../reports/lower_certificates_v1/report.md) demonstrates
+The [recorded study](../reports/lower_certificates_v1/report.md) demonstrates
 class exclusion, admissibility, unresolved outcomes, and a larger-block
 certificate that resolves a threshold missed by the pairwise certificate.
 Its single declared stream does not estimate decision probabilities or

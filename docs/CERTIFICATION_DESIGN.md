@@ -1,6 +1,6 @@
 # Exact calibration losses and verified fitted-risk upper bounds
 
-The `certify` stage, introduced in version 0.1.0, evaluates the three already frozen computational
+The `certify` stage evaluates the three frozen computational
 predictors under the [calibration protocol](../kahm_demo/calibration_protocol.json)
 that was fixed with their freeze.
 It does not choose or refit predictors. Its numerical routines are implemented
@@ -147,7 +147,7 @@ the interval endpoints reversed when negating the logarithm enclosure.
 The direct checker does not call the search routine. It recomputes the final
 endpoint logarithm enclosures with fresh constant caches and verifies the
 saved lower/upper inequalities, exact mean, bracket width, and reporting rules.
-It also checks the retained trace's structural arithmetic and bookkeeping.
+It also checks the saved trace's structural arithmetic and bookkeeping.
 The logarithm backend is shared, so its enclosure correctness is additionally
 tested against independent references; this is not a second wholly separate
 implementation of every mathematical operation.
@@ -196,21 +196,21 @@ preserves the reservation and frozen development hashes after calibration.
 
 The completed assessment contains the receipt copy, exact loss ledger, all three
 numerical bound records, source snapshot, and `certificate.json`. The latter
-binds a complete artifact inventory. Verification checks the current and archived
+binds a complete artifact inventory. Verification checks the executing and archived
 certifier source identities, the unchanged frozen family and data receipt,
 every exact loss, direct endpoint proofs, confidence scope, all statuses, and the
 shared generation-work chain. It performs no sampling, model fitting, root search,
 or fitted-model population-risk calculation.
 
 Hashes and execution checks detect inconsistent artifacts; they do not
-authenticate historical chronology. The later reference-risk audit remains a
+authenticate execution chronology. The later reference-risk audit remains a
 separate stage and does not determine the certificate endpoint.
 
 That separate audit stage is described in
 [POPULATION_AUDIT.md](POPULATION_AUDIT.md). Its `verify-audit` command deliberately
 recomputes model-specific exact benchmark risks and compares them with the
-unchanged issued endpoints. This document's `verify-certificate` workflow keeps
-its original scope and does not compute those population risks.
+unchanged issued endpoints. The `verify-certificate` workflow checks the issued sample bounds;
+`verify-audit` computes those population risks.
 
 ## Commands
 

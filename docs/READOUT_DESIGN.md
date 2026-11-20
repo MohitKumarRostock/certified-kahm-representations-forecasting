@@ -144,7 +144,7 @@ f_b(x)=\operatorname{col}\bigl(u(x),\widetilde\nu_b(u(x))\bigr).
 $$
 
 Thus the standardized linear representation is preserved unchanged at the
-front of the decoder input. The new block has its own fitted scaling. If the
+front of the decoder input. The Nyström block has its own fitted scaling. If the
 representation has width $p$ and the retained kernel rank is $r$, the
 ridge design has width $p+r$. Eigenvector conventions and residual checks
 are recorded by the implementation. They do not constitute verified error

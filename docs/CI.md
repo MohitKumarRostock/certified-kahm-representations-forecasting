@@ -1,8 +1,8 @@
 # CI: portable checks and strict recorded-runtime verification
 
-The GitHub workflow checks the package on its current runner and runs
-one new, complete demonstration there. The original primary snapshot retains its
-exact runtime and source checks. A normal GitHub-hosted Python installation is
+The GitHub workflow checks the package on its runner and executes one complete
+demonstration. Strict verification of `public-v0.1.0` requires its recorded
+runtime and sources. A normal GitHub-hosted Python installation is
 not claimed to match the recorded CPython build, NumPy/BLAS configuration, or
 other numerical runtime metadata.
 
@@ -63,9 +63,9 @@ also remain included. Their temporary models and certificates are created and
 checked on the same executing runtime; they do not relax the original snapshot.
 
 The ordinary command `python -m unittest discover -s tests -v` still runs the
-complete suite, including the historical primary checks. Those positive checks
+complete suite, including the `public-v0.1.0` checks. Those positive checks
 require the original `v0.1.0` source as well as its recorded primary runtime.
-For the current source, use the portable gate and fresh-wheel integration
+For the 0.2.0 package, use the portable gate and fresh-wheel integration
 gate. The portable command makes its narrower scope visible in its report.
 
 ## Installed-wheel and fresh-run gate
@@ -108,25 +108,25 @@ refit, or retry. A completed pipeline with such outcomes can pass CI because
 the workflow and evidence are functioning correctly. A failed calculation or
 verification cannot pass.
 
-## Retained class-risk evidence gate
+## Recorded class-risk evidence gate
 
 The workflow extracts the committed numerical verification bundle into a new
 runner directory and uses the installed wheel to execute `verify-class-risk`.
-The check validates the supplied study against the current numerical-source
+The check validates the supplied study against the installed numerical-source
 identities and recomputes its mathematical witnesses and statistical endpoints.
 It records the verification summary separately. No optimization, model fitting,
 or replacement calibration sample is used. This gate will fail if a later
-source change is incompatible with the retained study; documentation-only
+source change is incompatible with the recorded study; documentation-only
 changes outside the fingerprint roster leave it applicable.
 
-## Class-risk extension gate
+## Class-risk integration gate
 
-After the original fresh demonstration, the GitHub workflow uses the **installed
+After the fitted-predictor demonstration, the GitHub workflow uses the **installed
 wheel's** interpreter in isolated mode to run `class-risk` on that new run's
 freeze. It declares sample sizes 1,024 and 4,096, block sizes 2, 8, 16, 32 and 64,
 and 64 solver sweeps before generating a separate calibration stream. The
-original three representation classes use Lipschitz bound 2; the two analytical
-history controls use bound 4. The new protocol divides one failure budget across
+RAW, MEM, and LOCAL classes use Lipschitz bound 2; the two analytical
+history controls use bound 4. The class-risk protocol divides one failure budget across
 every endpoint in this family.
 
 A second installed-wheel command, `verify-class-risk`, rechecks the retained
@@ -146,11 +146,10 @@ terminology and interpretation.
 
 ## Strict primary gate
 
-The bundled primary experiment was created with `0.1.0`. Version `0.1.1`
-corrects encoder-loader input validation, changing a source file recorded by
-that experiment's freeze. Historical strict verification therefore requires
+The bundled experiment `public-v0.1.0` binds the `0.1.0` execution sources.
+Strict verification requires
 the complete unmodified [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
-and the exact recorded runtime. A fresh run made with the current package instead freezes and verifies
+and the exact recorded runtime. A separate run freezes and verifies
 its own source/runtime identity.
 
 `strict-primary` performs the recorded runtime/source compatibility check first.
@@ -164,7 +163,7 @@ is opt-in on a matching environment. The hosted workflow does not pretend that
 selecting Python 3.12 and NumPy 2.3.5 alone reproduces the original interpreter
 build and numerical runtime.
 
-## Retained CI evidence and workflow permissions
+## CI records and workflow permissions
 
 `.github/workflows/ci.yml` runs on pushes, pull requests, and explicit workflow
 dispatch. It requests only `contents: read`, does not persist checkout

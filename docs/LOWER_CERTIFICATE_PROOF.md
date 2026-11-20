@@ -63,7 +63,7 @@ therefore equals optimization over $\mathcal G_\kappa(d)$.
 
 The implementation treats archived binary64 coordinates as exact represented
 values. Their Euclidean distances can be irrational, so numerical enclosures
-are checked separately. The extension need not equal the original executable
+are checked separately. The extension need not equal the executable
 nonlinear readout away from the support.
 
 ## 2. A block lower bound
@@ -390,7 +390,7 @@ allocation and supply no favorable conclusion. A conflict between an
 available class lower and an admissible fitted upper cannot occur on this
 simultaneous event and is retained for inspection.
 
-A verifier pass establishes the retained numerical inequalities and
+A verifier pass establishes the recorded numerical inequalities and
 provenance checks. It does not prove iid sampling, development independence,
 or coverage on every realized calibration sample.
 
@@ -484,12 +484,12 @@ The implementation establishes the finite-support numerical statements and
 the statistical guarantees under the premises above. It does not treat
 overlapping windows of a dependent time series as iid. It does not prove
 that archived features equal an ideal real-arithmetic encoder or that the
-original executable readout has the required global Lipschitz constant.
+executable readout has the required global Lipschitz constant.
 It does not establish general forecasting superiority or a runtime benefit
 from blocking.
 
 The audit follows issuance and verification and does not select classes,
 predictors, calibration streams, or confidence endpoints. Source hashes bind
-stored bytes; they do not prove historical chronology or sampling
+stored bytes; they do not prove execution chronology or sampling
 independence. Selection of a new study after inspecting earlier outcomes
 requires its own declared inference scope.

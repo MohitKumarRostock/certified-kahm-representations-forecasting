@@ -1,11 +1,11 @@
 # Benchmark, forecast target, and data protocol
 
-This document defines the controlled task introduced in version `0.1.0` and
-used by both fitted-predictor and class-risk assessments. The
+This document defines the controlled task used by both fitted-predictor and
+class-risk assessments. The
 machine-readable [scientific contract](../kahm_demo/specification.json),
 [readout specification](../kahm_demo/readout_specification.json), and
 [calibration protocol](../kahm_demo/calibration_protocol.json) bind its concrete
-original fitted-predictor implementation. The class-risk assessment has a
+fitted-predictor implementation. The class-risk assessment has a
 separate plan on the same task, described in Section 7. Changing the task
 requires a separately identified contract and assessment. The
 [scientific reference](SCIENTIFIC_REFERENCE.md) defines the common notation.
@@ -122,7 +122,7 @@ Both $Y$ and $f_{m,D}(X)$ lie in `[0,1]`, so the squared loss lies in
 empirical target-variance normalization is used. The certificate concerns the
 actual computational prediction values, not an ideal real-arithmetic substitute.
 
-## 5. Original fitted-predictor assessment protocol
+## 5. Fitted-predictor assessment protocol
 
 | Setting | Value |
 | --- | --- |
@@ -193,7 +193,7 @@ triples, with independently drawn calibration episodes. It commits its own
 class definitions, calibration-size menu, block partitions, numerical sources,
 and confidence allocation before generating that calibration sample.
 
-The retained study uses the following five classes:
+The recorded study uses the following five classes:
 
 | Representation | Coordinates and metric | Lipschitz bound |
 | --- | --- | ---: |
@@ -204,18 +204,18 @@ The retained study uses the following five classes:
 | Full history | Previous and current observations in their original units; Euclidean distance | $\kappa=4$ |
 
 Targets and decoder outputs lie in $I=[0,1]$, and the MSE threshold is
-$\tau=1/10$. The original stored feature and fitted-prediction values are
+$\tau=1/10$. The stored feature and fitted-prediction values are
 interpreted as exact computational tables on the benchmark support. A fitted
 table is checked for class membership separately; a successful check ensures
 that some Lipschitz decoder agrees with the table on that support.
 
-The retained study declares sample sizes $1{,}024$, $4{,}096$, and $16{,}384$,
+The recorded study declares sample sizes $1{,}024$, $4{,}096$, and $16{,}384$,
 block sizes $2,8,16,32,64$, and one repetition. Each class/sample-size
 assessment includes one fitted-risk upper endpoint, five block lower
 endpoints, five empirical-risk lower endpoints using the same block witnesses,
 and one full empirical-risk lower endpoint. The resulting 180 allocations are
 each $1/3600$, summing to $\delta=0.05$. These allocations are separate from
-the original three-predictor protocol in Section 5. The default command uses
+the three-predictor protocol in Section 5. The default command uses
 one calibration size, giving 60 endpoints with allocation $1/1200$ each.
 
 The short-history optimum is $5/32$, whereas the full-history optimum is

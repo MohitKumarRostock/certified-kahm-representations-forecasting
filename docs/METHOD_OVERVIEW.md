@@ -18,7 +18,7 @@ decision rules.
 | Frozen predictor | Complete saved state to canonical predictions and bound source/runtime identities | [Freeze interface](FREEZE_INTERFACE.md) | `forecast_state.py`, `freeze.py` |
 | Fitted-predictor risk assessment | Reserved calibration losses to checked upper confidence bounds | [Fitted-risk guarantee](FITTED_RISK_GUARANTEE.md), [certification](CERTIFICATION_DESIGN.md) | `calibration_ledger.py`, `verified_arithmetic.py`, `risk_bounds.py`, `certificate_workflow.py` |
 | Optimal class-risk assessment | Fixed representation, metric, and Lipschitz bound to lower confidence bounds and admissibility checks | [Class-risk guide](LOWER_CERTIFICATES.md), [proof](LOWER_CERTIFICATE_PROOF.md) | `lipschitz_class.py`, `class_bounds.py`, `class_risk_workflow.py` |
-| Population audit | Known finite law to fitted risks, bounds on optimal class risk, and retained coverage comparisons | [Population audit](POPULATION_AUDIT.md), [class-risk guide](LOWER_CERTIFICATES.md) | `population_audit.py`, `audit_workflow.py`, `class_oracle.py` |
+| Population audit | Known finite law to fitted risks, bounds on optimal class risk, and recorded coverage comparisons | [Population audit](POPULATION_AUDIT.md), [class-risk guide](LOWER_CERTIFICATES.md) | `population_audit.py`, `audit_workflow.py`, `class_oracle.py` |
 
 The encoder is fitted without forecasting targets. A fitted decoder, also
 called the readout in the implementation, completes the forecasting model.
@@ -77,7 +77,7 @@ objects are the complete selected procedures.
 | `U` | Conservative statistical upper endpoint for the fitted population risk | The stated sampling assumptions, bounded-loss argument, and verified endpoint arithmetic |
 | `R` | Exact expectation under this known benchmark law | All 64 weighted history-target cases, evaluated after certification |
 
-The original `certify` workflow conditions on development: the selected predictors are fixed
+The `certify` workflow conditions on development: the selected predictors are fixed
 before calibration. With 4,096 iid calibration episodes independent of development,
 allocation `1/60` per candidate bounds the probability that any reported valid
 endpoint misses its risk by `1/20`. The local proof derives this from a
@@ -123,7 +123,7 @@ The [proof](LOWER_CERTIFICATE_PROOF.md) derives this hierarchy and its
 convergence on the implemented finite feature support. Numerically verified
 optimization lower bounds support two statistical constructions: a bound
 using independent block scores and a bound on minimum empirical risk using
-the same optimization witnesses. Full empirical optimization is also retained.
+the same optimization witnesses. The study also reports full empirical optimization.
 Taking the maximum of the prespecified, simultaneously valid lower endpoints
 gives $L\leq R_\kappa^*$ on the joint confidence event.
 
@@ -141,9 +141,9 @@ threshold $\tau$:
 The workflow retains conflicting conclusions and unavailable individual
 endpoints for inspection. It does not replace calibration observations to
 obtain a favorable decision. Its confidence allocation is separate from the
-original three-endpoint `certify` protocol.
+three-endpoint `certify` protocol.
 
-The [retained study](../reports/lower_certificates_v1/report.md) compares RAW,
+The [recorded study](../reports/lower_certificates_v1/report.md) compares RAW,
 MEM, LOCAL, and short/full-history controls at three calibration sizes. It
 demonstrates class exclusion missed by pairwise certification, admissible
 predictors meeting the threshold, and an unresolved small-sample result.
@@ -159,7 +159,7 @@ stated evaluation law.
 The class-risk workflow treats archived feature coordinates and prediction
 tables as exact computational functions on the 16 supported histories. Its
 admissibility check establishes the existence of a matching Lipschitz decoder;
-it does not establish global regularity of the original executable readout.
+it does not establish global regularity of the executable readout.
 The known-law audit supplies independent reference bounds on optimal class
 risk after sample certificates are issued.
 

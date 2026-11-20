@@ -14,7 +14,7 @@ individual forecast has small error. The
 [scientific reference](SCIENTIFIC_REFERENCE.md) defines the common terminology
 and gives a self-contained account of the hierarchy and its assumptions.
 
-The original fitted-predictor workflow reports three models: RAW, KAHM MEM, and KAHM LOCAL.
+The fitted-predictor workflow reports three models: RAW, KAHM MEM, and KAHM LOCAL.
 They are selected during development and fixed before final calibration.
 Their geometry, preprocessing, decoder, numerical behavior, and clipping rule
 are all part of the assessed predictor. The governing definitions are the
@@ -53,7 +53,7 @@ datasets do not supply such an oracle. A justified fitted-risk certificate can
 still be possible without an exact population audit; a test-set average must
 remain labeled as an empirical estimate rather than exact `R`.
 
-## What “95% simultaneous” means for the original three predictors
+## What “95% simultaneous” means for the three fitted predictors
 
 The final family contains exactly three selected predictors. They share 4,096
 calibration episodes. Each receives failure-probability allocation `1/60`,
@@ -170,7 +170,7 @@ separate claims with separate evidence.
 | Operation | What it establishes |
 | --- | --- |
 | Archive inspection | Fixed primary record and payload identities match; the displayed values are the archived ones |
-| Runtime compatibility precheck | Recorded and current source/runtime metadata match sufficiently to attempt strict verification |
+| Runtime compatibility precheck | Recorded and executing source/runtime metadata match sufficiently to attempt strict verification |
 | Strict certificate verification | Frozen preflight passes; all calibration losses reproduce exactly; saved endpoint inequalities, allocation, and protocol checks pass |
 | Strict population-audit verification | Certificate verification passes; exact population contributions and saved comparisons independently reproduce |
 
@@ -218,7 +218,7 @@ $$
 requires $\widehat g$ to belong to the prescribed class. The implementation
 checks all pairwise constraints on its finite prediction table. Passing those
 checks gives a matching Lipschitz extension; it does not prove global
-regularity of the original executable readout away from the checked support.
+regularity of the executable readout away from the checked support.
 
 For a prescribed MSE threshold $\tau$, the class decisions are:
 
@@ -234,12 +234,12 @@ not reassigned. An inadmissible fitted predictor can still have a valid upper
 bound on its own risk, but that endpoint cannot establish the adequacy of the
 specified class.
 
-The [retained class-risk study](../reports/lower_certificates_v1/report.md)
+The [recorded class-risk study](../reports/lower_certificates_v1/report.md)
 uses five classes, three calibration prefixes, five block sizes, and a total
 of 180 endpoints, each with failure allocation $1/3600$. Their allocations
-sum to $0.05$. This is a separate simultaneous guarantee from the historical
-three-predictor assessment. Shared observations and nested prefixes do not
-require independence between endpoints for the union bound. One retained
+sum to $0.05$. This is a separate simultaneous guarantee from the
+three-predictor `certify` assessment. Shared observations and nested prefixes do not
+require independence between endpoints for the union bound. One
 study illustrates realized decisions; it does not estimate coverage frequency
 or the probability of obtaining a conclusive decision.
 
@@ -260,7 +260,7 @@ decoder.
 
 A new dataset, changed loss or clipping rule, multiple horizons, a modified
 predictor, or repeated attempts require a newly justified assessment design.
-The current package has no generic CSV adapter. The
+The package has no generic CSV adapter. The
 [adaptation guide](ADAPTING_TO_NEW_DATA.md) maps those decisions to the modules
 that would need to change.
 

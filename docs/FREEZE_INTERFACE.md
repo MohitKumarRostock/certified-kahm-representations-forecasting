@@ -1,6 +1,6 @@
 # Frozen forecasting family and calibration interface
 
-The freeze stage, introduced in version 0.1.0, binds the three selected computational forecasters and the complete
+The freeze stage binds the three selected computational forecasters and the complete
 calibration protocol into a self-contained snapshot. It executes the saved
 models and verifies their development provenance without refitting them,
 generating calibration observations, or evaluating their oracle population
@@ -14,8 +14,8 @@ The `class-risk` workflow can reuse the archived feature and prediction tables
 as exact functions on the finite benchmark support. It commits a separate
 class-risk plan containing the representations, metrics, Lipschitz bounds,
 sample sizes, block partitions, and confidence allocation before its own
-calibration draw. It does not extend the original three-endpoint allocation or
-claim historical model replay from table-identity checks. See
+calibration draw. Its confidence allocation is separate from the three-endpoint
+`certify` allocation. Table-identity checks do not establish executable model replay. See
 [LOWER_CERTIFICATES.md](LOWER_CERTIFICATES.md) and
 [SCIENTIFIC_REFERENCE.md](SCIENTIFIC_REFERENCE.md).
 
@@ -241,7 +241,7 @@ Their private `_model_freeze_preflight` lazily calls
 `verify_frozen_bundle(freeze_path, dataset_bundle=bundle)`. There is no public
 bypass flag. Both APIs keep calibration outside the frozen tree and run this
 **full model preflight before the structural data-layer checker**. This order
-lets the full verifier reject unsafe declared data paths before the legacy
+lets the full verifier reject unsafe declared data paths before the
 structural loader reads a plan.
 
 Materialization first rejects an existing calibration path, including a dangling
@@ -275,8 +275,8 @@ Using `--bundle frozen/primary/development/data` is rejected because it would
 mutate the sealed snapshot. The read-only `verify-freeze` API may use that
 archived data; the outcome-writing and outcome-loading APIs may not.
 
-`validate_freeze_record` remains a standalone structural checker.
-`verify_bundle` remains an integrity-only data checker and may inspect
+`validate_freeze_record` is a standalone structural checker.
+`verify_bundle` is an integrity-only data checker and may inspect
 already-materialized episode rows. Neither function by itself is a successful
 model preflight. The public calibration paths enforce the full gate; isolated
 data-layer unit tests patch that private gate explicitly for their structural
@@ -299,6 +299,6 @@ control; the existing freeze cannot silently be relabeled to cover them.
 The Python freeze verifier returns `statistical_certificate_issued: false`.
 This field describes what freeze
 verification itself establishes. It does not inspect a later certificate bundle.
-The current `verify-freeze` CLI exposes that scope as
+The `verify-freeze` CLI exposes that scope as
 `risk_certificate_checked: false`. The separate `verify-certificate` command
 establishes the status of the risk assessment.

@@ -9,14 +9,13 @@ result can establish that every decoder in a class exceeds a mean squared
 error (MSE) threshold, establish that an admissible fitted predictor meets the
 threshold, or leave the decision unresolved.
 
-The implementation, mathematical definitions, proofs, assumptions, benchmark,
-and recorded experiments are documented here. No external manuscript is needed
-to understand or run the demonstrator.
+The self-contained documentation specifies the implementation, mathematical
+definitions, proofs, assumptions, benchmark, and recorded experiments.
 
 [Scientific reference](docs/SCIENTIFIC_REFERENCE.md) ·
 [Quick start](docs/QUICKSTART.md) ·
 [Class-risk guide](docs/LOWER_CERTIFICATES.md) ·
-[Retained results](reports/lower_certificates_v1/report.md) ·
+[Recorded results](reports/lower_certificates_v1/report.md) ·
 [Software citation](CITATION.md)
 
 ## The scientific question
@@ -40,7 +39,7 @@ fitted-predictor upper confidence bound $U_{\mathrm{fit}}$ support these decisio
 | --- | --- | --- |
 | `class_excluded` | $L>\tau$ | Every decoder in the declared class exceeds the threshold. |
 | `requirement_met` | An admissible fitted predictor with $U_{\mathrm{fit}}\leq\tau$ | The fitted predictor and its class meet the threshold. |
-| `unresolved` | Available bounds establish neither conclusion | The current evidence does not determine whether the class meets the requirement. |
+| `unresolved` | Available bounds establish neither conclusion | The available evidence does not determine whether the class meets the requirement. |
 
 A fitted predictor outside the declared class can still have a valid upper
 bound on its own risk. Its fitted-risk upper endpoint is not used as an upper
@@ -63,9 +62,9 @@ For a reproducible scientific reference, also record the exact commit with
 `git rev-parse HEAD`; [CITATION.md](CITATION.md) describes version and run
 identification. The wheel contains the package. The complete checkout or GitHub
 source archive additionally contains documentation, tests, figures, and
-retained experiment evidence.
+recorded experiment evidence.
 
-## Verify the retained class-risk experiment
+## Verify the recorded class-risk experiment
 
 This is the shortest route to checking the supplied results:
 
@@ -83,7 +82,7 @@ memory to check the identities of the recorded observations.
 The ZIP is a **numerical verification bundle**, including the assessment's
 source snapshot. It is not a substitute for the complete software checkout.
 The [manifest](reports/lower_certificates_v1/manifest.json) identifies the
-retained bundle, study plan, summary, and development wheel by SHA-256.
+verification bundle, study plan, summary, and development wheel by SHA-256.
 
 ## Run a separate class-risk assessment
 
@@ -106,13 +105,13 @@ python -m kahm_demo class-risk --freeze frozen/primary/freeze.json --output runs
 ```
 
 The [class-risk guide](docs/LOWER_CERTIFICATES.md) explains every option and
-retained record. The same observations and optimization witnesses support two
+saved record. The same observations and optimization witnesses support two
 lower-confidence constructions: expected block-score bounds and
 empirical-risk-based bounds. A separate full empirical optimization is also
 reported. Unresolved outcomes, numerical failures, and realized coverage misses
 are retained.
 
-## Retained scientific results
+## Scientific results
 
 The supplied study fixes five classes, three calibration sizes, five block
 sizes, and **180 one-sided confidence endpoints** with total failure
@@ -163,7 +162,7 @@ regression, and output clipping. Feature widths and total search effort differ.
 For class-risk assessment, saved feature and prediction tables are exact
 finite-support computational functions. Euclidean geometry is assessed before
 the readout's internal column scaling. An admissible table has a Lipschitz
-extension, but the check does not establish global regularity of the original
+extension, but the check does not establish global regularity of the
 nonlinear executable readout. In particular, the MEM exclusion is specific to
 its coordinates, metric, and Lipschitz bound; it does not establish unrestricted
 information loss. See [benchmark](docs/BENCHMARK.md),
@@ -171,7 +170,7 @@ information loss. See [benchmark](docs/BENCHMARK.md),
 
 ## Fit and assess new predictors
 
-The original fitted-predictor workflow remains available in version 0.2.0:
+The fitted-predictor workflow fits, freezes, and assesses three forecasting models:
 
 ```bash
 python -m kahm_demo reproduce --output runs/fresh-models --master-seed 20261110 --run-id fresh-models-v0.2
@@ -185,9 +184,9 @@ models using its own declared class-risk calibration stream. All outcomes and
 partial failures are retained. A completed workflow need not meet the risk
 threshold.
 
-## Learn from the historical fitted-predictor example
+## Inspect the fitted-predictor experiment
 
-The unchanged `public-v0.1.0` experiment is also supplied. Inspect it with:
+The `public-v0.1.0` experiment supplies the fitted-predictor example. Inspect it with:
 
 ```bash
 python -m kahm_demo tutorial --project . --mode inspect --history 0.25 0.75
@@ -195,26 +194,26 @@ python -m kahm_demo tutorial --project . --mode inspect --history 0.25 0.75
 
 History order is **previous observation, current observation**. Inspection
 checks archive identities and displays stored values; it does not replay the
-models or reverify their original numerical certificates. Strict replay of that
-historical experiment requires its unmodified `v0.1.0` sources and exact
-recorded numerical runtime. Current-source experiments retain their own
-identities. [CI.md](docs/CI.md) explains the separate verification gates.
+models or reverify their numerical certificates. Strict replay of
+`public-v0.1.0` requires the unmodified `v0.1.0` sources and exact recorded
+numerical runtime. Each separately executed experiment records its own
+source and runtime identities. [CI.md](docs/CI.md) explains the separate verification gates.
 
 The [guided notebook](notebooks/01_kahm_certified_forecasting.ipynb) and
 [static HTML walkthrough](notebooks/01_kahm_certified_forecasting.html) teach
 this fitted-predictor example. Install `python -m pip install '.[tutorial]'` for
 JupyterLab. The notebook defaults to inspection; running all cells does not fit
-models or draw calibration data. The class-risk extension is covered by its
-[standalone guide](docs/LOWER_CERTIFICATES.md) and retained study.
+models or draw calibration data. The class-risk workflow is covered by its
+[standalone guide](docs/LOWER_CERTIFICATES.md) and recorded study.
 
 ## Documentation map
 
 | Document | Purpose |
 | --- | --- |
 | [Scientific reference](docs/SCIENTIFIC_REFERENCE.md) | Definitions, terminology, hierarchy, statistical guarantees, and interpretation |
-| [Class-risk guide](docs/LOWER_CERTIFICATES.md) | Commands, numerical objects, study design, and retained outputs |
+| [Class-risk guide](docs/LOWER_CERTIFICATES.md) | Commands, numerical objects, study design, and recorded outputs |
 | [Class-risk proof](docs/LOWER_CERTIFICATE_PROOF.md) | Self-contained derivation of the lower and upper guarantees |
-| [Fitted-risk guarantee](docs/FITTED_RISK_GUARANTEE.md) | The original bounded-loss upper-confidence construction |
+| [Fitted-risk guarantee](docs/FITTED_RISK_GUARANTEE.md) | The bounded-loss upper-confidence construction |
 | [Certificates explained](docs/CERTIFICATES_EXPLAINED.md) | Decisions and the distinction between a class and a fitted predictor |
 | [Method overview](docs/METHOD_OVERVIEW.md) and [technical overview](docs/TECHNICAL_OVERVIEW.md) | Implementation map, APIs, and artifact lifecycle |
 | [Freeze interface](docs/FREEZE_INTERFACE.md) and [population audit](docs/POPULATION_AUDIT.md) | Provenance checks and independent known-law references |
