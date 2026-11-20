@@ -1,7 +1,7 @@
 # Fitted-risk guarantee and its numerical verification
 
 This note gives a self-contained proof of the fitted-predictor upper-confidence
-guarantee introduced in version 0.1.0 and retained by the `certify` workflow.
+guarantee implemented by the `certify` workflow.
 It describes the arithmetic conditions
 that make a reported numerical endpoint conservative. All assumptions and
 constants needed for the argument appear below.
@@ -12,7 +12,7 @@ representation is sufficient, that a decoder is optimal, or that any individual
 forecast lies in a prediction interval. The confidence statement is conditional
 on development and on the stated sampling premises.
 
-The additional `class-risk` workflow supplies lower confidence bounds on
+The `class-risk` workflow supplies lower confidence bounds on
 optimal class risk and checks whether a fitted predictor is admissible for
 that class. Its self-contained argument is in
 [LOWER_CERTIFICATE_PROOF.md](LOWER_CERTIFICATE_PROOF.md). The
@@ -189,7 +189,7 @@ $\operatorname{kl}(q\Vert u(q))=c$. At $q=0$, the equivalent
 identity is $u(0)=1-e^{-c}$; the implementation does not need to evaluate
 this exponential.
 
-We now prove, for every fixed predictor,
+We prove, for every fixed predictor,
 
 $$
 \Pr\bigl(R>u(q)\mid D\bigr)\le\delta.
@@ -573,7 +573,7 @@ computational experiment records the sampler and states this sampling premise
 explicitly rather than claiming to prove it from hashes or seed names.
 
 Hashes and replay checks bind the saved predictors, data, and arithmetic
-records and can detect inconsistencies. They do not authenticate historical
+records and can detect inconsistencies. They do not authenticate execution
 chronology or independently prove that calibration was never inspected during
 development. Independence, freezing before calibration, and the evaluation law
 remain substantive premises of the statistical claim.

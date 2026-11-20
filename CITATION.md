@@ -27,13 +27,12 @@ GitHub URL or a versioned source archive identifies an immutable source snapshot
 the default branch can change. Use an observed tag or release date only when
 that tag or release actually exists. Do not invent a software DOI.
 
-The documentation is independent of an external manuscript. A later research
-article can reference this repository and its identified software version;
-using the implementation does not require that article to be available.
+The scientific documentation is self-contained. Cite the identified software
+snapshot together with the particular experiment used.
 
 ## Identify the scientific evidence
 
-For the retained lower/upper study, cite run
+For the lower/upper certificate study, cite run
 `lower-certificates-20261119-v1` and identify the study plan and bundle digests
 from [the manifest](reports/lower_certificates_v1/manifest.json). The
 [study report](reports/lower_certificates_v1/report.md) and
@@ -51,17 +50,16 @@ determine the decisions.
 State which activity was performed:
 
 - **Archive inspection:** checked archive identities and displayed recorded values.
-- **Class-risk verification:** checked retained source identities, numerical
+- **Class-risk verification:** checked recorded source identities, numerical
   witnesses, confidence endpoints, admissibility, decisions, and audit records.
-- **Strict historical verification:** replayed the original fitted models in
-  their required source/runtime environment and checked their original evidence.
+- **Strict fitted-model verification:** replayed the fitted models in their
+  required source/runtime environment and checked the recorded evidence.
 - **Fresh experiment:** created separately identified development and/or
   calibration records and retained every outcome.
 
-The original fitted-predictor experiment remains `public-v0.1.0`; version 0.2.0
-does not rewrite its models, calibration losses, endpoints, or audit. Strict
-replay of that historical experiment requires its original v0.1.0 sources and
-recorded runtime. The retained class-risk study evaluates the frozen
+The fitted-predictor experiment `public-v0.1.0` includes its models, calibration
+losses, endpoints, and audit. Strict replay requires the unmodified v0.1.0
+sources and recorded runtime. The recorded class-risk study evaluates the frozen
 finite-support computational tables and has its own independent calibration
 protocol and numerical witnesses.
 

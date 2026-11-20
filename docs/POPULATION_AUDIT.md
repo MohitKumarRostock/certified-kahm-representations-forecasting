@@ -1,15 +1,15 @@
 # Exact benchmark population-risk audit
 
-The fitted-predictor population audit, introduced in version 0.1.0, evaluates the three already frozen computational predictors
+The fitted-predictor population audit evaluates the three frozen computational predictors
 against the stipulated finite benchmark law, after the fitted-risk certificate has
 been issued and verified. The scientific contract explicitly requires
 this independent reference audit and retention of every realized coverage
 outcome. Its implementation is `population_audit.py` plus `audit_workflow.py`.
 
-The `class-risk` workflow has an additional known-law audit implemented in
+The `class-risk` workflow has a known-law audit implemented in
 `class_oracle.py`. It bounds optimal risk over prescribed Lipschitz decoder
-classes after sample certificates have been issued. Section 8 describes that
-extension; the common risk terminology is in
+classes after sample certificates have been issued. Section 8 describes this
+audit; the common risk terminology is in
 [SCIENTIFIC_REFERENCE.md](SCIENTIFIC_REFERENCE.md).
 
 ## 1. Three different quantities
@@ -175,7 +175,7 @@ chronology or make editable directories tamper-proof.
 | `audit_plan.json` | Fixed audit scope, prerequisites, implementation identities, and runtime |
 | `sources/` | Two audit source modules |
 | `population/{raw,kahm_mem,kahm_local}.json` | Exact 64-triple expectations, 16-history decompositions, and cross-checks |
-| `audit.json` | Complete family comparison, retained outcomes, references, and artifact inventory |
+| `audit.json` | Complete family comparison, recorded outcomes, references, and artifact inventory |
 
 ## 7. Commands
 
@@ -205,7 +205,7 @@ feasible prediction tables provide upper bounds. These deterministic
 population-reference bounds are distinct from the lower and upper confidence
 bounds obtained from calibration observations.
 
-For the retained study, the audit establishes the RAW and LOCAL optimal class
+For the recorded study, the audit establishes the RAW and LOCAL optimal class
 risks exactly as $9/160$, the short-history optimum as $5/32$, and a verified
 interval for the MEM optimum. Those statements concern the specified feature
 coordinates, metric, Lipschitz bound, and benchmark law. They do not establish

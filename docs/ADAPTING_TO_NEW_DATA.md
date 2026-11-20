@@ -36,7 +36,7 @@ regularization is also a fitting penalty, not a verified hard Lipschitz bound
 on the rounded decoder. The `certify` workflow bounds fitted-predictor MSE.
 The separate `class-risk` workflow bounds optimal class risk
 $R_\kappa^*$ for a prescribed representation, metric, Lipschitz bound, and
-output interval. Its currently implemented data interface remains specific to
+output interval. Its data interface is specific to
 the finite benchmark.
 
 For class-risk assessment, also declare the feature coordinates, metric $d$,
@@ -46,7 +46,7 @@ development information before calibration. The constraint is
 $|g(u)-g(v)|\leq\kappa d(u,v)$, so rescaling coordinates while holding
 $\kappa$ fixed can change the assessed class. A fitted predictor supplies an
 upper bound on $R_\kappa^*$ only after its class membership has been justified.
-The current all-support table check does not transfer to arbitrary unseen
+The all-support table check does not transfer to arbitrary unseen
 inputs or establish global regularity of a nonlinear executable readout.
 
 Use [BENCHMARK.md](BENCHMARK.md) and the
@@ -81,7 +81,7 @@ weight. Preserve exclusion rules and missingness decisions made during design.
 
 ### Trajectories require a justified evaluation design
 
-The original fitted-predictor protocol uses 4,096 stipulated independent
+The fitted-predictor protocol uses 4,096 stipulated independent
 calibration episodes, each starting from a newly drawn history pair. The
 class-risk protocol permits a prespecified sample-size menu under the same iid
 episode assumption. These are not overlapping windows cut from one trajectory.
@@ -101,7 +101,7 @@ Another design may use a theorem for dependent observations with explicit
 mixing, blocking, martingale, or other applicable assumptions. Such a design
 requires its own bound and implementation. Adding gaps, shuffling windows, or
 changing random seeds does not automatically establish those assumptions. The
-current iid KL protocol must not be applied to arbitrary trajectories by
+iid KL protocol must not be applied to arbitrary trajectories by
 simply relabeling their windows as episodes.
 
 ## 3. Adapt the numerical components and workflow together
@@ -110,7 +110,7 @@ Some lower-level components accept general dense arrays, but the end-to-end
 workflow includes deliberate finite-support assumptions. The following map
 identifies the places an application implementation must address.
 
-| Concern | Current modules/resources | Adaptation work |
+| Concern | Modules/resources | Adaptation work |
 | --- | --- | --- |
 | Task and protocol identity | `specification.json`, `contract.py`, `calibration_protocol.json`, `calibration_protocol.py` | Define a new versioned contract and protocol. Validate the new facts explicitly and retain the original archive. |
 | Observations and splits | `law.py`, `sampling.py`, `datasets.py` | Replace the four-state episode schema/generator with an audited source and split interface. Bind data, role, sampling design, target representation, and counts. |
@@ -123,7 +123,7 @@ identifies the places an application implementation must address.
 | Population audit and reports | `oracle.py`, `population_audit.py`, `audit_workflow.py` | Use a population oracle only when the new probability law and support genuinely permit it. Otherwise report what is observable without inventing exact population risk. |
 | Class-optimum reference audit | `class_oracle.py` | Supply known-law reference optimization only when justified, and keep it independent of sample-certificate construction. |
 
-The original `certify` endpoint protocol fixes `n=4096`, three candidates, per-candidate
+The `certify` endpoint protocol fixes `n=4096`, three candidates, per-candidate
 failure probability `1/60`, and tolerance `1/10`. These are not generic command
 line certificate parameters. Changing a number in a report cannot adapt the
 mathematical or numerical procedure. A generalized implementation needs a
@@ -155,12 +155,12 @@ Each partition has its own normalization; membership weights are reconstruction
 affinities, not calibrated regime probabilities. Include the RAW-history
 baseline, preserve comparable data roles and readout procedures, and document
 feature widths, kernel ranks, and search budgets. Shared readouts do not imply
-equal capacity, and the current 45/90/90 search does not imply equal total
+equal capacity, and the 45/90/90 search does not imply equal total
 effort.
 
 Changing the number of references, PCA caps, landmark budget, bandwidth grid,
 decoder family, or bank-selection rule is a development decision. Choose and
-validate it before final calibration. The current 16-landmark choice exploits
+validate it before final calibration. The 16-landmark choice exploits
 a tiny benchmark support; it is not a general recommendation for application
 scale. [ENCODER_DESIGN.md](ENCODER_DESIGN.md) and
 [READOUT_DESIGN.md](READOUT_DESIGN.md) document the implemented construction and
@@ -195,7 +195,7 @@ For multiple horizons, either predeclare one bounded aggregate loss or allocate
 the failure budget across every separately reported predictor/horizon claim.
 Three predictors at each of `H` horizons can create `3H` reported risks. A
 recursive latent rollout is another prediction rule with its own errors and
-loss; the current one-step certificate does not certify such a rollout.
+loss; the one-step certificate does not certify such a rollout.
 
 ## 5. Freeze the actual executable predictor
 
@@ -205,7 +205,7 @@ and handling of invalid inputs or numerical failures. A fallback or abstention
 policy must be part of the frozen rule and loss definition. Silently dropping
 hard calibration examples changes the evaluated object.
 
-The current package stores arrays and outputs in lossless hexadecimal form and
+The package stores arrays and outputs in lossless hexadecimal form and
 checks canonical row inference, including batch equivalence. Its strict runtime
 identity includes the full Python build, NumPy version, NumPy/BLAS configuration,
 machine information, and source bytes. Version pins alone do not recreate that
@@ -238,7 +238,7 @@ saved model supplies a reproducibility check, not another independent sample.
 Equivalent code or a conservative recalculation can sometimes reuse archived
 calibration evidence, but equivalence or conservativeness must be established
 for the actual assessed object. This is a mathematical and numerical argument,
-not permission to bypass source/runtime checks or rewrite the historical freeze.
+not permission to bypass source/runtime checks or rewrite the recorded freeze.
 
 ## 7. Report the evidence available for the new problem
 
@@ -274,7 +274,7 @@ additional claims and evidence beyond this class-specific assessment.
 ## Local methods and guarantees
 
 The [scientific reference](SCIENTIFIC_REFERENCE.md) defines the common
-statistical objects and decision rules. The current task and sampling law are
+statistical objects and decision rules. The benchmark task and sampling law are
 defined in [BENCHMARK.md](BENCHMARK.md).
 The construction is documented in [ENCODER_DESIGN.md](ENCODER_DESIGN.md) and
 [READOUT_DESIGN.md](READOUT_DESIGN.md). The bounded iid loss argument and its
@@ -288,6 +288,6 @@ The known-law audit and its scope are in [POPULATION_AUDIT.md](POPULATION_AUDIT.
 [METHOD_OVERVIEW.md](METHOD_OVERVIEW.md) connects these layers to the code.
 
 The adaptation decisions above are a proposed engineering and evaluation path.
-The current package does not implement a new-data adapter, and its statistical
+The package does not implement a new-data adapter, and its statistical
 argument does not apply to a new dataset without its assumptions being
 established for that dataset and prediction rule.

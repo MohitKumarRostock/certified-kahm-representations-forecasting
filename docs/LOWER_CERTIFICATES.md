@@ -10,7 +10,7 @@ after those certificates are issued.
 Start with the [scientific reference](SCIENTIFIC_REFERENCE.md) for the
 definitions, assumptions, and interpretation. The
 [proof note](LOWER_CERTIFICATE_PROOF.md) gives the full mathematical
-arguments. This guide covers execution and retained evidence.
+arguments. This guide covers execution and recorded evidence.
 
 ## Run the example
 
@@ -38,7 +38,7 @@ The separate population audit still uses at least 200 proposal sweeps on
 the small support.
 
 Use a new output directory for each execution. The command refuses to
-overwrite or resume a retained run. It also refuses to write inside an input
+overwrite or resume an existing run. It also refuses to write inside an input
 scientific bundle. A failure leaves the partial evidence and a failure record;
 it does not replace calibration observations or retry with a different seed.
 
@@ -74,9 +74,9 @@ endpoints**, each allocated failure probability **$1/1200$**. The simultaneous
 guarantee covers the entire declared family, conditional on development and
 under the stated iid calibration assumptions.
 
-The original three upper endpoints and their confidence allocation remain
-historical results. This extension issues a new assessment with its own
-allocation.
+The class-risk assessment uses its own calibration sample and confidence
+allocation, separate from the three fitted-risk upper endpoints issued by
+`certify`.
 
 ## What is assessed
 
@@ -84,7 +84,7 @@ The source freeze identifies archived computational feature and prediction
 tables on all 16 possible histories. The command verifies the hashes that bind
 those development tables, copies the required inputs, and freezes the new
 class specification before drawing calibration episodes. It does **not**
-replay a historical model in the current numerical runtime.
+replay the executable model in the assessment runtime.
 
 For the prescribed representation $\Gamma$, feature metric $d$, and
 Lipschitz bound $\kappa$, let $\mathcal G_\kappa(d)$ contain all measurable
@@ -202,7 +202,7 @@ LOCAL can attain risk $0.05625$ at $\kappa=2$. A disjoint-pair calculation gives
 the MEM class a population lower bound of $0.118052$. The population optimizer
 can tighten this reference through a verified interval.
 
-The current MEM fitted predictor has low risk but fails the $\kappa=2$
+The MEM fitted predictor in the recorded study has low risk but fails the $\kappa=2$
 admissibility check in these coordinates. Its fitted-risk upper endpoint
 remains meaningful for that predictor; it is not used as an upper bound on the
 constrained class optimum. All 16 archived MEM vectors are distinct, so this
@@ -213,7 +213,7 @@ These reference facts are checked by the population audit after sample
 certificates have been saved and verified. The audit does not choose a class,
 readout, calibration seed, or endpoint.
 
-## Retained validation study
+## Validation study
 
 The [recorded study](../reports/lower_certificates_v1/report.md) uses sample
 sizes 1,024, 4,096, and 16,384, the five default block sizes,
@@ -223,8 +223,8 @@ allocation $1/3600$. All endpoints were numerically available.
 
 At $n=4096$, the MEM class has combined lower endpoint approximately
 **0.11470296**, exceeding the 0.1 MSE threshold. RAW and LOCAL have admissible
-upper endpoints approximately **0.07227278**. At $n=1024$, MEM remains
-unresolved; that result is retained.
+upper endpoints approximately **0.07227278**. At $n=1024$, MEM is
+unresolved; the result is included in the study record.
 
 For the short-history control at $n=16384$, the block lower endpoint rises
 from approximately **0.03595112** at $b=2$ to **0.10959758** at $b=16$.
@@ -277,7 +277,7 @@ stream labels and pseudorandom seeds make execution reproducible; they do not
 prove the iid or development-independence premises. Reusing a seed/run ID is
 not a new independent replication.
 
-## Retained evidence and verification
+## Recorded evidence and verification
 
 | File or directory | Contents |
 | --- | --- |
@@ -288,18 +288,18 @@ not a new independent replication.
 | `certificates/` | Lower/upper endpoints, admissibility records, and block/full optimization witnesses |
 | `audits/` | Known-law class-optimum intervals, fitted risks, and analytical hierarchy references |
 | `summary.json`, `report.md` | Recomputed assessment results and a readable summary |
-| `failure.json`, if present | A retained execution failure without replacement sampling |
+| `failure.json`, if present | A recorded execution failure without replacement sampling |
 
 `verify-class-risk` checks source identities, reconstructs classes and exact
-losses, verifies retained dual/primal and KL witnesses, and checks the population
+losses, verifies saved dual/primal and KL witnesses, and checks the population
 audits. It replays each declared deterministic calibration stream **in memory**
 to compare it with the saved observations. It does not fit models, optimize new
 witnesses, write replacement observations, or search for new endpoints.
 
 Verification requires assessment sources matching those saved with the run.
-An edited implementation should create its own new assessment. The original
-baseline's full runtime identity is unnecessary for reading its archived
-computational tables; that reading must not be described as model replay.
+An assessment must use sources matching its recorded identity. Reading the
+archived computational tables does not require the runtime used to fit them;
+this operation does not establish executable model replay.
 
 ## Export the figures
 
@@ -322,6 +322,6 @@ first two figures; use `--sample-size` and `--repetition` to select another
 declared assessment. Exported metadata identifies that selection and the input
 hashes.
 
-Plotting reads retained values and does not verify them or perform another
+Plotting reads recorded values and does not verify them or perform another
 experiment. Decimal coordinates in figures are descriptive approximations;
 exact JSON fractions govern all decisions.

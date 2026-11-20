@@ -1,89 +1,85 @@
-# Changelog
+# Software versions
 
-## 0.2.0 — standalone class-risk edition
+## 0.2.0 — class-risk assessment
 
-- Added the separately versioned `class-risk` assessment protocol and
+Version 0.2.0 provides:
+
+- The separately versioned `class-risk` assessment protocol and
   `verify-class-risk` command.
-- Added exact finite-support Lipschitz class definitions and membership checks,
-  weighted dual optimization witnesses, verified primal bounds, and generic
-  lower/upper binary-KL confidence endpoints.
-- Implemented block-score and empirical-risk-based lower-confidence constructions, including reuse
-  of identical block witnesses for the empirical-optimum bound.
-- Added short/full-history analytical controls and population class-optimum
-  audits that run after sample certificates are issued.
-- Added a retained 180-endpoint study, complete verification archive, scientific
-  figures, mathematical documentation, and 51 focused numerical/provenance tests.
-- Added installed-wheel class-risk integration to GitHub Actions.
-- Completed standalone scientific documentation using consistent definitions
-  of optimal class risk, fitted-predictor risk, Lipschitz bounds, MSE thresholds,
-  admissibility, block scores, and simultaneous confidence bounds.
-- Updated current installation routes, software citation metadata, and the
-  distinction between the complete source project and numerical evidence ZIP.
-- Preserved all numerical-source fingerprints and retained experiment evidence
-  while completing documentation and publication metadata.
+- Exact finite-support Lipschitz class definitions and membership checks,
+  weighted dual optimization witnesses, verified primal bounds, and lower
+  and upper binary-KL confidence endpoints.
+- Block-score and empirical-risk lower-confidence constructions, including
+  reuse of the same block witnesses for an empirical-optimum bound.
+- Short- and full-history analytical controls and population class-optimum
+  audits performed after sample certificates are issued.
+- A 180-endpoint scientific study, complete numerical verification archive,
+  scientific figures, mathematical documentation, and 51 focused numerical
+  and provenance tests.
+- Installed-wheel class-risk integration in GitHub Actions.
+- Self-contained definitions of optimal class risk, fitted-predictor risk,
+  Lipschitz bounds, MSE thresholds, admissibility, block scores, and
+  simultaneous confidence bounds.
+- Installation instructions and citation metadata for the software, with
+  separate identities for the complete source project and numerical evidence ZIP.
 
-See the [standalone validation report](reports/standalone_0.2.0/report.md)
-for the completed checks and their scope.
+The [validation report](reports/standalone_0.2.0/report.md) records completed
+checks and their scope. The class-risk protocol has its own calibration
+observations, class definitions, confidence allocation, source snapshots,
+and results. Its allocation is separate from the fitted-predictor assessment.
 
-The published 0.1.1 archive and original primary scientific records remain
-historical releases. The new protocol uses its own calibration observations,
-class definitions, confidence budget, source snapshots, and result records.
+## 0.1.1 — fitted-predictor workflow
 
-## Unreleased — documentation refinements
+Version 0.1.1 provides the fitted-predictor workflow and the `public-v0.1.0`
+experiment, with these interface and validation rules:
 
-- Identify cell execution and changes to `HISTORY` as interactive-notebook
-  actions; explain that the static HTML displays saved output.
-- Add a fixed worked LOCAL example for the archived history `[0.25, 0.75]`,
-  connecting the six MEM memberships, local PCA coordinates, weighted
-  coordinates, and all 18 vector positions.
+- Complete-ZIP download, extraction, project-directory, and local HTML viewing
+  instructions; the tutorial requires `data/primary/`.
+- Exact validation of command-line observations against the finite benchmark
+  support in both the package CLI and the guided tutorial.
+- Controlled rejection of malformed encoder runtime metadata.
+- Separate JSON and test-log outputs for a CI report whose name ends in `.log`.
+- Explicit iid calibration assumptions.
 
-These documentation changes retain the notebook code and saved outputs.
-The published v0.1.1 tag, package assets, and release manifest remain the
-original release snapshot.
+The v0.1.1 execution-source bytes differ from those bound by the
+`public-v0.1.0` freeze. Archive inspection is supported. Strict replay of that
+experiment requires the complete unmodified `v0.1.0` sources and exact recorded
+runtime. Each separately executed experiment records its own source/runtime
+identities, models, calibration losses, endpoints, and audit.
 
-## 0.1.1
+See the [0.1.1 validation report](reports/PATCH_0.1.1_VALIDATION.md) for the
+checks performed and the [release guide](docs/RELEASE_GUIDE.md) for artifact
+identity requirements.
 
-This patch improves first use and error handling while retaining the complete
-`public-v0.1.0` experiment and its recorded outcomes.
+## 0.1.0 — fitted-risk demonstration
 
-- Add explicit complete-ZIP download, extraction, project-directory, and local
-  HTML viewing instructions. Include `data/primary/` in the tutorial prerequisites.
-- Check tutorial command-line observations as exact numbers before accepting
-  values from the finite benchmark support. Apply the same rule to the package
-  CLI and the human-readable guided tutorial.
-- Reject malformed encoder runtime metadata with a controlled validation error.
-- Keep a CI report whose name ends in `.log` separate from its test log, retaining
-  both the JSON report and test output.
-- Clarify the stipulated iid calibration premise in the introductory explanation.
+Version 0.1.0 provides:
 
-The corrected encoder loader changes a source file bound by the historical
-primary freeze. Archive inspection remains supported, but strict replay of the
-original primary evidence requires the complete unmodified `v0.1.0` source and
-its exact recorded runtime. New experiments use `0.1.1` and retain their own
-source/runtime identities. No primary model, data, loss, endpoint, or audit is
-rewritten by this patch.
+- A complete finite-benchmark demonstration of RAW, KAHM membership, and
+  KAHM local-coordinate forecasting representations.
+- Definitions of the benchmark, encoder, readout, development choices, and
+  verified fitted-risk guarantee.
+- An elementary bounded-loss concentration proof, simultaneous confidence
+  allocation, and conservative numerical endpoint checks.
+- The `public-v0.1.0` experiment: a recorded plan, both encoder banks, all
+  225 development fits, the selected family, and every calibration and
+  population-audit outcome.
+- Separate archive-inspection, strict-verification, and experiment-execution
+  routes.
+- A guided notebook, static HTML reading view, command-line tutorial,
+  contributor guide, automated checks, and pinned GitHub Actions workflow.
+- Apache-2.0 licensing, Copyright 2026 Mohit Kumar, software author Mohit
+  Kumar, and a repository-based software citation.
 
-See [patch validation](reports/PATCH_0.1.1_VALIDATION.md) for the checks performed
-and [the release guide](docs/RELEASE_GUIDE.md) for preservation requirements.
+The [0.1.0 validation report](reports/RELEASE_VALIDATION.md) records the checks
+performed for this source/runtime snapshot. `PUBLICATION_STATUS.json` records
+software preparation and validation scope; repository and GitHub Actions
+records identify remote publication and CI results.
 
-## 0.1.0 — self-contained public edition
+## Tutorial materials
 
-- Provides a complete finite-benchmark demonstration of RAW, KAHM membership,
-  and KAHM local-coordinate forecasting representations.
-- Documents the benchmark, encoder, readout, development choices, and verified
-  fitted-risk guarantee within this repository.
-- Supplies the elementary bounded-loss concentration proof, the simultaneous
-  confidence allocation, and the conservative numerical endpoint checks.
-- Includes one newly generated public primary experiment with a recorded plan,
-  both encoder banks, all 225 development fits, the selected family, and every
-  calibration and population-audit outcome.
-- Keeps archive inspection, strict verification, and fresh experiments as
-  explicit separate operations.
-- Includes a guided notebook, static HTML reading view, command-line tutorial,
-  contributor guide, automated checks, and a pinned GitHub Actions workflow.
-- Records Apache-2.0 licensing, Copyright 2026 Mohit Kumar, software author
-  Mohit Kumar, and the repository-based software citation.
-
-Actual local validation is recorded in `reports/RELEASE_VALIDATION.md`.
-`PUBLICATION_STATUS.json` distinguishes local preparation from an observed
-remote repository publication or GitHub Actions run.
+The interactive notebook executes cells and responds to changes in `HISTORY`.
+The static HTML displays saved output. A worked LOCAL example for
+`[0.25, 0.75]` relates the six MEM memberships to local PCA coordinates,
+membership-weighted coordinates, and all 18 LOCAL entries. Its displayed
+values belong to the `public-v0.1.0` experiment.

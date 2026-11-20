@@ -5,9 +5,9 @@ forecasts, fitted-predictor upper confidence bounds, lower confidence bounds
 on optimal class risk, and an independent known-law population audit.
 The [scientific reference](SCIENTIFIC_REFERENCE.md) defines the mathematical
 objects; the [method overview](METHOD_OVERVIEW.md) maps them to modules.
-This guide describes the lifecycle, interfaces, and retained artifacts.
-Historical baseline instructions are recorded in the
-[README](../README.md#learn-from-the-historical-fitted-predictor-example).
+This guide describes the lifecycle, interfaces, and recorded artifacts.
+Instructions for the `public-v0.1.0` example are in the
+[README](../README.md#inspect-the-fitted-predictor-experiment).
 
 ## 1. Read or recompute an existing experiment
 
@@ -24,10 +24,9 @@ The tutorial's primary paths are `data/primary`, `frozen/primary`,
 identities and displays recorded results; it does not replay the numerical
 models or reverify their endpoint inequalities.
 
-The retained primary evidence belongs to `public-v0.1.0`. Version `0.1.1`
-corrects encoder artifact input validation, changing execution-source bytes
-bound by that historical freeze. Inspection remains available in later releases.
-For numerical verification of the primary evidence, use the complete unmodified
+The `public-v0.1.0` evidence binds the v0.1.0 execution sources and recorded
+runtime. The package supports archive inspection without that runtime match.
+For numerical verification, use the complete unmodified
 [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
 and its exact recorded runtime. Run this command from that original project:
 
@@ -42,8 +41,8 @@ stops the operation rather than silently reducing its scope.
 
 Runtime identity includes the full Python build string, machine information,
 NumPy version, and NumPy/BLAS configuration, as well as numerical source bytes.
-Package-version pins alone do not establish that identity. A fresh current-source
-experiment creates its own source/runtime identities, freeze, and assessment.
+Package-version pins alone do not establish that identity. Each experiment
+records its own source/runtime identities, freeze, and assessment.
 
 The [notebook](../notebooks/01_kahm_certified_forecasting.ipynb) defaults to
 inspection; its Run All does not fit models or generate calibration data. Its
@@ -94,7 +93,7 @@ every product and result must be finite before clipping. Batch inference reuses
 the same row calculation and may cache identical histories while retaining order
 and multiplicity. Loading stored arrays does not rerun model fitting.
 
-The following example replays the historical baseline. Run it with the
+The following example replays `public-v0.1.0`. Run it with the
 unmodified `v0.1.0` source and exact recorded runtime described above:
 
 ```python
@@ -153,7 +152,7 @@ records the complete procedure and work limits.
 | `unresolved` | A valid endpoint exceeds `1/10`; this does not establish excessive actual risk |
 | `certificate_unavailable` | The required endpoint calculation or verification was not established |
 
-This certificate-verification example also uses the historical baseline and
+This certificate-verification example uses `public-v0.1.0` and
 requires the unmodified `v0.1.0` source and exact recorded runtime:
 
 ```python
@@ -192,8 +191,8 @@ development or certificate construction. See [POPULATION_AUDIT.md](POPULATION_AU
 
 ## 6. Run the fitted-predictor procedure in a fresh directory
 
-Use the installed package from its project directory. The new run binds
-the current sources and runtime:
+Use the installed package from its project directory. The run records
+the executing sources and runtime:
 
 ```bash
 python -m kahm_demo reproduce --output runs/tutorial --master-seed 20261110 --run-id tutorial-v0.1
@@ -202,7 +201,7 @@ python -m kahm_demo reproduce --output runs/tutorial --master-seed 20261110 --ru
 The runner commits a reproduction plan before work and writes
 `reproduction.json` after all stages complete. Completion, certificate acceptance,
 and realized coverage are separate outcomes. Unresolved/unavailable endpoints,
-coverage misses, and partial failure evidence remain retained. There is no
+coverage misses, and partial failures are recorded. There is no
 automatic overwrite, resume, or retry. Reusing a seed/run identity replays a
 stream; it is not additional independent evidence.
 
@@ -232,7 +231,7 @@ to make an incompatible snapshot pass.
 A complete release baseline uses the following paths; fresh runs place the same
 layers under their chosen output directory.
 
-| Path | Retained evidence |
+| Path | Recorded evidence |
 | --- | --- |
 | `encoders/primary/`, `models/primary/` | Both banks, all 225 fitted candidate states, and complete selection records |
 | `frozen/primary/freeze.json` | Authoritative model/protocol freeze and inventory |
@@ -247,7 +246,7 @@ layers under their chosen output directory.
 
 Verification recomputes numerical and interpretation fields rather than merely
 trusting editable hashes. Hashes, replay, and fitted-equation checks establish
-consistency; they do not authenticate historical chronology or make writable
+consistency; they do not authenticate execution chronology or make writable
 directories tamper-proof. Repeating verification supplies no new independent
 statistical sample.
 
@@ -263,8 +262,8 @@ in [ADAPTING_TO_NEW_DATA.md](ADAPTING_TO_NEW_DATA.md).
 
 The `class-risk` workflow consumes a verified archive identity and its
 feature/prediction tables. It treats those represented numbers as exact
-functions on all 16 benchmark histories, rather than replaying a historical
-encoder under the current numerical runtime. It binds the input tables,
+functions on all 16 benchmark histories. It does not replay the executable
+encoder. It binds the input tables,
 representations, metrics, Lipschitz bounds, fitted tables, calibration menu,
 block partitions, source snapshot, and failure allocations before generating
 its own calibration episodes.
@@ -284,7 +283,7 @@ aggregated for optimization.
 | Class specification and membership | `lipschitz_class.py` | Exact coordinates, prescribed metric and Lipschitz bound, and admissibility of fitted tables |
 | Optimization and confidence bounds | `class_bounds.py` | Verified dual lower bounds, block-score calibration, empirical-risk calibration, and fitted-risk upper endpoints |
 | Known-law audit | `class_oracle.py` | Reference bounds on optimal class risk and checks of the issued sample certificates |
-| Plan, retained evidence, and verification | `class_risk_workflow.py` | Input/source identity, calibration-stream identity, every witness, and all decisions |
+| Plan, recorded evidence, and verification | `class_risk_workflow.py` | Input/source identity, calibration-stream identity, every witness, and all decisions |
 
 The result compares lower confidence bound $L$ on optimal class risk
 $R_\kappa^*$ and fitted-predictor upper bound $U$ with an MSE threshold $\tau$.
@@ -294,14 +293,14 @@ unavailable endpoints and conflicting conclusions stay visible. The
 confidence budget includes the entire prespecified family, including shared
 sample prefixes and all requested block sizes.
 
-The default single-size run contains 60 endpoints. The retained three-size
+The default single-size run contains 60 endpoints. The three-size
 study contains 180 endpoints with total failure allocation $0.05$. Neither
-allocation is combined automatically with the original three-endpoint
+allocation is combined automatically with the three-endpoint
 `certify` assessment. The known-law audit occurs after sample certificate
 issuance and does not choose the class or replace an endpoint.
 
 The [class-risk guide](LOWER_CERTIFICATES.md) documents the full artifact map,
-retained results, and supported options. The [proof](LOWER_CERTIFICATE_PROOF.md)
+recorded results, and supported options. The [proof](LOWER_CERTIFICATE_PROOF.md)
 derives the hierarchy and numerical/statistical guarantees. Full empirical
-optimization remains inexpensive on this finite support; the study does not
+optimization is inexpensive on this finite support; the study does not
 establish a computational advantage for blocking on larger feature spaces.

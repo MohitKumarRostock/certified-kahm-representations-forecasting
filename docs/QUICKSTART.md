@@ -1,10 +1,10 @@
 # Quick start
 
-Start with the retained class-risk study or inspect the original fitted-risk
-experiment. The current package can also run fresh experiments with their own
-evidence. Strict replay of the original baseline requires unmodified v0.1.0
-sources and its exact recorded runtime; verification of the class-risk study
-checks its archived numerical witnesses without historical model replay.
+Start with the recorded class-risk study or inspect the fitted-risk experiment
+`public-v0.1.0`. The package can also run separate experiments with their own
+evidence. Strict replay of `public-v0.1.0` requires the unmodified v0.1.0 sources
+and exact recorded runtime. Class-risk verification checks archived numerical
+witnesses and does not replay the executable encoder.
 The [scientific reference](SCIENTIFIC_REFERENCE.md) explains the guarantees,
 and the [method overview](METHOD_OVERVIEW.md) maps them to the implementation.
 
@@ -37,7 +37,7 @@ The source-directory inspection command below uses only the standard library;
 it can also run directly from the complete checkout without installing NumPy.
 Fitting and strict numerical verification require the numerical dependencies.
 
-## 2. Verify the retained class-risk study
+## 2. Verify the recorded class-risk study
 
 From the matching source checkout, extract the evidence into a fresh directory
 and run its verifier:
@@ -47,15 +47,15 @@ python -m zipfile -e reports/lower_certificates_v1/full_verification_bundle.zip 
 python -m kahm_demo verify-class-risk --run runs/retained-lower-study/run
 ```
 
-The archive contains the retained observations, class definitions, numerical
+The archive contains the recorded observations, class definitions, numerical
 witnesses, source snapshots, and population audit. It is an evidence bundle,
 not the complete source distribution; the checkout or supplied wheel provides
 the executable package. Verification recomputes the witness checks, source
 identities, and calibration-stream identity. It neither fits models nor solves
-new optimization problems, and it does not replay the historical encoder.
+new optimization problems, and it does not replay the executable encoder.
 
 Read [the study report](../reports/lower_certificates_v1/report.md) for the
-five-class comparison, block hierarchy, sample-size tradeoff, and retained
+five-class comparison, block hierarchy, sample-size tradeoff, and
 unresolved result. A lower confidence bound $L>\tau$ excludes the prescribed
 class; an admissible fitted predictor with upper bound $U\leq\tau$ meets the
 MSE requirement. See [Certificates explained](CERTIFICATES_EXPLAINED.md).
@@ -70,11 +70,11 @@ python -m kahm_demo verify-class-risk --run runs/class-risk
 This command creates a new class specification and calibration plan with its
 own confidence allocation. It uses exact archived feature/prediction tables
 on the benchmark support. The [class-risk guide](LOWER_CERTIFICATES.md)
-documents parameters, assumptions, and the complete retained design. Reusing
+documents parameters, assumptions, and the complete study design. Reusing
 the same seed and run ID replays observations rather than creating another
 independent replication.
 
-## 3. Inspect the original fitted-risk example
+## 3. Inspect the fitted-risk example
 
 ```bash
 python -m kahm_demo tutorial --project . --mode inspect --history 0.25 0.75
@@ -133,7 +133,7 @@ risk `R`.
 **Run All does not start training or create calibration data.** The fresh-run
 command is displayed in Markdown, outside executable cells. In the interactive
 notebook, changing `MODE` to `"verify"` requests the strict checks in the next
-section; the historical baseline requires the v0.1.0 release and its exact
+section; the `public-v0.1.0` example requires the v0.1.0 release and its exact
 recorded runtime.
 
 For the [HTML walkthrough](../notebooks/01_kahm_certified_forecasting.html), open
@@ -141,17 +141,16 @@ the extracted `notebooks/01_kahm_certified_forecasting.html` file in your browse
 Keep it in the complete project so its relative documentation links work.
 It is a static reading copy with recorded inspection output; opening it does
 not execute a notebook kernel or verify a certificate. The
-[historical validation report](../reports/RELEASE_VALIDATION.md) records the
+[v0.1.0 validation report](../reports/RELEASE_VALIDATION.md) records the
 checks performed for the v0.1.0 baseline.
 Official application setup is documented by
 [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html).
 
-## 5. Verify the original fitted-risk numerical evidence
+## 5. Verify the fitted-risk numerical evidence
 
-The supplied evidence is the historical `public-v0.1.0` experiment. Version
-0.1.1 fixes encoder artifact input validation, changing execution-source bytes
-bound by that freeze. It can inspect the historical archive, but cannot pass
-its strict source-identity check. Obtain the unmodified
+The supplied fitted-risk evidence belongs to `public-v0.1.0`. Its freeze binds
+the v0.1.0 execution sources and recorded runtime. Archive inspection does not
+require a matching runtime; strict verification does. Obtain the unmodified
 [v0.1.0 release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
 and use the exact recorded runtime. Run this command from that v0.1.0 project:
 
@@ -193,8 +192,8 @@ particular snapshot. Do not edit archived identities to override a mismatch.
 | `verify-certificate` | Frozen preflight, exact calibration losses, and direct checks of issued endpoints |
 | `verify-audit` | Certificate verification plus recomputation of exact benchmark risks and comparisons |
 
-These commands have the same source/runtime requirement. For the historical
-baseline, run them from the unmodified v0.1.0 project in its recorded runtime:
+These commands have the same source/runtime requirement. For
+`public-v0.1.0`, run them from the unmodified v0.1.0 project in its recorded runtime:
 
 ```bash
 python -m kahm_demo forecast-frozen --freeze frozen/primary/freeze.json --candidate kahm_local --history 0.25 0.75
@@ -209,9 +208,9 @@ assessment. It does not mean that no certificate exists. The installed
 
 ## 6. Run a fresh fitted-predictor experiment
 
-Use the current project and its installed package for a fresh experiment.
-This explicit operation fits models and generates new artifacts bound to the
-current sources and runtime:
+Use the complete project and its installed package for a fresh experiment.
+This operation fits models and generates artifacts bound to the executing
+sources and runtime:
 
 ```bash
 python -m kahm_demo reproduce --output runs/tutorial --master-seed 20261110 --run-id tutorial-v0.1
@@ -242,7 +241,7 @@ coverage outcomes remain separate fields. The output layout is:
 | `frozen/` | Model/protocol freeze and complete archived development snapshot |
 | `certificates/` | Loss ledger, issued endpoints, checks, and all three statuses |
 | `audits/` | Exact benchmark risks and every realized coverage outcome |
-| `reproduction.json` | Completed stages, artifact identities, and retained results |
+| `reproduction.json` | Completed stages, artifact identities, and recorded results |
 
 An interrupted run keeps its partial evidence and failure record. The command
 does not overwrite, resume, retry, or discard an unfavorable result.
@@ -268,7 +267,7 @@ python -m kahm_demo verify-class-risk --run runs/tutorial-class-risk
 ```
 
 This uses that run's newly fitted feature tables. Its outcomes can differ from
-the retained class-risk study, which assesses the original archived tables.
+the recorded class-risk study, which assesses the `public-v0.1.0` tables.
 
 ## 7. Common questions and failures
 
@@ -276,7 +275,7 @@ the retained class-risk study, which assesses the original archived tables.
 | --- | --- |
 | Missing primary archive or identity mismatch | Use the complete unmodified project and the correct `--project` path. The wheel alone is insufficient for archive inspection. |
 | Unsupported history | Use exactly two supported observation values in temporal order. The tutorial is a finite-benchmark interface. |
-| Strict source/runtime mismatch | Inspect with the current package, verify the historical baseline with unmodified v0.1.0 sources and its exact runtime, or create a fresh experiment. Do not change archived identities to bypass the check. |
+| Strict source/runtime mismatch | Inspect the archive, verify `public-v0.1.0` with unmodified v0.1.0 sources and its exact runtime, or create a fresh experiment. Do not change archived identities to bypass the check. |
 | Existing reproduction output | Preserve it. A new execution needs a genuinely fresh destination; the command cannot resume or overwrite a run. |
 | `unresolved` | Available bounds establish neither the relevant adequacy decision nor class exclusion. An upper endpoint above the threshold does not prove excessive risk. |
 | `class_excluded` | The class-risk lower confidence bound exceeds the MSE threshold for the prescribed representation, metric, and Lipschitz bound. |
@@ -289,6 +288,6 @@ For portable automated checks and the separate strict-runtime gate, see
 [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md).
 
 For your own dataset, continue with
-[ADAPTING_TO_NEW_DATA.md](ADAPTING_TO_NEW_DATA.md). The current command line has
+[ADAPTING_TO_NEW_DATA.md](ADAPTING_TO_NEW_DATA.md). The command line has
 no generic data importer, and its iid assumptions do not automatically apply
 to overlapping time-series windows.

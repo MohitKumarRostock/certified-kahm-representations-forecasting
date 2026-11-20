@@ -47,14 +47,13 @@ The notebook and plotting dependencies are optional:
 python -m pip install -e '.[tutorial]'
 ```
 
-The bundled primary experiment was created with `0.1.0`. Version `0.1.1`
-corrects encoder-loader validation, changing source bytes bound by its freeze.
-Historical strict replay requires the complete unmodified
+The bundled experiment `public-v0.1.0` binds the `0.1.0` execution sources.
+Strict replay requires the complete unmodified
 [`v0.1.0` release](https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0)
 and its exact recorded runtime. It checks the Python build, NumPy/BLAS
 configuration, machine, and numerical sources; version pins or installation
-alone do not establish that match. Current development uses the portable
-and fresh-wheel gates below.
+alone do not establish that match. Use the portable
+and fresh-wheel gates below for the 0.2.0 package.
 
 ## Checks to run
 
@@ -66,7 +65,7 @@ documented in [CI.md](docs/CI.md).
 | Check the supplied archive without replaying it | `python scripts/ci_checks.py archive-inspect --project . --report ../kahm-archive-inspection.json` |
 | Run the portable regression checks | `python scripts/ci_checks.py portable --project . --report ../kahm-portable-checks.json` |
 | Build an isolated wheel and complete a fresh integration run | `python scripts/ci_checks.py fresh-wheel --project . --output ../kahm-contribution-run --run-id contribution-check` |
-| Verify the historical primary run from unmodified v0.1.0 sources in its exact recorded runtime | `python scripts/ci_checks.py strict-primary --project . --report ../kahm-strict-primary.json` |
+| Verify the `public-v0.1.0` run from unmodified v0.1.0 sources in its exact recorded runtime | `python scripts/ci_checks.py strict-primary --project . --report ../kahm-strict-primary.json` |
 
 The fresh-wheel output must be a new directory outside the checkout. For a
 later run, choose another unused directory and retain the earlier result.
@@ -81,7 +80,7 @@ exclusion list is maintained in the check runner and documented in `CI.md`.
 A portable pass is not a strict-primary pass. Strict verification fails on an
 execution identity mismatch and does not substitute archive inspection.
 
-The ordinary full suite includes the historical primary checks. Run it from
+The ordinary full suite includes the `public-v0.1.0` checks. Run it from
 the unmodified `v0.1.0` project in its exact recorded runtime; the current
 source uses the portable gate:
 
@@ -95,9 +94,9 @@ guard. A change in text alone normally needs link and rendering checks, not a
 new numerical experiment. A change to fitting or verification needs the
 relevant regression coverage and a fresh integration result.
 
-## Preserve the original evidence
+## Preserve scientific evidence
 
-The versioned class-risk extension has additional instructions in
+The class-risk workflow is described in
 [LOWER_CERTIFICATES.md](docs/LOWER_CERTIFICATES.md) and its mathematical
 [guarantee](docs/LOWER_CERTIFICATE_PROOF.md). Its focused tests cover numerical
 endpoints, optimization witnesses, finite-law audits, and complete workflow
@@ -106,12 +105,12 @@ provenance. A substantive change to these calculations requires a new retained
 all unfavorable outcomes visible. A fresh installed-wheel run should also assess
 the new model freeze through the class-risk command.
 
-The primary artifacts are retained scientific records. Do not rewrite their
+The primary artifacts are scientific records. Do not rewrite their
 contents to make a new implementation pass an old check. This includes
 `data/primary`, `encoders/primary`, `models/primary`, `frozen/primary`,
 `certificates/primary`, and `audits/primary`, as well as historical validation
-reports. Their saved model statuses and recorded source/runtime identities
-remain historical facts.
+reports. Their model statuses and source/runtime identities define the assessed
+computational predictors.
 
 Changing a numerical source file included in a freeze, certificate, or audit
 identity can make strict verification of that old record fail. Explain that

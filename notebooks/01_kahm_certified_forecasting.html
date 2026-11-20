@@ -125,11 +125,11 @@ div.output { margin-bottom:1.2em; }
 <div id="welcome" class="cell markdown">
 <h1 id="kahm-soft-state-forecasting-from-representation-to-a-checked-risk-bound">KAHM
 soft-state forecasting: from representation to a checked risk bound</h1>
-<p><strong>Guided demonstration · software v0.1.1 · historical baseline
+<p><strong>Guided demonstration · software v0.1.1 · experiment
 public-v0.1.0</strong></p>
 <p>This notebook connects one observed history to its geometry-induced
 features, three fitted forecasts, and the archived evidence supporting
-their fitted-risk bounds. It uses the completed four-state benchmark
+their fitted-risk bounds. It uses the four-state benchmark
 supplied with this package.</p>
 <p>You will learn to:</p>
 <ol>
@@ -143,12 +143,12 @@ risk <strong>R</strong>.</li>
 for new data.</li>
 </ol>
 <p><strong>Default: archive inspection.</strong> Saved outputs below are
-the historical v0.1.0 inspection example. They do not certify the
+the v0.1.0 inspection example. They do not certify the
 runtime in which you open this file. In the interactive notebook, run
 the cells in order with <code>MODE = &quot;inspect&quot;</code>. Use the
 JupyterLab launch command in Section 1 to open that notebook. In the
 static HTML reading copy, follow the saved outputs; the HTML does not
-run cells. Historical numerical verification requires unmodified v0.1.0
+run cells. Numerical verification of that experiment requires unmodified v0.1.0
 sources and the exact recorded runtime, as described below. The mode is
 repeated in each results section.</p>
 </div>
@@ -255,10 +255,9 @@ for checking that the archive is intact.</p>
 chain and then replays the three selected-history predictions. It does
 not refit models, sample new calibration observations, or search for new
 endpoints.</p>
-<p>Version 0.1.1 fixes encoder artifact input validation, so its
-execution-source bytes differ from the retained
-<code>public-v0.1.0</code> freeze. Inspection remains available. For
-historical verification, use the notebook and unmodified sources from
+<p>The <code>public-v0.1.0</code> freeze binds the v0.1.0 execution sources and
+recorded runtime. Archive inspection does not require that runtime match.
+For strict verification, use the notebook and unmodified sources from
 the <a href="https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/releases/tag/v0.1.0">v0.1.0
 release</a> in the exact recorded runtime; only there should you select
 <code>MODE = &quot;verify&quot;</code>.</p>
@@ -491,10 +490,10 @@ makes entries 9 and 10 much smaller. LOCAL therefore retains both
 geometric affinity and the input&#39;s local position, with each position
 block scaled by its affinity. Six memberships plus six two-coordinate
 blocks give <strong>18 LOCAL entries</strong>.</p>
-<p>The values come from the retained <a href="../encoders/primary/cap_2.json">encoder</a> and <a href="../encoders/primary/cap_2_features.json">feature records</a>. This
+<p>The values come from the archived <a href="../encoders/primary/cap_2.json">encoder</a> and <a href="../encoders/primary/cap_2_features.json">feature records</a>. This
 is a worked explanation of feature construction using the
 <code>public-v0.1.0</code> archive. It does not establish strict replay
-of the historical predictor, certificate, or population audit.</p>
+of the archived predictor, certificate, or population audit.</p>
 </div>
 <div id="forecast-explanation" class="cell markdown">
 <h2 id="4-read-a-forecast-for-the-selected-history">4. Read a forecast
@@ -707,9 +706,9 @@ independent evidence. The public primary run ID is
 <div id="adaptation" class="cell markdown">
 <h2 id="8-move-toward-a-new-application">8. Move toward a new
 application</h2>
-<p>This release is an executable controlled benchmark. It does not yet
-provide a general CSV adapter or a theorem that makes arbitrary
-time-series windows iid. The following decisions come before a new
+<p>The package implements a controlled benchmark. It has no general CSV
+adapter, and its iid assumption does not apply automatically to arbitrary
+time-series windows. The following decisions come before a new
 application-specific certificate:</p>
 <table>
 <colgroup>
@@ -762,8 +761,8 @@ losses need newly justified bounds. Multi-step latent rollouts require
 their own modeling and certification.</p>
 <p>Continue with <a href="../docs/TUTORIAL.md">the full tutorial</a> and
 <a href="../docs/ADAPTING_TO_NEW_DATA.md">the adaptation guide</a>,
-which map these decisions to the current modules. The checks performed
-for the v0.1.0 baseline are in <a href="../reports/RELEASE_VALIDATION.md">the historical validation
+which map these decisions to the implementation modules. The checks performed
+for the v0.1.0 baseline are in <a href="../reports/RELEASE_VALIDATION.md">the v0.1.0 validation
 report</a>.</p>
 </div>
 </body>

@@ -1,7 +1,6 @@
 # Gaussian KAHM encoder and soft-state representations
 
-This guide defines the encoder introduced in version `0.1.0` and retained by
-the current forecasting workflow. It fits geometry from
+The Gaussian KAHM encoder fits geometry from
 training inputs, produces membership-only and locally enriched representations,
 and supplies two banks for development selection. Readout fitting and shared-bank
 selection are defined in [READOUT_DESIGN.md](READOUT_DESIGN.md). The statistical

@@ -5,7 +5,7 @@ What concrete problem does this change address, and what behavior changes?
 ## Evidence
 
 List the commands run and their outcomes. Distinguish portable checks, archived
-primary verification, and a fresh experiment. Link retained results when relevant.
+primary verification, and a fresh experiment. Link recorded results when relevant.
 
 ## Scientific scope
 
