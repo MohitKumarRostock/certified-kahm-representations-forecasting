@@ -108,7 +108,7 @@ For $b\ge2$ iid feature-target observations, let
 ```math
 Q_b=\min_v\left\{
 \sum_{i=1}^b(Y_i-v_i)^2:
-|v_i-v_j|\le\kappa d(U_i,U_j)\text{ for all }i<j
+|v_i-v_j|\le\kappa d(U_i,U_j)\text{ for all }i\lt j
 \right\},
 \qquad
 T_b=\frac{Q_b}{b-1},
