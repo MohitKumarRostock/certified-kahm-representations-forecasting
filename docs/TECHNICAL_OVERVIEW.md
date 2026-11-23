@@ -287,7 +287,7 @@ aggregated for optimization.
 
 The result compares lower confidence bound $L$ on optimal class risk
 $`R_\kappa^*`$ and fitted-predictor upper bound $U$ with an MSE threshold $\tau$.
-`class_excluded` requires $L>\tau$. `requirement_met` requires an admissible
+`class_excluded` requires $L\gt \tau$. `requirement_met` requires an admissible
 fitted table and $U\leq\tau$. Otherwise the assessment remains unresolved;
 unavailable endpoints and conflicting conclusions stay visible. The
 confidence budget includes the entire prespecified family, including shared
