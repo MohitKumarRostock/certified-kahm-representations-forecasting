@@ -72,6 +72,7 @@ for(const abs of scanFiles(ROOT)){
   for(const [markdown,label] of markdowns)for(const expr of extractMath(markdown,label)){
     mathCount++;const prefix=expr.file+":"+expr.line;
     if(expr.unterminated)mistakes.push(prefix+": unclosed display equation");
+    if(/[<>]/.test(expr.latex)) mistakes.push(prefix+": use \\lt or \\gt in TeX; literal comparison signs are escaped by GitHub browser rendering");
     // Direct TeX parsing does not reproduce Markdown's punctuation-unescaping step.
     // Prefer fenced math and protected inline math for sensitive source.
     const fragile=/\\[{}!,;:|]|\*|\\(?:left|right)\b|\\\\/;
