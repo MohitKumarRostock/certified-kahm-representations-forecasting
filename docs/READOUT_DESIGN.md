@@ -68,7 +68,7 @@ $\gamma_i=\Gamma(x_i)$. For coordinate $a$, fit
 ```math
 \bar\gamma_a=\frac1n\sum_i\gamma_{ia},\qquad
 s_a=\sqrt{\frac1n\sum_i(\gamma_{ia}-\bar\gamma_a)^2},\qquad
-d_a=\begin{cases}1,&s_a<10^{-8},\\s_a,&s_a\ge10^{-8},\end{cases}
+d_a=\begin{cases}1,&s_a\lt 10^{-8},\\s_a,&s_a\ge10^{-8},\end{cases}
 \qquad
 u_a(x)=\frac{\Gamma_a(x)-\bar\gamma_a}{d_a}.
 ```
@@ -123,7 +123,7 @@ it, and order its eigenvalues from largest to smallest. Retain exactly those
 eigenvalues satisfying
 
 ```math
-\lambda_i>\max(10^{-12},10^{-10}\lambda_{\max}).
+\lambda_i\gt \max(10^{-12},10^{-10}\lambda_{\max}).
 ```
 
 Let $V$ contain the retained eigenvectors and $\Lambda$ the retained
