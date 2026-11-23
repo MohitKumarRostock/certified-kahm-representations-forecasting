@@ -24,7 +24,7 @@ ordinary metric additionally separates different points.
 
 Fix a **Lipschitz bound** $\kappa\ge0$ and a known bounded interval
 $I=[y_-,y_+]$ containing the target almost surely. Predictions also lie in
-$I$. Write $D=y_+-y_->0$ and $B=D^2$, so squared loss lies in $[0,B]$. The
+$I$. Write $D=y_+-y_-\gt 0$ and $B=D^2$, so squared loss lies in $[0,B]$. The
 class of admissible decoders is
 
 ```math
@@ -44,7 +44,7 @@ R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}R(g).
 The risk $R(g)$ belongs to one decoder; $`R_\kappa^*`$ belongs to the entire
 prescribed class. Both depend on the evaluation law. The representation,
 coordinates, metric, and Lipschitz bound must be reported together. For
-example, replacing $d$ by $`c\,d`$ and $\kappa$ by $\kappa/c$, for $c>0$,
+example, replacing $d$ by $`c\,d`$ and $\kappa$ by $\kappa/c$, for $c\gt 0$,
 leaves the class unchanged. Changing feature scale while holding $\kappa$
 fixed can change the class.
 
@@ -144,7 +144,7 @@ T_2=\frac12\bigl(|Y_1-Y_2|-\kappa d(U_1,U_2)\bigr)_+^2.
 On the implemented finite support, $`\mathcal W_b\uparrow R_\kappa^*`$.
 The same convergence holds for a compact metric feature space under the
 measurability and boundedness assumptions stated in the proof note.
-Thus, for a fixed such prediction problem and any $`\tau<R_\kappa^*`$,
+Thus, for a fixed such prediction problem and any $`\tau\lt R_\kappa^*`$,
 some population hierarchy level exceeds $\tau$. This statement does not
 specify the sample size needed to certify the comparison, and no fixed
 block size works uniformly well across all prediction problems.
@@ -197,7 +197,7 @@ L\le R_\kappa^*\le R(\widehat g)\le U_{\mathrm{fit}}.
 
 | Outcome | Mathematical condition | Interpretation |
 | --- | --- | --- |
-| `class_excluded` | $L>\tau$ | Every decoder in the prescribed class exceeds the MSE threshold |
+| `class_excluded` | $L\gt \tau$ | Every decoder in the prescribed class exceeds the MSE threshold |
 | `requirement_met` | Admissible fitted predictor and $U_{\mathrm{fit}}\le\tau$ | That predictor, and therefore its class, meets the requirement |
 | `unresolved` | Neither condition is established | The certificates do not decide class adequacy |
 | `certificate_unavailable` | A required numerical check cannot certify an individual endpoint | That endpoint supplies no favorable decision; its allocation is retained |
