@@ -31,7 +31,7 @@ function extractMath(markdown,file) {
       if(fence===null){
         fence={char:marker[0],size:marker.length,isMath:language==="math",line:i+1,parts:[]};
       }else if(fence.char===marker[0]&&marker.length>=fence.size){
-        if(fence.isMath)results.push({file,line:fence.line,latex:fence.parts.join("\n"),display:true});
+        if(fence.isMath)results.push({file,line:fence.line,latex:fence.parts.join("\n"),display:true,mode:"fenced"});
         fence=null;
       }
       continue;
@@ -39,21 +39,21 @@ function extractMath(markdown,file) {
     if(fence!==null){if(fence.isMath)fence.parts.push(line);continue;}
     if(/^\s*\$\$\s*$/.test(line)){
       if(block===null)block={line:i+1,parts:[]};
-      else{results.push({file,line:block.line,latex:block.parts.join("\n"),display:true});block=null;}
+      else{results.push({file,line:block.line,latex:block.parts.join("\n"),display:true,mode:"dollars"});block=null;}
       continue;
     }
     if(block!==null){block.parts.push(line);continue;}
     // GitHub's protected inline math form uses a dollar/backtick pair.
     const protectedMath=/\$\x60([^\x60]+)\x60\$/g; let match;
     while((match=protectedMath.exec(line))!==null)
-      results.push({file,line:i+1,latex:match[1],display:false});
+      results.push({file,line:i+1,latex:match[1],display:false,mode:"protected"});
     const withoutProtected=line.replace(protectedMath," ");
     const plain=withoutProtected.replace(/\x60+[^\x60]*\x60+/g," ");
     const inline=/(?<!\\)\$((?:\\.|[^$])+?)(?<!\\)\$/g; let found;
-    while((found=inline.exec(plain))!==null)results.push({file,line:i+1,latex:found[1],display:false});
+    while((found=inline.exec(plain))!==null)results.push({file,line:i+1,latex:found[1],display:false,mode:"inline"});
   }
-  if(block!==null)results.push({file,line:block.line,latex:block.parts.join("\n"),display:true,unterminated:true});
-  if(fence!==null&&fence.isMath)results.push({file,line:fence.line,latex:fence.parts.join("\n"),display:true,unterminated:true});
+  if(block!==null)results.push({file,line:block.line,latex:block.parts.join("\n"),display:true,mode:"dollars",unterminated:true});
+  if(fence!==null&&fence.isMath)results.push({file,line:fence.line,latex:fence.parts.join("\n"),display:true,mode:"fenced",unterminated:true});
   return results;
 }
 const mistakes=[];let mathCount=0,fileCount=0;
@@ -72,6 +72,11 @@ for(const abs of scanFiles(ROOT)){
   for(const [markdown,label] of markdowns)for(const expr of extractMath(markdown,label)){
     mathCount++;const prefix=expr.file+":"+expr.line;
     if(expr.unterminated)mistakes.push(prefix+": unclosed display equation");
+    // Direct TeX parsing does not reproduce Markdown's punctuation-unescaping step.
+    // Prefer fenced math and protected inline math for sensitive source.
+    const fragile=/\\[{}!,;:|]|\*|\\(?:left|right)\b|\\\\/;
+    if((expr.mode==="inline"||expr.mode==="dollars")&&fragile.test(expr.latex))
+      mistakes.push(prefix+": Markdown-sensitive TeX must use a math fence or protected inline math");
     if(/\\(?:operatorname\*?|tag|hbox|rm)(?![a-zA-Z])/.test(expr.latex))mistakes.push(prefix+": unsupported GitHub macro");
     try{katex.renderToString(expr.latex,{displayMode:expr.display,throwOnError:true,strict:"ignore",trust:false,output:"html"});}
     catch(err){mistakes.push(prefix+": KaTeX: "+err.message+"\n  "+expr.latex.slice(0,350).replaceAll("\n"," "));}
