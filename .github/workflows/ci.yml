@@ -25,6 +25,8 @@ jobs:
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
+      - name: Check scientific Markdown and recorded result display
+        run: python scripts/check_scientific_docs.py
       - name: Inspect the archived example with the standard library only
         run: python scripts/ci_checks.py archive-inspect --project . --report "${RUNNER_TEMP}/kahm-ci/archive-inspection.json"
       - name: Install the CI numerical and wheel-build dependencies

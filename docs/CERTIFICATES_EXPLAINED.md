@@ -189,7 +189,7 @@ verification does not use them. Instructions are in
 
 ## Lower confidence bounds on optimal class risk
 
-The `class-risk` workflow fixes a representation $\Gamma$, feature metric $d$,
+The `class-risk` workflow fixes a representation $\Gamma$, feature pseudometric $d$,
 Lipschitz bound $\kappa$, and output interval $I=[0,1]$. The **optimal class
 risk** is
 

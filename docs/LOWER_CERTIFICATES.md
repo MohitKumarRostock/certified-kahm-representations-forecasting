@@ -86,7 +86,7 @@ those development tables, copies the required inputs, and freezes the new
 class specification before drawing calibration episodes. It does **not**
 replay the executable model in the assessment runtime.
 
-For the prescribed representation $\Gamma$, feature metric $d$, and
+For the prescribed representation $\Gamma$, feature pseudometric $d$, and
 Lipschitz bound $\kappa$, let $\mathcal G_\kappa(d)$ contain all measurable
 $\kappa$-Lipschitz decoders into $I=[0,1]$. Their optimal class risk is
 
@@ -97,11 +97,11 @@ R_\kappa^*
 $$
 
 The workflow constructs a lower confidence bound $L$ on this infimum and an
-upper confidence bound $U_{\rm fit}$ on the archived fitted predictor's
-risk $R_{\rm fit}=\mathbb E[(Y-\widehat f(X))^2]$. The combined statement
+upper confidence bound $U_{\mathrm{fit}}$ on the archived fitted decoder's
+risk $R(\widehat g)=\mathbb E[(Y-\widehat g(\Gamma(X)))^2]$. The combined statement
 
 $$
-L\le R_\kappa^*\le R_{\rm fit}\le U_{\rm fit}
+L\le R_\kappa^*\le R(\widehat g)\le U_{\mathrm{fit}}
 $$
 
 requires the fitted prediction table to satisfy the declared class constraints.

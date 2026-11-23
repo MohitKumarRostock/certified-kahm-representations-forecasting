@@ -1,7 +1,7 @@
-# Scientific reference: risk certificates for fixed representations
+# Scientific reference: risk certificates for representation-based prediction
 
-This demonstrator assesses whether a prescribed representation and decoder
-class can meet a population mean squared error (MSE) threshold. It provides
+This demonstrator assesses whether a prescribed representation–decoder class
+can meet a population mean squared error (MSE) threshold. It provides
 lower confidence bounds on the **optimal class risk** and upper confidence
 bounds on **fitted-predictor risk**. These are different quantities: a fitted
 predictor can fail even when another decoder in its class could succeed.
@@ -52,17 +52,20 @@ fixed can change the class.
 | --- | --- |
 | $\Gamma,d,\kappa,I$ | Prescribed representation, feature pseudometric, Lipschitz bound, and output interval |
 | $R_\kappa^*$ | Infimum population MSE over this decoder class |
-| $\widehat f$ | A predictor fixed using development data, with outputs in $I$ |
-| $R_{\rm fit}$ | $\mathbb E[(Y-\widehat f(X))^2]$ |
+| $\widehat g$ | A measurable fitted decoder fixed using development data, with outputs in $I$; admissibility is not assumed |
+| $R(\widehat g)$ | $\mathbb E[(Y-\widehat g(\Gamma(X)))^2]$ |
 | $a_n$ | Minimum empirical MSE over the class on the $n$ calibration observations |
 | $T_b,\mathcal W_b$ | Normalized minimum block error and its expectation |
-| $L,U_{\rm fit}$ | Lower confidence bound on $R_\kappa^*$ and upper confidence bound on $R_{\rm fit}$ |
+| $L,U_{\mathrm{fit}}$ | Lower confidence bound on $R_\kappa^*$ and upper confidence bound on $R_{\mathrm{fit}}$ |
 | $\tau,\delta$ | Required MSE threshold and total allocated failure probability |
 
-If $\widehat f=\widehat g\circ\Gamma$ for an admissible decoder
-$\widehat g\in\mathcal G_\kappa(d)$, then
-$R_\kappa^*\le R_{\rm fit}$. That inequality requires an admissibility
-check; a small fitted prediction error does not establish it.
+If $\widehat g\in\mathcal G_\kappa(d)$, then
+$R_\kappa^*\le R(\widehat g)$. A small fitted prediction error alone
+cannot establish that inequality. In the finite benchmark, the software
+checks the archived fitted prediction table on the complete evaluation
+support; a passing table has an admissible Lipschitz extension. This
+finite-support check does not establish the global Lipschitz regularity
+of the executable nonlinear readout.
 
 The implementation uses $I=[0,1]$, hence $D=B=1$, Euclidean distance on
 archived feature coordinates, and a finite benchmark with 16 possible
@@ -79,7 +82,9 @@ a_n=\inf_{g\in\mathcal G_\kappa(d)}
 $$
 
 A verified optimization bound $d_n\le a_n$ is a deterministic statement
-about those observations. It becomes a lower confidence bound on population
+about those observations. The fixed-dataset optimization also applies to
+observed targets outside $I$; the population confidence bounds below require
+a justified bounded-loss condition, here ensured by $Y\in I$. It becomes a lower confidence bound on population
 risk only after a valid statistical calibration. A feasible prediction
 assignment constructed from the calibration targets gives an upper bound
 on $a_n$; it does not by itself give an upper bound on future risk.
@@ -183,17 +188,17 @@ allowed; independence between confidence statements is unnecessary.
 
 For each class, let $L$ be the maximum of zero and its available lower
 confidence endpoints. Every fixed fitted predictor has its own valid
-upper endpoint $U_{\rm fit}$. When the predictor is admissible, the
+upper endpoint $U_{\mathrm{fit}}$. When the predictor is admissible, the
 simultaneous event gives
 
 $$
-L\le R_\kappa^*\le R_{\rm fit}\le U_{\rm fit}.
+L\le R_\kappa^*\le R(\widehat g)\le U_{\mathrm{fit}}.
 $$
 
 | Outcome | Mathematical condition | Interpretation |
 | --- | --- | --- |
 | `class_excluded` | $L>\tau$ | Every decoder in the prescribed class exceeds the MSE threshold |
-| `requirement_met` | Admissible fitted predictor and $U_{\rm fit}\le\tau$ | That predictor, and therefore its class, meets the requirement |
+| `requirement_met` | Admissible fitted predictor and $U_{\mathrm{fit}}\le\tau$ | That predictor, and therefore its class, meets the requirement |
 | `unresolved` | Neither condition is established | The certificates do not decide class adequacy |
 | `certificate_unavailable` | A required numerical check cannot certify an individual endpoint | That endpoint supplies no favorable decision; its allocation is retained |
 
