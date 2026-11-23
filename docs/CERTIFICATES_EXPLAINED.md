@@ -70,7 +70,7 @@ Conditional on development, the statement is
 
 ```math
 \Pr_{\mathrm{Cal}}\!\left[
-\exists m\text{ with a reported valid endpoint and }R_m(D)>U_m
+\exists m\text{ with a reported valid endpoint and }R_m(D)\gt U_m
 \mid D\right]\le\frac1{20}.
 ```
 
