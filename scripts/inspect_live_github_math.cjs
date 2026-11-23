@@ -2,13 +2,9 @@
 const { chromium } = require("playwright-core");
 const fs = require("node:fs");
 const pages = [
-  ["proof", "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/blob/472485fcf9c29b088405ba2eb5305a18df1e4ef4/docs/LOWER_CERTIFICATE_PROOF.md"],
-  ["fitted", "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/blob/472485fcf9c29b088405ba2eb5305a18df1e4ef4/docs/FITTED_RISK_GUARANTEE.md"],
-  ["scientific", "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/blob/472485fcf9c29b088405ba2eb5305a18df1e4ef4/docs/SCIENTIFIC_REFERENCE.md"],
-  ["readout", "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/blob/472485fcf9c29b088405ba2eb5305a18df1e4ef4/docs/READOUT_DESIGN.md"],
-  ["benchmark", "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/blob/472485fcf9c29b088405ba2eb5305a18df1e4ef4/docs/BENCHMARK.md"],
-  ["experiments", "https://github.com/MohitKumarRostock/Kernel_Affine_Hull_Koopman_Machine/tree/44066afd225408254fecc81a9701a02f9c37b9c5"],
-  ["experiment-guide", "https://github.com/MohitKumarRostock/Kernel_Affine_Hull_Koopman_Machine/blob/44066afd225408254fecc81a9701a02f9c37b9c5/docs/EXPERIMENT_GUIDE.md"],
+  ["final-proof", "https://github.com/MohitKumarRostock/certified-kahm-representations-forecasting/blob/7710b3eb18ee40859026866169379896a009d556/docs/LOWER_CERTIFICATE_PROOF.md"],
+  ["final-experiments", "https://github.com/MohitKumarRostock/Kernel_Affine_Hull_Koopman_Machine/tree/54b820a35e7ece691734effd3bd93d01e938204e"],
+  ["final-experiment-guide", "https://github.com/MohitKumarRostock/Kernel_Affine_Hull_Koopman_Machine/blob/54b820a35e7ece691734effd3bd93d01e938204e/docs/EXPERIMENT_GUIDE.md"],
 ];
 (async()=>{
   const browser=await chromium.launch({channel:"chrome",headless:true,args:["--no-sandbox","--disable-dev-shm-usage"]});
