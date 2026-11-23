@@ -109,7 +109,7 @@ ranks, or feature widths.
 ## 4. Gaussian Nyström block with a linear component
 
 Compute $\delta$ as the median of $`\|\ell_i-\ell_j\|^2`$ over
-$i<j$, excluding distances at most $10^{-14}$. Set $\delta=1$
+$i\lt j$, excluding distances at most $10^{-14}$. Set $\delta=1$
 when no distances remain. For each bandwidth multiplier
 
 ```math
