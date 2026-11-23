@@ -29,9 +29,9 @@ Do not describe a fitted-risk upper endpoint as an upper bound on *optimal class
 
 ## Mechanical checks and limitations
 
-Run `python scripts/check_scientific_docs.py` before committing. The standard-library check validates GitHub-compatible dollar-delimited Markdown mathematics, local link targets, and the principal numerical results table against the recorded exact-fraction summary. GitHub Actions runs the same check, along with the existing software and verification checks.
+Run `python scripts/check_scientific_docs.py` before committing. The standard-library check validates math delimiters, local link targets, and the principal numerical results table against the recorded exact-fraction summary. The separate math-rendering workflow uses both raw-TeX parsers and `scripts/check_actual_github_math.cjs`, which submits Markdown to GitHub's own renderer before parsing the resulting math expressions. **Use `\\lt` and `\\gt` instead of literal `<` and `>` in inline TeX**: GitHub may otherwise expose encoded HTML entities such as `&lt;` to MathJax. Keep display equations in `math` code fences.
 
-Mechanical checks cannot validate the proofs, the sampling assumptions, or rendered math visually. Review mathematical statements and any changed GitHub rendering manually. A passing replay does not convert a fixed-dataset empirical-risk statement into a population-risk certificate.
+Mechanical checks cannot validate the proofs, the sampling assumptions, or every aspect of browser layout. Review mathematical statements and any changed GitHub rendering manually. A passing replay does not convert a fixed-dataset empirical-risk statement into a population-risk certificate.
 
 ## Separate experimental archive
 
