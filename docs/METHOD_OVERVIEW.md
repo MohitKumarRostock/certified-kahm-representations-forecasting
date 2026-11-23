@@ -135,7 +135,7 @@ threshold $\tau$:
 
 | Decision | Required evidence |
 | --- | --- |
-| `class_excluded` | $L>\tau$: every decoder in the prescribed class exceeds the threshold |
+| `class_excluded` | $L\gt \tau$: every decoder in the prescribed class exceeds the threshold |
 | `requirement_met` | An admissible fitted prediction table has $U\leq\tau$ |
 | `unresolved` | Neither conclusion has been established |
 

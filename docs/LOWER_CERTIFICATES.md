@@ -112,7 +112,7 @@ arbitrary feature inputs.
 
 | Reported decision | Meaning |
 | --- | --- |
-| `class_excluded` | $L>\tau$: every decoder in the specified class fails the requirement. |
+| `class_excluded` | $L\gt \tau$: every decoder in the specified class fails the requirement. |
 | `requirement_met` | An admissible fitted table has $U_{\mathrm{fit}}\le\tau$. |
 | `unresolved` | Neither conclusion has been established. |
 | `conflicting_certificates` | The issued lower and admissible upper conclusions conflict; the result is retained for inspection. |

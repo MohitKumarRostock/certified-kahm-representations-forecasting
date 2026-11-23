@@ -56,7 +56,7 @@ new optimization problems, and it does not replay the executable encoder.
 
 Read [the study report](../reports/lower_certificates_v1/report.md) for the
 five-class comparison, block hierarchy, sample-size tradeoff, and
-unresolved result. A lower confidence bound $L>\tau$ excludes the prescribed
+unresolved result. A lower confidence bound $L\gt \tau$ excludes the prescribed
 class; an admissible fitted predictor with upper bound $U\leq\tau$ meets the
 MSE requirement. See [Certificates explained](CERTIFICATES_EXPLAINED.md).
 

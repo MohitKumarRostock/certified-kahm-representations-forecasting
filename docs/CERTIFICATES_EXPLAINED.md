@@ -224,7 +224,7 @@ For a prescribed MSE threshold $\tau$, the class decisions are:
 
 | Status | Meaning |
 | --- | --- |
-| `class_excluded` | $L>\tau$, so every decoder in the prescribed class exceeds the threshold |
+| `class_excluded` | $L\gt \tau$, so every decoder in the prescribed class exceeds the threshold |
 | `requirement_met` | The fitted table is admissible and $U\leq\tau$ |
 | `unresolved` | Neither conclusion follows from the available bounds |
 | `conflicting_certificates` | The lower and admissible upper conclusions conflict; the result is retained for inspection |

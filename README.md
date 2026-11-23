@@ -41,7 +41,7 @@ fitted-predictor upper confidence bound $U_{\mathrm{fit}}$ support these decisio
 
 | Decision | Required evidence | Interpretation |
 | --- | --- | --- |
-| `class_excluded` | $L>\tau$ | Every decoder in the declared class exceeds the threshold. |
+| `class_excluded` | $L\gt \tau$ | Every decoder in the declared class exceeds the threshold. |
 | `requirement_met` | An admissible fitted predictor with $U_{\mathrm{fit}}\leq\tau$ | The fitted predictor and its class meet the threshold. |
 | `unresolved` | Available bounds establish neither conclusion | The available evidence does not determine whether the class meets the requirement. |
 

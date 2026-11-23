@@ -7,7 +7,7 @@ and relation to published work; the [implementation guide](LOWER_CERTIFICATES.md
 gives commands and record formats.
 
 The mathematics uses a prescribed interval $I=[y_-,y_+]$, width
-$D=y_+-y_->0$, and squared-loss bound $B=D^2$. The implementation specializes
+$D=y_+-y_-\gt 0$, and squared-loss bound $B=D^2$. The implementation specializes
 to $I=[0,1]$, hence $D=B=1$, Euclidean distance on exact archived feature
 coordinates, and the finite benchmark defined in Section 7. Broader
 statements about metric spaces are mathematical results, not additional
@@ -182,8 +182,8 @@ $\sup_g|\widehat R_b(g)-R(g)|\to0$ almost surely, and hence convergence of
 the infima and of $\mathcal W_b$. No convergence claim for arbitrary
 noncompact feature spaces follows from this argument.
 
-For any fixed such law and $`\tau<R_\kappa^*`$, some finite $b$ satisfies
-$\mathcal W_b>\tau$. This does not specify a sufficient calibration size.
+For any fixed such law and $`\tau\lt R_\kappa^*`$, some finite $b$ satisfies
+$\mathcal W_b\gt \tau$. This does not specify a sufficient calibration size.
 At fixed $n$, increasing $b$ leaves fewer independent blocks, so lower
 confidence endpoints need not increase. Section 7 also gives examples where
 a fixed $b$ captures an arbitrarily small fraction of positive class risk.
@@ -197,7 +197,7 @@ Q=A+\min_z\sum_i w_i(z_i-m_i)^2,
 \qquad |z_i-z_j|\le\kappa d_{ij},
 ```
 
-where $w_i>0$, $m_i\in I$, and $A\ge0$ is the within-group sum of squared
+where $w_i\gt 0$, $m_i\in I$, and $A\ge0$ is the within-group sum of squared
 errors (SSE). Merging coincident feature rows adds their weights, takes the
 weighted mean, and adds between-mean SSE to $A$. When $\kappa=0$, every
 prediction must coincide and all rows can be merged. Sample occurrences
@@ -267,7 +267,7 @@ bounds. Both endpoint functions are nondecreasing in their first argument.
 This is the bounded-mean consequence of Hoeffding's inequality; see the
 [published references](SCIENTIFIC_REFERENCE.md#published-references).
 
-For observations in $[0,C]$, $C>0$, divide their mean by $C$ before inversion
+For observations in $[0,C]$, $C\gt 0$, divide their mean by $C$ before inversion
 and multiply the resulting endpoint by $C$. If $C=0$, both endpoints are zero.
 
 The implementation encloses logarithms and KL comparisons using exact
@@ -296,7 +296,7 @@ L_b^{\mathrm{blk}}=C_b k_-\left(
 The true block scores are iid in $[0,C_b]$. The numerical scores lie below
 them pointwise, even if their numerical computation uses shared information.
 Monotonicity of $k_-$ and Section 4 give
-$`\Pr\{L_b^{\mathrm{blk}}>\mathcal W_b\}\le\alpha_b^{\mathrm{blk}}`$.
+$`\Pr\{L_b^{\mathrm{blk}}\gt \mathcal W_b\}\le\alpha_b^{\mathrm{blk}}`$.
 Because $`\mathcal W_b\le R_\kappa^*`$, this is also a lower confidence bound
 on optimal class risk.
 
@@ -327,7 +327,7 @@ $d_n\le a_n\le\widehat R_n(g_j)$. Monotonicity and Section 4 imply
 \le\Pr\{L^{\mathrm{emp}}>R(g_j)\}\le\alpha_{\mathrm{emp}}.
 ```
 
-The events on the left increase to $`\{L^{\mathrm{emp}}>R_\kappa^*\}`$, so the
+The events on the left increase to $`\{L^{\mathrm{emp}}\gt R_\kappa^*\}`$, so the
 same bound holds in the limit. This argument does not treat $d_n$ as an
 average of iid variables and does not need a class-complexity penalty in
 this lower direction.
@@ -359,7 +359,7 @@ U_{\mathrm{fit}}=B\,k_+\left(
 \frac{\log(1/\alpha_U)}n\right)
 ```
 
-satisfies $`\Pr\{R(\widehat g)>U_{\mathrm{fit}}\}\le\alpha_U`$.
+satisfies $`\Pr\{R(\widehat g)\gt U_{\mathrm{fit}}\}\le\alpha_U`$.
 In the implemented finite benchmark these represented losses are computed
 exactly. Admissibility is unnecessary for this fitted-predictor statement.
 
@@ -385,7 +385,7 @@ $`L\le R_\kappa^*`$. For an admissible fitted predictor,
 L\le R_\kappa^*\le R(\widehat g)\le U_{\mathrm{fit}}.
 ```
 
-Thus $L>\tau$ excludes the class, while admissibility and
+Thus $L\gt \tau$ excludes the class, while admissibility and
 $U_{\mathrm{fit}}\le\tau$ establish that the requirement is met. Otherwise the
 decision is unresolved. Numerically unavailable endpoints retain their
 allocation and supply no favorable conclusion. A conflict between an
