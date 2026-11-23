@@ -20,6 +20,8 @@ FENCE = re.compile(r"^\s*(?P<mark>~{3,}|" + re.escape(chr(96)) + r"{3,})")
 MATH_DOLLAR = re.compile(r"(?<!\\)\$")
 INLINE_MATH = re.compile(r"(?<!\\)\$([^$]*)\$")
 LINK = re.compile(r"!?\[[^\]]+\]\(([^)\s]+)")
+# GitHub rejects \operatorname and can misrender \tag; keep math portable.
+GITHUB_UNSAFE_MATH = re.compile(r"\\(operatorname\*?|tag|hbox|rm)(?=[^A-Za-z]|$)")
 NUMERIC_TOLERANCE = Fraction(51, 100_000_000_000)  # nine-place display rounding
 
 
@@ -47,9 +49,17 @@ def check_markdown(path: Path) -> list[str]:
     in_display = False
     for number, line in visible_lines(path):
         origin = f"{path.relative_to(ROOT)}:{number}"
-        if line.strip() == "$$":
+        if line.strip() == "$":
             in_display = not in_display
             continue
+        math_regions = [line] if in_display else [
+            match.group(1) for match in INLINE_MATH.finditer(line)
+        ]
+        for region in math_regions:
+            for macro in GITHUB_UNSAFE_MATH.finditer(region):
+                errors.append(
+                    f"{origin}: GitHub-incompatible math macro \\{macro.group(1)}"
+                )
         if in_display:
             continue
         if "$$" in line:
