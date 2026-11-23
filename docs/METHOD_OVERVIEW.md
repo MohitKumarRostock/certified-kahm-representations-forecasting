@@ -1,8 +1,8 @@
 # Method and implementation overview
 
 This project combines a geometric representation, fitted forecasting models,
-and risk certificates for both individual predictors and prescribed decoder
-classes. This guide maps the mathematical objects to their definitions and
+and risk certificates for both fitted predictors and prescribed
+representation–decoder classes. This guide maps the mathematical objects to their definitions and
 executable modules. The [scientific reference](SCIENTIFIC_REFERENCE.md) gives
 the self-contained statement of the problem, assumptions, hierarchy, and
 decision rules.
@@ -96,7 +96,7 @@ contradiction because `q` is a finite-sample observation.
 
 ## 5. Optimal class risk and the block hierarchy
 
-Fix a representation $\Gamma$, a feature metric $d$, a Lipschitz bound
+Fix a representation $\Gamma$, a feature pseudometric $d$, a Lipschitz bound
 $\kappa\geq0$, and a common target and prediction interval $I=[0,1]$.
 An admissible decoder satisfies
 
@@ -106,7 +106,8 @@ g:\mathcal U\to I,\qquad
 $$
 
 Its population MSE is $R(g)=\mathbb E[(Y-g(\Gamma(X)))^2]$, and the
-**optimal class risk** is $R_\kappa^*=\inf_g R(g)$ over these decoders.
+**optimal class risk** is $R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}R(g)$,
+where $\mathcal G_\kappa(d)$ is the measurable $I$-valued Lipschitz decoder class.
 The `class-risk` workflow freezes the class specification before drawing its
 own iid calibration episodes, independently of development.
 
