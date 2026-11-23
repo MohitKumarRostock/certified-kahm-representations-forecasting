@@ -1,9 +1,10 @@
-# KAHM forecasting demonstrator
+# Risk certificates for representation-based prediction
 
 **Version 0.2.0 · Apache-2.0 · Standalone implementation and scientific documentation**
 
-This project demonstrates **risk certification for fixed representations and
-prescribed Lipschitz decoder classes**. It combines lower confidence bounds on
+This project demonstrates **risk certification for prescribed representation–decoder
+classes** in a finite-state forecasting task. Each class fixes a feature
+representation, a feature pseudometric, and a Lipschitz decoder constraint. It combines lower confidence bounds on
 optimal class risk with upper confidence bounds on fitted-predictor risk. The
 result can establish that every decoder in a class exceeds a mean squared
 error (MSE) threshold, establish that an admissible fitted predictor meets the
@@ -20,16 +21,17 @@ definitions, proofs, assumptions, benchmark, and recorded experiments.
 
 ## The scientific question
 
-Fix a representation $\Gamma$, feature metric $d$, Lipschitz bound $\kappa$,
-bounded target and prediction interval $I$, and evaluation distribution.
+Fix a representation $\Gamma$, a measurable finite-valued feature pseudometric
+$d$, a Lipschitz bound $\kappa\geq0$, an evaluation law, and a known bounded
+interval $I$ containing both targets and decoder predictions.
 The **optimal class risk** is
 
 $$
 R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}
 \mathbb E[(Y-g(\Gamma(X)))^2],
 \qquad
-\mathcal G_\kappa(d)=\{g:\mathcal U\to I:
-|g(u)-g(v)|\leq\kappa d(u,v)\}.
+\mathcal G_\kappa(d)=\{g:\mathcal U\to I\text{ measurable}:
+|g(u)-g(v)|\leq\kappa d(u,v)\quad\forall u,v\in\mathcal U\}.
 $$
 
 For a fixed MSE threshold $\tau$, a lower confidence bound $L$ and a
@@ -45,7 +47,7 @@ A fitted predictor outside the declared class can still have a valid upper
 bound on its own risk. Its fitted-risk upper endpoint is not used as an upper
 bound on the class optimum without an admissibility argument.
 Numerical unavailability and conflicting outcomes are recorded separately.
-These are population mean-error statements, not prediction intervals for
+These are population-MSE statements, not prediction intervals for
 individual observations.
 
 ## Install the complete project
@@ -117,16 +119,18 @@ The supplied study fixes five classes, three calibration sizes, five block
 sizes, and **180 one-sided confidence endpoints** with total failure
 allocation `0.05`. At 4,096 calibration episodes and $\tau=0.1$:
 
-| Declared class | Lower confidence bound | Admissible fitted upper bound | Decision |
-| --- | ---: | ---: | --- |
-| RAW, $\kappa=2$ | 0.042810136 | 0.072272782 | Requirement met |
-| KAHM MEM, $\kappa=2$ | 0.114702961 | Unavailable: fitted predictor is inadmissible | Class excluded |
-| KAHM LOCAL, $\kappa=2$ | 0.042810136 | 0.072272781 | Requirement met |
-| Short history, $\kappa=4$ | 0.134763734 | 0.180788316 | Class excluded |
-| Full history, $\kappa=4$ | 0.042810136 | 0.072272784 | Requirement met |
+| Representation–decoder class | Class-risk lower bound $L$ | Fitted-risk upper bound $U_{\mathrm{fit}}$ | Fitted table admissible? | Decision |
+| --- | ---: | ---: | :---: | --- |
+| RAW, $\kappa=2$ | 0.042810136 | 0.072272782 | Yes | Requirement met |
+| KAHM MEM, $\kappa=2$ | 0.114702961 | 0.072272781 | No | Class excluded |
+| KAHM LOCAL, $\kappa=2$ | 0.042810136 | 0.072272781 | Yes | Requirement met |
+| Short history, $\kappa=4$ | 0.134763734 | 0.180788316 | Yes | Class excluded |
+| Full history, $\kappa=4$ | 0.042810136 | 0.072272784 | Yes | Requirement met |
 
 These are descriptive decimal approximations; exact stored fractions govern
-all decisions. MEM remains unresolved at 1,024 episodes. At 16,384 episodes,
+all decisions. The MEM fitted-risk upper bound is valid for that predictor,
+but its inadmissibility prevents using the endpoint as an upper bound on
+optimal class risk. The stored assessment reports these two facts separately. MEM remains unresolved at 1,024 episodes. At 16,384 episodes,
 short-history blocks of sizes 16, 32, and 64 establish exclusion that the
 pairwise bound misses. The full empirical-optimum certificate is stronger in
 this small benchmark; no computational advantage of blocking is established.
