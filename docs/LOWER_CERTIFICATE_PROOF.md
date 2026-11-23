@@ -26,32 +26,32 @@ target, and $U=\Gamma(X)\in\mathcal U$ a prescribed measurable representation.
 Let $d$ be a measurable, finite-valued pseudometric and fix $\kappa\ge0$.
 Assume the infima and statistics below are measurable. Define
 
-$$
+```math
 \mathcal G_\kappa(d)=
 \{g:\mathcal U\to I\text{ measurable}:
 |g(u)-g(v)|\le\kappa d(u,v)\text{ for all }u,v\},
-$$
+```
 
-$$
+```math
 R(g)=\mathbb E[(Y-g(U))^2],
 \qquad
 R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}R(g).
-$$
+```
 
 Every claim is specific to $(\Gamma,d,\kappa,I)$ and the evaluation law.
 Clipping a real-valued Lipschitz decoder to $I$ preserves its Lipschitz
 bound and cannot increase squared loss to a target in $I$. Constants are
 admissible, so
-$0\le R_\kappa^*\le\mathrm{Var}(Y)\le B/4$.
+$`0\le R_\kappa^*\le\mathrm{Var}(Y)\le B/4`$.
 If $D=0$, all risks are zero and no statistical inversion is needed.
 
 On finitely many feature points $u_i$, an $I$-valued prediction table $z_i$
 satisfying all pairwise constraints has the extension
 
-$$
+```math
 g_z(u)=\mathrm{clip}_I
 \left(\min_i\{z_i+\kappa d(u,u_i)\}\right).
-$$
+```
 
 Each function inside the minimum is $\kappa$-Lipschitz by the reverse
 triangle inequality; a finite minimum and clipping preserve that bound.
@@ -70,7 +70,7 @@ nonlinear readout away from the support.
 
 For $b\ge2$ iid feature-target observations, write
 
-$$
+```math
 Q_b=\min_{v\in\mathbb R^b}
 \left\{\sum_{i=1}^b(Y_i-v_i)^2:
 |v_i-v_j|\le\kappa d(U_i,U_j)\text{ for all }i<j\right\},
@@ -78,14 +78,14 @@ Q_b=\min_{v\in\mathbb R^b}
 T_b=\frac{Q_b}{b-1},
 \qquad
 \mathcal W_b=\mathbb E[T_b].
-$$
+```
 
 Clipping predictions to $I$ leaves the minimum unchanged. For $b=2$,
 separating the prediction sum and difference gives
 
-$$
+```math
 T_2=\frac12\bigl(|Y_1-Y_2|-\kappa d(U_1,U_2)\bigr)_+^2.
-$$
+```
 
 The optimal sum is $Y_1+Y_2$, and the optimal difference is $Y_1-Y_2$
 clipped to $[-\kappa d(U_1,U_2),\kappa d(U_1,U_2)]$.
@@ -97,24 +97,24 @@ residual mean $\bar r$ to every prediction preserves all pairwise
 constraints. Clipping those shifted predictions to $I$ can only reduce
 loss. Consequently,
 
-$$
+```math
 T_b\le\frac1{b-1}\sum_i(r_i-\bar r)^2.
-$$
+```
 
 The expectation on the right is
 $\mathrm{Var}(Y-g(U))\le R(g)$. Taking the infimum over admissible $g$
-gives $\mathcal W_b\le R_\kappa^*$.
+gives $`\mathcal W_b\le R_\kappa^*`$.
 
 A constant prediction at the sample target mean is feasible. The sample
 variance of $b$ targets in $I$ is maximal at interval endpoints.
 If $k$ targets are at the upper endpoint, the pairwise squared-difference
-sum is $B\,k(b-k)$. Maximizing over integer $k$ gives
+sum is $`B\,k(b-k)`$. Maximizing over integer $k$ gives
 
-$$
+```math
 0\le T_b\le C_b,
 \qquad
 C_b=\frac{B\lfloor b^2/4\rfloor}{b(b-1)}\le B/2.
-$$
+```
 
 ### Subset comparison and monotonicity
 
@@ -123,27 +123,27 @@ otherwise a common shift would reduce their sum of squared errors. For
 any subset $S$ of size $m\ge2$, recenter that table's residuals within $S$.
 The shifted subset prediction table is feasible, so
 
-$$
+```math
 T_m(S)\le
 \frac1{m-1}\sum_{i\in S}(r_i-\bar r_S)^2
 =\frac1{m(m-1)}
 \sum_{\substack{i<j\\i,j\in S}}(r_i-r_j)^2.
-$$
+```
 
 Each pair belongs to $\binom{b-2}{m-2}$ of the $\binom bm$ subsets.
 Since their ratio is $m(m-1)/(b(b-1))$,
 
-$$
+```math
 \binom bm^{-1}\sum_{|S|=m}T_m(S)
 \le\frac1{b(b-1)}\sum_{i<j}(r_i-r_j)^2=T_b.
-$$
+```
 
 Every $m$-subset has the same iid distribution as a block of size $m$.
 Taking expectations proves
 
-$$
+```math
 0\le\mathcal W_2\le\mathcal W_3\le\cdots\le R_\kappa^*.
-$$
+```
 
 This is a subset-average inequality. An individual block score need not
 exceed every smaller subset's score.
@@ -157,23 +157,23 @@ are empirical frequencies and bounded first and second target moments.
 The strong law makes those coefficients converge almost surely, uniformly
 over the feasible set. Section 1 identifies its minimum with
 
-$$
+```math
 a_b=\inf_{g\in\mathcal G_\kappa(d)}
 \frac1b\sum_{i=1}^b(Y_i-g(U_i))^2.
-$$
+```
 
-Thus $a_b\to R_\kappa^*$ almost surely. Since
-$T_b=b\,a_b/(b-1)$ and $0\le T_b\le B/2$, dominated convergence gives
-$\mathcal W_b\uparrow R_\kappa^*$. This is the convergence statement directly
+Thus $`a_b\to R_\kappa^*`$ almost surely. Since
+$`T_b=b\,a_b/(b-1)`$ and $0\le T_b\le B/2$, dominated convergence gives
+$`\mathcal W_b\uparrow R_\kappa^*`$. This is the convergence statement directly
 instantiated by the implementation.
 
 The same conclusion holds on a compact metric feature space. The bounded
 Lipschitz class is closed and equicontinuous, hence compact in uniform norm
 by Arzelà–Ascoli. A finite uniform $\varepsilon$-net, together with
 
-$$
+```math
 |(y-g(u))^2-(y-h(u))^2|\le2D\|g-h\|_\infty,
-$$
+```
 
 reduces uniform convergence of empirical risks to the strong law for
 finitely many decoders. Let $b$ increase, then let $\varepsilon$ decrease
@@ -182,7 +182,7 @@ $\sup_g|\widehat R_b(g)-R(g)|\to0$ almost surely, and hence convergence of
 the infima and of $\mathcal W_b$. No convergence claim for arbitrary
 noncompact feature spaces follows from this argument.
 
-For any fixed such law and $\tau<R_\kappa^*$, some finite $b$ satisfies
+For any fixed such law and $`\tau<R_\kappa^*`$, some finite $b$ satisfies
 $\mathcal W_b>\tau$. This does not specify a sufficient calibration size.
 At fixed $n$, increasing $b$ leaves fewer independent blocks, so lower
 confidence endpoints need not increase. Section 7 also gives examples where
@@ -192,10 +192,10 @@ a fixed $b$ captures an arbitrarily small fraction of positive class risk.
 
 Repeated observations at a feature value can be aggregated exactly:
 
-$$
+```math
 Q=A+\min_z\sum_i w_i(z_i-m_i)^2,
 \qquad |z_i-z_j|\le\kappa d_{ij},
-$$
+```
 
 where $w_i>0$, $m_i\in I$, and $A\ge0$ is the within-group sum of squared
 errors (SSE). Merging coincident feature rows adds their weights, takes the
@@ -207,17 +207,17 @@ Choose any subset of constraint edges and arbitrary signed multipliers
 $\lambda_e$. Let $s=M\lambda$, with one $+1$ and one $-1$ in each incidence
 column. Every feasible $z$ satisfies
 
-$$
+```math
 s^\top z\le\kappa\sum_e d_e|\lambda_e|.
-$$
+```
 
 Adding this valid penalty to the objective and minimizing the resulting
 unconstrained quadratic gives
 
-$$
+```math
 D(\lambda)=A+s^\top m-\sum_i\frac{s_i^2}{4w_i}
 -\kappa\sum_e d_e|\lambda_e|\le Q.
-$$
+```
 
 This is weak duality: no convergence or multiplier-optimality claim is
 needed. The numerical optimizer proposes multipliers; the checker
@@ -239,26 +239,26 @@ objective values, and primal feasibility. It does not rerun the optimizer.
 
 For $q,p\in[0,1]$, let
 
-$$
+```math
 \mathrm{kl}(q\Vert p)
 =q\log(q/p)+(1-q)\log((1-q)/(1-p))
-$$
+```
 
 with the usual endpoint conventions. Define
 
-$$
+```math
 k_-(q,c)=\inf\{p\in[0,q]:\mathrm{kl}(q\Vert p)\le c\},
 \qquad
 k_+(q,c)=\sup\{p\in[q,1]:\mathrm{kl}(q\Vert p)\le c\}.
-$$
+```
 
 For iid $Z_i\in[0,1]$ with mean $p$ and sample mean $\bar Z$,
 
-$$
+```math
 \Pr\{k_-(\bar Z,\log(1/\alpha)/N)>p\}\le\alpha,
 \qquad
 \Pr\{k_+(\bar Z,\log(1/\alpha)/N)<p\}\le\alpha.
-$$
+```
 
 The Chernoff argument applies to bounded, not necessarily Bernoulli,
 variables: convexity gives $\mathbb E[e^{tZ}]\le1-p+pe^t$.
@@ -281,53 +281,53 @@ Fix $K_b=\lfloor n/b\rfloor$ disjoint consecutive blocks before examining
 calibration values. Assume the numerical witnesses satisfy
 $0\le\underline Q_{b,k}\le Q_{b,k}$ for every dataset. Put
 
-$$
+```math
 \bar t_b=\frac1{K_b}\sum_k\frac{\underline Q_{b,k}}{b-1}.
-$$
+```
 
 The **block lower confidence bound** is
 
-$$
+```math
 L_b^{\mathrm{blk}}=C_b k_-\left(
 \frac{\bar t_b}{C_b},
 \frac{\log(1/\alpha_b^{\mathrm{blk}})}{K_b}\right).
-$$
+```
 
 The true block scores are iid in $[0,C_b]$. The numerical scores lie below
 them pointwise, even if their numerical computation uses shared information.
 Monotonicity of $k_-$ and Section 4 give
-$\Pr\{L_b^{\mathrm{blk}}>\mathcal W_b\}\le\alpha_b^{\mathrm{blk}}$.
-Because $\mathcal W_b\le R_\kappa^*$, this is also a lower confidence bound
+$`\Pr\{L_b^{\mathrm{blk}}>\mathcal W_b\}\le\alpha_b^{\mathrm{blk}}`$.
+Because $`\mathcal W_b\le R_\kappa^*`$, this is also a lower confidence bound
 on optimal class risk.
 
 For the **empirical-risk lower confidence bound**, let $a_n$ be the minimum
 empirical MSE over the full calibration sample. A full feasible prediction
 restricts to a feasible table on each block, so
 
-$$
+```math
 d_{n,b}=\frac1n\sum_k\underline Q_{b,k}\le a_n.
-$$
+```
 
 Observations outside complete blocks contribute zero to the numerator and
 remain in the denominator. More generally, any measurable numerical bound
 $0\le d_n\le a_n$ valid for every dataset gives
 
-$$
+```math
 L^{\mathrm{emp}}=B\,k_-\left(
 \frac{d_n}{B},\frac{\log(1/\alpha_{\mathrm{emp}})}{n}\right).
-$$
+```
 
 To prove validity without assuming attainment of the population infimum,
 choose a fixed admissible $g_j$ with
-$R(g_j)\le R_\kappa^*+1/j$. Pointwise,
+$`R(g_j)\le R_\kappa^*+1/j`$. Pointwise,
 $d_n\le a_n\le\widehat R_n(g_j)$. Monotonicity and Section 4 imply
 
-$$
+```math
 \Pr\{L^{\mathrm{emp}}>R_\kappa^*+1/j\}
 \le\Pr\{L^{\mathrm{emp}}>R(g_j)\}\le\alpha_{\mathrm{emp}}.
-$$
+```
 
-The events on the left increase to $\{L^{\mathrm{emp}}>R_\kappa^*\}$, so the
+The events on the left increase to $`\{L^{\mathrm{emp}}>R_\kappa^*\}`$, so the
 same bound holds in the limit. This argument does not treat $d_n$ as an
 average of iid variables and does not need a class-complexity penalty in
 this lower direction.
@@ -353,20 +353,20 @@ Suppose each calibration loss has a valid numerical upper bound
 $(Y_i-\widehat g(U_i))^2\le\overline\ell_i\le B$.
 Then
 
-$$
+```math
 U_{\mathrm{fit}}=B\,k_+\left(
 \frac{n^{-1}\sum_i\overline\ell_i}{B},
 \frac{\log(1/\alpha_U)}n\right)
-$$
+```
 
-satisfies $\Pr\{R(\widehat g)>U_{\mathrm{fit}}\}\le\alpha_U$.
+satisfies $`\Pr\{R(\widehat g)>U_{\mathrm{fit}}\}\le\alpha_U`$.
 In the implemented finite benchmark these represented losses are computed
 exactly. Admissibility is unnecessary for this fitted-predictor statement.
 
 If the fitted prediction table passes every support-pair Lipschitz check,
 Section 1 supplies an admissible Lipschitz extension $\widetilde g$
 that agrees with $\widehat g$ on the entire evaluation support. Therefore
-$R_\kappa^*\le R(\widetilde g)=R(\widehat g)$. An inadmissible table gives
+$`R_\kappa^*\le R(\widetilde g)=R(\widehat g)`$. An inadmissible table gives
 no such inequality; a valid fitted-risk bound can coexist with a higher
 optimal risk in the prescribed decoder class. The table check does not
 establish global Lipschitz regularity of the executable nonlinear readout.
@@ -379,11 +379,11 @@ sample prefixes are permitted; independence between endpoint events is
 unnecessary.
 
 On that event, the maximum $L$ of valid lower endpoints and zero satisfies
-$L\le R_\kappa^*$. For an admissible fitted predictor,
+$`L\le R_\kappa^*`$. For an admissible fitted predictor,
 
-$$
+```math
 L\le R_\kappa^*\le R(\widehat g)\le U_{\mathrm{fit}}.
-$$
+```
 
 Thus $L>\tau$ excludes the class, while admissibility and
 $U_{\mathrm{fit}}\le\tau$ establish that the requirement is met. Otherwise the
@@ -400,25 +400,25 @@ or coverage on every realized calibration sample.
 
 The implemented benchmark has observation values
 
-$$
+```math
 v=(0,\tfrac14,\tfrac34,1),\qquad X=(v_a,v_b),\qquad Y=v_c,
-$$
+```
 
 with $a,b$ uniform over the 16 ordered pairs and
 
-$$
+```math
 \Pr(c\mid a,b)=\frac45\,\mathbf1\{c=(a+b)\bmod4\}+\frac1{20}.
-$$
+```
 
 Its 64 history-target outcomes are specified in [BENCHMARK.md](BENCHMARK.md).
 Direct summation gives
 
-$$
+```math
 \mu_{ab}=\mathbb E[Y\mid a,b]
 =\frac1{10}+\frac45v_{(a+b)\bmod4},
 \qquad
 R(z)=\frac9{160}+\frac1{16}\sum_{a,b}(z_{ab}-\mu_{ab})^2.
-$$
+```
 
 The first term is the full-history Bayes risk. The class audit uses weights
 $1/16$ and constant $9/160$, verifies lower and upper optimization witnesses,
@@ -436,16 +436,16 @@ $\sigma^2=M^{-1}\sum_j\sigma_j^2$.
 Conditional on counts $N_j$, each group's optimal prediction is its sample
 target mean. Its expected SSE is $\sigma_j^2(N_j-1)_+$. Since
 
-$$
+```math
 \mathbb E[(N_j-1)_+]=\frac bM-1+(1-1/M)^b,
-$$
+```
 
 the exact hierarchy is
 
-$$
+```math
 \mathcal W_b=\sigma^2
 \frac{b-M+M(1-1/M)^b}{b-1}.
-$$
+```
 
 For the short-history control at $\kappa=4$, $M=4$ and
 $\sigma^2=5/32$. For the full-history control at $\kappa=4$,
@@ -456,7 +456,7 @@ This formula also illustrates the weakness of any fixed block size.
 Take $Y$ independent of $U$, with $\Pr(Y=y_-)=\Pr(Y=y_+)=1/2$,
 a uniform $M$-point feature distribution, and inactive distinct-point
 constraints. Then
-$R_\kappa^*=B/4$, while the ratio $\mathcal W_b/R_\kappa^*$ tends to zero
+$`R_\kappa^*=B/4`$, while the ratio $`\mathcal W_b/R_\kappa^*`$ tends to zero
 as $M\to\infty$ for each fixed $b$. For each fixed finite $M$, it instead
 tends to one as $b\to\infty$.
 
@@ -467,13 +467,13 @@ $(0,5),(10,15),(9,13),(6,7)$ have distances at most $1/500$.
 Their conditional-mean differences are $3/5,3/5,4/5,4/5$.
 Applying the two-point squared-error bound to these disjoint pairs gives
 
-$$
+```math
 R(z)\ge\frac9{160}
 +\frac1{32}\left[
 2\left(\frac35-\frac1{250}\right)^2+
 2\left(\frac45-\frac1{250}\right)^2\right]
 =\frac{29513}{250000}.
-$$
+```
 
 The audit checks those distance premises exactly. This known-law argument
 is a reference for the sample certificate, not its input. Its conclusion
