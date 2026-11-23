@@ -113,7 +113,7 @@ arbitrary feature inputs.
 | Reported decision | Meaning |
 | --- | --- |
 | `class_excluded` | $L>\tau$: every decoder in the specified class fails the requirement. |
-| `requirement_met` | An admissible fitted table has $U_{\rm fit}\le\tau$. |
+| `requirement_met` | An admissible fitted table has $U_{\mathrm{fit}}\le\tau$. |
 | `unresolved` | Neither conclusion has been established. |
 | `conflicting_certificates` | The issued lower and admissible upper conclusions conflict; the result is retained for inspection. |
 
@@ -178,9 +178,9 @@ they do not use population conditional means during certificate construction.
 At $\kappa=4$ in the original coordinates, the optimal class risks are
 
 $$
-R^*_{\rm short}=5/32=0.15625,
+R^*_{\mathrm{short}}=5/32=0.15625,
 \qquad
-R^*_{\rm full}=9/160=0.05625.
+R^*_{\mathrm{full}}=9/160=0.05625.
 $$
 
 For the short control the exact population block score is
@@ -269,7 +269,7 @@ repetition, class, and bound. With $J$ Lipschitz bounds, $S$ sample sizes, $R$
 repetitions, and $H$ block sizes, its endpoint count is
 
 $$
-N_{\rm endpoints}=(3J+2)SR(2H+2).
+N_{\mathrm{endpoints}}=(3J+2)SR(2H+2).
 $$
 
 More comparisons therefore reduce the allocation per endpoint. Different
