@@ -96,7 +96,7 @@ The endpoint is the upper inverse of binary KL:
 
 $$
 U_m\ge\sup\left\{p\in[q_m,1]:
-  \operatorname{kl}(q_m\Vert p)\le\frac{\log60}{4096}\right\},
+  \mathrm{kl}(q_m\Vert p)\le\frac{\log60}{4096}\right\},
 $$
 
 where zero-weight logarithm terms use their continuous conventions. The
@@ -130,7 +130,7 @@ The tests use separate exact rational and high-precision Decimal references.
 The search retains exact q and brackets the root of
 
 $$
-F(p)=4096\operatorname{kl}(q\Vert p)-\log60.
+F(p)=4096\mathrm{kl}(q\Vert p)-\log60.
 $$
 
 For q<1, it starts at [q,1], whose lower and upper directions are known
