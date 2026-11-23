@@ -346,28 +346,30 @@ differ.
 
 ## 6. Fitted-risk upper bounds, simultaneous coverage, and decisions
 
-Let $\widehat f:\mathcal X\to I$ be fixed using development data and put
-$R_{\rm fit}=\mathbb E[(Y-\widehat f(X))^2]$. Suppose each calibration loss
-has a valid numerical upper bound
-$(Y_i-\widehat f(X_i))^2\le\overline\ell_i\le B$.
+Let $\widehat g:\mathcal U\to I$ be a measurable fitted decoder, fixed
+using development data and not necessarily in $\mathcal G_\kappa(d)$. Its
+population MSE is $R(\widehat g)=\mathbb E[(Y-\widehat g(U))^2]$.
+Suppose each calibration loss has a valid numerical upper bound
+$(Y_i-\widehat g(U_i))^2\le\overline\ell_i\le B$.
 Then
 
 $$
-U_{\rm fit}=B\,k_+\left(
+U_{\mathrm{fit}}=B\,k_+\left(
 \frac{n^{-1}\sum_i\overline\ell_i}{B},
 \frac{\log(1/\alpha_U)}n\right)
 $$
 
-satisfies $\Pr\{R_{\rm fit}>U_{\rm fit}\}\le\alpha_U$.
+satisfies $\Pr\{R(\widehat g)>U_{\mathrm{fit}}\}\le\alpha_U$.
 In the implemented finite benchmark these represented losses are computed
 exactly. Admissibility is unnecessary for this fitted-predictor statement.
 
 If the fitted prediction table passes every support-pair Lipschitz check,
-Section 1 supplies an admissible decoder $\widehat g$ agreeing with
-$\widehat f$ on all supported histories. Consequently
-$R_\kappa^*\le R(\widehat g)=R_{\rm fit}$. An inadmissible table gives no
-such inequality; its accurate fitted risk can coexist with a higher
-optimal risk in the prescribed class.
+Section 1 supplies an admissible Lipschitz extension $\widetilde g$
+that agrees with $\widehat g$ on the entire evaluation support. Therefore
+$R_\kappa^*\le R(\widetilde g)=R(\widehat g)$. An inadmissible table gives
+no such inequality; a valid fitted-risk bound can coexist with a higher
+optimal risk in the prescribed decoder class. The table check does not
+establish global Lipschitz regularity of the executable nonlinear readout.
 
 Allocate failure probabilities across all requested classes, sample sizes,
 repetitions, and lower/upper endpoints with total at most $\delta$.
@@ -380,11 +382,11 @@ On that event, the maximum $L$ of valid lower endpoints and zero satisfies
 $L\le R_\kappa^*$. For an admissible fitted predictor,
 
 $$
-L\le R_\kappa^*\le R_{\rm fit}\le U_{\rm fit}.
+L\le R_\kappa^*\le R(\widehat g)\le U_{\mathrm{fit}}.
 $$
 
 Thus $L>\tau$ excludes the class, while admissibility and
-$U_{\rm fit}\le\tau$ establish that the requirement is met. Otherwise the
+$U_{\mathrm{fit}}\le\tau$ establish that the requirement is met. Otherwise the
 decision is unresolved. Numerically unavailable endpoints retain their
 allocation and supply no favorable conclusion. A conflict between an
 available class lower and an admissible fitted upper cannot occur on this
