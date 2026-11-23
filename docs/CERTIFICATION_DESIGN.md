@@ -21,9 +21,9 @@ decision rules are in [SCIENTIFIC_REFERENCE.md](SCIENTIFIC_REFERENCE.md).
 For a fixed development outcome D and each frozen predictor f_m,D, the target is
 the population scalar mean squared error
 
-$$
+```math
 R_m(D)=\mathbb{E}_{(X,Y)\sim P}\big[(Y-f_{m,D}(X))^2\big].
-$$
+```
 
 The evaluation law P is the [four-state benchmark](BENCHMARK.md). The
 statistical statement assumes 4,096 iid calibration episodes from that law,
@@ -43,12 +43,12 @@ are each 1/60, summing to 1/20.
 
 For every reported valid endpoint, the intended simultaneous statement is
 
-$$
+```math
 \Pr_{\mathrm{Cal}}\!\left[
   \exists m\text{ with a reported valid endpoint and }R_m(D)>U_m
   \mid D
 \right]\le \frac1{20},
-$$
+```
 
 under the stated premises. There is no additional conditioning on numerical
 availability or acceptance. Every unavailable candidate remains visible in the
@@ -75,9 +75,9 @@ number. The targets are the exact observation values 0, 1/4, 3/4, and 1.
 Subtraction, squaring, summation, and division by 4,096 are exact rational
 operations:
 
-$$
+```math
 q_m=\frac{1}{4096}\sum_{i=1}^{4096}(y_i-f_m(x_i))^2.
-$$
+```
 
 There is no target-variance normalization, decimal approximation, or additional
 prediction clipping during evaluation. The canonical clipped predictor was
@@ -94,26 +94,26 @@ and frozen predictions.
 
 The endpoint is the upper inverse of binary KL:
 
-$$
+```math
 U_m\ge\sup\left\{p\in[q_m,1]:
   \mathrm{kl}(q_m\Vert p)\le\frac{\log60}{4096}\right\},
-$$
+```
 
 where zero-weight logarithm terms use their continuous conventions. The
 implementation encloses each logarithm with exact integer and rational
 arithmetic. For positive rational x, integer range reduction gives
 
-$$
+```math
 x=2^a u,\qquad 1\le u<2,\qquad z=\frac{u-1}{u+1}.
-$$
+```
 
 The atanh series satisfies, for 0<=z<=1/3,
 
-$$
+```math
 S_M(z)=2\sum_{j=0}^{M-1}\frac{z^{2j+1}}{2j+1},\qquad
 0\le\log\frac{1+z}{1-z}-S_M(z)
 \le\frac{3}{4(2M+1)9^M}.
-$$
+```
 
 At precision b in {128,256,512}, M=b and D=2^b. Exact integer floor and ceiling
 operations enclose each power and each term on the D grid. The rigorous
@@ -129,9 +129,9 @@ The tests use separate exact rational and high-precision Decimal references.
 
 The search retains exact q and brackets the root of
 
-$$
+```math
 F(p)=4096\mathrm{kl}(q\Vert p)-\log60.
-$$
+```
 
 For q<1, it starts at [q,1], whose lower and upper directions are known
 analytically. It chooses the exact midpoint, first evaluates at 128 bits, and

@@ -28,13 +28,13 @@ Lipschitz bound $\kappa\geq0$, an evaluation law for $(X,Y)$, and a known
 bounded interval $I$ containing both targets and decoder predictions.
 The **optimal class risk** is
 
-$$
+```math
 R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}
 \mathbb E[(Y-g(\Gamma(X)))^2],
 \qquad
 \mathcal G_\kappa(d)=\{g:\mathcal U\to I\text{ measurable}:
 |g(u)-g(v)|\leq\kappa d(u,v)\quad\forall u,v\in\mathcal U\}.
-$$
+```
 
 For a fixed MSE threshold $\tau$, a lower confidence bound $L$ and a
 fitted-predictor upper confidence bound $U_{\mathrm{fit}}$ support these decisions:

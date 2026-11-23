@@ -33,19 +33,19 @@ The [benchmark specification and derivation](BENCHMARK.md) define the law.
 Let z=(0,1/4,3/4,1), with history labels a,b and successor label c in {0,1,2,3}.
 Each history has probability 1/16. The joint probabilities are
 
-$$
+```math
 p(a,b,c)=\begin{cases}
 17/320,&c=(a+b)\bmod4,\\
 1/320,&\text{otherwise}.
 \end{cases}
-$$
+```
 
 For the actual frozen binary64 prediction f(a,b), the exact population MSE is
 
-$$
+```math
 R(f)=\sum_{a=0}^3\sum_{b=0}^3\sum_{c=0}^3
  p(a,b,c)\,[z_c-f(a,b)]^2.
-$$
+```
 
 Every stored float is converted to its exact represented rational value. The
 audit performs no decimal rationalization, extra clipping, variance normalization,
@@ -70,16 +70,16 @@ path. Both implementations use Python's exact `Fraction` arithmetic.
 
 The conditional mean for a history is
 
-$$
+```math
 \mu(a,b)=\frac1{10}+\frac45z_{(a+b)\bmod4}.
-$$
+```
 
 The audit also checks the per-history conditional variance and the identity
 
-$$
+```math
 R(f)=\underbrace{\frac9{160}}_{R_{\mathrm{Bayes}}}
  +\frac1{16}\sum_{a,b}[f(a,b)-\mu(a,b)]^2.
-$$
+```
 
 The second term is the **fitted predictor's excess risk over the full-history
 Bayes risk**. It is not a measurement of information discarded by a representation,
@@ -200,7 +200,7 @@ evaluating model-specific population risks.
 
 For each prescribed representation, metric, and Lipschitz bound, the class-risk
 audit optimizes squared loss under the known finite population law. Verified
-dual witnesses provide lower bounds on optimal class risk $R_\kappa^*$, and
+dual witnesses provide lower bounds on optimal class risk $`R_\kappa^*`$, and
 feasible prediction tables provide upper bounds. These deterministic
 population-reference bounds are distinct from the lower and upper confidence
 bounds obtained from calibration observations.

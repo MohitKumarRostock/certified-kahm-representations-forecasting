@@ -45,9 +45,9 @@ For each coordinate, fit the mean and standard deviation using all training
 rows, including duplicates. Variance has divisor `n_train`. A standard deviation
 at most `1e-12` is replaced by one. Store and reuse
 
-$$
+```math
 z=(x-\mu_{\mathrm{train}})/s_{\mathrm{train}}.
-$$
+```
 
 Two partitions request 2 and 4 groups. For deterministic clustering, distinct
 standardized rows are sorted lexicographically and carry their occurrence counts.
@@ -95,10 +95,10 @@ Unexpected fitting failures stop execution.
 
 For positive rank r,
 
-$$
+```math
 S=\mathrm{Cov}_{n-1}(P^Tq_i),\qquad
 \kappa(z,q)=\exp\!\left[-\frac{(P^T(z-q))^TS^{-1}(P^T(z-q))}{2r}\right].
-$$
+```
 
 If `S=L L.T`, the stored metric is `M=P L^(-T)/sqrt(r)`, evaluated by a
 linear-system solve. Thus the kernel log is `-0.5*||(z-q)M||^2`. Explicit
@@ -121,17 +121,17 @@ to an ideal real-arithmetic function is asserted for the fitted bank.
 Let $G_{ij}=\kappa(q_i,q_j)$ be the unrescaled reference Gaussian Gram matrix,
 with $n$ reference rows and input dimension $d$. Reference energy is
 
-$$
+```math
 \nu=\frac{\|Q\|_F^2}{nd},\qquad \lambda^{(0)}=2.5\nu.
-$$
+```
 
 Q contains globally standardized references; the energy calculation does not
 subtract the local mean. At each completed solve,
 
-$$
+```math
 C^{(a)}=(G+\lambda^{(a)}I)^{-1},\qquad
 \lambda^{(a+1)}=2\nu+\frac{\|Q-GC^{(a)}Q\|_F^2}{nd}.
-$$
+```
 
 Stop when absolute regularizer change is at most `1e-3`, or after 100 solves.
 Store the last completed matching pair `(C,lambda)`, not the subsequent proposal.
@@ -145,17 +145,17 @@ to zero. It is applied only to the query vector, not to rows of the fitting Gram
 
 The KAHM reconstruction is
 
-$$
+```math
 w=Ck(z),\qquad A(z)=\frac{Q^Tw}{\mathbf1^Tw}.
-$$
+```
 
 Weights can be negative. A negative denominator alone is valid. Common weight
 rescaling by `max(abs(w))` avoids overflow in sums and preserves the exact
 quotient. Require nonzero weight mass and
 
-$$
+```math
 \frac{|\sum_iw_i|}{\sum_i|w_i|}\ge 10^{-10}.
-$$
+```
 
 Failed finite-value or cancellation checks use affine reconstruction
 `mu + P P.T (z-mu)`. Full-rank affine fallback returns z directly. This identity
@@ -167,11 +167,11 @@ was actually used. Every fallback has a recorded reason.
 
 Given reconstruction a, compute the score in the full standardized input space:
 
-$$
+```math
 e=1-e^{-\|z-a\|_2},\qquad
 \theta=\pi^{-1}\arccos(\mathrm{clip}(c,-1,1)),\qquad
 T=\sqrt{(e^2+\theta^2)/2}.
-$$
+```
 
 Here c is the cosine when both norms are positive, and zero otherwise. In
 particular, `T(0,0)=1/(2*sqrt(2))`. Identical nonzero vectors receive zero score.
@@ -180,16 +180,16 @@ underflow. Cosine and final score are clipped only against their specified bound
 
 For offset eta=`1e-6` and contrast omega=`16`, normalize within each partition:
 
-$$
+```math
 \ell_j=\omega\log(1-T_j+\eta),\qquad
 h_b=\max_{i\in\mathcal J_b}\ell_i,
-$$
+```
 
-$$
+```math
 \zeta_b=h_b+\log\sum_{i\in\mathcal J_b}e^{\ell_i-h_b},\qquad
 \phi_j=\frac{e^{\ell_j-h_b}}{\sum_{i\in\mathcal J_b}e^{\ell_i-h_b}}
 \quad(j\in\mathcal J_b).
-$$
+```
 
 There is no small-sum uniform branch or artificial membership floor. Extreme
 relative affinities may round to zero for other parameter choices; parameters
@@ -198,11 +198,11 @@ and canonical replay check the memberships on every supported history.
 
 The feature vectors are
 
-$$
+```math
 \Gamma_{\mathrm{MEM}}=\phi,\qquad
 \Gamma_{\mathrm{LOCAL}}=\mathrm{col}\!\left(\phi,
 \{\phi_j P_j^T(z-\mu_j)\}_{j=1}^{J}\right).
-$$
+```
 
 The local coordinates belong to the input, not its reconstruction. The MEM block
 is copied identically into LOCAL. Scores and log normalizers are retained as

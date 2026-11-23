@@ -37,9 +37,9 @@ Each reconstruction receives a radial/angular discrepancy score. Affinities
 are normalized separately within each partition. Their concatenation is MEM.
 LOCAL retains that exact membership prefix and appends
 
-$$
+```math
 \phi_j(z)P_j^T(z-\mu_j)
-$$
+```
 
 for each local model. These are coordinates of the input relative to its local
 geometry, not coordinates of the reconstruction. Rank-zero models append no
@@ -100,13 +100,13 @@ Fix a representation $\Gamma$, a feature pseudometric $d$, a Lipschitz bound
 $\kappa\geq0$, and a common target and prediction interval $I=[0,1]$.
 An admissible decoder satisfies
 
-$$
+```math
 g:\mathcal U\to I,\qquad
 |g(u)-g(v)|\leq\kappa d(u,v).
-$$
+```
 
 Its population MSE is $R(g)=\mathbb E[(Y-g(\Gamma(X)))^2]$, and the
-**optimal class risk** is $R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}R(g)$,
+**optimal class risk** is $`R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}R(g)`$,
 where $\mathcal G_\kappa(d)$ is the measurable $I$-valued Lipschitz decoder class.
 The `class-risk` workflow freezes the class specification before drawing its
 own iid calibration episodes, independently of development.
@@ -115,10 +115,10 @@ For $b\geq2$ observations, the block score $T_b$ is the minimum total squared
 error subject to all pairwise Lipschitz constraints, divided by $b-1$.
 The expected scores satisfy
 
-$$
+```math
 \mathcal W_2\leq\mathcal W_3\leq\cdots\leq R_\kappa^*,
 \qquad \mathcal W_b=\mathbb E[T_b].
-$$
+```
 
 The [proof](LOWER_CERTIFICATE_PROOF.md) derives this hierarchy and its
 convergence on the implemented finite feature support. Numerically verified
@@ -126,7 +126,7 @@ optimization lower bounds support two statistical constructions: a bound
 using independent block scores and a bound on minimum empirical risk using
 the same optimization witnesses. The study also reports full empirical optimization.
 Taking the maximum of the prespecified, simultaneously valid lower endpoints
-gives $L\leq R_\kappa^*$ on the joint confidence event.
+gives $`L\leq R_\kappa^*`$ on the joint confidence event.
 
 An upper bound $U$ on a fitted predictor's risk also bounds optimal class risk
 only when that predictor is admissible. On the benchmark support, the verifier

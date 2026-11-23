@@ -1,0 +1,26 @@
+name: Render all Markdown equations
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  math-rendering:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install two TeX parsers outside the source tree
+        run: |
+          mkdir -p "${RUNNER_TEMP}/tex-parsers"
+          cd "${RUNNER_TEMP}/tex-parsers"
+          npm install --no-save --ignore-scripts --no-audit --no-fund katex@0.16.22 mathjax-full@3.2.2
+      - name: Parse every Markdown and notebook equation
+        run: NODE_PATH="${RUNNER_TEMP}/tex-parsers/node_modules" node scripts/check_rendered_math.cjs

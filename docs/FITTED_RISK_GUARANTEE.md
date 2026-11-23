@@ -27,9 +27,9 @@ hyperparameter searches, selection decisions, fitted parameters, clipping
 rules, and the computational conventions that determine predictions. After
 development, the family consists of exactly three deterministic predictors,
 
-$$
+```math
 f_{1,D},\quad f_{2,D},\quad f_{3,D},
-$$
+```
 
 called RAW, KAHM MEM, and KAHM LOCAL. Each returns a value in $[0,1]$.
 Conditional on $D$, these functions and the calibration protocol are fixed.
@@ -37,16 +37,16 @@ Conditional on $D$, these functions and the calibration protocol are fixed.
 Let $P$ be the stipulated evaluation distribution of a history–target pair
 $Z=(X,Y)$, with $Y\in[0,1]$. The risk of predictor $m$ is
 
-$$
+```math
 R_m(D)=\mathbb E_{Z\sim P}\left[(Y-f_{m,D}(X))^2\right].
-$$
+```
 
 The calibration premise is that
 
-$$
+```math
 Z_1,\ldots,Z_n\mid D\ \overset{\mathrm{iid}}{\sim}\ P,
 \qquad n=4096.
-$$
+```
 
 In particular, calibration is independent of the information used to develop
 and select the predictors. There is one loss observation per independently
@@ -56,11 +56,11 @@ A single dependent trajectory is not covered by this proof.
 
 Define
 
-$$
+```math
 L_{i,m}=(Y_i-f_{m,D}(X_i))^2\in[0,1],
 \qquad
 q_m=\frac1n\sum_{i=1}^n L_{i,m}.
-$$
+```
 
 The same $4096$ episodes may be evaluated by all three predictors. For each
 fixed $m$, its losses are iid over $i$; losses for different predictors
@@ -101,50 +101,50 @@ calibration distribution.
 For every real $t$, convexity of $x\mapsto e^{tx}$ implies that its graph
 on $[0,1]$ lies below the chord joining its endpoint values:
 
-$$
+```math
 e^{tx}\le (1-x)+xe^t,\qquad 0\le x\le1.
-$$
+```
 
 Taking expectations gives
 
-$$
+```math
 \mathbb E[e^{tL_i}\mid D]\le 1-R+Re^t.
-$$
+```
 
 Independence over calibration episodes therefore yields
 
-$$
+```math
 \mathbb E\!\left[e^{t\sum_{i=1}^n L_i}\mid D\right]
 \le (1-R+Re^t)^n.
-$$
+```
 
 For $t<0$ and $0\le s<R$, the event $q\le s$ implies
 $e^{t\sum_i L_i}\ge e^{tns}$. Markov's inequality gives
 
-$$
+```math
 \Pr(q\le s\mid D)
 \le \exp\!\left(n\left[\log(1-R+Re^t)-ts\right]\right).
-$$
+```
 
 If $0<s<R<1$, the minimizing value is
 
-$$
+```math
 t_* = \log\frac{s(1-R)}{R(1-s)}<0.
-$$
+```
 
 Substituting it proves
 
-$$
+```math
 \boxed{\Pr(q\le s\mid D)\le e^{-n\mathrm{kl}(s\Vert R)}}
 \qquad\text{(1)}
-$$
+```
 
 where the binary relative entropy is
 
-$$
+```math
 \mathrm{kl}(a\Vert p)
 =a\log\frac ap+(1-a)\log\frac{1-a}{1-p}.
-$$
+```
 
 The convention is $0\log(0/u)=0$, including the continuous boundary
 cases. A positive numerator divided by zero contributes infinite divergence.
@@ -162,27 +162,27 @@ function of every $[0,1]$-valued loss with the same mean.
 
 Set
 
-$$
+```math
 \delta=\frac1{60},\qquad
 c=\frac{\log(1/\delta)}n=\frac{\log60}{4096}.
-$$
+```
 
 For an empirical mean $q$, define the ideal upper endpoint
 
-$$
+```math
 u(q)=\sup\left\{p\in[q,1]:
 \mathrm{kl}(q\Vert p)\le c\right\}.
 \qquad\text{(2)}
-$$
+```
 
 If $q=1$, then $u(q)=1$. For $q<1$, the divergence is continuous
 in $p\in[q,1)$, starts at zero, and tends to infinity as $p\to1$.
 For $q<p<1$,
 
-$$
+```math
 \frac{\partial}{\partial p}\mathrm{kl}(q\Vert p)
 =\frac{p-q}{p(1-p)}>0.
-$$
+```
 
 Consequently, there is a unique $u(q)\in(q,1)$ satisfying
 $\mathrm{kl}(q\Vert u(q))=c$. At $q=0$, the equivalent
@@ -191,40 +191,40 @@ this exponential.
 
 We prove, for every fixed predictor,
 
-$$
+```math
 \Pr\bigl(R>u(q)\mid D\bigr)\le\delta.
 \qquad\text{(3)}
-$$
+```
 
-If $R\in\{0,1\}$, the almost-sure statements above make (3) immediate.
+If $`R\in\{0,1\}`$, the almost-sure statements above make (3) immediate.
 Suppose $0<R<1$. A failure $R>u(q)$ requires $q<R$, since
 $u(q)\ge q$. For $q<R$, strict monotonicity in the second argument
 shows that
 
-$$
+```math
 R>u(q)\quad\Longleftrightarrow\quad
 \mathrm{kl}(q\Vert R)>c.
-$$
+```
 
 For fixed $R$, the function
 $h(s)=\mathrm{kl}(s\Vert R)$ is continuous and strictly decreasing
 on $[0,R]$, with $h(R)=0$ and $h(0)=-\log(1-R)$. In the
 interior this follows from
 
-$$
+```math
 h'(s)=\log\frac{s(1-R)}{R(1-s)}<0.
-$$
+```
 
 If $c\ge h(0)$, failure is impossible. Otherwise, there is a unique
-$s_*\in(0,R)$ with $h(s_*)=c$, and the failure event is exactly
-$q<s_*$. Applying (1) at this fixed threshold gives
+$`s_*\in(0,R)`$ with $`h(s_*)=c`$, and the failure event is exactly
+$`q<s_*`$. Applying (1) at this fixed threshold gives
 
-$$
+```math
 \Pr(R>u(q)\mid D)
 =\Pr(q<s_*\mid D)
 \le\Pr(q\le s_*\mid D)
 \le e^{-nc}=\frac1{60}.
-$$
+```
 
 This argument uses a threshold determined by the fixed true risk. It does
 not substitute a random empirical threshold into a fixed-threshold tail bound.
@@ -235,25 +235,25 @@ Let $A_m$ mean that the implementation reports a valid endpoint for
 predictor $m$. On $A_m$, the numerical checks described below establish
 the pointwise deterministic inequality
 
-$$
+```math
 U_m\ge u(q_m).
 \qquad\text{(4)}
-$$
+```
 
 Numerical availability may depend on calibration data, and the availability
 events for different predictors may be coupled by a shared work budget. Neither
 kind of dependence affects the following event inclusion:
 
-$$
+```math
 \{A_m\text{ and }R_m(D)>U_m\}
 \subseteq \{R_m(D)>u(q_m)\}.
-$$
+```
 
 **Theorem (simultaneous fitted-risk upper bounds).** Under the assumptions in
 Section 1, if every reported endpoint satisfies (4), the following bound holds.
 Combining (3), the preceding event inclusion, and the union bound proves it:
 
-$$
+```math
 \boxed{
 \Pr_{\mathrm{Cal}}\!\left[
   \exists m\in\{1,2,3\}: A_m\text{ and }R_m(D)>U_m
@@ -262,7 +262,7 @@ $$
 \le\frac3{60}=\frac1{20}.
 }
 \qquad\text{(5)}
-$$
+```
 
 Equivalently, with conditional probability at least $19/20$, every
 reported endpoint simultaneously covers its own fitted risk. If all three
@@ -281,13 +281,13 @@ conditioning can change those probabilities.
 For the fixed tolerance $\tau=1/10$, define acceptance by
 $A_m$ and $U_m\le\tau$. Then
 
-$$
+```math
 \Pr_{\mathrm{Cal}}\!\left[
   \exists m: A_m,\ U_m\le\tau,\ R_m(D)>\tau
   \mid D
 \right]\le\frac1{20},
 \qquad\text{(6)}
-$$
+```
 
 because that event is a subset of the failure event in (5). A user may select
 any accepted member of this fixed family without adding a new allocation.
@@ -312,24 +312,24 @@ exact rational intervals to enclose the logarithms in the KL divergence.
 For a positive rational $x$, integer bit lengths and exact comparisons
 give an integer $a$ and rational $u$ such that
 
-$$
+```math
 x=2^a u,\qquad 1\le u<2.
-$$
+```
 
 Set $z=(u-1)/(u+1)$, so $0\le z<1/3$. Integration of the geometric
 series for $1/(1-t^2)$, or direct differentiation and evaluation at zero,
 gives
 
-$$
+```math
 \log\frac{1+z}{1-z}
 =2\sum_{j=0}^{\infty}\frac{z^{2j+1}}{2j+1}.
-$$
+```
 
 For
 $S_M(z)=2\sum_{j=0}^{M-1}z^{2j+1}/(2j+1)$, the omitted terms are
 nonnegative and satisfy
 
-$$
+```math
 \begin{aligned}
 0\le \log\frac{1+z}{1-z}-S_M(z)
 &\le \frac{2z^{2M+1}}{(2M+1)(1-z^2)}\\
@@ -337,7 +337,7 @@ $$
 \qquad 0\le z\le\frac13.
 \end{aligned}
 \qquad\text{(7)}
-$$
+```
 
 The first inequality replaces each denominator $2j+1$ in the tail by
 $2M+1$ and sums a geometric series. The second uses $z\le1/3$.
@@ -345,43 +345,43 @@ The same formula at $z=1/3$ encloses $\log2$.
 
 ### 5.2 Directed dyadic recurrence
 
-Choose a permitted precision $b\in\{128,256,512\}$, set $M=b$, and
+Choose a permitted precision $`b\in\{128,256,512\}`$, set $M=b$, and
 use the integer grid denominator $G=2^b$. Initialize
 
-$$
+```math
 \ell_0=\lfloor Gz\rfloor,\qquad h_0=\lceil Gz\rceil.
-$$
+```
 
 For each next required power set
 
-$$
+```math
 \ell_{j+1}=\lfloor\ell_j z^2\rfloor,\qquad
 h_{j+1}=\lceil h_j z^2\rceil.
-$$
+```
 
 Induction, using $z^2\ge0$, proves
 
-$$
+```math
 \ell_j/G\le z^{2j+1}\le h_j/G.
-$$
+```
 
 Accumulate the integer bounds
 
-$$
+```math
 A=\sum_{j=0}^{M-1}\left\lfloor\frac{2\ell_j}{2j+1}\right\rfloor,
 \qquad
 B=\sum_{j=0}^{M-1}\left\lceil\frac{2h_j}{2j+1}\right\rceil.
-$$
+```
 
 Each term is enclosed in the correct direction. By (7), the exact interval
 
-$$
+```math
 \left[
 \frac A G,
 \frac{B+\left\lceil G\,\frac{3}{4(2M+1)9^M}\right\rceil}{G}
 \right]
 \qquad\text{(8)}
-$$
+```
 
 encloses $\log u$. At $z=0$, its exact value zero is returned
 directly. Every floor and ceiling above is computed by exact integer division,
@@ -415,18 +415,18 @@ values are handled analytically, not encoded as finite rational intervals.
 
 Write
 
-$$
+```math
 F_q(p)=4096\mathrm{kl}(q\Vert p)-\log60.
-$$
+```
 
 If the KL interval is $[K_-,K_+]$ and the confidence-log interval is
 $[C_-,C_+]$, then
 
-$$
+```math
 F_q(p)\in
 [4096K_- - C_+,\ 4096K_+ - C_-].
 \qquad\text{(9)}
-$$
+```
 
 Thus a nonnegative lower endpoint in (9) proves $F_q(p)\ge0$, while a
 nonpositive upper endpoint proves $F_q(p)\le0$. An interval containing
@@ -438,10 +438,10 @@ For $q<1$, initialize the exact bracket $[L,H]=[q,1]$. Its lower
 direction follows from $F_q(q)=-\log60<0$; the upper boundary is
 analytic, since $u(q)<1$. The invariant is
 
-$$
+```math
 q\le L\le u(q)\le H\le1.
 \qquad\text{(10)}
-$$
+```
 
 When $H-L>2^{-80}$, form the exact midpoint $p=(L+H)/2$. Evaluate
 (9) first at $128$ bits, then at $256$, and then at $512$ only
@@ -484,9 +484,9 @@ inequalities are enough to establish (10) without trusting successful search
 decisions as numerical evidence. In particular, $F_q(H)\ge0$ and strict
 monotonicity imply $H\ge u(q)$. The reported endpoint is
 
-$$
+```math
 U=H,
-$$
+```
 
 so (4) holds deterministically whenever the checks succeed. Its conservatism
 also satisfies $0\le U-u(q)\le H-L\le2^{-80}$.
@@ -535,10 +535,10 @@ zero probability to all possible software or hardware faults.
 The endpoint is stored as a reduced fraction $U=A/B$, with $B>0$,
 using canonical integer strings. For display only, compute
 
-$$
+```math
 J=\left\lceil\frac{10^{18}A}{B}\right\rceil,
 \qquad U_{\mathrm{display}}=J/10^{18}.
-$$
+```
 
 Then $U_{\mathrm{display}}\ge U$, with upward rounding error less than
 $10^{-18}$. The displayed string has exactly $18$ fractional digits.

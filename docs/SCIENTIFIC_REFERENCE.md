@@ -27,40 +27,40 @@ $I=[y_-,y_+]$ containing the target almost surely. Predictions also lie in
 $I$. Write $D=y_+-y_->0$ and $B=D^2$, so squared loss lies in $[0,B]$. The
 class of admissible decoders is
 
-$$
+```math
 \mathcal G_\kappa(d)=
 \{g:\mathcal U\to I\text{ measurable}:
 |g(u)-g(v)|\le\kappa d(u,v)\text{ for all }u,v\}.
-$$
+```
 
 Under the specified evaluation law of $(X,Y)$, define
 
-$$
+```math
 R(g)=\mathbb E[(Y-g(\Gamma(X)))^2],
 \qquad
 R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}R(g).
-$$
+```
 
-The risk $R(g)$ belongs to one decoder; $R_\kappa^*$ belongs to the entire
+The risk $R(g)$ belongs to one decoder; $`R_\kappa^*`$ belongs to the entire
 prescribed class. Both depend on the evaluation law. The representation,
 coordinates, metric, and Lipschitz bound must be reported together. For
-example, replacing $d$ by $c\,d$ and $\kappa$ by $\kappa/c$, for $c>0$,
+example, replacing $d$ by $`c\,d`$ and $\kappa$ by $\kappa/c$, for $c>0$,
 leaves the class unchanged. Changing feature scale while holding $\kappa$
 fixed can change the class.
 
 | Symbol | Meaning |
 | --- | --- |
 | $\Gamma,d,\kappa,I$ | Prescribed representation, feature pseudometric, Lipschitz bound, and output interval |
-| $R_\kappa^*$ | Infimum population MSE over this decoder class |
+| $`R_\kappa^*`$ | Infimum population MSE over this decoder class |
 | $\widehat g$ | A measurable fitted decoder fixed using development data, with outputs in $I$; admissibility is not assumed |
 | $R(\widehat g)$ | $\mathbb E[(Y-\widehat g(\Gamma(X)))^2]$ |
 | $a_n$ | Minimum empirical MSE over the class on the $n$ calibration observations |
 | $T_b,\mathcal W_b$ | Normalized minimum block error and its expectation |
-| $L,U_{\mathrm{fit}}$ | Lower confidence bound on $R_\kappa^*$ and upper confidence bound on $R_{\mathrm{fit}}$ |
+| $L,U_{\mathrm{fit}}$ | Lower confidence bound on $`R_\kappa^*`$ and upper confidence bound on $R_{\mathrm{fit}}$ |
 | $\tau,\delta$ | Required MSE threshold and total allocated failure probability |
 
 If $\widehat g\in\mathcal G_\kappa(d)$, then
-$R_\kappa^*\le R(\widehat g)$. A small fitted prediction error alone
+$`R_\kappa^*\le R(\widehat g)`$. A small fitted prediction error alone
 cannot establish that inequality. In the finite benchmark, the software
 checks the archived fitted prediction table on the complete evaluation
 support; a passing table has an admissible Lipschitz extension. This
@@ -76,10 +76,10 @@ arbitrary intervals, pseudometrics, or data sources.
 
 For a fixed calibration sample, the empirical optimum is
 
-$$
+```math
 a_n=\inf_{g\in\mathcal G_\kappa(d)}
 \frac1n\sum_{i=1}^n(Y_i-g(U_i))^2.
-$$
+```
 
 A verified optimization bound $d_n\le a_n$ is a deterministic statement
 about those observations. The fixed-dataset optimization also applies to
@@ -105,7 +105,7 @@ inspecting results.
 
 For $b\ge2$ iid feature-target observations, let
 
-$$
+```math
 Q_b=\min_v\left\{
 \sum_{i=1}^b(Y_i-v_i)^2:
 |v_i-v_j|\le\kappa d(U_i,U_j)\text{ for all }i<j
@@ -114,7 +114,7 @@ Q_b=\min_v\left\{
 T_b=\frac{Q_b}{b-1},
 \qquad
 \mathcal W_b=\mathbb E[T_b].
-$$
+```
 
 Clipping predictions to $I$ leaves the minimum unchanged. A feasible
 finite prediction table has a Lipschitz extension, so $Q_b/b$ equals the
@@ -126,25 +126,25 @@ the residuals of any fixed admissible decoder gives a feasible block
 assignment whose normalized error is its residual sample variance.
 That sample variance is unbiased for the residual variance. Consequently,
 
-$$
+```math
 0\le\mathcal W_2\le\mathcal W_3\le\cdots\le R_\kappa^*,
 \qquad
 0\le T_b\le
 C_b:=\frac{B\lfloor b^2/4\rfloor}{b(b-1)}.
-$$
+```
 
 The monotonicity follows from a deterministic subset-average inequality,
 proved in the [proof note](LOWER_CERTIFICATE_PROOF.md#2-a-block-lower-bound).
 For $b=2$, the score has the explicit form
 
-$$
+```math
 T_2=\frac12\bigl(|Y_1-Y_2|-\kappa d(U_1,U_2)\bigr)_+^2.
-$$
+```
 
-On the implemented finite support, $\mathcal W_b\uparrow R_\kappa^*$.
+On the implemented finite support, $`\mathcal W_b\uparrow R_\kappa^*`$.
 The same convergence holds for a compact metric feature space under the
 measurability and boundedness assumptions stated in the proof note.
-Thus, for a fixed such prediction problem and any $\tau<R_\kappa^*$,
+Thus, for a fixed such prediction problem and any $`\tau<R_\kappa^*`$,
 some population hierarchy level exceeds $\tau$. This statement does not
 specify the sample size needed to certify the comparison, and no fixed
 block size works uniformly well across all prediction problems.
@@ -191,9 +191,9 @@ confidence endpoints. Every fixed fitted predictor has its own valid
 upper endpoint $U_{\mathrm{fit}}$. When the predictor is admissible, the
 simultaneous event gives
 
-$$
+```math
 L\le R_\kappa^*\le R(\widehat g)\le U_{\mathrm{fit}}.
-$$
+```
 
 | Outcome | Mathematical condition | Interpretation |
 | --- | --- | --- |
@@ -255,7 +255,7 @@ falsification are also studied directly in [5].
 The proof note states the exact construction used by this software rather
 than attributing the whole framework to one source. In particular,
 monotonicity of expected empirical minima $a_b$ alone does not imply
-monotonicity of $\mathbb E[b\,a_b/(b-1)]$, because $b/(b-1)$ decreases.
+monotonicity of $`\mathbb E[b\,a_b/(b-1)]`$, because $b/(b-1)$ decreases.
 The subset-average residual-variance argument establishes the latter result.
 No claim of universal statistical or computational superiority is needed
 for these guarantees.

@@ -90,19 +90,19 @@ For the prescribed representation $\Gamma$, feature pseudometric $d$, and
 Lipschitz bound $\kappa$, let $\mathcal G_\kappa(d)$ contain all measurable
 $\kappa$-Lipschitz decoders into $I=[0,1]$. Their optimal class risk is
 
-$$
+```math
 R_\kappa^*
 =\inf_{g\in\mathcal G_\kappa(d)}
 \mathbb E[(Y-g(\Gamma(X)))^2].
-$$
+```
 
 The workflow constructs a lower confidence bound $L$ on this infimum and an
 upper confidence bound $U_{\mathrm{fit}}$ on the archived fitted decoder's
 risk $R(\widehat g)=\mathbb E[(Y-\widehat g(\Gamma(X)))^2]$. The combined statement
 
-$$
+```math
 L\le R_\kappa^*\le R(\widehat g)\le U_{\mathrm{fit}}
-$$
+```
 
 requires the fitted prediction table to satisfy the declared class constraints.
 All 120 pairs of supported histories are checked using exact squared-distance
@@ -133,11 +133,11 @@ termination status is not the mathematical certificate.
 For block size $b$, let $\underline Q_{b,k}$ denote its verified lower SSE,
 $K_b=\lfloor n/b\rfloor$, and
 
-$$
+```math
 \underline T_{b,k}=\frac{\underline Q_{b,k}}{b-1},
 \qquad
 C_b=\frac{\lfloor b^2/4\rfloor}{b(b-1)}.
-$$
+```
 
 The **block lower confidence bound** calibrates the average normalized
 score using the $K_b$ independent true block scores in $[0,C_b]$. The
@@ -177,17 +177,17 @@ they do not use population conditional means during certificate construction.
 
 At $\kappa=4$ in the original coordinates, the optimal class risks are
 
-$$
+```math
 R^*_{\mathrm{short}}=5/32=0.15625,
 \qquad
 R^*_{\mathrm{full}}=9/160=0.05625.
-$$
+```
 
 For the short control the exact population block score is
 
-$$
+```math
 \mathcal W_b=\frac5{32}\frac{b-4+4(3/4)^b}{b-1}.
-$$
+```
 
 Thus $\mathcal W_2=0.0390625$ and $\mathcal W_8\approx0.0982244$ lie below
 the threshold, whereas $\mathcal W_{16}\approx0.1254176$ lies above it. This is
@@ -268,9 +268,9 @@ The joint confidence allocation includes every requested sample size,
 repetition, class, and bound. With $J$ Lipschitz bounds, $S$ sample sizes, $R$
 repetitions, and $H$ block sizes, its endpoint count is
 
-$$
+```math
 N_{\mathrm{endpoints}}=(3J+2)SR(2H+2).
-$$
+```
 
 More comparisons therefore reduce the allocation per endpoint. Different
 stream labels and pseudorandom seeds make execution reproducible; they do not

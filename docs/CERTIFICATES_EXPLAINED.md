@@ -34,9 +34,9 @@ proof is in
 For development outcome `D` and selected predictor `f_m,D`, the certified target
 is
 
-$$
+```math
 R_m(D)=\mathbb E_{(X,Y)\sim P}\bigl[(Y-f_{m,D}(X))^2\bigr].
-$$
+```
 
 Here `P` is the specific [four-state benchmark distribution](BENCHMARK.md). The model predicts
 one scalar observation from a two-observation history. Targets and clipped
@@ -68,11 +68,11 @@ The statistical assumptions are:
 
 Conditional on development, the statement is
 
-$$
+```math
 \Pr_{\mathrm{Cal}}\!\left[
 \exists m\text{ with a reported valid endpoint and }R_m(D)>U_m
 \mid D\right]\le\frac1{20}.
-$$
+```
 
 Thus, over repetitions of calibration under these premises with development
 held fixed, the probability of any reported bound missing its corresponding
@@ -193,10 +193,10 @@ The `class-risk` workflow fixes a representation $\Gamma$, feature pseudometric 
 Lipschitz bound $\kappa$, and output interval $I=[0,1]$. The **optimal class
 risk** is
 
-$$
+```math
 R_\kappa^*=\inf_{g\in\mathcal G_\kappa(d)}
 \mathbb E[(Y-g(\Gamma(X)))^2],
-$$
+```
 
 where every $g$ maps to $I$ and satisfies
 $|g(u)-g(v)|\leq\kappa d(u,v)$. A numerical optimization lower bound on one
@@ -211,9 +211,9 @@ retains a full empirical-optimization bound. The entire menu and confidence
 allocation are fixed before calibration. A fitted-predictor upper bound $U$
 is computed separately. The risk sandwich
 
-$$
+```math
 L\leq R_\kappa^*\leq R(\widehat g)\leq U
-$$
+```
 
 requires $\widehat g$ to belong to the prescribed class. The implementation
 checks all pairwise constraints on its finite prediction table. Passing those

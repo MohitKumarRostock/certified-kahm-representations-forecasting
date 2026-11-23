@@ -196,11 +196,11 @@ identity; the protocol is not a runtime-tunable configuration.
 For exact empirical mean $q$, the prescribed endpoint is the upper binary-KL
 inverse
 
-$$
+```math
 k_+\!\left(q,\frac{\log 60}{4096}\right)
 =\sup\left\{p\in[q,1]:
 \mathrm{kl}(q\Vert p)\le\frac{\log60}{4096}\right\}.
-$$
+```
 
 The protocol also fixes how certification must obtain a conservative numerical endpoint.
 It prescribes exact integer/rational arithmetic, range-reduced logarithm
