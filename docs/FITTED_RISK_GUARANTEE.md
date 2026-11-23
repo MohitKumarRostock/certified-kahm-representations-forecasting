@@ -118,7 +118,7 @@ Independence over calibration episodes therefore yields
 \le (1-R+Re^t)^n.
 ```
 
-For $t<0$ and $0\le s<R$, the event $q\le s$ implies
+For $t\lt 0$ and $0\le s\lt R$, the event $q\le s$ implies
 $e^{t\sum_i L_i}\ge e^{tns}$. Markov's inequality gives
 
 ```math
@@ -126,7 +126,7 @@ $e^{t\sum_i L_i}\ge e^{tns}$. Markov's inequality gives
 \le \exp\!\left(n\left[\log(1-R+Re^t)-ts\right]\right).
 ```
 
-If $0<s<R<1$, the minimizing value is
+If $0\lt s\lt R\lt 1$, the minimizing value is
 
 ```math
 t_* = \log\frac{s(1-R)}{R(1-s)}<0.
@@ -148,7 +148,7 @@ where the binary relative entropy is
 
 The convention is $0\log(0/u)=0$, including the continuous boundary
 cases. A positive numerator divided by zero contributes infinite divergence.
-At $s=0<R<1$, taking $t\to-\infty$ in the preceding bound gives
+At $s=0\lt R\lt 1$, taking $t\to-\infty$ in the preceding bound gives
 $(1-R)^n=e^{-n\mathrm{kl}(0\Vert R)}$, so (1) also holds there.
 At $s=R$, its right side is one. If $R=0$ or $R=1$, boundedness
 implies $L_i=R$ almost surely and the relevant boundary statements are
@@ -175,9 +175,9 @@ u(q)=\sup\left\{p\in[q,1]:
 \qquad\text{(2)}
 ```
 
-If $q=1$, then $u(q)=1$. For $q<1$, the divergence is continuous
+If $q=1$, then $u(q)=1$. For $q\lt 1$, the divergence is continuous
 in $p\in[q,1)$, starts at zero, and tends to infinity as $p\to1$.
-For $q<p<1$,
+For $q\lt p\lt 1$,
 
 ```math
 \frac{\partial}{\partial p}\mathrm{kl}(q\Vert p)
@@ -197,8 +197,8 @@ We prove, for every fixed predictor,
 ```
 
 If $`R\in\{0,1\}`$, the almost-sure statements above make (3) immediate.
-Suppose $0<R<1$. A failure $R>u(q)$ requires $q<R$, since
-$u(q)\ge q$. For $q<R$, strict monotonicity in the second argument
+Suppose $0\lt R\lt 1$. A failure $R\gt u(q)$ requires $q\lt R$, since
+$u(q)\ge q$. For $q\lt R$, strict monotonicity in the second argument
 shows that
 
 ```math
@@ -217,7 +217,7 @@ h'(s)=\log\frac{s(1-R)}{R(1-s)}<0.
 
 If $c\ge h(0)$, failure is impossible. Otherwise, there is a unique
 $`s_*\in(0,R)`$ with $`h(s_*)=c`$, and the failure event is exactly
-$`q<s_*`$. Applying (1) at this fixed threshold gives
+$`q\lt s_*`$. Applying (1) at this fixed threshold gives
 
 ```math
 \Pr(R>u(q)\mid D)
@@ -316,7 +316,7 @@ give an integer $a$ and rational $u$ such that
 x=2^a u,\qquad 1\le u<2.
 ```
 
-Set $z=(u-1)/(u+1)$, so $0\le z<1/3$. Integration of the geometric
+Set $z=(u-1)/(u+1)$, so $0\le z\lt 1/3$. Integration of the geometric
 series for $1/(1-t^2)$, or direct differentiation and evaluation at zero,
 gives
 
@@ -387,7 +387,7 @@ encloses $\log u$. At $z=0$, its exact value zero is returned
 directly. Every floor and ceiling above is computed by exact integer division,
 including the divisions implicit in rational $z^2$.
 
-Finally, use $\log x=\log u+a\log2$. When $a<0$, multiply the
+Finally, use $\log x=\log u+a\log2$. When $a\lt 0$, multiply the
 upper endpoint of the $\log2$ interval to obtain the lower product
 endpoint, and the lower endpoint to obtain the upper product endpoint.
 Forgetting this reversal would break the enclosure. The $\log2$ and
@@ -401,7 +401,7 @@ not from an assumed number of accurate digits.
 
 ### 5.3 KL and root residual intervals
 
-For $0<q<1$ and $0<p<1$, enclose
+For $0\lt q\lt 1$ and $0\lt p\lt 1$, enclose
 $\log(q/p)$ and $\log((1-q)/(1-p))$. Their weights $q$ and
 $1-q$ are nonnegative, so multiplying and adding their lower endpoints
 gives a lower KL endpoint; doing the same with their upper endpoints gives an
@@ -434,16 +434,16 @@ both negative and positive values proves neither sign.
 
 ## 6. Bracketing and a direct proof of the reported endpoint
 
-For $q<1$, initialize the exact bracket $[L,H]=[q,1]$. Its lower
-direction follows from $F_q(q)=-\log60<0$; the upper boundary is
-analytic, since $u(q)<1$. The invariant is
+For $q\lt 1$, initialize the exact bracket $[L,H]=[q,1]$. Its lower
+direction follows from $F_q(q)=-\log60\lt 0$; the upper boundary is
+analytic, since $u(q)\lt 1$. The invariant is
 
 ```math
 q\le L\le u(q)\le H\le1.
 \qquad\text{(10)}
 ```
 
-When $H-L>2^{-80}$, form the exact midpoint $p=(L+H)/2$. Evaluate
+When $H-L\gt 2^{-80}$, form the exact midpoint $p=(L+H)/2$. Evaluate
 (9) first at $128$ bits, then at $256$, and then at $512$ only
 if needed, always keeping the same midpoint during those precision attempts.
 
@@ -466,9 +466,9 @@ empirical mean and bracket and freshly checks the final endpoint witnesses:
 
 1. It verifies $0\le q\le L\le H\le1$, the exact width identity, and
    $H-L\le2^{-80}$.
-2. It accepts $L=q$ analytically. Otherwise it requires $q<L<1$
+2. It accepts $L=q$ analytically. Otherwise it requires $q\lt L\lt 1$
    and a fresh interval evaluation proving $F_q(L)\le0$.
-3. It accepts $H=1$ analytically. Otherwise it requires $q<H<1$
+3. It accepts $H=1$ analytically. Otherwise it requires $q\lt H\lt 1$
    and a fresh interval evaluation proving $F_q(H)\ge0$.
 4. It recomputes the nonanalytic endpoint enclosures at their recorded
    precisions with fresh constant caches, compares them with the saved
@@ -493,7 +493,7 @@ also satisfies $0\le U-u(q)\le H-L\le2^{-80}$.
 
 At $q=1$, the exact bracket is $[1,1]$ and the endpoint is $U=1$,
 subject to the remaining input, identity, and work checks; no logarithm is
-required. If $q<1$ but the initial bracket already has width
+required. If $q\lt 1$ but the initial bracket already has width
 at most $2^{-80}$, the same rules can establish the analytic upper
 endpoint $H=1$ without bisection. An upper endpoint of one is not used
 as a fallback when the required width has not been established.
@@ -532,7 +532,7 @@ deterministic implications of exact arithmetic. This statement assumes the
 specified arithmetic and checks are correctly implemented; it does not assign
 zero probability to all possible software or hardware faults.
 
-The endpoint is stored as a reduced fraction $U=A/B$, with $B>0$,
+The endpoint is stored as a reduced fraction $U=A/B$, with $B\gt 0$,
 using canonical integer strings. For display only, compute
 
 ```math
@@ -548,7 +548,7 @@ decimal and not a binary floating-point conversion.
 | Status | Meaning under the stated premises |
 | --- | --- |
 | `requirement_met` | All required checks support an endpoint and its exact value satisfies $U\le1/10$ |
-| `unresolved` | A valid endpoint satisfies $U>1/10$; this does not prove $R>1/10$ |
+| `unresolved` | A valid endpoint satisfies $U\gt 1/10$; this does not prove $R\gt 1/10$ |
 | `certificate_unavailable` | No endpoint is issued because a required condition or check was not established |
 
 An unavailable record can be internally consistent without being a verified
