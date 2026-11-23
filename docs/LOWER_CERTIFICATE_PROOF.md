@@ -73,7 +73,7 @@ For $b\ge2$ iid feature-target observations, write
 ```math
 Q_b=\min_{v\in\mathbb R^b}
 \left\{\sum_{i=1}^b(Y_i-v_i)^2:
-|v_i-v_j|\le\kappa d(U_i,U_j)\text{ for all }i<j\right\},
+|v_i-v_j|\le\kappa d(U_i,U_j)\text{ for all }i\lt j\right\},
 \qquad
 T_b=\frac{Q_b}{b-1},
 \qquad
@@ -127,7 +127,7 @@ The shifted subset prediction table is feasible, so
 T_m(S)\le
 \frac1{m-1}\sum_{i\in S}(r_i-\bar r_S)^2
 =\frac1{m(m-1)}
-\sum_{\substack{i<j\\i,j\in S}}(r_i-r_j)^2.
+\sum_{\substack{i\lt j\\i,j\in S}}(r_i-r_j)^2.
 ```
 
 Each pair belongs to $\binom{b-2}{m-2}$ of the $\binom bm$ subsets.
@@ -135,7 +135,7 @@ Since their ratio is $m(m-1)/(b(b-1))$,
 
 ```math
 \binom bm^{-1}\sum_{|S|=m}T_m(S)
-\le\frac1{b(b-1)}\sum_{i<j}(r_i-r_j)^2=T_b.
+\le\frac1{b(b-1)}\sum_{i\lt j}(r_i-r_j)^2=T_b.
 ```
 
 Every $m$-subset has the same iid distribution as a block of size $m$.
@@ -255,9 +255,9 @@ k_+(q,c)=\sup\{p\in[q,1]:\mathrm{kl}(q\Vert p)\le c\}.
 For iid $Z_i\in[0,1]$ with mean $p$ and sample mean $\bar Z$,
 
 ```math
-\Pr\{k_-(\bar Z,\log(1/\alpha)/N)>p\}\le\alpha,
+\Pr\{k_-(\bar Z,\log(1/\alpha)/N)\gt p\}\le\alpha,
 \qquad
-\Pr\{k_+(\bar Z,\log(1/\alpha)/N)<p\}\le\alpha.
+\Pr\{k_+(\bar Z,\log(1/\alpha)/N)\lt p\}\le\alpha.
 ```
 
 The Chernoff argument applies to bounded, not necessarily Bernoulli,
@@ -323,8 +323,8 @@ $`R(g_j)\le R_\kappa^*+1/j`$. Pointwise,
 $d_n\le a_n\le\widehat R_n(g_j)$. Monotonicity and Section 4 imply
 
 ```math
-\Pr\{L^{\mathrm{emp}}>R_\kappa^*+1/j\}
-\le\Pr\{L^{\mathrm{emp}}>R(g_j)\}\le\alpha_{\mathrm{emp}}.
+\Pr\{L^{\mathrm{emp}}\gt R_\kappa^*+1/j\}
+\le\Pr\{L^{\mathrm{emp}}\gt R(g_j)\}\le\alpha_{\mathrm{emp}}.
 ```
 
 The events on the left increase to $`\{L^{\mathrm{emp}}\gt R_\kappa^*\}`$, so the

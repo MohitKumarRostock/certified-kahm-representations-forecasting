@@ -140,7 +140,7 @@ independent of development, give
 
 ```math
 \Pr\!\left(\exists m\text{ with a reported valid endpoint and }
-R_m(D)>U_m\mid D\right)\le\frac1{20}.
+R_m(D)\gt U_m\mid D\right)\le\frac1{20}.
 ```
 
 There is no additional conditioning on acceptance or numerical availability.
