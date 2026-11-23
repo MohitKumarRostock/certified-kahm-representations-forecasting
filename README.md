@@ -21,10 +21,11 @@ definitions, proofs, assumptions, benchmark, and recorded experiments.
 
 ## The scientific question
 
-Let $X$ denote the observed history and $Y$ the scalar prediction target.
-Fix a representation $\Gamma$, a measurable finite-valued feature pseudometric
-$d$, a Lipschitz bound $\kappa\geq0$, an evaluation law for $(X,Y)$, and a
-known bounded interval $I$ containing both targets and decoder predictions.
+Let $X\in\mathcal X$ denote the observed history and $Y$ the scalar prediction
+target. Fix a measurable representation $\Gamma:\mathcal X\to\mathcal U$,
+a measurable finite-valued feature pseudometric $d$ on $\mathcal U$, a
+Lipschitz bound $\kappa\geq0$, an evaluation law for $(X,Y)$, and a known
+bounded interval $I$ containing both targets and decoder predictions.
 The **optimal class risk** is
 
 $$
