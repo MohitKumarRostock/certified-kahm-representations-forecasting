@@ -1,0 +1,29 @@
+name: Inspect live GitHub math in browser
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install browser automation
+        run: |
+          which google-chrome || true
+          mkdir -p "${RUNNER_TEMP}/gh-browser"
+          cd "${RUNNER_TEMP}/gh-browser"
+          npm install --no-save --ignore-scripts --no-audit --no-fund playwright-core@1.58.2
+      - name: Inspect exact linked GitHub webpages
+        run: NODE_PATH="${RUNNER_TEMP}/gh-browser/node_modules" node scripts/inspect_live_github_math.cjs
+      - name: Preserve browser screenshots
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: github-math-browser-inspection
+          path: /tmp/ghmath/
+          if-no-files-found: ignore
