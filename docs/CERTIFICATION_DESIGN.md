@@ -45,7 +45,7 @@ For every reported valid endpoint, the intended simultaneous statement is
 
 ```math
 \Pr_{\mathrm{Cal}}\!\left[
-  \exists m\text{ with a reported valid endpoint and }R_m(D)>U_m
+  \exists m\text{ with a reported valid endpoint and }R_m(D)\gt U_m
   \mid D
 \right]\le \frac1{20},
 ```
@@ -104,7 +104,7 @@ implementation encloses each logarithm with exact integer and rational
 arithmetic. For positive rational x, integer range reduction gives
 
 ```math
-x=2^a u,\qquad 1\le u<2,\qquad z=\frac{u-1}{u+1}.
+x=2^a u,\qquad 1\le u\lt 2,\qquad z=\frac{u-1}{u+1}.
 ```
 
 The atanh series satisfies, for 0<=z<=1/3,
