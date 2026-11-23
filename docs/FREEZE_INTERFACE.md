@@ -199,7 +199,7 @@ inverse
 $$
 k_+\!\left(q,\frac{\log 60}{4096}\right)
 =\sup\left\{p\in[q,1]:
-\operatorname{kl}(q\Vert p)\le\frac{\log60}{4096}\right\}.
+\mathrm{kl}(q\Vert p)\le\frac{\log60}{4096}\right\}.
 $$
 
 The protocol also fixes how certification must obtain a conservative numerical endpoint.

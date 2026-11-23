@@ -135,21 +135,21 @@ $$
 Substituting it proves
 
 $$
-\boxed{\Pr(q\le s\mid D)\le e^{-n\operatorname{kl}(s\Vert R)}}
-\tag{1}
+\boxed{\Pr(q\le s\mid D)\le e^{-n\mathrm{kl}(s\Vert R)}}
+\qquad\text{(1)}
 $$
 
 where the binary relative entropy is
 
 $$
-\operatorname{kl}(a\Vert p)
+\mathrm{kl}(a\Vert p)
 =a\log\frac ap+(1-a)\log\frac{1-a}{1-p}.
 $$
 
 The convention is $0\log(0/u)=0$, including the continuous boundary
 cases. A positive numerator divided by zero contributes infinite divergence.
 At $s=0<R<1$, taking $t\to-\infty$ in the preceding bound gives
-$(1-R)^n=e^{-n\operatorname{kl}(0\Vert R)}$, so (1) also holds there.
+$(1-R)^n=e^{-n\mathrm{kl}(0\Vert R)}$, so (1) also holds there.
 At $s=R$, its right side is one. If $R=0$ or $R=1$, boundedness
 implies $L_i=R$ almost surely and the relevant boundary statements are
 immediate.
@@ -171,8 +171,8 @@ For an empirical mean $q$, define the ideal upper endpoint
 
 $$
 u(q)=\sup\left\{p\in[q,1]:
-\operatorname{kl}(q\Vert p)\le c\right\}.
-\tag{2}
+\mathrm{kl}(q\Vert p)\le c\right\}.
+\qquad\text{(2)}
 $$
 
 If $q=1$, then $u(q)=1$. For $q<1$, the divergence is continuous
@@ -180,12 +180,12 @@ in $p\in[q,1)$, starts at zero, and tends to infinity as $p\to1$.
 For $q<p<1$,
 
 $$
-\frac{\partial}{\partial p}\operatorname{kl}(q\Vert p)
+\frac{\partial}{\partial p}\mathrm{kl}(q\Vert p)
 =\frac{p-q}{p(1-p)}>0.
 $$
 
 Consequently, there is a unique $u(q)\in(q,1)$ satisfying
-$\operatorname{kl}(q\Vert u(q))=c$. At $q=0$, the equivalent
+$\mathrm{kl}(q\Vert u(q))=c$. At $q=0$, the equivalent
 identity is $u(0)=1-e^{-c}$; the implementation does not need to evaluate
 this exponential.
 
@@ -193,7 +193,7 @@ We prove, for every fixed predictor,
 
 $$
 \Pr\bigl(R>u(q)\mid D\bigr)\le\delta.
-\tag{3}
+\qquad\text{(3)}
 $$
 
 If $R\in\{0,1\}$, the almost-sure statements above make (3) immediate.
@@ -203,11 +203,11 @@ shows that
 
 $$
 R>u(q)\quad\Longleftrightarrow\quad
-\operatorname{kl}(q\Vert R)>c.
+\mathrm{kl}(q\Vert R)>c.
 $$
 
 For fixed $R$, the function
-$h(s)=\operatorname{kl}(s\Vert R)$ is continuous and strictly decreasing
+$h(s)=\mathrm{kl}(s\Vert R)$ is continuous and strictly decreasing
 on $[0,R]$, with $h(R)=0$ and $h(0)=-\log(1-R)$. In the
 interior this follows from
 
@@ -237,7 +237,7 @@ the pointwise deterministic inequality
 
 $$
 U_m\ge u(q_m).
-\tag{4}
+\qquad\text{(4)}
 $$
 
 Numerical availability may depend on calibration data, and the availability
@@ -261,7 +261,7 @@ $$
 \right]
 \le\frac3{60}=\frac1{20}.
 }
-\tag{5}
+\qquad\text{(5)}
 $$
 
 Equivalently, with conditional probability at least $19/20$, every
@@ -286,7 +286,7 @@ $$
   \exists m: A_m,\ U_m\le\tau,\ R_m(D)>\tau
   \mid D
 \right]\le\frac1{20},
-\tag{6}
+\qquad\text{(6)}
 $$
 
 because that event is a subset of the failure event in (5). A user may select
@@ -336,7 +336,7 @@ $$
 &\le \frac{3}{4(2M+1)9^M},
 \qquad 0\le z\le\frac13.
 \end{aligned}
-\tag{7}
+\qquad\text{(7)}
 $$
 
 The first inequality replaces each denominator $2j+1$ in the tail by
@@ -380,7 +380,7 @@ $$
 \frac A G,
 \frac{B+\left\lceil G\,\frac{3}{4(2M+1)9^M}\right\rceil}{G}
 \right]
-\tag{8}
+\qquad\text{(8)}
 $$
 
 encloses $\log u$. At $z=0$, its exact value zero is returned
@@ -407,7 +407,7 @@ $1-q$ are nonnegative, so multiplying and adding their lower endpoints
 gives a lower KL endpoint; doing the same with their upper endpoints gives an
 upper KL endpoint. Rational arithmetic performs these operations exactly.
 
-At $q=0$, use $\operatorname{kl}(0\Vert p)=-\log(1-p)$, reversing
+At $q=0$, use $\mathrm{kl}(0\Vert p)=-\log(1-p)$, reversing
 the logarithm interval's endpoints on negation. At $q=1$, the finite
 formula is $-\log p$. At $p=q$, divergence is exactly zero. No
 zero-weight term causes an evaluation of $\log0$. Infinite KL boundary
@@ -416,7 +416,7 @@ values are handled analytically, not encoded as finite rational intervals.
 Write
 
 $$
-F_q(p)=4096\operatorname{kl}(q\Vert p)-\log60.
+F_q(p)=4096\mathrm{kl}(q\Vert p)-\log60.
 $$
 
 If the KL interval is $[K_-,K_+]$ and the confidence-log interval is
@@ -425,7 +425,7 @@ $[C_-,C_+]$, then
 $$
 F_q(p)\in
 [4096K_- - C_+,\ 4096K_+ - C_-].
-\tag{9}
+\qquad\text{(9)}
 $$
 
 Thus a nonnegative lower endpoint in (9) proves $F_q(p)\ge0$, while a
@@ -440,7 +440,7 @@ analytic, since $u(q)<1$. The invariant is
 
 $$
 q\le L\le u(q)\le H\le1.
-\tag{10}
+\qquad\text{(10)}
 $$
 
 When $H-L>2^{-80}$, form the exact midpoint $p=(L+H)/2$. Evaluate

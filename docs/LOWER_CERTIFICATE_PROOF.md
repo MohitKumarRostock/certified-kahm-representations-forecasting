@@ -42,14 +42,14 @@ Every claim is specific to $(\Gamma,d,\kappa,I)$ and the evaluation law.
 Clipping a real-valued Lipschitz decoder to $I$ preserves its Lipschitz
 bound and cannot increase squared loss to a target in $I$. Constants are
 admissible, so
-$0\le R_\kappa^*\le\operatorname{Var}(Y)\le B/4$.
+$0\le R_\kappa^*\le\mathrm{Var}(Y)\le B/4$.
 If $D=0$, all risks are zero and no statistical inversion is needed.
 
 On finitely many feature points $u_i$, an $I$-valued prediction table $z_i$
 satisfying all pairwise constraints has the extension
 
 $$
-g_z(u)=\operatorname{clip}_I
+g_z(u)=\mathrm{clip}_I
 \left(\min_i\{z_i+\kappa d(u,u_i)\}\right).
 $$
 
@@ -102,7 +102,7 @@ T_b\le\frac1{b-1}\sum_i(r_i-\bar r)^2.
 $$
 
 The expectation on the right is
-$\operatorname{Var}(Y-g(U))\le R(g)$. Taking the infimum over admissible $g$
+$\mathrm{Var}(Y-g(U))\le R(g)$. Taking the infimum over admissible $g$
 gives $\mathcal W_b\le R_\kappa^*$.
 
 A constant prediction at the sample target mean is feasible. The sample
@@ -240,16 +240,16 @@ objective values, and primal feasibility. It does not rerun the optimizer.
 For $q,p\in[0,1]$, let
 
 $$
-\operatorname{kl}(q\Vert p)
+\mathrm{kl}(q\Vert p)
 =q\log(q/p)+(1-q)\log((1-q)/(1-p))
 $$
 
 with the usual endpoint conventions. Define
 
 $$
-k_-(q,c)=\inf\{p\in[0,q]:\operatorname{kl}(q\Vert p)\le c\},
+k_-(q,c)=\inf\{p\in[0,q]:\mathrm{kl}(q\Vert p)\le c\},
 \qquad
-k_+(q,c)=\sup\{p\in[q,1]:\operatorname{kl}(q\Vert p)\le c\}.
+k_+(q,c)=\sup\{p\in[q,1]:\mathrm{kl}(q\Vert p)\le c\}.
 $$
 
 For iid $Z_i\in[0,1]$ with mean $p$ and sample mean $\bar Z$,
@@ -288,15 +288,15 @@ $$
 The **block lower confidence bound** is
 
 $$
-L_b^{\rm blk}=C_b k_-\left(
+L_b^{\mathrm{blk}}=C_b k_-\left(
 \frac{\bar t_b}{C_b},
-\frac{\log(1/\alpha_b^{\rm blk})}{K_b}\right).
+\frac{\log(1/\alpha_b^{\mathrm{blk}})}{K_b}\right).
 $$
 
 The true block scores are iid in $[0,C_b]$. The numerical scores lie below
 them pointwise, even if their numerical computation uses shared information.
 Monotonicity of $k_-$ and Section 4 give
-$\Pr\{L_b^{\rm blk}>\mathcal W_b\}\le\alpha_b^{\rm blk}$.
+$\Pr\{L_b^{\mathrm{blk}}>\mathcal W_b\}\le\alpha_b^{\mathrm{blk}}$.
 Because $\mathcal W_b\le R_\kappa^*$, this is also a lower confidence bound
 on optimal class risk.
 
@@ -313,8 +313,8 @@ remain in the denominator. More generally, any measurable numerical bound
 $0\le d_n\le a_n$ valid for every dataset gives
 
 $$
-L^{\rm emp}=B\,k_-\left(
-\frac{d_n}{B},\frac{\log(1/\alpha_{\rm emp})}{n}\right).
+L^{\mathrm{emp}}=B\,k_-\left(
+\frac{d_n}{B},\frac{\log(1/\alpha_{\mathrm{emp}})}{n}\right).
 $$
 
 To prove validity without assuming attainment of the population infimum,
@@ -323,11 +323,11 @@ $R(g_j)\le R_\kappa^*+1/j$. Pointwise,
 $d_n\le a_n\le\widehat R_n(g_j)$. Monotonicity and Section 4 imply
 
 $$
-\Pr\{L^{\rm emp}>R_\kappa^*+1/j\}
-\le\Pr\{L^{\rm emp}>R(g_j)\}\le\alpha_{\rm emp}.
+\Pr\{L^{\mathrm{emp}}>R_\kappa^*+1/j\}
+\le\Pr\{L^{\mathrm{emp}}>R(g_j)\}\le\alpha_{\mathrm{emp}}.
 $$
 
-The events on the left increase to $\{L^{\rm emp}>R_\kappa^*\}$, so the
+The events on the left increase to $\{L^{\mathrm{emp}}>R_\kappa^*\}$, so the
 same bound holds in the limit. This argument does not treat $d_n$ as an
 average of iid variables and does not need a class-complexity penalty in
 this lower direction.
@@ -340,7 +340,7 @@ individual endpoints separately, so their individual claims are covered.
 Optimization choices may depend on calibration values when their checked
 inequalities hold for every dataset. That does not authorize choosing new
 classes, sample sizes, or iid block partitions after inspecting results.
-Neither $L_b^{\rm blk}$ nor $L^{\rm emp}$ universally dominates the other:
+Neither $L_b^{\mathrm{blk}}$ nor $L^{\mathrm{emp}}$ universally dominates the other:
 their normalizations, loss ranges, and effective calibration sample sizes
 differ.
 
@@ -431,7 +431,7 @@ Ordinary solver precision is not a proof of an exact optimum.
 Suppose $U$ is uniform on $M$ points and constraints between distinct points
 are inactive for all predictions in $I$; a sufficient condition is
 $\kappa d(u_i,u_j)\ge D$ for $i\ne j$. Let
-$\sigma_j^2=\operatorname{Var}(Y\mid U=u_j)$ and
+$\sigma_j^2=\mathrm{Var}(Y\mid U=u_j)$ and
 $\sigma^2=M^{-1}\sum_j\sigma_j^2$.
 Conditional on counts $N_j$, each group's optimal prediction is its sample
 target mean. Its expected SSE is $\sigma_j^2(N_j-1)_+$. Since

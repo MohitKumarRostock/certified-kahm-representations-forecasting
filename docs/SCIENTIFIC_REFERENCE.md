@@ -159,7 +159,7 @@ The following routes use the same optimization witnesses:
 | --- | --- | --- |
 | Block lower confidence bound | $\bar t_b=K_b^{-1}\sum_k\underline Q_{b,k}/(b-1)$ | $K_b$ independent true block scores in $[0,C_b]$ |
 | Empirical-risk lower confidence bound | $d_{n,b}=n^{-1}\sum_k\underline Q_{b,k}\le a_n$ | Comparison with each fixed decoder's $n$ iid losses in $[0,B]$ |
-| Full empirical-risk lower confidence bound | A verified lower bound $d_{n,\rm full}\le a_n$ from joint optimization | The same empirical-risk calibration |
+| Full empirical-risk lower confidence bound | A verified lower bound $d_{n,\mathrm{full}}\le a_n$ from joint optimization | The same empirical-risk calibration |
 
 The empirical-risk route does **not** treat the optimized value $d_n$ as
 an average of iid variables. Its validity follows from the pointwise
