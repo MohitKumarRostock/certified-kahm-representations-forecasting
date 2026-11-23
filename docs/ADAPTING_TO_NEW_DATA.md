@@ -146,7 +146,7 @@ Use
 
 $$
 \Gamma_{\mathrm{MEM}}(x)=\phi(z),\qquad
-\Gamma_{\mathrm{LOCAL}}(x)=\operatorname{col}\left(
+\Gamma_{\mathrm{LOCAL}}(x)=\mathrm{col}\left(
 \phi(z),\{\phi_j(z)P_j^T(z-\mu_j)\}_j\right).
 $$
 
@@ -173,7 +173,7 @@ loss is bounded by one. If a new problem has a justified target range `[A,B]`
 with `A < B`, a possible normalized loss is
 
 $$
-\ell(x,y)=\left(\frac{y-\operatorname{clip}(f(x),A,B)}{B-A}\right)^2
+\ell(x,y)=\left(\frac{y-\mathrm{clip}(f(x),A,B)}{B-A}\right)^2
 \in[0,1].
 $$
 
