@@ -14,15 +14,15 @@ requires a separately identified contract and assessment. The
 
 There are four state labels, `0,1,2,3`, with observation values
 
-$$
+```math
 v=(0,\tfrac14,\tfrac34,1).
-$$
+```
 
 For state labels $a,b,c$, the model input and target are
 
-$$
+```math
 X=(v_a,v_b),\qquad Y=v_c.
-$$
+```
 
 The history is ordered **previous observation, current observation**; the target
 is the next observation. The task has one scalar output and horizon one.
@@ -32,22 +32,22 @@ contains 64 triples.
 
 The conditional law is
 
-$$
+```math
 P(c\mid a,b)=\frac45\,\mathbf1\{c=(a+b)\bmod4\}+\frac1{20}.
-$$
+```
 
 The nominal successor has probability `17/20`; each other successor has
 probability `1/20`. Each episode starts with a freshly drawn uniform ordered
 pair, so
 
-$$
+```math
 P(a,b)=\frac1{16},\qquad
 P(a,b,c)=
 \begin{cases}
 17/320,&c=(a+b)\bmod4,\\
 1/320,&\text{otherwise}.
 \end{cases}
-$$
+```
 
 The pair distribution is stationary for the corresponding second-order chain:
 for fixed $b,c$, summing $P(c\mid a,b)/16$ over $a$ gives `1/16`.
@@ -112,10 +112,10 @@ numerical types, and accumulation conventions belong to the frozen predictor.
 
 For fixed development outcome $D$, the assessed risk is
 
-$$
+```math
 R_m(D)=\mathbb E_{(X,Y)\sim P}
        [(Y-f_{m,D}(X))^2].
-$$
+```
 
 Both $Y$ and $f_{m,D}(X)$ lie in `[0,1]`, so the squared loss lies in
 `[0,1]`. Risk is measured in squared units of the stated observations. No
@@ -138,10 +138,10 @@ actual computational prediction values, not an ideal real-arithmetic substitute.
 Conditional on development, iid calibration episodes from the stated law,
 independent of development, give
 
-$$
+```math
 \Pr\!\left(\exists m\text{ with a reported valid endpoint and }
 R_m(D)>U_m\mid D\right)\le\frac1{20}.
-$$
+```
 
 There is no additional conditioning on acceptance or numerical availability.
 Unavailable endpoints remain visible and do not release probability budget for
@@ -158,17 +158,17 @@ per-forecast interval or a statement about optimal risk over a model class.
 
 Because the law and support are known, a frozen predictor has exact risk
 
-$$
+```math
 R(f)=\sum_{a,b,c}P(a,b,c)\,[v_c-f(v_a,v_b)]^2.
-$$
+```
 
 The represented binary64 forecasts are treated as exact rationals. The model's
 conditional-mean reference and decomposition are
 
-$$
+```math
 \mu(a,b)=\frac1{10}+\frac45v_{(a+b)\bmod4},\qquad
 R(f)=\frac9{160}+\frac1{16}\sum_{a,b}[f(v_a,v_b)-\mu(a,b)]^2.
-$$
+```
 
 The full-history Bayes risk is `9/160`; the best constant prediction `1/2` has
 risk `5/32`; the nominal successor's observation has risk `1/16`. These are
