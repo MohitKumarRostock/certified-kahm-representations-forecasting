@@ -14,16 +14,25 @@ const {AllPackages}=require("mathjax-full/js/input/tex/AllPackages.js");
 const adaptor=liteAdaptor();RegisterHTMLHandler(adaptor);
 const mj=mathjax.document("",{InputJax:new TeX({packages:AllPackages}),OutputJax:new SVG({fontCache:"none"})});
 const ROOT=path.resolve(__dirname,".."),REPO=process.env.GITHUB_REPOSITORY||"MohitKumarRostock/certified-kahm-representations-forecasting";
-const ROOTS=[ROOT, path.join(ROOT,"docs"), path.join(ROOT,"reports")];
-const files=[];
-for(const folder of ROOTS)if(fs.existsSync(folder)){
-  for(const entry of fs.readdirSync(folder,{withFileTypes:true})){
-    if(entry.isFile()&&entry.name.endsWith(".md"))files.push(path.join(folder,entry.name));
-    if(folder.endsWith("/reports")&&entry.isDirectory()&&entry.name==="lower_certificates_v1"){
-      for(const name of fs.readdirSync(path.join(folder,entry.name)))if(name.endsWith(".md"))files.push(path.join(folder,entry.name,name));
+const SKIP=new Set([".git","node_modules",".venv","venv","__pycache__","dist","build"]);
+const targets=[];
+function discover(folder){
+  for(const ent of fs.readdirSync(folder,{withFileTypes:true})){
+    if(ent.isDirectory()){if(!SKIP.has(ent.name))discover(path.join(folder,ent.name));continue;}
+    if(!ent.isFile())continue;
+    const name=path.join(folder,ent.name),rel=path.relative(ROOT,name).replaceAll(path.sep,"/");
+    if(ent.name.endsWith(".md")){
+      targets.push({name:rel,markdown:fs.readFileSync(name,"utf8")});
+    }else if(ent.name.endsWith(".ipynb")){
+      const notebook=JSON.parse(fs.readFileSync(name,"utf8"));
+      for(const [i,cell] of (notebook.cells||[]).entries()){
+        if(cell.cell_type!=="markdown")continue;
+        targets.push({name:rel+"#cell-"+(i+1),markdown:Array.isArray(cell.source)?cell.source.join(""):String(cell.source||"")});
+      }
     }
   }
 }
+discover(ROOT);
 // HTML text inside <math-renderer> is entity-decoded exactly once by the browser.
 // An entity like &amp;gt; becomes the literal string &gt; in textContent.
 function decodeOnce(s){
@@ -46,9 +55,9 @@ async function gitHubHtml(text){
 }
 async function main(){
 let count=0,failures=[],filesChecked=0;
-for(const file of files){
-  const rel=path.relative(ROOT,file).replaceAll(path.sep,"/");
-  const html=await gitHubHtml(fs.readFileSync(file,"utf8"));
+for(const target of targets){
+  const rel=target.name;
+  const html=await gitHubHtml(target.markdown);
   let index=0,fileErr=0;
   const items=[...html.matchAll(/<math-renderer\b([^>]*)>([\s\S]*?)<\/math-renderer>/g)];
   for(const item of items){
