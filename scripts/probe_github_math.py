@@ -37,6 +37,24 @@ for path in PATHS:
         match = re.search(regex, rendered, re.I)
         if match:
             print(" MATCH",regex,"CONTEXT",repr(rendered[max(0,match.start()-180):match.start()+500]))
+    fragments = re.findall(r"<math-renderer\b[^>]*>([\s\S]*?)</math-renderer>", rendered, re.I)
+    decoded = [html.unescape(x) for x in fragments]
+    suspected = []
+    counters = {"escaped_ampersand":0,"left_lbrace":0,"literal_angle":0,"protected_inline":0}
+    for n, formula in enumerate(decoded):
+        if any(seq in formula for seq in ("&gt;","&lt;","&amp;","&#")):
+            counters["escaped_ampersand"]+=1
+            suspected.append((n, "HTML entity inside math", formula))
+        if "\\left" in formula and any(c in formula for c in ("\\{","\\}")):
+            counters["left_lbrace"]+=1
+            suspected.append((n, "Escaped brace within paired delimiter", formula))
+        if ("<" in formula or ">" in formula):
+            counters["literal_angle"]+=1
+        if ("\\left" in formula or "\\right" in formula) and formula.count("\\left")!=formula.count("\\right"):
+            suspected.append((n,"Unbalanced left/right after GitHub preprocessing",formula))
+    print(" MATH ELEMENTS",len(decoded),"COUNTERS",counters)
+    for index, kind, formula in suspected[:16]:
+        print(" SUSPECT",index,kind,repr(formula[:320]))
     out = Path(os.environ.get("RUNNER_TEMP","/tmp")) / "rendered-math"
     out.mkdir(exist_ok=True)
     (out / (path.replace("/","_") + ".html")).write_text(rendered, encoding="utf-8")
