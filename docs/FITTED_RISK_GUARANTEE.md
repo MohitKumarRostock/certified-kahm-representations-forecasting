@@ -129,7 +129,7 @@ $e^{t\sum_i L_i}\ge e^{tns}$. Markov's inequality gives
 If $0\lt s\lt R\lt 1$, the minimizing value is
 
 ```math
-t_* = \log\frac{s(1-R)}{R(1-s)}<0.
+t_* = \log\frac{s(1-R)}{R(1-s)}\lt 0.
 ```
 
 Substituting it proves
@@ -181,7 +181,7 @@ For $q\lt p\lt 1$,
 
 ```math
 \frac{\partial}{\partial p}\mathrm{kl}(q\Vert p)
-=\frac{p-q}{p(1-p)}>0.
+=\frac{p-q}{p(1-p)}\gt 0.
 ```
 
 Consequently, there is a unique $u(q)\in(q,1)$ satisfying
@@ -192,7 +192,7 @@ this exponential.
 We prove, for every fixed predictor,
 
 ```math
-\Pr\bigl(R>u(q)\mid D\bigr)\le\delta.
+\Pr\bigl(R\gt u(q)\mid D\bigr)\le\delta.
 \qquad\text{(3)}
 ```
 
@@ -202,8 +202,8 @@ $u(q)\ge q$. For $q\lt R$, strict monotonicity in the second argument
 shows that
 
 ```math
-R>u(q)\quad\Longleftrightarrow\quad
-\mathrm{kl}(q\Vert R)>c.
+R\gt u(q)\quad\Longleftrightarrow\quad
+\mathrm{kl}(q\Vert R)\gt c.
 ```
 
 For fixed $R$, the function
@@ -212,7 +212,7 @@ on $[0,R]$, with $h(R)=0$ and $h(0)=-\log(1-R)$. In the
 interior this follows from
 
 ```math
-h'(s)=\log\frac{s(1-R)}{R(1-s)}<0.
+h'(s)=\log\frac{s(1-R)}{R(1-s)}\lt 0.
 ```
 
 If $c\ge h(0)$, failure is impossible. Otherwise, there is a unique
@@ -220,8 +220,8 @@ $`s_*\in(0,R)`$ with $`h(s_*)=c`$, and the failure event is exactly
 $`q\lt s_*`$. Applying (1) at this fixed threshold gives
 
 ```math
-\Pr(R>u(q)\mid D)
-=\Pr(q<s_*\mid D)
+\Pr(R\gt u(q)\mid D)
+=\Pr(q\lt s_*\mid D)
 \le\Pr(q\le s_*\mid D)
 \le e^{-nc}=\frac1{60}.
 ```
@@ -245,8 +245,8 @@ events for different predictors may be coupled by a shared work budget. Neither
 kind of dependence affects the following event inclusion:
 
 ```math
-\{A_m\text{ and }R_m(D)>U_m\}
-\subseteq \{R_m(D)>u(q_m)\}.
+\{A_m\text{ and }R_m(D)\gt U_m\}
+\subseteq \{R_m(D)\gt u(q_m)\}.
 ```
 
 **Theorem (simultaneous fitted-risk upper bounds).** Under the assumptions in
@@ -256,7 +256,7 @@ Combining (3), the preceding event inclusion, and the union bound proves it:
 ```math
 \boxed{
 \Pr_{\mathrm{Cal}}\!\left[
-  \exists m\in\{1,2,3\}: A_m\text{ and }R_m(D)>U_m
+  \exists m\in\{1,2,3\}: A_m\text{ and }R_m(D)\gt U_m
   \mid D
 \right]
 \le\frac3{60}=\frac1{20}.
@@ -283,7 +283,7 @@ $A_m$ and $U_m\le\tau$. Then
 
 ```math
 \Pr_{\mathrm{Cal}}\!\left[
-  \exists m: A_m,\ U_m\le\tau,\ R_m(D)>\tau
+  \exists m: A_m,\ U_m\le\tau,\ R_m(D)\gt \tau
   \mid D
 \right]\le\frac1{20},
 \qquad\text{(6)}
@@ -313,7 +313,7 @@ For a positive rational $x$, integer bit lengths and exact comparisons
 give an integer $a$ and rational $u$ such that
 
 ```math
-x=2^a u,\qquad 1\le u<2.
+x=2^a u,\qquad 1\le u\lt 2.
 ```
 
 Set $z=(u-1)/(u+1)$, so $0\le z\lt 1/3$. Integration of the geometric
