@@ -26,8 +26,17 @@ function extractMath(markdown,file) {
   const results=[],lines=markdown.split(/\r?\n/); let fence=null,block=null;
   for(let i=0;i<lines.length;i++){
     const line=lines[i],fenceMark=line.match(/^\s*(\x60{3,}|~{3,})/);
-    if(fenceMark){if(fence===null)fence=fenceMark[1][0];else if(fence===fenceMark[1][0])fence=null;continue;}
-    if(fence!==null)continue;
+    if(fenceMark){
+      const marker=fenceMark[1],language=line.slice(line.indexOf(marker)+marker.length).trim();
+      if(fence===null){
+        fence={char:marker[0],size:marker.length,isMath:language==="math",line:i+1,parts:[]};
+      }else if(fence.char===marker[0]&&marker.length>=fence.size){
+        if(fence.isMath)results.push({file,line:fence.line,latex:fence.parts.join("\n"),display:true});
+        fence=null;
+      }
+      continue;
+    }
+    if(fence!==null){if(fence.isMath)fence.parts.push(line);continue;}
     if(/^\s*\$\$\s*$/.test(line)){
       if(block===null)block={line:i+1,parts:[]};
       else{results.push({file,line:block.line,latex:block.parts.join("\n"),display:true});block=null;}
@@ -39,6 +48,7 @@ function extractMath(markdown,file) {
     while((found=inline.exec(plain))!==null)results.push({file,line:i+1,latex:found[1],display:false});
   }
   if(block!==null)results.push({file,line:block.line,latex:block.parts.join("\n"),display:true,unterminated:true});
+  if(fence!==null&&fence.isMath)results.push({file,line:fence.line,latex:fence.parts.join("\n"),display:true,unterminated:true});
   return results;
 }
 const mistakes=[];let mathCount=0,fileCount=0;
