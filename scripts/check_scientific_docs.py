@@ -49,7 +49,7 @@ def check_markdown(path: Path) -> list[str]:
     in_display = False
     for number, line in visible_lines(path):
         origin = f"{path.relative_to(ROOT)}:{number}"
-        if line.strip() == "$":
+        if line.strip() == chr(36) * 2:
             in_display = not in_display
             continue
         math_regions = [line] if in_display else [
