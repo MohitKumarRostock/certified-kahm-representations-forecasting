@@ -51,9 +51,9 @@ Let $z$ denote the history after the stored training-only history
 standardization. Before readout scaling, the three representations are
 
 $$
-\Gamma_{\rm RAW}(x)=z,\qquad
-\Gamma_{\rm MEM}(x)=\phi(z),\qquad
-\Gamma_{\rm LOCAL}(x)=\operatorname{col}\!\left(
+\Gamma_{\mathrm{RAW}}(x)=z,\qquad
+\Gamma_{\mathrm{MEM}}(x)=\phi(z),\qquad
+\Gamma_{\mathrm{LOCAL}}(x)=\mathrm{col}\!\left(
   \phi(z),\{\phi_j(z)P_j^T(z-\mu_j)\}_{j=1}^{J}\right).
 $$
 
@@ -140,7 +140,7 @@ deviation rule. Denote the standardized block by $\widetilde\nu_b$. The
 decoder input is
 
 $$
-f_b(x)=\operatorname{col}\bigl(u(x),\widetilde\nu_b(u(x))\bigr).
+f_b(x)=\mathrm{col}\bigl(u(x),\widetilde\nu_b(u(x))\bigr).
 $$
 
 Thus the standardized linear representation is preserved unchanged at the
@@ -165,12 +165,12 @@ $$
 $$
 
 The intercept is unpenalized. Center $F$ and $y$, and compute the
-reduced SVD $F_c=U\operatorname{diag}(s_i)V^T$. The stored coefficients
+reduced SVD $F_c=U\mathrm{diag}(s_i)V^T$. The stored coefficients
 and intercept are computed from
 
 $$
 \widehat w
-=V\operatorname{diag}\!\left(\frac{s_i}{s_i^2+n\alpha}\right)U^Ty_c,
+=V\mathrm{diag}\!\left(\frac{s_i}{s_i^2+n\alpha}\right)U^Ty_c,
 \qquad
 \widehat\beta=\bar y-\bar F\widehat w.
 $$
