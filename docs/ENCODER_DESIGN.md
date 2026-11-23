@@ -46,7 +46,7 @@ rows, including duplicates. Variance has divisor `n_train`. A standard deviation
 at most `1e-12` is replaced by one. Store and reuse
 
 $$
-z=(x-\mu_{\rm train})/s_{\rm train}.
+z=(x-\mu_{\mathrm{train}})/s_{\mathrm{train}}.
 $$
 
 Two partitions request 2 and 4 groups. For deterministic clustering, distinct
@@ -96,7 +96,7 @@ Unexpected fitting failures stop execution.
 For positive rank r,
 
 $$
-S=\operatorname{Cov}_{n-1}(P^Tq_i),\qquad
+S=\mathrm{Cov}_{n-1}(P^Tq_i),\qquad
 \kappa(z,q)=\exp\!\left[-\frac{(P^T(z-q))^TS^{-1}(P^T(z-q))}{2r}\right].
 $$
 
@@ -169,7 +169,7 @@ Given reconstruction a, compute the score in the full standardized input space:
 
 $$
 e=1-e^{-\|z-a\|_2},\qquad
-\theta=\pi^{-1}\arccos(\operatorname{clip}(c,-1,1)),\qquad
+\theta=\pi^{-1}\arccos(\mathrm{clip}(c,-1,1)),\qquad
 T=\sqrt{(e^2+\theta^2)/2}.
 $$
 
@@ -199,8 +199,8 @@ and canonical replay check the memberships on every supported history.
 The feature vectors are
 
 $$
-\Gamma_{\rm MEM}=\phi,\qquad
-\Gamma_{\rm LOCAL}=\operatorname{col}\!\left(\phi,
+\Gamma_{\mathrm{MEM}}=\phi,\qquad
+\Gamma_{\mathrm{LOCAL}}=\mathrm{col}\!\left(\phi,
 \{\phi_j P_j^T(z-\mu_j)\}_{j=1}^{J}\right).
 $$
 
