@@ -1,0 +1,23 @@
+name: Verify actual GitHub math elements
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  github-rendered-math:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install MathJax outside the project
+        run: |
+          mkdir -p "${RUNNER_TEMP}/github-math-audit"
+          cd "${RUNNER_TEMP}/github-math-audit"
+          npm install --no-save --ignore-scripts --no-audit --no-fund mathjax-full@3.2.2
+      - name: Audit GitHub-emitted mathematics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: NODE_PATH="${RUNNER_TEMP}/github-math-audit/node_modules" node scripts/check_actual_github_math.cjs
