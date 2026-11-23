@@ -35,7 +35,7 @@ Koopman closure of the encoding. Those are separate mathematical claims. Ridge
 regularization is also a fitting penalty, not a verified hard Lipschitz bound
 on the rounded decoder. The `certify` workflow bounds fitted-predictor MSE.
 The separate `class-risk` workflow bounds optimal class risk
-$R_\kappa^*$ for a prescribed representation, metric, Lipschitz bound, and
+$`R_\kappa^*`$ for a prescribed representation, metric, Lipschitz bound, and
 output interval. Its data interface is specific to
 the finite benchmark.
 
@@ -45,7 +45,7 @@ predictions, and the scientific reason for those choices. Fix them using
 development information before calibration. The constraint is
 $|g(u)-g(v)|\leq\kappa d(u,v)$, so rescaling coordinates while holding
 $\kappa$ fixed can change the assessed class. A fitted predictor supplies an
-upper bound on $R_\kappa^*$ only after its class membership has been justified.
+upper bound on $`R_\kappa^*`$ only after its class membership has been justified.
 The all-support table check does not transfer to arbitrary unseen
 inputs or establish global regularity of a nonlinear executable readout.
 
@@ -144,11 +144,11 @@ for the two candidates. Share training preprocessing, partitions, reference
 identities, PCA, Gaussian models, reconstruction scores, and membership rules.
 Use
 
-$$
+```math
 \Gamma_{\mathrm{MEM}}(x)=\phi(z),\qquad
 \Gamma_{\mathrm{LOCAL}}(x)=\mathrm{col}\left(
 \phi(z),\{\phi_j(z)P_j^T(z-\mu_j)\}_j\right).
-$$
+```
 
 The appended coordinates describe the input, and the MEM prefix is identical.
 Each partition has its own normalization; membership weights are reconstruction
@@ -172,10 +172,10 @@ The example relies on targets and clipped predictions in `[0,1]`, so squared
 loss is bounded by one. If a new problem has a justified target range `[A,B]`
 with `A < B`, a possible normalized loss is
 
-$$
+```math
 \ell(x,y)=\left(\frac{y-\mathrm{clip}(f(x),A,B)}{B-A}\right)^2
 \in[0,1].
-$$
+```
 
 A bound on this normalized risk converts to a bound on squared-error risk in
 the original units by multiplication by `(B-A)^2`. Record both the clipping
