@@ -50,12 +50,12 @@ observed value. Hidden state labels and episode identifiers are not features.
 Let $z$ denote the history after the stored training-only history
 standardization. Before readout scaling, the three representations are
 
-$$
+```math
 \Gamma_{\mathrm{RAW}}(x)=z,\qquad
 \Gamma_{\mathrm{MEM}}(x)=\phi(z),\qquad
 \Gamma_{\mathrm{LOCAL}}(x)=\mathrm{col}\!\left(
   \phi(z),\{\phi_j(z)P_j^T(z-\mu_j)\}_{j=1}^{J}\right).
-$$
+```
 
 The LOCAL coordinates describe the input relative to each local reference
 geometry. They are not coordinates of the KAHM reconstruction. Rank-zero local
@@ -65,13 +65,13 @@ Neither scores nor log normalizers are additional candidate coordinates.
 For each candidate representation, form all $n$ training rows
 $\gamma_i=\Gamma(x_i)$. For coordinate $a$, fit
 
-$$
+```math
 \bar\gamma_a=\frac1n\sum_i\gamma_{ia},\qquad
 s_a=\sqrt{\frac1n\sum_i(\gamma_{ia}-\bar\gamma_a)^2},\qquad
 d_a=\begin{cases}1,&s_a<10^{-8},\\s_a,&s_a\ge10^{-8},\end{cases}
 \qquad
 u_a(x)=\frac{\Gamma_a(x)-\bar\gamma_a}{d_a}.
-$$
+```
 
 The threshold comparison is strict. Constant and dependent feature columns
 remain present. All training occurrences contribute to the moments, including
@@ -108,40 +108,40 @@ ranks, or feature widths.
 
 ## 4. Gaussian Nyström block with a linear component
 
-Compute $\delta$ as the median of $\|\ell_i-\ell_j\|^2$ over
+Compute $\delta$ as the median of $`\|\ell_i-\ell_j\|^2`$ over
 $i<j$, excluding distances at most $10^{-14}$. Set $\delta=1$
 when no distances remain. For each bandwidth multiplier
 
-$$
+```math
 b\in\{0.25,0.5,1,2,4\},\qquad
 \sigma_b^2=\max(\delta b^2,10^{-12}),\qquad
 k_b(u,v)=\exp\!\left(-\frac{\|u-v\|^2}{2\sigma_b^2}\right).
-$$
+```
 
 Form the landmark Gram matrix $K_{ij}=k_b(\ell_i,\ell_j)$, symmetrize
 it, and order its eigenvalues from largest to smallest. Retain exactly those
 eigenvalues satisfying
 
-$$
+```math
 \lambda_i>\max(10^{-12},10^{-10}\lambda_{\max}).
-$$
+```
 
 Let $V$ contain the retained eigenvectors and $\Lambda$ the retained
 positive eigenvalues. For the column vector of landmark similarities
 $k_L(u)$, the unscaled Nyström block is
 
-$$
+```math
 \nu_b(u)=\Lambda^{-1/2}V^Tk_L(u).
-$$
+```
 
 Fit a second column scaler to $\nu_b(u(x_i))$ over **all** training
 episodes, with the same divisor $n$ and strict $10^{-8}$ standard
 deviation rule. Denote the standardized block by $\widetilde\nu_b$. The
 decoder input is
 
-$$
+```math
 f_b(x)=\mathrm{col}\bigl(u(x),\widetilde\nu_b(u(x))\bigr).
-$$
+```
 
 Thus the standardized linear representation is preserved unchanged at the
 front of the decoder input. The Nyström block has its own fitted scaling. If the
@@ -155,25 +155,25 @@ bounds relative to exact real arithmetic.
 For a fixed feature map, let $F$ be the $n$-row training design and
 let $y\in[0,1]^n$ contain the scalar next-observation targets. Fit
 
-$$
+```math
 (\widehat\beta,\widehat w)
 =\arg\min_{\beta,w}\left\{
 \frac1n\sum_{i=1}^{n}(y_i-\beta-F_iw)^2+\alpha\|w\|_2^2
 \right\},
 \qquad
 \alpha\in\{10^{-6},10^{-5},\ldots,10^2\}.
-$$
+```
 
 The intercept is unpenalized. Center $F$ and $y$, and compute the
 reduced SVD $F_c=U\mathrm{diag}(s_i)V^T$. The stored coefficients
 and intercept are computed from
 
-$$
+```math
 \widehat w
 =V\mathrm{diag}\!\left(\frac{s_i}{s_i^2+n\alpha}\right)U^Ty_c,
 \qquad
 \widehat\beta=\bar y-\bar F\widehat w.
-$$
+```
 
 The factor $n\alpha$ is required by the **mean** squared-error objective.
 Ridge retains all supplied feature columns; it does not remove columns using a
@@ -183,10 +183,10 @@ nine penalties for a feature map, preserving the same rows and objective.
 Training solves the displayed quadratic objective before clipping. The complete
 predictor subsequently evaluates
 
-$$
+```math
 g(x)=\widehat\beta+f_b(x)^T\widehat w,\qquad
 \widehat y(x)=\min(1,\max(0,g(x))).
-$$
+```
 
 The computational definition evaluates the affine sum with `math.fsum`, including
 the intercept and the individually rounded binary64 products in feature order.
@@ -204,9 +204,9 @@ value, whether clipping changed it, and any KAHM fallback diagnostics.
 
 For a candidate computational predictor $h$, let
 
-$$
+```math
 L_B(h)=\frac1{n_B}\sum_{i\in B}(y_i-h(x_i))^2.
-$$
+```
 
 Selection treats each actual clipped binary64 output as its exact rational
 value, and computes this empirical mean exactly with rational arithmetic.
