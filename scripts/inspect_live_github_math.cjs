@@ -2,7 +2,7 @@
 const { chromium } = require("playwright-core");
 const fs = require("node:fs");
 const pages = [
-  ["final-experiment-guide", "https://github.com/MohitKumarRostock/Kernel_Affine_Hull_Koopman_Machine/blob/54b820a35e7ece691734effd3bd93d01e938204e/docs/EXPERIMENT_GUIDE.md"],
+  ["feature-computation-guide", "https://github.com/MohitKumarRostock/Kernel_Affine_Hull_Koopman_Machine/blob/7875d522accd2bc941fede5e9df7ed6daecbcb4d/docs/FEATURE_COMPUTATION.md"],
 ];
 (async()=>{
   const browser=await chromium.launch({channel:"chrome",headless:true,args:["--no-sandbox","--disable-dev-shm-usage"]});
@@ -39,7 +39,7 @@ const pages = [
       if(report.errors.length||report.count===0)throw Error(label+" math rendering failure: "+report.errors.length+" errors, "+report.count+" elements");
       fs.mkdirSync("/tmp/ghmath",{recursive:true});
       await page.screenshot({path:"/tmp/ghmath/"+label+".png",fullPage:false});
-    }catch(err){console.log("FAIL",label,String(err))}
+    }catch(err){console.log("FAIL",label,String(err));process.exitCode=1}
     console.log("BROWSER_ERRORS",label,JSON.stringify(errors.slice(0,15)));
     await page.close();
   }
